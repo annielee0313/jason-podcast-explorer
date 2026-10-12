@@ -15,7 +15,7 @@ A static React (Vite + TypeScript) site that helps new listeners discover episod
 ## Layout
 - `src/lib/data.ts`: every data import, the types, and helpers (`relatedEpisodes`, `findTerm`, `formatDuration`). Add new data sources here, not in components.
 - `src/pages/`: Landing, Episode, Explorer, Studio.
-- `src/components/`: Header/Footer, GuestMap plus GuestMapModal, and small UI pieces.
+- `src/components/`: Header/Footer, GuestMap plus GuestMapModal (layout in `guestMapLayout.ts`), and small UI pieces.
 - `src/styles.css`: brand tokens (`:root`) and component classes.
 
 ## Conventions
@@ -29,7 +29,7 @@ A static React (Vite + TypeScript) site that helps new listeners discover episod
 
 ## Known gaps / next tasks
 - Only 12 episodes are in `data/episodes.json`. EP.238–241 have no takeaways yet; run the fetch script.
-- The guest map uses hand-placed positions (`curation.mapLayout`) and falls back to a simple placement. It needs a force layout plus zoom for 50+ guests.
+- The guest map is an infinite canvas (pan/zoom) with an ego-centric radial layout (`src/components/guestMapLayout.ts`): the selected guest is the origin, their themes ring 1, guests sharing them ring 2, and so on. `curation.mapLayout` and `themes[].hub` are no longer read by the map.
 - `clips.sample.json` and `questions.sample.json` are demo data. Rebuild them from transcripts:
   - Use diarization to find Jason's turns.
   - Cluster his questions with embeddings.
