@@ -1,0 +1,5 @@
+# fetch_episodes.py needs only the standard library.
+anthropic          # tag_episodes.py
+faster-whisper     # transcribe.py
+opencc-python-reimplemented  # Simplified → Taiwan Traditional cleanup
+# pyannote.audio   # optional: --diarize (needs a Hugging Face token)

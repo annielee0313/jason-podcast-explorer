@@ -1,0 +1,31 @@
+{
+  "_note": "Hand-curated content. jasonPicks and mostReplayed are empty until Jason's team supplies them.",
+  "paths": [
+    { "title": "AI 來了，我的工作呢？", "blurb": "從行銷集團董事長到前田徑國手，六位來賓談 AI 怎麼改變團隊與個人。", "theme": "ai", "eps": [247, 246, 243, 241, 240, 238] },
+    { "title": "跌倒之後，怎麼走回來", "blurb": "負債三千萬、爆紅後的低谷、失控的生活——他們怎麼重新站穩。", "theme": "resilience", "eps": [242, 248, 249, 239] },
+    { "title": "接手一個老品牌", "blurb": "二代接班、老字號重塑、危機後重建團隊。", "theme": "leadership", "eps": [245] },
+    { "title": "先照顧好自己", "blurb": "健康管理、精神內耗、整理生活空間。", "theme": "health", "eps": [244, 239, 249] }
+  ],
+  "jasonPicks": [],
+  "mostReplayed": [],
+  "phrases": [
+    { "label": "AI", "terms": ["AI"] },
+    { "label": "價值", "terms": ["價值"] },
+    { "label": "盲點／盲區", "terms": ["盲點", "盲區"] },
+    { "label": "思維", "terms": ["思維"] },
+    { "label": "品牌", "terms": ["品牌"] },
+    { "label": "底層邏輯", "terms": ["底層邏輯"] },
+    { "label": "焦慮", "terms": ["焦慮"] },
+    { "label": "逆境", "terms": ["逆境"] },
+    { "label": "信任", "terms": ["信任"] },
+    { "label": "SOP", "terms": ["SOP"] },
+    { "label": "溫度", "terms": ["溫度"] }
+  ],
+  "mapLayout": {
+    "_note": "Hand-placed node centers (px) on a 1100x680 stage for the 12-episode demo. Episodes without a position are placed automatically.",
+    "249": { "x": 660, "y": 610 }, "248": { "x": 90, "y": 335 }, "247": { "x": 720, "y": 255 },
+    "246": { "x": 390, "y": 255 }, "245": { "x": 560, "y": 70 }, "244": { "x": 720, "y": 425 },
+    "243": { "x": 320, "y": 80 }, "242": { "x": 300, "y": 620 }, "241": { "x": 400, "y": 420 },
+    "240": { "x": 560, "y": 480 }, "239": { "x": 470, "y": 610 }, "238": { "x": 1010, "y": 330 }
+  }
+}

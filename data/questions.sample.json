@@ -1,0 +1,34 @@
+{
+  "_note": "Demo data for 'same question, different answers'. Answers are taken from show-note takeaways (source: show-notes) or paraphrased (source: summary). Replace with transcript quotes + timestamps once transcripts exist.",
+  "questions": [
+    {
+      "text": "AI 做得越來越多，人還剩下什麼？",
+      "answers": [
+        { "ep": 247, "text": "AI 給出分析，唯有人能承擔。", "source": "show-notes" },
+        { "ep": 246, "text": "情感共振與真實體驗，是 AI 永遠無法代勞的價值。", "source": "show-notes" },
+        { "ep": 243, "text": "讓 AI 負責廣度與速度，人負責深度與溫度。", "source": "summary" },
+        { "ep": 241, "text": "判斷力會成為最稀缺的能力。", "source": "summary" },
+        { "ep": 240, "text": "品味與判斷力，是未來最關鍵的能力。", "source": "summary" },
+        { "ep": 239, "text": "感知力與品味，是人在 AI 時代的核心優勢。", "source": "summary" }
+      ]
+    },
+    {
+      "text": "跌到谷底時，怎麼撐過去？",
+      "answers": [
+        { "ep": 242, "text": "區分事實與觀點，化逆境為成長契機。", "source": "show-notes" },
+        { "ep": 248, "text": "修練逆境心理學，打破低谷焦慮的迷思。", "source": "summary" },
+        { "ep": 249, "text": "把不可控的失控感，鍛造為雙倍高效。", "source": "show-notes" },
+        { "ep": 239, "text": "情緒穩定，是面對壓力最關鍵的能力。", "source": "summary" }
+      ]
+    },
+    {
+      "text": "一個品牌要怎麼走得久？",
+      "answers": [
+        { "ep": 248, "text": "用品質累積真實口碑，不被爆款成就設限。", "source": "summary" },
+        { "ep": 245, "text": "精準淬鍊老字號最值得延續的品牌資產。", "source": "summary" },
+        { "ep": 243, "text": "用「π型人才」的思維建立個人品牌。", "source": "summary" },
+        { "ep": 246, "text": "沒有策略導引，AI 做出的企劃只能見招拆招。", "source": "summary" }
+      ]
+    }
+  ]
+}
