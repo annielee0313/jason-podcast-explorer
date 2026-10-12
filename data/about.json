@@ -1,0 +1,38 @@
+{
+  "_source": "Host bio and book: 博客來 product page for the book (作者簡介 / 內容簡介), fetched 2026-10-12. Company links: the show's own notes on SoundOn.",
+  "host": {
+    "name": "楊佳燊",
+    "nameEn": "Jason Yang",
+    "title": "傑思‧愛德威媒體 創辦人暨執行長",
+    "facts": [
+      "1974 年生於新竹",
+      "曾任 TVBS 電視台業務",
+      "30 歲白手起家創業，投身網路廣告",
+      "和無名小站一同打造年收上億元的事業",
+      "2020 年起主持《Jason好好聊》",
+      "台大管理學院 EMBA、政大企家班"
+    ],
+    "awards": ["100MVP 經理人", "傑出數位經營人獎", "金手指年度人物獎"]
+  },
+  "book": {
+    "title": "真誠 Be real, not perfect",
+    "subtitle": "從菜鳥助理到跨國企業CEO，關於職場、關係與人生的啟發",
+    "publisher": "商周出版",
+    "date": "2024-12-26",
+    "url": "https://www.books.com.tw/products/0011007950",
+    "lessons": ["真誠做自己，好運跟著來", "三心哲學：同理心，不貪心，感恩的心", "先求有，再求穩，再求好", "制度優先，溫度隨後附上"]
+  },
+  "company": {
+    "name": "傑思‧愛德威",
+    "nameEn": "JS ADWAYS GROUP",
+    "blurb": "橫跨媒體、電商、品牌顧問與技術的整合性數位媒體行銷集團。",
+    "website": "https://www.js-adways.com.tw/",
+    "websiteLabel": "js-adways.com.tw",
+    "facebook": "https://www.facebook.com/jsadways",
+    "email": "sales-service@js-adways.com.tw"
+  },
+  "show": {
+    "apple": "https://podcasts.apple.com/tw/podcast/id1532218131",
+    "soundon": "https://player.soundon.fm/p/f1f2a53d-d42a-4752-a768-00a32b1ac9c5"
+  }
+}

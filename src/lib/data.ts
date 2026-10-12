@@ -3,6 +3,7 @@ import themesJson from '../../data/themes.json';
 import curationJson from '../../data/curation.json';
 import questionsJson from '../../data/questions.sample.json';
 import clipsJson from '../../data/clips.sample.json';
+import aboutJson from '../../data/about.json';
 
 export type ThemeId = 'ai' | 'brand' | 'leadership' | 'resilience' | 'health' | 'money';
 
@@ -46,6 +47,9 @@ export const curation = curationJson as unknown as {
   phrases: Phrase[];
   mapLayout: Record<string, { x: number; y: number }>;
 };
+
+/** Host bio, book, production company and show links. Sources are noted in data/about.json. */
+export const about = aboutJson;
 
 export const questions = questionsJson.questions as {
   text: string;

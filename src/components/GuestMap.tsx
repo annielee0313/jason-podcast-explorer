@@ -206,7 +206,7 @@ export function GuestMap({ initialEp = 247, onNavigate }: { initialEp?: number; 
                   return (
                     <span key={n.id} className="map-hub" style={{
                       left: p.x, top: p.y, width: size, height: size,
-                      background: t.bg, color: t.fg, border: `3px solid ${t.dot}`,
+                      background: t.bg, color: t.fg, boxShadow: `inset 0 0 0 6px ${t.dot}22`,
                       opacity: selThemes.has(n.theme) ? 1 : 0.75,
                     }}>
                       {t.name}<br />{n.count} 位
@@ -220,9 +220,10 @@ export function GuestMap({ initialEp = 247, onNavigate }: { initialEp?: number; 
                     onClick={() => setSelEp(n.ep.ep)}
                     style={{
                       left: p.x, top: p.y,
-                      background: isSel ? 'var(--ink)' : '#fff',
+                      background: isSel ? 'var(--ink)' : rel ? 'var(--teal-wash)' : 'var(--ground)',
                       color: isSel ? '#fff' : rel ? 'var(--ink)' : 'var(--muted-2)',
-                      border: isSel || rel ? '2px solid var(--ink)' : '1px solid var(--dash)',
+                      border: 0,
+                      fontWeight: rel ? 700 : undefined,
                       fontSize: isSel ? 17 : undefined,
                       zIndex: isSel ? 2 : 1,
                     }}>
@@ -258,7 +259,7 @@ export function GuestMap({ initialEp = 247, onNavigate }: { initialEp?: number; 
           <Link to={`/episode/${sel.ep}`} className="btn btn-primary" style={{ alignSelf: 'flex-start' }} onClick={onNavigate}>
             看這一集
           </Link>
-          <div style={{ borderTop: '1px solid var(--line-soft)', paddingTop: 14 }}>
+          <div style={{ background: 'var(--ground)', borderRadius: 16, padding: 16 }}>
             <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 10 }}>聊過同樣主題的來賓 · {related.length} 位</div>
             <div className="chips" style={{ gap: 8 }}>
               {related.map((r) => (

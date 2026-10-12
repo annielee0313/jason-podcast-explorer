@@ -29,3 +29,6 @@ export const ShuffleIcon = () => (
 export const CloseIcon = () => (
   <svg {...iconProps} width={18} height={18}><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
 );
+export const ArrowUpRightIcon = () => (
+  <svg {...iconProps}><line x1="7" y1="17" x2="17" y2="7" /><polyline points="8 7 17 7 17 16" /></svg>
+);

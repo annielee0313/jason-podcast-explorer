@@ -23,6 +23,8 @@ A static React (Vite + TypeScript) site that helps new listeners discover episod
 - **Never invent data.** If something isn't known yet (play counts, Jason's picks, timestamps, quotes), render a dashed `.placeholder` box naming the missing source. Mark paraphrases explicitly: `highlightIsSummary` in data, and a 摘要 label in the UI. Takeaways in `episodes.json` must be verbatim from the show notes.
 - **Themes come from the fixed taxonomy** in `data/themes.json`. Use 1–2 per episode. Don't add free-form tags. Propose a taxonomy change instead.
 - **Data scripts merge, they don't overwrite.** Hand-curated fields (`themes`, `arc`, `highlight`, `appleUrl`) survive re-fetching.
+- **No border strokes.** Separate surfaces with fills (`--ground`, `#fff`, `--soft`), radius and spacing. The only outline allowed is the dashed `.placeholder` for missing data.
+- **Host, book and company facts** live in `data/about.json` (sources noted inside). Keep the 傑思‧愛德威 section and footer links: routing listeners to the company is a core goal of the site.
 - **Brand colors:** turquoise `--teal` is only a fill, with slate text on it, because white on turquoise fails contrast. Links and white-text buttons use `--teal-strong`.
 - **Accessibility:** use real buttons and links, keep touch targets at least 44px, set `aria-pressed` on toggles. The modal handles Escape, focus and scroll lock. Keep it that way.
 - Routing uses `HashRouter` so the static build works on GitHub Pages.

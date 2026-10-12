@@ -62,11 +62,11 @@ export default function EpisodePage() {
             <div className="card">
               <h2 style={{ fontSize: 24, marginBottom: 20 }}>這集在聊</h2>
               {ep.takeaways.length ? (
-                <ol style={{ margin: 0, padding: 0, listStyle: 'none' }}>
+                <ol style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {ep.takeaways.map((t) => {
                     const [head, ...rest] = t.split('：');
                     return (
-                      <li key={t} style={{ display: 'grid', gridTemplateColumns: '72px minmax(0, 1fr)', gap: 16, padding: '16px 0', borderTop: '1px solid var(--line-soft)' }}>
+                      <li key={t} style={{ display: 'grid', gridTemplateColumns: '72px minmax(0, 1fr)', gap: 16, padding: '16px 18px', background: 'var(--ground)', borderRadius: 16 }}>
                         <span className="mono" style={{ fontSize: 15, color: 'var(--muted-2)' }}>--:--</span>
                         <span style={{ fontSize: 17, lineHeight: 1.65 }}>
                           {rest.length ? <><strong>{head}</strong>：{rest.join('：')}</> : t}

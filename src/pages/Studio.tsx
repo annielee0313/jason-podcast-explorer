@@ -25,14 +25,14 @@ export default function Studio() {
   return (
     <div className="tool">
       <Header tool="短影音工作台" />
-      <div style={{ background: '#fff', borderBottom: '1px solid var(--line)', padding: '12px 32px' }}>
+      <div style={{ background: '#fff', padding: '12px 32px' }}>
         <ol aria-label="處理進度" style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexWrap: 'wrap', gap: 8, alignItems: 'center', fontSize: 14 }}>
           {STEPS.map((s, i) => (
             <li key={s} style={{
               padding: '6px 12px', borderRadius: 999,
               ...(i < CURRENT_STEP ? { background: '#DFF3E4', color: '#1E6B33' }
                 : i === CURRENT_STEP ? { background: 'var(--ink)', color: '#fff' }
-                : { border: '1px solid var(--dash)', color: 'var(--muted)' }),
+                : { background: 'var(--ground)', color: 'var(--muted)' }),
             }}>{i + 1} {s}{i === CURRENT_STEP && '（你在這）'}</li>
           ))}
           <li className="mono" style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--teal-strong)' }}>時間碼為示意 · 接上逐字稿後換成真實數據</li>
