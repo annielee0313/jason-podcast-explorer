@@ -8,7 +8,9 @@ Transcribe episodes to data/transcripts/EP###.json (segments with timestamps, op
     python scripts/transcribe.py --eps 247 --diarize    # + speaker labels (needs HF_TOKEN, pyannote)
 
 Notes
-- Uses faster-whisper (large-v3 by default; --model medium for speed on a laptop).
+- Backends: mlx-whisper (Apple Silicon GPU, default on M-series Macs, ~10x faster there)
+  or faster-whisper (CPU/CUDA elsewhere). --backend picks one explicitly.
+- large-v3 by default; --model large-v3-turbo or medium for speed.
 - Mandarin with English mixed in ("AI", "SOP", "B2B") — Whisper handles code-switching
   reasonably; the initial prompt nudges it toward Traditional characters, and OpenCC
   (if installed) converts any Simplified output to Taiwan Traditional.
@@ -53,6 +55,50 @@ def to_traditional(text: str) -> str:
     return OpenCC("s2twp").convert(text)
 
 
+MLX_REPOS = {
+    "large-v3": "mlx-community/whisper-large-v3-mlx",
+    "large-v3-turbo": "mlx-community/whisper-large-v3-turbo",
+    "medium": "mlx-community/whisper-medium-mlx",
+}
+
+
+def default_backend() -> str:
+    try:
+        import mlx_whisper  # type: ignore  # noqa: F401
+    except ImportError:
+        return "faster"
+    return "mlx"
+
+
+def make_transcriber(backend: str, model_name: str):
+    """Return fn(path) -> list of (start, end, text)."""
+    if backend == "mlx":
+        import mlx_whisper  # type: ignore
+        from faster_whisper.audio import decode_audio  # type: ignore  # PyAV decode, no ffmpeg binary needed
+
+        repo = MLX_REPOS.get(model_name, model_name)
+
+        def run(path: Path):
+            # condition_on_previous_text=False avoids Whisper's repetition loops on hour-long audio.
+            result = mlx_whisper.transcribe(
+                decode_audio(str(path)), path_or_hf_repo=repo, language="zh",
+                initial_prompt=INITIAL_PROMPT, condition_on_previous_text=False,
+            )
+            return [(s["start"], s["end"], s["text"]) for s in result["segments"]]
+
+        return run
+
+    from faster_whisper import WhisperModel  # type: ignore
+
+    model = WhisperModel(model_name, device="auto", compute_type="auto")
+
+    def run(path: Path):
+        segs, _info = model.transcribe(str(path), language="zh", initial_prompt=INITIAL_PROMPT, vad_filter=True)
+        return [(s.start, s.end, s.text) for s in segs]
+
+    return run
+
+
 def diarize(path: Path, segments: list[dict]) -> None:
     from pyannote.audio import Pipeline  # type: ignore
 
@@ -68,6 +114,7 @@ def main() -> int:
     ap.add_argument("--eps", type=int, nargs="*", default=[])
     ap.add_argument("--latest", type=int, default=0)
     ap.add_argument("--model", default="large-v3")
+    ap.add_argument("--backend", choices=["mlx", "faster"], default=None, help="default: mlx if installed, else faster")
     ap.add_argument("--diarize", action="store_true")
     ap.add_argument("--force", action="store_true", help="re-transcribe even if output exists")
     args = ap.parse_args()
@@ -81,9 +128,8 @@ def main() -> int:
         print("Pass --eps N … or --latest N", file=sys.stderr)
         return 1
 
-    from faster_whisper import WhisperModel  # type: ignore
-
-    model = WhisperModel(args.model, device="auto", compute_type="auto")
+    backend = args.backend or default_backend()
+    transcribe = make_transcriber(backend, args.model)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     for ep in eps:
@@ -95,9 +141,12 @@ def main() -> int:
             print(f"EP.{ep}: no audio URL")
             continue
         path = download(ep, urls[ep])
-        print(f"EP.{ep}: transcribing with {args.model}…")
-        segs, _info = model.transcribe(str(path), language="zh", initial_prompt=INITIAL_PROMPT, vad_filter=True)
-        segments = [{"start": round(s.start, 2), "end": round(s.end, 2), "text": to_traditional(s.text.strip())} for s in segs]
+        print(f"EP.{ep}: transcribing with {args.model} ({backend})…", flush=True)
+        segments = [
+            {"start": round(start, 2), "end": round(end, 2), "text": to_traditional(text.strip())}
+            for start, end, text in transcribe(path)
+            if text.strip()
+        ]
         if args.diarize:
             diarize(path, segments)
         out.write_text(json.dumps({"ep": ep, "model": args.model, "segments": segments}, ensure_ascii=False, indent=1) + "\n", "utf-8")

@@ -1,5 +1,6 @@
 # fetch_episodes.py needs only the standard library.
 anthropic          # tag_episodes.py
-faster-whisper     # transcribe.py
+faster-whisper     # transcribe.py (CPU/CUDA backend; also used to decode audio)
+mlx-whisper; sys_platform == "darwin" and platform_machine == "arm64"  # transcribe.py on Apple Silicon
 opencc-python-reimplemented  # Simplified → Taiwan Traditional cleanup
 # pyannote.audio   # optional: --diarize (needs a Hugging Face token)
