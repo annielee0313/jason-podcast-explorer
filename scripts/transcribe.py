@@ -26,6 +26,7 @@ import argparse
 import json
 import os
 import sys
+import time
 import urllib.request
 from pathlib import Path
 
@@ -39,12 +40,24 @@ INITIAL_PROMPT = "以下是繁體中文的 Podcast 訪談《Jason好好聊》，
 def download(ep: int, url: str) -> Path:
     AUDIO_DIR.mkdir(exist_ok=True)
     path = AUDIO_DIR / f"EP{ep:03d}.mp3"
-    if not path.exists():
-        print(f"  downloading EP.{ep}…")
-        req = urllib.request.Request(url, headers={"User-Agent": "jason-podcast-explorer/0.1"})
-        with urllib.request.urlopen(req, timeout=300) as r, open(path, "wb") as f:
-            f.write(r.read())
-    return path
+    if path.exists() and path.stat().st_size > 0:
+        return path
+    # Stream to a .part file and rename when complete, so a dropped connection
+    # never leaves a truncated mp3 that later runs would treat as cached.
+    part = path.with_suffix(".mp3.part")
+    req = urllib.request.Request(url, headers={"User-Agent": "jason-podcast-explorer/0.1"})
+    for attempt in range(1, 4):
+        print(f"  downloading EP.{ep} (attempt {attempt})…", flush=True)
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r, open(part, "wb") as f:
+                while chunk := r.read(1 << 20):
+                    f.write(chunk)
+            part.rename(path)
+            return path
+        except OSError as err:
+            print(f"  download failed: {err}", flush=True)
+            time.sleep(10 * attempt)
+    raise RuntimeError(f"EP.{ep}: download failed after 3 attempts")
 
 
 def to_traditional(text: str) -> str:

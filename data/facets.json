@@ -1,0 +1,16 @@
+{
+  "_note": "DRAFT taxonomies for guest role and industry, agreed as a demo on 2026-10-13. Like themes, keep these lists fixed: propose a change instead of adding free-form values. role comes from the guest's own title; industry is a judgment call (authors are filed by their book's subject). null = not yet confirmed.",
+  "roles": [
+    { "id": "founder", "name": "創辦人" },
+    { "id": "exec", "name": "經營者" },
+    { "id": "author", "name": "作者" },
+    { "id": "pro", "name": "專業工作者" }
+  ],
+  "industries": [
+    { "id": "tech", "name": "AI／科技" },
+    { "id": "marketing", "name": "行銷／業務" },
+    { "id": "health", "name": "健康／生技" },
+    { "id": "food", "name": "餐飲" },
+    { "id": "design", "name": "設計／藝術／生活" }
+  ]
+}

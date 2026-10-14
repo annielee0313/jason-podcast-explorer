@@ -9,7 +9,7 @@ What it does
 - Parses each <item>: EP number, title hook (text before ➡️), date, duration,
   the 來賓 line (guest + org), the ☑️ takeaways, and the audio URL.
 - MERGES into the existing data/episodes.json: hand-curated fields
-  (themes, arc, highlight, highlightIsSummary) are never overwritten.
+  (themes, arc, highlight, highlightIsSummary, role, industry) are never overwritten.
   New episodes get themes=[] — run scripts/tag_episodes.py next.
 - Writes data/audio_urls.json (EP -> mp3 URL) for scripts/transcribe.py.
 
@@ -37,7 +37,7 @@ NS = {
     "itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
     "content": "http://purl.org/rss/1.0/modules/content/",
 }
-CURATED_FIELDS = ("themes", "arc", "highlight", "highlightIsSummary", "appleUrl")
+CURATED_FIELDS = ("themes", "arc", "highlight", "highlightIsSummary", "appleUrl", "role", "industry")
 
 
 def fetch_feed(url: str) -> bytes:
@@ -171,7 +171,7 @@ def main() -> int:
                 row["highlightIsSummary"] = False
         else:
             added += 1
-            row.update(themes=[], arc=None, highlight=default_highlight(p["takeaways"]), highlightIsSummary=False)
+            row.update(themes=[], arc=None, role=None, industry=None, highlight=default_highlight(p["takeaways"]), highlightIsSummary=False)
         row.setdefault("appleUrl", None)
         merged.append(row)
 

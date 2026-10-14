@@ -12,7 +12,11 @@
       "2020 年起主持《Jason好好聊》",
       "台大管理學院 EMBA、政大企家班"
     ],
-    "awards": ["100MVP 經理人", "傑出數位經營人獎", "金手指年度人物獎"]
+    "awards": [
+      "100MVP 經理人",
+      "傑出數位經營人獎",
+      "金手指年度人物獎"
+    ]
   },
   "book": {
     "title": "真誠 Be real, not perfect",
@@ -20,7 +24,12 @@
     "publisher": "商周出版",
     "date": "2024-12-26",
     "url": "https://www.books.com.tw/products/0011007950",
-    "lessons": ["真誠做自己，好運跟著來", "三心哲學：同理心，不貪心，感恩的心", "先求有，再求穩，再求好", "制度優先，溫度隨後附上"]
+    "lessons": [
+      "真誠做自己，好運跟著來",
+      "三心哲學：同理心，不貪心，感恩的心",
+      "先求有，再求穩，再求好",
+      "制度優先，溫度隨後附上"
+    ]
   },
   "company": {
     "name": "傑思‧愛德威",
@@ -33,6 +42,7 @@
   },
   "show": {
     "apple": "https://podcasts.apple.com/tw/podcast/id1532218131",
+    "youtube": "https://www.youtube.com/@Jasonstalkshow",
     "soundon": "https://player.soundon.fm/p/f1f2a53d-d42a-4752-a768-00a32b1ac9c5"
   }
 }

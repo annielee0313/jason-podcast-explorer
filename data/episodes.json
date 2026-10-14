@@ -20,7 +20,9 @@
     "arc": null,
     "highlight": "擺脫美感堆疊，讓空間成為內心的具象化",
     "highlightIsSummary": false,
-    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000793983647"
+    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000793983647",
+    "role": "pro",
+    "industry": "design"
   },
   {
     "ep": 248,
@@ -43,7 +45,9 @@
     "arc": "幫懷孕妻子消水腫 → 十年爆款紅豆水",
     "highlight": "擺脫行銷競爭，臨床實證與專利建立技術壁壘",
     "highlightIsSummary": false,
-    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000791560975"
+    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000791560975",
+    "role": "exec",
+    "industry": "health"
   },
   {
     "ep": 247,
@@ -66,7 +70,9 @@
     "arc": "前田徑國手 → AI 新創創辦人",
     "highlight": "AI 給出分析，唯有人能承擔",
     "highlightIsSummary": false,
-    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000789005390"
+    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000789005390",
+    "role": "founder",
+    "industry": "tech"
   },
   {
     "ep": 246,
@@ -89,7 +95,9 @@
     "arc": null,
     "highlight": "讓 AI 擔任最強副駕駛，但關鍵決策權仍在人類",
     "highlightIsSummary": false,
-    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000786440218"
+    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000786440218",
+    "role": "exec",
+    "industry": "marketing"
   },
   {
     "ep": 245,
@@ -112,7 +120,9 @@
     "arc": "金融圈 → 老字號餐飲接班",
     "highlight": "拒絕冰冷 SOP：以「人」為本，創造無法複製的情緒價值",
     "highlightIsSummary": false,
-    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000783271009"
+    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000783271009",
+    "role": "exec",
+    "industry": "food"
   },
   {
     "ep": 244,
@@ -135,7 +145,9 @@
     "arc": null,
     "highlight": "突破「無紅字即健康」的安全假象",
     "highlightIsSummary": false,
-    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000779227307"
+    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000779227307",
+    "role": "exec",
+    "industry": "health"
   },
   {
     "ep": 243,
@@ -158,7 +170,9 @@
     "arc": null,
     "highlight": "人機協作的黃金法則：廣度、速度與深度、溫度",
     "highlightIsSummary": false,
-    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000777178798"
+    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000777178798",
+    "role": "author",
+    "industry": "marketing"
   },
   {
     "ep": 242,
@@ -181,7 +195,9 @@
     "arc": "22 歲負債三千萬 → 財務自在",
     "highlight": "區分事實與觀點，化逆境為成長契機",
     "highlightIsSummary": false,
-    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000775285449"
+    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000775285449",
+    "role": "founder",
+    "industry": null
   },
   {
     "ep": 241,
@@ -202,7 +218,9 @@
     ],
     "arc": null,
     "highlight": "打破「讓 AI 幫點忙」迷思，All in AI 讓產值暴增一萬倍",
-    "highlightIsSummary": false
+    "highlightIsSummary": false,
+    "role": "author",
+    "industry": "tech"
   },
   {
     "ep": 240,
@@ -223,7 +241,9 @@
     ],
     "arc": null,
     "highlight": "AI 顛覆出版業的神級效率",
-    "highlightIsSummary": false
+    "highlightIsSummary": false,
+    "role": "author",
+    "industry": "tech"
   },
   {
     "ep": 239,
@@ -245,7 +265,9 @@
     ],
     "arc": "心理學家 → 攝影藝廊 CEO",
     "highlight": "從心理學角度聚焦團隊的「優勢才華」，激發團隊最深層的潛能與真實交流",
-    "highlightIsSummary": false
+    "highlightIsSummary": false,
+    "role": "exec",
+    "industry": "design"
   },
   {
     "ep": 238,
@@ -267,6 +289,8 @@
     ],
     "arc": null,
     "highlight": "花錢教員工用 AI 根本省不到錢？帶你秒懂建立能自動完成任務的「AI Agent」",
-    "highlightIsSummary": false
+    "highlightIsSummary": false,
+    "role": "founder",
+    "industry": "tech"
   }
 ]
