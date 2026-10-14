@@ -2,7 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, typ
 import { Link } from 'react-router-dom';
 import { episodes, themeById } from '../lib/data';
 import { guestId, radialLayout, themeId } from './guestMapLayout';
-import { CloseIcon, ThemeChip } from './ui';
+import { ArrowIcon } from './ui';
 
 const ZOOM_MIN = 0.25;
 const ZOOM_MAX = 2.5;
@@ -34,7 +34,7 @@ function fitZoom(nodes: { depth: number; x: number; y: number }[], size: { w: nu
  * Selecting a guest re-runs the radial layout around them and animates both the
  * nodes and the camera so they end up in the middle of the viewport.
  */
-export function GuestMap({ initialEp = 247, onNavigate }: { initialEp?: number; onNavigate?: () => void }) {
+export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
   const [selEp, setSelEp] = useState(initialEp);
   const sel = episodes.find((e) => e.ep === selEp) ?? episodes[0];
   const shares = (ep: number) => ep !== sel.ep && episodes.find((e) => e.ep === ep)!.themes.some((t) => sel.themes.includes(t));
@@ -101,20 +101,17 @@ export function GuestMap({ initialEp = 247, onNavigate }: { initialEp?: number; 
     });
   }, []);
 
-  // Wheel needs a non-passive listener to stop the modal from scrolling.
+  // Non-passive so a ⌘/Ctrl+wheel zoom can stop the page from scrolling.
   useEffect(() => {
     const el = viewportRef.current!;
+    // The map sits inline in the page, so a plain wheel scrolls the page. Only a
+    // trackpad pinch (reported as ctrl+wheel) or ⌘/Ctrl+wheel zooms the map.
     const onWheel = (e: WheelEvent) => {
+      if (!(e.ctrlKey || e.metaKey)) return;
       e.preventDefault();
       const rect = el.getBoundingClientRect();
       const at = { x: e.clientX - rect.left - rect.width / 2, y: e.clientY - rect.top - rect.height / 2 };
-      if (e.ctrlKey || e.metaKey || e.deltaMode !== 0) {
-        // Trackpad pinch (reported as ctrl+wheel) or a mouse wheel: zoom.
-        zoomBy(Math.exp(-e.deltaY * (e.deltaMode ? 0.05 : 0.01)), at);
-      } else {
-        // Trackpad two-finger scroll: pan.
-        setCam((c) => ({ ...c, x: c.x - e.deltaX, y: c.y - e.deltaY }));
-      }
+      zoomBy(Math.exp(-e.deltaY * (e.deltaMode ? 0.05 : 0.01)), at);
     };
     el.addEventListener('wheel', onWheel, { passive: false });
     return () => el.removeEventListener('wheel', onWheel);
@@ -161,11 +158,8 @@ export function GuestMap({ initialEp = 247, onNavigate }: { initialEp?: number; 
   const related = episodes.filter((e) => shares(e.ep));
 
   return (
-    <div style={{ padding: '4px 28px 28px' }}>
-      <p className="muted" style={{ margin: 0, fontSize: 16, lineHeight: 1.7 }}>
-        點一位來賓，地圖會以這位來賓為中心展開：先是聊過的主題，再往外是聊過同樣主題的其他來賓。
-      </p>
-      <div className="row" style={{ marginTop: 20, alignItems: 'flex-start', gap: 20 }}>
+    <div>
+      <div className="row" style={{ alignItems: 'flex-start', gap: 20 }}>
         <div className="map-stage-box grow">
           <div
             ref={viewportRef}
@@ -241,71 +235,40 @@ export function GuestMap({ initialEp = 247, onNavigate }: { initialEp?: number; 
           </div>
         </div>
 
-        <aside aria-label="來賓資料" className="card side" style={{ display: 'flex', flexDirection: 'column', gap: 14, padding: 24 }}>
-          <span className="mono muted" style={{ fontSize: 13 }}>EP.{sel.ep} · {sel.date}</span>
+        <aside aria-label="來賓資料" className="card side map-panel">
+          <span className="map-panel-meta">EP.{sel.ep} · {sel.date}</span>
           <div>
-            <div style={{ fontSize: 26, fontWeight: 900 }}>{sel.guest}</div>
-            <div className="muted" style={{ fontSize: 15, marginTop: 4 }}>{sel.org}</div>
+            <div className="map-panel-name">{sel.guest}</div>
+            <div className="map-panel-org">{sel.org}</div>
           </div>
-          {sel.arc && (
-            <span style={{ alignSelf: 'flex-start', padding: '8px 14px', borderRadius: 999, background: 'var(--ink)', color: '#fff', fontSize: 14 }}>
-              {sel.arc}
-            </span>
-          )}
-          <div className="chips">{sel.themes.map((t) => <ThemeChip key={t} id={t} />)}</div>
-          <blockquote style={{ margin: 0, padding: '16px 18px', background: 'var(--ground)', borderRadius: 12, fontSize: 17, fontWeight: 700, lineHeight: 1.6 }}>
-            {sel.highlight}{sel.highlightIsSummary && <span className="muted" style={{ fontSize: 13, fontWeight: 400 }}>（摘要）</span>}
-          </blockquote>
-          <Link to={`/episode/${sel.ep}`} className="btn btn-primary" style={{ alignSelf: 'flex-start' }} onClick={onNavigate}>
-            看這一集
+          <div className="map-panel-themes">
+            {sel.themes.map((t) => (
+              <span key={t}><i style={{ background: themeById[t].dot }} aria-hidden="true" />{themeById[t].name}</span>
+            ))}
+          </div>
+          <p className="map-panel-quote">
+            「{sel.highlight}」{sel.highlightIsSummary && <span className="muted">（摘要）</span>}
+          </p>
+          <Link to={`/episode/${sel.ep}`} className="link-btn">
+            看這一集 <span className="dot-icon"><ArrowIcon /></span>
           </Link>
-          <div style={{ background: 'var(--ground)', borderRadius: 16, padding: 16 }}>
-            <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 10 }}>聊過同樣主題的來賓 · {related.length} 位</div>
-            <div className="chips" style={{ gap: 8 }}>
-              {related.map((r) => (
-                <button key={r.ep} type="button" className="toggle" style={{ fontSize: 14 }} onClick={() => setSelEp(r.ep)}>
-                  {r.guest}
-                </button>
-              ))}
+          {related.length > 0 && (
+            <div className="map-panel-related">
+              <span className="map-panel-label">也聊過這些主題</span>
+              <ul>
+                {related.map((r) => (
+                  <li key={r.ep}>
+                    <button type="button" onClick={() => setSelEp(r.ep)}>
+                      <span>{r.guest}</span><span className="mono">EP.{r.ep}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          )}
         </aside>
       </div>
-      <p className="muted" style={{ margin: '16px 0 0', fontSize: 13 }}>拖曳移動地圖，滾輪或雙指縮放。主題為人工標記草稿。</p>
-    </div>
-  );
-}
-
-export function GuestMapModal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const closeRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    const prevOverflow = document.body.style.overflow;
-    const prevFocus = document.activeElement as HTMLElement | null;
-    document.body.style.overflow = 'hidden';
-    closeRef.current?.focus();
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
-    window.addEventListener('keydown', onKey);
-    return () => {
-      document.body.style.overflow = prevOverflow;
-      window.removeEventListener('keydown', onKey);
-      prevFocus?.focus();
-    };
-  }, [open, onClose]);
-
-  if (!open) return null;
-  return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal" role="dialog" aria-modal="true" aria-labelledby="map-title" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-head">
-          <h2 id="map-title" style={{ fontSize: 30 }}>來賓地圖</h2>
-          <button ref={closeRef} type="button" className="icon-btn" aria-label="關閉來賓地圖" onClick={onClose}>
-            <CloseIcon />
-          </button>
-        </div>
-        <GuestMap onNavigate={onClose} />
-      </div>
+      <p className="muted" style={{ margin: '16px 0 0', fontSize: 12 }}>拖曳可以移動；按住 ⌘／Ctrl 再滾動，或用雙指捏合，可以縮放。</p>
     </div>
   );
 }

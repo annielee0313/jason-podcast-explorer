@@ -4,6 +4,7 @@ import curationJson from '../../data/curation.json';
 import questionsJson from '../../data/questions.sample.json';
 import clipsJson from '../../data/clips.sample.json';
 import aboutJson from '../../data/about.json';
+import facetsJson from '../../data/facets.json';
 
 export type ThemeId = 'ai' | 'brand' | 'leadership' | 'resilience' | 'health' | 'money';
 
@@ -25,6 +26,9 @@ export interface Episode {
   org: string;
   appleUrl?: string;
   themes: ThemeId[];
+  /** Draft facets from data/facets.json; null until confirmed. */
+  role: string | null;
+  industry: string | null;
   arc: string | null;
   /** Verbatim ☑️ lines from the show notes. Empty until scripts/fetch_episodes.py has run for this episode. */
   takeaways: string[];
@@ -47,6 +51,11 @@ export const curation = curationJson as unknown as {
   phrases: Phrase[];
   mapLayout: Record<string, { x: number; y: number }>;
 };
+
+export interface Facet { id: string; name: string }
+/** Guest role and industry taxonomies (drafts, see data/facets.json). */
+export const roles = facetsJson.roles as Facet[];
+export const industries = facetsJson.industries as Facet[];
 
 /** Host bio, book, production company and show links. Sources are noted in data/about.json. */
 export const about = aboutJson;
@@ -82,7 +91,7 @@ export function formatClock(sec: number): string {
 
 /** Every takeaway line, flattened, for phrase counting and the takeaway deck. */
 export const takeawayLines = episodes.flatMap((e) =>
-  e.takeaways.map((text) => ({ ep: e.ep, guest: e.guest, text })),
+  e.takeaways.map((text) => ({ ep: e.ep, guest: e.guest, org: e.org, title: e.title, text })),
 );
 
 export function findTerm(text: string, terms: string[]) {
