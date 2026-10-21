@@ -29,7 +29,7 @@ Everything the site shows comes from `data/`. No backend.
 | `themes.json` | The fixed theme taxonomy, with colors and hub positions on the guest map | Hand-edited |
 | `curation.json` | Listening paths, Jason's picks, most-replayed, the phrase list, and guest-map positions | Hand-edited |
 | `questions.sample.json` | Demo data for "same question, different answers" | Replace once transcripts exist |
-| `clips.sample.json` | Demo clip candidates for EP.247. **The timestamps are illustrative.** | Replace once transcripts exist |
+| `clips/EP###.json` | Reel candidates. EP.247: picked from the transcript; quotes and subtitles verbatim, speakers unconfirmed | Add more per episode |
 | `transcripts/EP###.json` | Whisper output: segments with timestamps and optional speaker labels | `scripts/transcribe.py` |
 
 **Current state:** 12 episodes (EP.238–249).
