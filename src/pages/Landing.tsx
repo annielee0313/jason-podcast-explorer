@@ -208,7 +208,7 @@ export default function Landing() {
       <section className="section">
         <div className="wrap row">
           <div className="card" style={{ flex: '1 1 380px', minWidth: 0 }}>
-            <h3 className="card-title">常被聊到的詞</h3>
+            <h3 className="kicker kicker-light">常被聊到的詞</h3>
             <p className="muted" style={{ margin: '8px 0 24px', fontSize: 14 }}>
               這幾個詞在 {epsWithNotes} 集的節目重點裡一再出現。點一個，看它出現在哪幾集。
             </p>
@@ -222,17 +222,17 @@ export default function Landing() {
             </div>
           </div>
           <div className="deck" style={{ flex: '999 1 560px' }}>
-            <span className="kicker">隨手抽一句</span>
+            <h3 className="kicker">隨手抽一句</h3>
+            {/* Fixed rhythm: the quote reserves two lines and the source one line each, and the
+                buttons sit on their own row, so the card doesn't resize from draw to draw. */}
             <blockquote>{current.text}</blockquote>
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
-              <div className="deck-source">
-                <span className="deck-ep"><span className="mono">EP.{current.ep}</span>　{current.title}</span>
-                <span className="deck-guest">節目重點 · {current.guest}{current.org ? ` · ${current.org}` : ''}</span>
-              </div>
-              <div className="chips" style={{ gap: 10 }}>
-                <button type="button" className="btn btn-ghost-dark" onClick={draw}><ShuffleIcon />再抽一張</button>
-                <Link className="btn btn-light" to={`/episode/${current.ep}`}>看這一集</Link>
-              </div>
+            <div className="deck-source">
+              <span className="deck-ep"><span className="mono">EP.{current.ep}</span>　{current.title}</span>
+              <span className="deck-guest">節目重點 · {current.guest}{current.org ? ` · ${current.org}` : ''}</span>
+            </div>
+            <div className="deck-actions">
+              <button type="button" className="btn btn-ghost-dark" onClick={draw}><ShuffleIcon />再抽一張</button>
+              <Link className="btn btn-light" to={`/episode/${current.ep}`}>看這一集</Link>
             </div>
           </div>
         </div>

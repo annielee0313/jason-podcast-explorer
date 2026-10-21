@@ -154,7 +154,8 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 .hero-foot { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; margin-top: 40px; }
 .hero-note { margin: 0; font-size: var(--fs-base); line-height: 1.9; letter-spacing: 0.04em; color: var(--muted); max-width: 400px; }
 .hero-cta { min-height: 48px; padding: 0 20px 0 6px; font-family: var(--font); font-size: var(--fs-base); letter-spacing: 0.04em; }
-.kicker { font-family: var(--mono); font-size: var(--fs-sm); letter-spacing: 0.04em; color: var(--teal-light); }
+.kicker { margin: 0; font-family: var(--mono); font-size: var(--fs-sm); font-weight: 400; letter-spacing: 0.04em; line-height: 1.6; color: var(--teal-light); }
+.kicker-light { color: var(--teal-strong); } /* kicker on white/ground: teal-light fails contrast there */
 .stat-n { font-family: 'Manrope', sans-serif; font-size: 32px; font-weight: 500; letter-spacing: -0.01em; line-height: 1; }
 .stat-l { font-size: 13px; line-height: 1.5; }
 
@@ -259,11 +260,12 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 
 /* Deck */
 .deck { background: var(--ink); color: #fff; border-radius: var(--radius); padding: 36px; display: flex; flex-direction: column; gap: 28px; min-width: 0; }
-.deck blockquote { margin: 0; font-family: var(--serif); font-size: clamp(18px, 2vw, 22px); font-weight: 500; line-height: 1.8; }
+.deck blockquote { margin: 0; min-height: 3.6em; font-family: var(--serif); font-size: clamp(18px, 2vw, 22px); font-weight: 500; line-height: 1.8; } /* 2 lines */
 .deck-source { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.deck-ep { font-size: var(--fs-base); color: #fff; }
+.deck-ep { font-size: var(--fs-base); color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .deck-ep .mono { color: var(--teal-light); }
-.deck-guest { font-size: 13px; color: var(--on-dark-muted); }
+.deck-guest { font-size: 13px; color: var(--on-dark-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.deck-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 /* Episode page guest block: name, then role and company. */
 /* Episode hero: one left-aligned column — meta, title, guest, listen buttons. */
 .ep-hero { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }

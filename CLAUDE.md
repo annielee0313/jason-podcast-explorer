@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Context for Claude Code working in this repo. Read README.md for the product overview.
+Context for Claude Code working in this repo. Read README.md for the product overview and DESIGN.md for the visual system (tokens, type hierarchy, components, motion).
 
 ## What this is
 A static React (Vite + TypeScript) site that helps new listeners discover episodes of the Taiwanese business podcast 《Jason好好聊》 (host 楊佳燊 Jason, produced by 傑思‧愛德威 / JS-Adways). It also has two internal tools: 語錄室 (`/explorer`) and 短影音工作台 (`/studio`). Since 2026-10-21 they are hidden from the public site (routes and footer links exist only under `npm run dev`). All content comes from JSON in `data/`. Python scripts in `scripts/` build that data.
