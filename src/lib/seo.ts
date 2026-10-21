@@ -72,7 +72,7 @@ export function headFor(pathname: string): Head {
           inLanguage: 'zh-Hant-TW',
           image: IMAGE,
           actor: { '@type': 'Person', name: e.guest, ...(e.org ? { jobTitle: e.org } : {}) },
-          ...((e.appleUrl || e.youtubeId) ? { sameAs: [e.appleUrl, e.youtubeId && `https://www.youtube.com/watch?v=${e.youtubeId}`].filter(Boolean) } : {}),
+          sameAs: [e.appleUrl, e.soundonUrl, e.youtubeId && `https://www.youtube.com/watch?v=${e.youtubeId}`].filter(Boolean),
           ...(e.youtubeId ? {
             video: {
               '@type': 'VideoObject', name: e.title, uploadDate: e.date,

@@ -25,6 +25,8 @@ export interface Episode {
   guest: string;
   org: string;
   appleUrl?: string;
+  /** The episode's page on SoundOn (from the feed's <link>). */
+  soundonUrl?: string;
   /** The full interview on YouTube, matched by scripts/fetch_youtube.py. */
   youtubeId?: string;
   themes: ThemeId[];

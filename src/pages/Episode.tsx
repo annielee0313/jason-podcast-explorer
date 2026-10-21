@@ -45,11 +45,11 @@ export default function EpisodePage() {
             {ep.org && <span className="ep-guest-org">{ep.org}</span>}
           </div>
           <div className="chips" style={{ gap: 10, marginTop: 8 }}>
-              {ep.appleUrl && <a className="btn btn-light" href={ep.appleUrl} target="_blank" rel="noreferrer"><PlayIcon />Apple Podcasts</a>}
-              {/* Per-episode video links come later (YouTube Data API); until then this opens the channel. */}
+              {/* Each button opens this episode on that platform; the show page only when we have no episode link. */}
+              <a className="btn btn-light" href={ep.appleUrl ?? about.show.apple} target="_blank" rel="noreferrer"><PlayIcon />Apple Podcasts</a>
               {about.show.spotify && <a className="btn btn-light" href={about.show.spotify} target="_blank" rel="noreferrer"><PlayIcon />Spotify</a>}
               <a className="btn btn-light" href={ep.youtubeId ? `https://www.youtube.com/watch?v=${ep.youtubeId}` : about.show.youtube} target="_blank" rel="noreferrer"><PlayIcon />YouTube</a>
-              <a className="btn btn-light" href={about.show.soundon} target="_blank" rel="noreferrer"><PlayIcon />SoundOn</a>
+              <a className="btn btn-light" href={ep.soundonUrl ?? about.show.soundon} target="_blank" rel="noreferrer"><PlayIcon />SoundOn</a>
           </div>
         </div>
       </section>

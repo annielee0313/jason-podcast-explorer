@@ -78,7 +78,17 @@ def split_guest(line: str) -> tuple[str, str]:
     tokens = line.split()
     if not tokens:
         return "", ""
-    if len(tokens) >= 2 and re.fullmatch(r"[A-Za-z]+", tokens[-1]) and re.search(r"[一-鿿]", tokens[-2]):
+    latin = lambda t: re.fullmatch(r"[A-Za-z.\-]+", t) is not None
+    cjk = lambda t: re.search(r"[一-鿿]", t) is not None
+    # a 2–3 character Chinese name, not a job title like 創辦人 / 執行長
+    cjk_name = lambda t: re.fullmatch(r"[一-鿿]{2,3}", t) is not None and not re.search(r"[人長師理監員官者家手總裁主]$", t)
+    if len(tokens) >= 3 and latin(tokens[-1]) and latin(tokens[-2]) and cjk_name(tokens[-3]):
+        # '孫健慎 Jason Sun': Chinese name + two-word English name
+        name, org_tokens = " ".join(tokens[-3:]), tokens[:-3]
+    elif len(tokens) >= 2 and latin(tokens[-1]) and latin(tokens[-2]):
+        # 'Ivy Chao': an English full name
+        name, org_tokens = " ".join(tokens[-2:]), tokens[:-2]
+    elif len(tokens) >= 2 and latin(tokens[-1]) and cjk(tokens[-2]):
         name, org_tokens = f"{tokens[-2]} {tokens[-1]}", tokens[:-2]
     else:
         name, org_tokens = tokens[-1], tokens[:-1]
@@ -126,7 +136,29 @@ def parse_item(item: ET.Element) -> dict | None:
         "org": org,
         "takeaways": takeaways,
         "_audio": enclosure.get("url") if enclosure is not None else None,
+        # The episode's own page on SoundOn (the feed's <link>).
+        "soundonUrl": (item.findtext("link") or "").strip() or None,
     }
+
+
+def apple_episode_urls() -> dict[int, str]:
+    """EP number -> Apple Podcasts episode link, from Apple's public lookup API.
+    It returns the newest 200 episodes; older ones keep linking to the show page."""
+    url = (f"https://itunes.apple.com/lookup?id={APPLE_SHOW_ID}&media=podcast"
+           f"&entity=podcastEpisode&limit=300&country=tw")
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "jason-podcast-explorer/0.1"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            results = json.load(r).get("results", [])
+    except Exception as exc:  # never fail the import over Apple being unreachable
+        print(f"Apple lookup failed ({exc}); keeping existing Apple links")
+        return {}
+    out: dict[int, str] = {}
+    for x in results:
+        m = re.search(r"EP\.?\s*(\d+)", x.get("trackName", ""))
+        if x.get("kind") == "podcast-episode" and m and x.get("trackId"):
+            out.setdefault(int(m.group(1)), f"https://podcasts.apple.com/tw/podcast/id{APPLE_SHOW_ID}?i={x['trackId']}")
+    return out
 
 
 def default_highlight(takeaways: list[str]) -> str:
@@ -138,7 +170,7 @@ def default_highlight(takeaways: list[str]) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--limit", type=int, default=50, help="keep the N most recent episodes (default 50)")
+    ap.add_argument("--limit", type=int, default=300, help="keep the N most recent episodes (default: all)")
     ap.add_argument("--from-file", type=Path, help="parse a saved feed XML instead of downloading")
     ap.add_argument("--url", default=FEED_URL)
     args = ap.parse_args()
@@ -161,6 +193,7 @@ def main() -> int:
     existing = {e["ep"]: e for e in json.loads(EPISODES_PATH.read_text("utf-8"))} if EPISODES_PATH.exists() else {}
     audio = json.loads(AUDIO_PATH.read_text("utf-8")) if AUDIO_PATH.exists() else {}
 
+    apple = apple_episode_urls()
     merged, added, updated = [], 0, 0
     for p in parsed:
         audio_url = p.pop("_audio")
@@ -173,9 +206,10 @@ def main() -> int:
             for f in CURATED_FIELDS:
                 if f in old:
                     row[f] = old[f]
-            # keep hand-entered guest/org if the parser came back empty
+            # guest/org are imported once, then curated: the guest-line split is a heuristic and
+            # names get corrected by hand (e.g. EP.227 孫健慎 Jason Sun), so existing values win.
             for f in ("guest", "org"):
-                if not row[f] and old.get(f):
+                if old.get(f):
                     row[f] = old[f]
             # the feed's takeaways replace any placeholder/summary
             if row["takeaways"] and old.get("highlightIsSummary"):
@@ -185,6 +219,8 @@ def main() -> int:
             added += 1
             row.update(themes=[], arc=None, industry=None, highlight=default_highlight(p["takeaways"]), highlightIsSummary=False)
         row.setdefault("appleUrl", None)
+        if not row.get("appleUrl") and p["ep"] in apple:
+            row["appleUrl"] = apple[p["ep"]]
         merged.append(row)
 
     # keep any older hand-curated rows that fell outside --limit
