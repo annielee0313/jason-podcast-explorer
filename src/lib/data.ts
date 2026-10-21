@@ -2,7 +2,6 @@ import episodesJson from '../../data/episodes.json';
 import themesJson from '../../data/themes.json';
 import curationJson from '../../data/curation.json';
 import questionsJson from '../../data/questions.sample.json';
-import clipsJson from '../../data/clips.sample.json';
 import aboutJson from '../../data/about.json';
 import facetsJson from '../../data/facets.json';
 
@@ -26,8 +25,7 @@ export interface Episode {
   org: string;
   appleUrl?: string;
   themes: ThemeId[];
-  /** Draft facets from data/facets.json; null until confirmed. */
-  role: string | null;
+  /** Draft industry from data/facets.json; null until confirmed. */
   industry: string | null;
   arc: string | null;
   /** Verbatim ☑️ lines from the show notes. Empty until scripts/fetch_episodes.py has run for this episode. */
@@ -46,15 +44,16 @@ export const themeById = Object.fromEntries(themes.map((t) => [t.id, t])) as Rec
 
 export const curation = curationJson as unknown as {
   paths: Path[];
-  jasonPicks: number[];
-  mostReplayed: number[];
+  /** From the team's Google Sheet (scripts/sync_sheets.py). tentative = placeholder until Jason confirms. */
+  jasonPicks: { ep: number; reason: string; order: number; tentative: boolean }[];
+  /** From the sheet; source says where the ranking comes from (e.g. SoundOn). */
+  mostListened: { rank: number; ep: number; source: string; period: string; updated: string }[];
   phrases: Phrase[];
   mapLayout: Record<string, { x: number; y: number }>;
 };
 
 export interface Facet { id: string; name: string }
-/** Guest role and industry taxonomies (drafts, see data/facets.json). */
-export const roles = facetsJson.roles as Facet[];
+/** Industry taxonomy (draft, see data/facets.json). */
 export const industries = facetsJson.industries as Facet[];
 
 /** Host bio, book, production company and show links. Sources are noted in data/about.json. */
@@ -65,13 +64,19 @@ export const questions = questionsJson.questions as {
   answers: { ep: number; text: string; source: 'show-notes' | 'summary' }[];
 }[];
 
-export const clipsSample = clipsJson as {
-  ep: number;
-  clips: {
-    start: number; end: number; speaker: string; title: string; hook: string;
-    why: string; tags: string[]; caption: string; hashtags: string[];
-  }[];
-};
+/** Who is speaking on a subtitle line; missing until diarization or an editor sets it. */
+export type Speaker = 'host' | 'guest';
+/** Subtitle line: [start, end] in seconds from the clip start, verbatim text, optional speaker. */
+export type Sub = [number, number, string, Speaker?];
+
+/** A reel candidate. hook/quote/subs are verbatim transcript text; title/why/tags/caption are editorial. */
+export interface Clip {
+  start: number; end: number; speaker: string; hook: string; title: string; why: string; tags: string[];
+  quote: string; subs: Sub[]; caption: string; hashtags: string[];
+}
+const clipFiles = import.meta.glob<{ ep: number; clips: Clip[] }>('../../data/clips/EP*.json', { eager: true, import: 'default' });
+/** Clip candidates per episode, from data/clips/EP###.json. */
+export const clipSets: Record<number, Clip[]> = Object.fromEntries(Object.values(clipFiles).map((f) => [f.ep, f.clips]));
 
 export const episodeByNumber = (n: number) => episodes.find((e) => e.ep === n);
 
@@ -110,4 +115,17 @@ export function relatedEpisodes(ep: Episode, limit = 4) {
     .filter((x) => x.shared.length > 0)
     .sort((a, b) => b.shared.length - a.shared.length || b.e.ep - a.e.ep)
     .slice(0, limit);
+}
+
+/** Cleaned transcript: paragraphs of [start second, text]. Built by scripts/clean_transcripts.py. */
+export interface Transcript { ep: number; model: string | null; paragraphs: [number, string, Speaker?][] }
+
+// Each transcript is its own lazily loaded chunk, so pages only download the ones they show.
+const transcriptFiles = import.meta.glob<{ default: Transcript }>('../../data/transcripts-web/EP*.json');
+const transcriptKey = (ep: number) => Object.keys(transcriptFiles).find((k) => k.endsWith(`EP${String(ep).padStart(3, '0')}.json`));
+export const transcriptEps = episodes.map((e) => e.ep).filter((ep) => !!transcriptKey(ep));
+
+export async function loadTranscript(ep: number): Promise<Transcript | null> {
+  const key = transcriptKey(ep);
+  return key ? (await transcriptFiles[key]()).default : null;
 }

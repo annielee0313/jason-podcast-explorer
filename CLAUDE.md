@@ -5,12 +5,25 @@ Context for Claude Code working in this repo. Read README.md for the product ove
 ## What this is
 A static React (Vite + TypeScript) site that helps new listeners discover episodes of the Taiwanese business podcast 《Jason好好聊》 (host 楊佳燊 Jason, produced by 傑思‧愛德威 / JS-Adways). It also has two internal tools: 語錄室 (`/explorer`) and 短影音工作台 (`/studio`). All content comes from JSON in `data/`. Python scripts in `scripts/` build that data.
 
+## Direction (from the 2026-10-20 meeting with Jenny, the show's producer)
+- **Audience goal:** today's listeners are mostly 30–40+; the push is to reach a younger audience. Weigh new features and copy against that.
+- **Jenny already transcribes (NotebookLM → SRT, checked by hand), edits in Premiere from three unsynced cameras, and makes reels (Premiere / CapCut).** Don't rebuild her workflow. For new episodes, prefer her final SRT over our Whisper output; Whisper fills back-catalogue gaps only.
+- **No links to guests' personal sites, courses or products.** The show must not look like it endorses them.
+- **Cadence:** a new episode every other week, skipping holidays; the YouTube video follows the audio. Automation should not assume weekly.
+- **Spotify:** add the show URL to `data/about.json` (`show.spotify`); the buttons appear when it's set. Don't guess the URL.
+- **Ideas on the table:** a Q&A chatbot that answers only from transcripts (episode + timestamp + verified quote, says so when the show hasn't covered something) and recommends episodes; listener questions are collected **inside the chatbot** (「把這個問題留給 Jason」, optional email, consent) and may later feed a public question board; an email subscription that sends people to a monthly recap page (每月回顧).
+- **Guest map, later:** once all guests are plotted, colour guest nodes by **industry** (legend) so same-industry guests read as groups, still linked by shared topics.
+- **Jason 親選 / 最多人收聽 come from the team's Google Sheet** (two tabs, published as CSV; links in `data/sheets.json`, local fallback CSVs in `data/sheets/`). `scripts/sync_sheets.py` validates and writes `curation.json`; it runs before every deploy and daily at 03:00 Taipei. Bad rows → keep last good lists. Setup guide for the team: `docs/google-sheet-setup.md`. The 5 current picks are random placeholders flagged 暫定.
+- **All 248 feed episodes are imported** (EP.54 is missing from the feed). Only 12 are tagged (themes/industry); untagged episodes appear in lists but not on the guest map. Older titles (EP.1–147, 「EP.n 職稱 姓名｜標題」) are trimmed to the part after ｜ by the fetch script.
+- **Stats** live in `data/about.json` → `stats`. Only the headline episode count animates (count-up on arrival); guests (`200+`, a safe floor) and the Apple rating are static.
+
 ## Commands
 - `npm run dev` runs the dev server.
 - `npm run build` typechecks and builds. Run it before committing UI changes.
 - `python scripts/fetch_episodes.py --limit 50` pulls episodes from the RSS feed.
 - `python scripts/tag_episodes.py` uses Claude to suggest themes for untagged episodes.
-- `python scripts/transcribe.py --eps 247` transcribes with faster-whisper.
+- `python scripts/transcribe.py --eps 247` transcribes (mlx-whisper on Apple Silicon, else faster-whisper) into raw `data/transcripts/`.
+- `python scripts/clean_transcripts.py` removes Whisper hallucinations (YouTube sign-offs over music, loops) and writes the compact `data/transcripts-web/` files the site lazy-loads. Run it after every transcribe.
 
 ## Layout
 - `src/lib/data.ts`: every data import, the types, and helpers (`relatedEpisodes`, `findTerm`, `formatDuration`). Add new data sources here, not in components.
@@ -23,7 +36,7 @@ A static React (Vite + TypeScript) site that helps new listeners discover episod
 - **UI copy is Traditional Chinese (zh-Hant, Taiwan usage).** Code, comments and commit messages are in English.
 - **Never invent data.** If something isn't known yet (play counts, Jason's picks, timestamps, quotes), render a dashed `.placeholder` box naming the missing source. Mark paraphrases explicitly: `highlightIsSummary` in data, and a 摘要 label in the UI. Takeaways in `episodes.json` must be verbatim from the show notes.
 - **Themes come from the fixed taxonomy** in `data/themes.json`. Use 1–2 per episode. Don't add free-form tags. Propose a taxonomy change instead.
-- **Guest role and industry** come from the draft taxonomies in `data/facets.json` (one value each on every episode, `null` until confirmed). Same rule as themes: no free-form values. Role follows the guest's own title; authors are filed by their book's subject for industry.
+- **Guest industry** comes from the draft taxonomy in `data/facets.json` (one value per episode, `null` until confirmed). Same rule as themes: no free-form values. Authors are filed by their book's subject. There is no role/title (身分) filter: the team asked to categorise by industry only.
 - **Data scripts merge, they don't overwrite.** Hand-curated fields (`themes`, `arc`, `highlight`, `appleUrl`, `role`, `industry`) survive re-fetching.
 - **Full-bleed sections.** Section backgrounds run edge to edge (`.section`, `.section-white`); content sits in `.wrap` (1200px column, 56px / 16px gutters). The hero bento is edge to edge with no gaps or radius.
 - **No border strokes.** Separate surfaces with fills (`--ground`, `#fff`, `--soft`), radius and spacing. The only outline allowed is the dashed `.placeholder` for missing data.
@@ -35,9 +48,10 @@ A static React (Vite + TypeScript) site that helps new listeners discover episod
 - Routing uses `HashRouter` so the static build works on GitHub Pages.
 
 ## Known gaps / next tasks
-- Only 12 episodes are in `data/episodes.json`. EP.238–241 have no takeaways yet; run the fetch script.
 - The guest map is an infinite canvas (pan/zoom) with an ego-centric radial layout (`src/components/guestMapLayout.ts`): the selected guest is the origin, their themes ring 1, guests sharing them ring 2, and so on. `curation.mapLayout` and `themes[].hub` are no longer read by the map.
-- `clips.sample.json` and `questions.sample.json` are demo data. Rebuild them from transcripts:
+- 短影音工作台 has a subtitle editor: fix words, tag each line Jason (`host`) or guest (`guest`), trim lines; edits update the preview and `.srt` live. Drafts are saved only in the editor's browser (localStorage) and exported as `EP###.json` to drop into `data/clips/`. A shared save needs a backend/CMS (open decision). Speaker colours: `--host` / `--guest` tokens.
+- Transcripts exist for EP.238–249 (machine, unreviewed, no speaker labels). The episode page and 語錄室 search use them.
+- `questions.sample.json` is demo data. Reel candidates live in `data/clips/EP###.json` (EP.247 done by hand from its transcript: hook/quote/subs verbatim, titles/captions editorial, speakers unconfirmed). Automate the rest from transcripts:
   - Use diarization to find Jason's turns.
   - Cluster his questions with embeddings.
   - Have an LLM propose 30–60s clips that make sense on their own.

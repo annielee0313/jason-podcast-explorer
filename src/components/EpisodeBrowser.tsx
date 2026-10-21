@@ -1,7 +1,7 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
-import { episodes, formatDuration, industries, roles, themes, type Episode } from '../lib/data';
+import { episodes, formatDuration, industries, themes, type Episode } from '../lib/data';
 import { ArrowIcon, ArrowUpRightIcon, ThemeChip } from './ui';
 
 const PAGE_SIZE = 8; // 4 columns × 2 rows on desktop
@@ -19,20 +19,18 @@ function pageList(current: number, total: number): (number | null)[] {
 }
 
 /**
- * The full, growing episode list: filter rows (theme, guest role, industry),
+ * The full, growing episode list: filter rows (theme, guest industry),
  * sort, the card grid and pagination. Filters combine; each tag's count shows
  * how many episodes it would leave given the other active filters.
  */
-type Filters = { theme: string; role: string; industry: string }; // 'all' or an id
-const ALL: Filters = { theme: 'all', role: 'all', industry: 'all' };
+type Filters = { theme: string; industry: string }; // 'all' or an id
+const ALL: Filters = { theme: 'all', industry: 'all' };
 const matches = (e: Episode, f: Filters) =>
   (f.theme === 'all' || e.themes.includes(f.theme as Episode['themes'][number])) &&
-  (f.role === 'all' || e.role === f.role) &&
   (f.industry === 'all' || e.industry === f.industry);
 
 const FACETS: { key: keyof Filters; label: string; options: { id: string; name: string; dot?: string }[] }[] = [
   { key: 'theme', label: '主題', options: themes.map((t) => ({ id: t.id, name: t.name, dot: t.dot })) },
-  { key: 'role', label: '身分', options: roles },
   { key: 'industry', label: '產業', options: industries },
 ];
 

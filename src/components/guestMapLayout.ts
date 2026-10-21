@@ -1,4 +1,7 @@
-import { episodes, themes, type Episode, type ThemeId } from '../lib/data';
+import { episodes as allEpisodes, themes, type Episode, type ThemeId } from '../lib/data';
+
+// Only tagged episodes are plotted; untagged ones have no theme to connect through.
+const episodes = allEpisodes.filter((e) => e.themes.length > 0);
 
 /**
  * Ego-centric radial layout for the guest map.

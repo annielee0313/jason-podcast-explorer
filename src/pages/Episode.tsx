@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Footer, Header } from '../components/Header';
 import { PlayIcon, ThemeChip } from '../components/ui';
+import { TranscriptPanel } from '../components/TranscriptPanel';
 import { about, episodeByNumber, formatDuration, questions, relatedEpisodes, themeById } from '../lib/data';
 
 export default function EpisodePage() {
@@ -36,6 +37,7 @@ export default function EpisodePage() {
             <div className="chips" style={{ gap: 10, marginTop: 28 }}>
               {ep.appleUrl && <a className="btn btn-light" href={ep.appleUrl} target="_blank" rel="noreferrer"><PlayIcon />Apple Podcasts</a>}
               {/* Per-episode video links come later (YouTube Data API); until then this opens the channel. */}
+              {about.show.spotify && <a className="btn btn-light" href={about.show.spotify} target="_blank" rel="noreferrer"><PlayIcon />Spotify</a>}
               <a className="btn btn-light" href={about.show.youtube} target="_blank" rel="noreferrer"><PlayIcon />YouTube</a>
               <a className="btn btn-light" href={about.show.soundon} target="_blank" rel="noreferrer"><PlayIcon />SoundOn</a>
             </div>
@@ -71,15 +73,12 @@ export default function EpisodePage() {
               ) : (
                 <div className="placeholder">本集重點尚未匯入（執行 scripts/fetch_episodes.py）。</div>
               )}
-              <p className="muted" style={{ margin: '16px 0 0', fontSize: 13 }}>重點取自節目說明。逐字稿完成後，每一點會配上時間碼，點了直接跳到那一段。</p>
+              <p className="muted" style={{ margin: '16px 0 0', fontSize: 13 }}>重點取自節目說明。時間碼要把每一點對回逐字稿後才會補上。</p>
             </div>
 
-            <div className="card">
-              <h2 style={{ fontSize: 20, marginBottom: 16 }}>原話</h2>
-              <div className="grid-auto" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 14 }}>
-                <div className="placeholder" style={{ minHeight: 120 }}>[ 逐字稿：來賓原話 ＋ 時間碼 ]</div>
-                <div className="placeholder" style={{ minHeight: 120 }}>[ 逐字稿：來賓原話 ＋ 時間碼 ]</div>
-              </div>
+            <div className="card" id="transcript">
+              <h2 style={{ fontSize: 20, marginBottom: 16 }}>逐字稿</h2>
+              <TranscriptPanel ep={ep.ep} />
             </div>
 
             <div className="card">

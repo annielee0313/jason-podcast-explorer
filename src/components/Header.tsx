@@ -14,11 +14,13 @@ const SECTIONS = [
   { id: 'about', label: '關於 Jason' },
 ];
 
+// Spotify appears automatically once data/about.json has its show URL.
 const PLATFORMS = [
   { label: 'Apple Podcasts', href: about.show.apple },
+  { label: 'Spotify', href: about.show.spotify },
   { label: 'YouTube', href: about.show.youtube },
   { label: 'SoundOn', href: about.show.soundon },
-];
+].filter((p): p is { label: string; href: string } => !!p.href);
 
 const MenuIcon = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
@@ -130,7 +132,7 @@ export function Header({ tool }: { tool?: string }) {
             ))}
           </ol>
           <div className="menu-sheet-links">
-            {PLATFORMS.slice(0, 2).map((p, i) => (
+            {PLATFORMS.filter((p) => p.label !== 'SoundOn').map((p, i) => (
               <a key={p.label} className={i === 0 ? 'ink' : ''} href={p.href} target="_blank" rel="noreferrer">{p.label}<ArrowUpRightIcon /></a>
             ))}
             <button type="button" onClick={() => go({ scrollTo: 'company' })}>{about.company.name}<ArrowIcon /></button>
@@ -161,6 +163,7 @@ export function Footer() {
         <div className="footer-col">
           <span className="footer-h">收聽</span>
           <a href={show.apple}>Apple Podcasts</a>
+          {show.spotify && <a href={show.spotify}>Spotify</a>}
           <a href={show.youtube}>YouTube</a>
           <a href={show.soundon}>SoundOn</a>
         </div>

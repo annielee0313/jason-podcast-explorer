@@ -7,8 +7,9 @@ import { HeroBackground } from '../components/HeroBackground';
 import { PathIndex } from '../components/PathIndex';
 import { ArrowIcon, ArrowUpRightIcon, PlayIcon, ShuffleIcon, ThemeChip } from '../components/ui';
 import { useLandingMotion } from '../lib/motion';
+import { CountUp } from '../components/CountUp';
 import {
-  about, curation, episodes, findTerm, formatDuration, takeawayLines, themeById,
+  about, curation, episodeByNumber, episodes, findTerm, formatDuration, takeawayLines, themeById,
 } from '../lib/data';
 
 /**
@@ -58,7 +59,7 @@ export default function Landing() {
 
   const deck = takeawayLines;
   const current = deck[card % deck.length];
-  const { host, book, company } = about;
+  const { host, book, company, stats } = about;
 
   return (
     <div ref={rootRef}>
@@ -68,9 +69,8 @@ export default function Landing() {
         <HeroBackground />
         <div className="wrap hero-grid">
           <div>
-            {/* TODO: derive 249 from the full episode list once all episodes are imported */}
             <h1 className="hero-title">
-              <span className="hero-line"><span className="hero-text">249 場對話</span></span>
+              <span className="hero-line"><span className="hero-text"><CountUp value={stats.episodes} duration={1.8} /> 場對話</span></span>
               <span className="hero-line"><span className="hero-text">從哪一場開始聽？</span></span>
             </h1>
             <div className="hero-foot">
@@ -102,13 +102,13 @@ export default function Landing() {
             </div>
           </div>
           <div className="tile tile-teal">
-            <span className="stat-n">249</span><span className="stat-l">集，從 2020 年聊到現在</span>
+            <span className="stat-n">{stats.episodes}</span><span className="stat-l">集，從 {stats.since} 年聊到現在</span>
           </div>
           <div className="tile tile-white">
-            <span className="stat-n">200+</span><span className="stat-l">位來賓</span>
+            <span className="stat-n">{stats.guestsFloor}+</span><span className="stat-l">位來賓</span>
           </div>
           <div className="tile tile-white">
-            <span className="stat-n">4.8</span><span className="stat-l">Apple Podcasts · 211 則評分</span>
+            <span className="stat-n">{stats.rating}</span><span className="stat-l">Apple Podcasts · {stats.ratingCount} 則評分</span>
           </div>
           <a className="tile tile-dark tile-company" href="#company" onClick={(e) => { e.preventDefault(); scrollTo('company'); }}>
             <span className="kicker">節目製作</span>
@@ -129,31 +129,70 @@ export default function Landing() {
       <section className="section">
         <div className="wrap row">
           <div className="card grow" style={{ flex: '3 1 520px' }}>
-            <h3 className="card-title">Jason 親選</h3>
+            <div className="list-head">
+              <h3 className="card-title">Jason 親選</h3>
+              {curation.jasonPicks.some((p) => p.tentative) && <span className="list-flag">暫定，待 Jason 確認</span>}
+            </div>
             <p className="muted" style={{ margin: '8px 0 20px', fontSize: 14 }}>如果只能推薦幾集給新朋友，Jason 會選這些。</p>
-            {curation.jasonPicks.length === 0 ? (
-              <div className="grid-auto" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 14 }}>
-                {[1, 2, 3].map((n) => (
-                  <div key={n} className="placeholder" style={{ minHeight: 140 }}>[ 親選 #{n} ]<br />單集 + Jason 一句推薦理由</div>
-                ))}
-              </div>
-            ) : null /* TODO: render picks from curation.jasonPicks */}
+            {curation.jasonPicks.length ? (
+              <ol className="pick-list">
+                {curation.jasonPicks.map((p) => {
+                  const e = episodeByNumber(p.ep);
+                  if (!e) return null;
+                  return (
+                    <li key={p.ep}>
+                      <Link to={`/episode/${e.ep}`} className="pick-row">
+                        <span className="pick-ep mono">EP.{e.ep}</span>
+                        <span className="pick-main">
+                          <span className="pick-title">{e.title}</span>
+                          <span className="pick-why">{p.reason || <span className="muted">推薦理由待補</span>}</span>
+                        </span>
+                        <span className="pick-guest">{e.guest}</span>
+                        <span className="ep-line-arrow" aria-hidden="true"><ArrowIcon /></span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ol>
+            ) : (
+              <div className="placeholder">[ 親選：在 Google Sheet 的「Jason親選」分頁填入集數與推薦理由 ]</div>
+            )}
           </div>
           <div className="card side" style={{ flex: '2 1 360px' }}>
-            <h3 className="card-title">最多人重播</h3>
-            <p className="muted" style={{ margin: '8px 0 20px', fontSize: 14 }}>大家重複聽最多次的幾集。</p>
-            {[1, 2, 3].map((n) => (
-              <div key={n} className="placeholder" style={{ padding: '12px 16px', marginBottom: 10, fontSize: 13 }}>
-                <span className="mono" style={{ fontSize: 20, marginRight: 14 }}>0{n}</span>[ SoundOn / Spotify 後台播放數據 ]
-              </div>
-            ))}
+            <h3 className="card-title">最多人收聽</h3>
+            <p className="muted" style={{ margin: '8px 0 20px', fontSize: 14 }}>
+              {curation.mostListened.length
+                ? `依 ${[...new Set(curation.mostListened.map((t) => t.source).filter(Boolean))].join('、') || '收聽數'} 統計${curation.mostListened[0].period ? `（${curation.mostListened[0].period}）` : ''} · ${curation.mostListened[0].updated} 更新`
+                : '大家最常聽的幾集。'}
+            </p>
+            {curation.mostListened.length ? (
+              <ol className="rank-list">
+                {curation.mostListened.map((t) => {
+                  const e = episodeByNumber(t.ep);
+                  if (!e) return null;
+                  return (
+                    <li key={t.rank}>
+                      <Link to={`/episode/${e.ep}`} className="rank-row">
+                        <span className="rank-n">{String(t.rank).padStart(2, '0')}</span>
+                        <span className="pick-main">
+                          <span className="pick-title">{e.title}</span>
+                          <span className="pick-why mono">EP.{e.ep} · {e.guest}</span>
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ol>
+            ) : (
+              <div className="placeholder">[ 在 Google Sheet 的「最多人收聽」分頁填入排名 ]</div>
+            )}
           </div>
         </div>
       </section>
 
       <section className="section" id="browse">
         <div className="wrap">
-          <SectionHead n="02" en="ALL EPISODES" title="全部集數" note="用主題、來賓身分或產業篩選，或一頁一頁往回翻。" />
+          <SectionHead n="02" en="ALL EPISODES" title="全部集數" note="用主題或來賓產業篩選，或一頁一頁往回翻。" />
           <EpisodeBrowser />
         </div>
       </section>
@@ -163,12 +202,12 @@ export default function Landing() {
           <div className="card" style={{ flex: '1 1 380px', minWidth: 0 }}>
             <h3 className="card-title">常被聊到的詞</h3>
             <p className="muted" style={{ margin: '8px 0 24px', fontSize: 14 }}>
-              這幾個詞在最近 {epsWithNotes} 集的節目重點裡一再出現。點一個，看它出現在哪幾集。
+              這幾個詞在 {epsWithNotes} 集的節目重點裡一再出現。點一個，看它出現在哪幾集。
             </p>
             <div className="chips" style={{ gap: 10 }}>
               {words.map((w) => (
                 <Link key={w.label} to={`/explorer?phrase=${encodeURIComponent(w.label)}`} className="toggle soft"
-                  style={{ textDecoration: 'none', fontWeight: 700, fontSize: 14 + w.count * 2 }}>
+                  style={{ textDecoration: 'none', fontWeight: 700, fontSize: 14 + Math.round((14 * w.count) / words[0].count) }}>
                   {w.label}<span className="count muted" style={{ fontWeight: 400 }}>×{w.count}</span>
                 </Link>
               ))}
@@ -196,7 +235,7 @@ export default function Landing() {
 
       <section className="section" id="map">
         <div className="wrap">
-          <SectionHead n="03" en="GUEST MAP" title="200 多位來賓，怎麼連在一起？"
+          <SectionHead n="03" en="GUEST MAP" title={`${stats.guestsFloor} 多位來賓，怎麼連在一起？`}
             note="聊過同一個主題的來賓，會被線連在一起。點一位你認識的人，看看還有誰聊過一樣的主題。" />
           <GuestMap initialEp={latest.ep} />
         </div>

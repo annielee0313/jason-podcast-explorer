@@ -155,7 +155,7 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
   const recenter = () => setCam({ x: 0, y: 0, z: fitZoom(layout.nodes, size) });
 
   const selThemes = new Set(sel.themes);
-  const related = episodes.filter((e) => shares(e.ep));
+  const related = episodes.filter((e) => e.themes.length > 0 && shares(e.ep));
 
   return (
     <div>

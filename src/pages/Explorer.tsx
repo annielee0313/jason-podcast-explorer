@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Header } from '../components/Header';
-import { curation, episodeByNumber, episodes, findTerm, questions, takeawayLines } from '../lib/data';
+import { TranscriptSearch } from '../components/TranscriptSearch';
+import { about, curation, episodeByNumber, episodes, findTerm, questions, takeawayLines, transcriptEps } from '../lib/data';
 
 const WINDOWS = ['節目說明', '最近 20 集', '2026 全年', '全部 249 集'] as const;
 
@@ -31,13 +32,23 @@ export default function Explorer() {
       <Header tool="語錄室" />
       <div className="status-bar">
         <span>資料狀態</span>
-        <span>單集資料 <strong>{episodes.length} / 249</strong></span>
-        <span>主題標記 <strong>{episodes.length} / 249</strong>（草稿）</span>
+        <span>單集資料 <strong>{episodes.length} / {about.stats.episodes}</strong></span>
+        <span>主題標記 <strong>{episodes.filter((e) => e.themes.length).length} / {episodes.length}</strong>（草稿）</span>
         <span>節目重點 <strong>{takeawayLines.length} 句</strong>（{range}）</span>
-        <span>逐字稿 <strong className="todo">0 / 249</strong></span>
+        <span>逐字稿 <strong>{transcriptEps.length} / 249</strong>（AI 轉錄，未校對）</span>
       </div>
 
       <section className="section" style={{ paddingBottom: 24 }}>
+        <div className="wrap" style={{ maxWidth: 1360 }}>
+        <div className="card" style={{ padding: 32 }}>
+          <h2 style={{ fontSize: 22 }}>搜尋逐字稿</h2>
+          <p className="muted" style={{ margin: '8px 0 20px', fontSize: 14 }}>在已轉錄的每一集裡找一個詞，看是哪一集、第幾分鐘說的。</p>
+          <TranscriptSearch />
+        </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0, paddingBottom: 24 }}>
         <div className="wrap" style={{ maxWidth: 1360 }}>
         <div className="card" style={{ padding: 32 }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: 16, alignItems: 'flex-end' }}>
