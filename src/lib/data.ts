@@ -25,6 +25,8 @@ export interface Episode {
   guest: string;
   org: string;
   appleUrl?: string;
+  /** The full interview on YouTube, matched by scripts/fetch_youtube.py. */
+  youtubeId?: string;
   themes: ThemeId[];
   /** Draft industry from data/facets.json; null until confirmed. */
   industry: string | null;

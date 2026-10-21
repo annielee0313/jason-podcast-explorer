@@ -3,7 +3,10 @@ import { Link, useParams } from 'react-router-dom';
 import { Footer, Header } from '../components/Header';
 import { PlayIcon, ThemeChip } from '../components/ui';
 import { TranscriptPanel } from '../components/TranscriptPanel';
+import { YouTubeEmbed } from '../components/YouTubeEmbed';
 import { about, episodeByNumber, formatDuration, relatedEpisodes, themeById, transcriptEps } from '../lib/data';
+
+const SHOW_TRANSCRIPT = false;
 
 export default function EpisodePage() {
   const { ep: epParam } = useParams();
@@ -24,7 +27,9 @@ export default function EpisodePage() {
   }
 
   const related = relatedEpisodes(ep);
-  const hasTranscript = transcriptEps.includes(ep.ep);
+  // Transcripts (and the audio player that lives with them) are hidden for now (2026-10-21);
+  // flip SHOW_TRANSCRIPT to bring them back. The cleaned files stay in data/transcripts-web.
+  const hasTranscript = SHOW_TRANSCRIPT && transcriptEps.includes(ep.ep);
 
   return (
     <>
@@ -43,7 +48,7 @@ export default function EpisodePage() {
               {ep.appleUrl && <a className="btn btn-light" href={ep.appleUrl} target="_blank" rel="noreferrer"><PlayIcon />Apple Podcasts</a>}
               {/* Per-episode video links come later (YouTube Data API); until then this opens the channel. */}
               {about.show.spotify && <a className="btn btn-light" href={about.show.spotify} target="_blank" rel="noreferrer"><PlayIcon />Spotify</a>}
-              <a className="btn btn-light" href={about.show.youtube} target="_blank" rel="noreferrer"><PlayIcon />YouTube</a>
+              <a className="btn btn-light" href={ep.youtubeId ? `https://www.youtube.com/watch?v=${ep.youtubeId}` : about.show.youtube} target="_blank" rel="noreferrer"><PlayIcon />YouTube</a>
               <a className="btn btn-light" href={about.show.soundon} target="_blank" rel="noreferrer"><PlayIcon />SoundOn</a>
           </div>
         </div>
@@ -55,6 +60,12 @@ export default function EpisodePage() {
             <div className="chips" style={{ gap: 8 }}>{ep.themes.map((t) => <ThemeChip key={t} id={t} />)}</div>
 
             {/* Only what this episode actually has: no empty placeholders for missing data. */}
+            {ep.youtubeId && (
+              <div className="card">
+                <h2 style={{ fontSize: 20, marginBottom: 16 }}>看完整訪談</h2>
+                <YouTubeEmbed id={ep.youtubeId} title={ep.title} />
+              </div>
+            )}
             {ep.takeaways.length > 0 && (
               <div className="card">
                 <h2 style={{ fontSize: 20, marginBottom: 20 }}>這集在聊</h2>

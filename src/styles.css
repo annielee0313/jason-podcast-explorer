@@ -638,3 +638,12 @@ mark { background: #BDEBEF; color: var(--ink); padding: 1px 3px; border-radius: 
 .player-scrub:focus-visible { outline: 2px solid var(--teal-light); outline-offset: 2px; }
 .player-speed { flex: none; min-width: 44px; height: 44px; border: 0; border-radius: var(--r-sm); background: rgba(255,255,255,.1); color: #fff; font-size: var(--fs-xs); cursor: pointer; }
 @media (max-width: 640px) { .player { top: 68px; gap: 8px; } .player-time:last-of-type { display: none; } }
+
+/* YouTube embed: 16:9, thumbnail until played */
+.yt { position: relative; aspect-ratio: 16 / 9; border-radius: var(--r-md); overflow: hidden; background: var(--ink); }
+.yt iframe, .yt-poster { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.yt-poster { padding: 0; background: none; cursor: pointer; }
+.yt-poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.yt-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; border-radius: 50%; background: var(--teal); color: var(--ink); display: flex; align-items: center; justify-content: center; transition: transform .2s; }
+.yt-play svg { width: 22px; height: 22px; }
+.yt-poster:hover .yt-play, .yt-poster:focus-visible .yt-play { transform: translate(-50%, -50%) scale(1.08); }

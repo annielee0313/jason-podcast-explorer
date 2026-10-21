@@ -38,7 +38,7 @@ NS = {
     "itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
     "content": "http://purl.org/rss/1.0/modules/content/",
 }
-CURATED_FIELDS = ("themes", "arc", "highlight", "highlightIsSummary", "appleUrl", "industry")
+CURATED_FIELDS = ("themes", "arc", "highlight", "highlightIsSummary", "appleUrl", "industry", "youtubeId")
 
 
 def fetch_feed(url: str) -> bytes:

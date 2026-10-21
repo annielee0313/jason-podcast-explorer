@@ -32,6 +32,8 @@ jobs:
           python-version: "3.11"
       # Jason親選 / 最多人收聽 from the Google Sheet. Bad rows are reported and skipped; never blocks the build.
       - run: python scripts/sync_sheets.py
+      # New episodes' YouTube videos from the channel's public feed (latest 15). Never blocks the build.
+      - run: python scripts/fetch_youtube.py
       - run: npm ci
       - run: npm run build
       - uses: actions/configure-pages@v5

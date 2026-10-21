@@ -72,7 +72,16 @@ export function headFor(pathname: string): Head {
           inLanguage: 'zh-Hant-TW',
           image: IMAGE,
           actor: { '@type': 'Person', name: e.guest, ...(e.org ? { jobTitle: e.org } : {}) },
-          ...(e.appleUrl ? { sameAs: [e.appleUrl] } : {}),
+          ...((e.appleUrl || e.youtubeId) ? { sameAs: [e.appleUrl, e.youtubeId && `https://www.youtube.com/watch?v=${e.youtubeId}`].filter(Boolean) } : {}),
+          ...(e.youtubeId ? {
+            video: {
+              '@type': 'VideoObject', name: e.title, uploadDate: e.date,
+              thumbnailUrl: `https://i.ytimg.com/vi/${e.youtubeId}/hqdefault.jpg`,
+              embedUrl: `https://www.youtube-nocookie.com/embed/${e.youtubeId}`,
+              contentUrl: `https://www.youtube.com/watch?v=${e.youtubeId}`,
+              description: episodeDescription(e),
+            },
+          } : {}),
           partOfSeries: series,
         },
       };
