@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { Footer, Header } from '../components/Header';
 import { PlayIcon, ThemeChip } from '../components/ui';
 import { TranscriptPanel } from '../components/TranscriptPanel';
-import { about, episodeByNumber, formatDuration, questions, relatedEpisodes, themeById } from '../lib/data';
+import { about, episodeByNumber, formatDuration, relatedEpisodes, themeById, transcriptEps } from '../lib/data';
 
 export default function EpisodePage() {
   const { ep: epParam } = useParams();
@@ -24,7 +24,7 @@ export default function EpisodePage() {
   }
 
   const related = relatedEpisodes(ep);
-  const askedHere = questions.filter((q) => q.answers.some((a) => a.ep === ep.ep));
+  const hasTranscript = transcriptEps.includes(ep.ep);
 
   return (
     <>
@@ -54,45 +54,26 @@ export default function EpisodePage() {
           <div className="grow" style={{ flex: '999 1 640px', display: 'flex', flexDirection: 'column', gap: 24 }}>
             <div className="chips" style={{ gap: 8 }}>{ep.themes.map((t) => <ThemeChip key={t} id={t} />)}</div>
 
-            <div className="card">
-              <h2 style={{ fontSize: 20, marginBottom: 20 }}>這集在聊</h2>
-              {ep.takeaways.length ? (
-                <ol style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {/* Only what this episode actually has: no empty placeholders for missing data. */}
+            {ep.takeaways.length > 0 && (
+              <div className="card">
+                <h2 style={{ fontSize: 20, marginBottom: 20 }}>這集在聊</h2>
+                <ol className="ep-points">
                   {ep.takeaways.map((t) => {
                     const [head, ...rest] = t.split('：');
-                    return (
-                      <li key={t} style={{ display: 'grid', gridTemplateColumns: '72px minmax(0, 1fr)', gap: 16, padding: '16px 18px', background: 'var(--ground)', borderRadius: 8 }}>
-                        <span className="mono" style={{ fontSize: 14, color: 'var(--muted-2)' }}>--:--</span>
-                        <span style={{ fontSize: 15, lineHeight: 1.65 }}>
-                          {rest.length ? <><strong>{head}</strong>：{rest.join('：')}</> : t}
-                        </span>
-                      </li>
-                    );
+                    return <li key={t}>{rest.length ? <><strong>{head}</strong>：{rest.join('：')}</> : t}</li>;
                   })}
                 </ol>
-              ) : (
-                <div className="placeholder">本集重點尚未匯入（執行 scripts/fetch_episodes.py）。</div>
-              )}
-              <p className="muted" style={{ margin: '16px 0 0', fontSize: 13 }}>重點取自節目說明。時間碼要把每一點對回逐字稿後才會補上。</p>
-            </div>
-
-            <div className="card" id="transcript">
-              <h2 style={{ fontSize: 20, marginBottom: 16 }}>逐字稿</h2>
-              <TranscriptPanel ep={ep.ep} />
-            </div>
-
-            <div className="card">
-              <h2 style={{ fontSize: 20 }}>Jason 這集問了什麼</h2>
-              <p className="muted" style={{ margin: '6px 0 16px', fontSize: 14 }}>點一個問題，看其他來賓怎麼回答同一題。</p>
-              <div className="chips" style={{ gap: 10 }}>
-                {askedHere.map((q) => (
-                  <Link key={q.text} to={`/explorer?q=${encodeURIComponent(q.text)}`} className="toggle" style={{ borderRadius: 8, background: 'var(--ground)', border: 0, textDecoration: 'none' }}>
-                    {q.text}<span className="count muted">{q.answers.length} 位回答過</span>
-                  </Link>
-                ))}
-                <span className="placeholder" style={{ padding: '10px 16px' }}>[ 其他問題：逐字稿說話者分離後擷取 ]</span>
+                <p className="muted" style={{ margin: '16px 0 0', fontSize: 13 }}>重點取自節目說明。</p>
               </div>
-            </div>
+            )}
+
+            {hasTranscript && (
+              <div className="card" id="transcript">
+                <h2 style={{ fontSize: 20, marginBottom: 16 }}>逐字稿</h2>
+                <TranscriptPanel ep={ep.ep} />
+              </div>
+            )}
           </div>
 
           <aside aria-label="也可以聽" className="side" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>

@@ -3,7 +3,7 @@
 Context for Claude Code working in this repo. Read README.md for the product overview.
 
 ## What this is
-A static React (Vite + TypeScript) site that helps new listeners discover episodes of the Taiwanese business podcast 《Jason好好聊》 (host 楊佳燊 Jason, produced by 傑思‧愛德威 / JS-Adways). It also has two internal tools: 語錄室 (`/explorer`) and 短影音工作台 (`/studio`). All content comes from JSON in `data/`. Python scripts in `scripts/` build that data.
+A static React (Vite + TypeScript) site that helps new listeners discover episodes of the Taiwanese business podcast 《Jason好好聊》 (host 楊佳燊 Jason, produced by 傑思‧愛德威 / JS-Adways). It also has two internal tools: 語錄室 (`/explorer`) and 短影音工作台 (`/studio`). Since 2026-10-21 they are hidden from the public site (routes and footer links exist only under `npm run dev`). All content comes from JSON in `data/`. Python scripts in `scripts/` build that data.
 
 ## Direction (from the 2026-10-20 meeting with Jenny, the show's producer)
 - **Audience goal:** today's listeners are mostly 30–40+; the push is to reach a younger audience. Weigh new features and copy against that.
@@ -47,7 +47,8 @@ A static React (Vite + TypeScript) site that helps new listeners discover episod
 - **Motion is subtle and optional:** GSAP only, small rises (≤28px) and fades, once per element, all inside `gsap.matchMedia('(prefers-reduced-motion: no-preference)')`, with `clearProps` so CSS hover states keep working.
 - Routing uses `BrowserRouter` with real paths (`/episode/247/`). `npm run build` also prerenders every route to static HTML (`src/entry-server.tsx` + `scripts/prerender.mjs`) with per-page title, description, canonical, Open Graph and JSON-LD from `src/lib/seo.ts`, plus `sitemap.xml`, `robots.txt` and `404.html`. Old `#/` links redirect in `main.tsx`.
 - **SSR-safe components:** no `window`/`document`/`localStorage` during render or in `useState` initialisers; read them in effects. Asset paths use `import.meta.env.BASE_URL`. The public URL comes from `SITE_URL` (vite.config.ts); set it when the site moves to the company domain.
-- `/explorer` and `/studio` are internal: `noindex`, not in the sitemap.
+- `/explorer` and `/studio` are internal and dev-only: not routed, prerendered or linked in production builds.
+- **Transcripts:** the cleaned `data/transcripts-web/` files for EP.238–249 are public (approved 2026-10-21) and shown on episode pages. Raw `data/transcripts/` and `data/clips/` stay local. Episode pages show only what exists: no placeholder cards for missing transcripts or takeaways.
 
 ## Known gaps / next tasks
 - The guest map is a focus view (`src/components/guestMapLayout.ts`): the selected guest pinned at the centre of a crosshair, their 1–2 themes either side, and every guest sharing a theme grouped into industry clusters (soft halos, count; click to open into name chips). Same-industry groups are highlighted. The side panel matches the map's height; the related list is paged (dots), not scrolled.

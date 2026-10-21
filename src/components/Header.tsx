@@ -167,11 +167,13 @@ export function Footer() {
           <a href={show.youtube}>YouTube</a>
           <a href={show.soundon}>SoundOn</a>
         </div>
-        <div className="footer-col">
-          <span className="footer-h">內部工具</span>
-          <Link to="/explorer">語錄室</Link>
-          <Link to="/studio">短影音工作台</Link>
-        </div>
+        {import.meta.env.DEV && (
+          <div className="footer-col">
+            <span className="footer-h">內部工具（僅本機）</span>
+            <Link to="/explorer">語錄室</Link>
+            <Link to="/studio">短影音工作台</Link>
+          </div>
+        )}
       </div>
     </footer>
   );

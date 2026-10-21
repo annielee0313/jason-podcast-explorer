@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Footer, Header, type NavState } from '../components/Header';
 import { EpisodeBrowser } from '../components/EpisodeBrowser';
@@ -8,8 +8,9 @@ import { PathIndex } from '../components/PathIndex';
 import { ArrowIcon, ArrowUpRightIcon, PlayIcon, ShuffleIcon, ThemeChip } from '../components/ui';
 import { useLandingMotion } from '../lib/motion';
 import { CountUp } from '../components/CountUp';
+import { WordModal } from '../components/WordModal';
 import {
-  about, curation, deckLines, episodeByNumber, episodes, findTerm, formatDuration, takeawayLines, themeById,
+  about, curation, deckLines, type Phrase, episodeByNumber, episodes, findTerm, formatDuration, takeawayLines, themeById,
 } from '../lib/data';
 
 /**
@@ -33,6 +34,8 @@ export default function Landing() {
   const location = useLocation();
   const navigate = useNavigate();
   const [card, setCard] = useState(0);
+  const [word, setWord] = useState<Phrase | null>(null);
+  const closeWord = useCallback(() => setWord(null), []);
   const latest = episodes[0];
   const rootRef = useRef<HTMLDivElement>(null);
   useLandingMotion(rootRef);
@@ -50,7 +53,7 @@ export default function Landing() {
 
   const words = useMemo(
     () => curation.phrases
-      .map((p) => ({ label: p.label, count: takeawayLines.filter((l) => findTerm(l.text, p.terms)).length }))
+      .map((p) => ({ phrase: p, label: p.label, count: takeawayLines.filter((l) => findTerm(l.text, p.terms)).length }))
       .filter((w) => w.count > 0)
       .sort((a, b) => b.count - a.count),
     [],
@@ -216,10 +219,10 @@ export default function Landing() {
             </p>
             <div className="chips" style={{ gap: 10 }}>
               {words.map((w) => (
-                <Link key={w.label} to={`/explorer?phrase=${encodeURIComponent(w.label)}`} className="toggle soft"
-                  style={{ textDecoration: 'none', fontWeight: 700, fontSize: 14 + Math.round((14 * w.count) / words[0].count) }}>
+                <button key={w.label} type="button" className="toggle soft" aria-haspopup="dialog" onClick={() => setWord(w.phrase)}
+                  style={{ fontWeight: 700, fontSize: 14 + Math.round((14 * w.count) / words[0].count) }}>
                   {w.label}<span className="count muted" style={{ fontWeight: 400 }}>×{w.count}</span>
-                </Link>
+                </button>
               ))}
             </div>
           </div>
@@ -312,6 +315,7 @@ export default function Landing() {
         </div>
       </section>
 
+      {word && <WordModal phrase={word} onClose={closeWord} />}
       <Footer />
     </div>
   );

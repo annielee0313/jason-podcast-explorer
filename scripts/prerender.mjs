@@ -24,14 +24,12 @@ const write = (file, html) => { mkdirSync(dirname(file), { recursive: true }); w
 for (const path of routes) {
   write(join(dist, path, 'index.html'), page(headFor(path), render(path)));
 }
-// Internal tool: no content in the HTML, not indexed.
-write(join(dist, 'studio', 'index.html'), page(headFor('/studio'), ''));
 // GitHub Pages serves this for unknown paths; the app renders client-side from there.
 write(join(dist, '404.html'), page({ ...headFor('/'), noindex: true }, ''));
 
 const sitemapUrl = new URL('sitemap.xml', headFor('/').url).href;
 writeFileSync(join(dist, 'sitemap.xml'), sitemapXml());
-writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: ${new URL(headFor('/studio').url).pathname}\n\nSitemap: ${sitemapUrl}\n`);
+writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${sitemapUrl}\n`);
 
 rmSync(ssrDir, { recursive: true, force: true });
-console.log(`prerendered ${routes.length} pages, plus studio, 404.html, sitemap.xml and robots.txt`);
+console.log(`prerendered ${routes.length} pages, plus 404.html, sitemap.xml and robots.txt`);

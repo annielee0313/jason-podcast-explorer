@@ -16,8 +16,9 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/episode/:ep" element={<EpisodePage />} />
-      <Route path="/explorer" element={<Explorer />} />
-      <Route path="/studio" element={<Studio />} />
+      {/* Internal tools are hidden on the public site for now: dev server only (npm run dev). */}
+      {import.meta.env.DEV && <Route path="/explorer" element={<Explorer />} />}
+      {import.meta.env.DEV && <Route path="/studio" element={<Studio />} />}
       <Route path="*" element={<Landing />} />
     </Routes>
   );

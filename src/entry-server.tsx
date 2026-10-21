@@ -6,8 +6,8 @@ import { episodes } from './lib/data';
 
 export { headFor, headHtml, sitemapXml } from './lib/seo';
 
-/** Paths written as static HTML by scripts/prerender.mjs. /studio is internal and stays an empty shell. */
-export const routes = ['/', '/explorer', ...episodes.map((e) => `/episode/${e.ep}`)];
+/** Paths written as static HTML by scripts/prerender.mjs. The internal tools are not published. */
+export const routes = ['/', ...episodes.map((e) => `/episode/${e.ep}`)];
 
 export function render(path: string) {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '') || '/';
