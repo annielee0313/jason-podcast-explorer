@@ -33,7 +33,7 @@ export function useLandingMotion(root: RefObject<HTMLElement>) {
         });
       });
 
-      const blocks = '.index-list > li, .browse-tools, .row > .card, .deck, .map-layout, .about-grid > *, .company';
+      const blocks = '.index-list > li, .browse-tools, .row > .card, .top-lists > .card, .deck, .map-layout, .about-grid > *, .company';
       gsap.set(blocks, { y: 24, autoAlpha: 0 });
       ScrollTrigger.batch(blocks, {
         start: 'top 88%',

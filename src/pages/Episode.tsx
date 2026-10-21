@@ -30,22 +30,22 @@ export default function EpisodePage() {
     <>
       <Header />
       <section className="hero" style={{ paddingTop: 40, paddingBottom: 56 }}>
-        <div className="wrap row" style={{ gap: 40, alignItems: 'flex-end' }}>
-          <div className="grow" style={{ flex: '999 1 600px' }}>
-            <p className="kicker" style={{ margin: '0 0 16px', fontSize: 13, color: 'var(--teal-strong)' }}>EP.{ep.ep} · {ep.date} · {formatDuration(ep.durationSec)}</p>
-            <h1 style={{ fontSize: 'clamp(30px, 4.4vw, 52px)' }}>{ep.title}</h1>
-            <div className="chips" style={{ gap: 10, marginTop: 28 }}>
+        <div className="wrap ep-hero">
+          <p className="kicker" style={{ margin: 0, fontSize: 13, color: 'var(--teal-strong)' }}>EP.{ep.ep} · {ep.date} · {formatDuration(ep.durationSec)}</p>
+          <h1 className="ep-title">{ep.title}</h1>
+          {/* Guest sits right under the title: who this conversation is with. */}
+          <div className="ep-guest">
+            <span className="ep-guest-label">來賓</span>
+            <span className="ep-guest-name">{ep.guest}</span>
+            {ep.org && <span className="ep-guest-org">{ep.org}</span>}
+          </div>
+          <div className="chips" style={{ gap: 10, marginTop: 8 }}>
               {ep.appleUrl && <a className="btn btn-light" href={ep.appleUrl} target="_blank" rel="noreferrer"><PlayIcon />Apple Podcasts</a>}
               {/* Per-episode video links come later (YouTube Data API); until then this opens the channel. */}
               {about.show.spotify && <a className="btn btn-light" href={about.show.spotify} target="_blank" rel="noreferrer"><PlayIcon />Spotify</a>}
               <a className="btn btn-light" href={about.show.youtube} target="_blank" rel="noreferrer"><PlayIcon />YouTube</a>
               <a className="btn btn-light" href={about.show.soundon} target="_blank" rel="noreferrer"><PlayIcon />SoundOn</a>
-            </div>
           </div>
-          <aside aria-label="來賓" className="ep-guest side">
-            <div className="ep-guest-name">{ep.guest}</div>
-            <div className="ep-guest-org">{ep.org}</div>
-          </aside>
         </div>
       </section>
 
@@ -71,7 +71,7 @@ export default function EpisodePage() {
             {hasTranscript && (
               <div className="card" id="transcript">
                 <h2 style={{ fontSize: 20, marginBottom: 16 }}>逐字稿</h2>
-                <TranscriptPanel ep={ep.ep} />
+                <TranscriptPanel ep={ep.ep} durationSec={ep.durationSec} />
               </div>
             )}
           </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { episodes, formatDuration, industries, themes, type Episode } from '../lib/data';
 import { ArrowIcon, ArrowUpRightIcon, ThemeChip } from './ui';
+import { FacetRow } from './FacetRow';
 
 const PAGE_SIZE = 8; // 4 columns × 2 rows on desktop
 
@@ -29,10 +30,16 @@ const matches = (e: Episode, f: Filters) =>
   (f.theme === 'all' || e.themes.includes(f.theme as Episode['themes'][number])) &&
   (f.industry === 'all' || e.industry === f.industry);
 
+/** Biggest first, by episodes over the whole catalogue (fixed, so tags never reorder while filtering). */
+function byTotal<T extends { id: string }>(opts: T[], key: keyof Filters) {
+  const total = (id: string) => episodes.filter((e) => matches(e, { ...ALL, [key]: id })).length;
+  return opts.slice().sort((a, b) => total(b.id) - total(a.id));
+}
+
 // Each option carries its tag colours: a selected filter looks like the tag it filters by.
 const FACETS: { key: keyof Filters; label: string; options: { id: string; name: string; dot: string; bg: string; fg: string }[] }[] = [
-  { key: 'theme', label: '主題', options: themes.map((t) => ({ id: t.id, name: t.name, dot: t.dot, bg: t.bg, fg: t.fg })) },
-  { key: 'industry', label: '產業', options: industries.map((i) => ({ id: i.id, name: i.name, dot: i.color, bg: i.bg, fg: i.fg })) },
+  { key: 'theme', label: '主題', options: byTotal(themes.map((t) => ({ id: t.id, name: t.name, dot: t.dot, bg: t.bg, fg: t.fg })), 'theme') },
+  { key: 'industry', label: '產業', options: byTotal(industries.map((i) => ({ id: i.id, name: i.name, dot: i.color, bg: i.bg, fg: i.fg })), 'industry') },
 ];
 
 export function EpisodeBrowser() {
@@ -107,23 +114,8 @@ export function EpisodeBrowser() {
         <div className="browse-tools">
           <div className="facets">
             {FACETS.map((f) => (
-              <div key={f.key} role="group" aria-label={`依${f.label}篩選`} className="facet-row">
-                <span className="facet-label">{f.label}</span>
-                <div className="filter-tags">
-                  <button type="button" className="tag" aria-pressed={filters[f.key] === 'all'} onClick={() => pick(f.key, 'all')}>全部</button>
-                  {f.options.map((o) => {
-                    const n = countFor(f.key, o.id);
-                    const on = filters[f.key] === o.id;
-                    return (
-                      <button key={o.id} type="button" className="tag" aria-pressed={on}
-                        style={on ? { background: o.bg, color: o.fg } : undefined}
-                        disabled={n === 0 && !on} onClick={() => pick(f.key, o.id)}>
-                        <span className="tag-dot" style={{ background: on ? '#fff' : o.dot }} aria-hidden="true" />{o.name}<span className="count">{n}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
+              <FacetRow key={f.key} label={f.label} options={f.options} selected={filters[f.key]}
+                countFor={(id) => countFor(f.key, id)} onPick={(id) => pick(f.key, id)} />
             ))}
           </div>
           <div role="group" aria-label="排序" className="seg">

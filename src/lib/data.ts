@@ -139,6 +139,15 @@ const transcriptFiles = import.meta.glob<{ default: Transcript }>('../../data/tr
 const transcriptKey = (ep: number) => Object.keys(transcriptFiles).find((k) => k.endsWith(`EP${String(ep).padStart(3, '0')}.json`));
 export const transcriptEps = episodes.map((e) => e.ep).filter((ep) => !!transcriptKey(ep));
 
+/**
+ * The episode's audio file from the RSS feed (hosted by SoundOn, so plays still count there).
+ * Loaded on demand as its own small chunk, only by episode pages that show a transcript.
+ */
+export async function loadAudioUrl(ep: number): Promise<string | null> {
+  const urls = (await import('../../data/audio_urls.json')).default as Record<string, string>;
+  return urls[String(ep)] ?? null;
+}
+
 export async function loadTranscript(ep: number): Promise<Transcript | null> {
   const key = transcriptKey(ep);
   return key ? (await transcriptFiles[key]()).default : null;

@@ -30,6 +30,47 @@ function SectionHead({ n, en, title, note }: { n: string; en: string; title: Rea
   );
 }
 
+/** Both lists show the same number of episodes so the two cards stay symmetrical. */
+const TOP_N = 3;
+const picks = curation.jasonPicks.slice(0, TOP_N);
+
+/**
+ * Jason 親選 and 最多人收聽 share this card: numbered rows (01–03), title, EP · guest,
+ * and the pick reason when Jason has written one. Nothing is shown for missing reasons.
+ */
+function TopList({ title, flag, note, items }: {
+  title: string; flag?: string; note: string; items: { ep: number; reason?: string }[];
+}) {
+  return (
+    <div className="card top-list">
+      <div className="list-head">
+        <h3 className="card-title">{title}</h3>
+        {flag && <span className="list-flag">{flag}</span>}
+      </div>
+      <p className="muted" style={{ margin: '8px 0 20px', fontSize: 14 }}>{note}</p>
+      <ol className="rank-list">
+        {items.map(({ ep, reason }, i) => {
+          const e = episodeByNumber(ep);
+          if (!e) return null;
+          return (
+            <li key={ep}>
+              <Link to={`/episode/${e.ep}`} className="rank-row">
+                <span className="rank-n">{String(i + 1).padStart(2, '0')}</span>
+                <span className="pick-main">
+                  <span className="pick-title">{e.title}</span>
+                  {reason && <span className="pick-why">{reason}</span>}
+                  <span className="pick-meta mono">EP.{e.ep} · {e.guest}</span>
+                </span>
+                <span className="ep-line-arrow" aria-hidden="true"><ArrowIcon /></span>
+              </Link>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
+  );
+}
+
 export default function Landing() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -140,66 +181,20 @@ export default function Landing() {
       </section>
 
       <section className="section">
-        <div className="wrap row">
-          <div className="card grow" style={{ flex: '3 1 520px' }}>
-            <div className="list-head">
-              <h3 className="card-title">Jason 親選</h3>
-              {curation.jasonPicks.some((p) => p.tentative) && <span className="list-flag">暫定，待 Jason 確認</span>}
-            </div>
-            <p className="muted" style={{ margin: '8px 0 20px', fontSize: 14 }}>如果只能推薦幾集給新朋友，Jason 會選這些。</p>
-            {curation.jasonPicks.length ? (
-              <ol className="pick-list">
-                {curation.jasonPicks.map((p) => {
-                  const e = episodeByNumber(p.ep);
-                  if (!e) return null;
-                  return (
-                    <li key={p.ep}>
-                      <Link to={`/episode/${e.ep}`} className="pick-row">
-                        <span className="pick-ep mono">EP.{e.ep}</span>
-                        <span className="pick-main">
-                          <span className="pick-title">{e.title}</span>
-                          <span className="pick-why">{p.reason || <span className="muted">推薦理由待補</span>}</span>
-                        </span>
-                        <span className="pick-guest">{e.guest}</span>
-                        <span className="ep-line-arrow" aria-hidden="true"><ArrowIcon /></span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ol>
-            ) : (
-              <div className="placeholder">[ 親選：在 Google Sheet 的「Jason親選」分頁填入集數與推薦理由 ]</div>
-            )}
-          </div>
-          <div className="card side" style={{ flex: '2 1 360px' }}>
-            <h3 className="card-title">最多人收聽</h3>
-            <p className="muted" style={{ margin: '8px 0 20px', fontSize: 14 }}>
-              {curation.mostListened.length
-                ? `依 ${[...new Set(curation.mostListened.map((t) => t.source).filter(Boolean))].join('、') || '收聽數'} 統計${curation.mostListened[0].period ? `（${curation.mostListened[0].period}）` : ''} · ${curation.mostListened[0].updated} 更新`
-                : '大家最常聽的幾集。'}
-            </p>
-            {curation.mostListened.length ? (
-              <ol className="rank-list">
-                {curation.mostListened.map((t) => {
-                  const e = episodeByNumber(t.ep);
-                  if (!e) return null;
-                  return (
-                    <li key={t.rank}>
-                      <Link to={`/episode/${e.ep}`} className="rank-row">
-                        <span className="rank-n">{String(t.rank).padStart(2, '0')}</span>
-                        <span className="pick-main">
-                          <span className="pick-title">{e.title}</span>
-                          <span className="pick-why mono">EP.{e.ep} · {e.guest}</span>
-                        </span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ol>
-            ) : (
-              <div className="placeholder">[ 在 Google Sheet 的「最多人收聽」分頁填入排名 ]</div>
-            )}
-          </div>
+        <div className="wrap top-lists">
+          <TopList
+            title="Jason 親選"
+            flag={picks.some((p) => p.tentative) ? '暫定，待 Jason 確認' : undefined}
+            note="如果只能推薦三集給新朋友，Jason 會選這些。"
+            items={picks.map((p) => ({ ep: p.ep, reason: p.reason }))}
+          />
+          <TopList
+            title="最多人收聽"
+            note={curation.mostListened.length
+              ? `依 ${[...new Set(curation.mostListened.map((t) => t.source).filter(Boolean))].join('、') || '收聽數'} 統計${curation.mostListened[0].period ? `（${curation.mostListened[0].period}）` : ''} · ${curation.mostListened[0].updated} 更新`
+              : '大家最常聽的幾集。'}
+            items={curation.mostListened.slice(0, TOP_N).map((t) => ({ ep: t.ep }))}
+          />
         </div>
       </section>
 

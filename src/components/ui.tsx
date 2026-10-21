@@ -32,3 +32,6 @@ export const CloseIcon = () => (
 export const ArrowUpRightIcon = () => (
   <svg {...iconProps}><line x1="7" y1="17" x2="17" y2="7" /><polyline points="8 7 17 7 17 16" /></svg>
 );
+export const PauseIcon = () => (
+  <svg {...iconProps}><line x1="8" y1="5" x2="8" y2="19" /><line x1="16" y1="5" x2="16" y2="19" /></svg>
+);
