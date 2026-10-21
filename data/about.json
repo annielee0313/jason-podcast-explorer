@@ -43,6 +43,15 @@
   "show": {
     "apple": "https://podcasts.apple.com/tw/podcast/id1532218131",
     "youtube": "https://www.youtube.com/@Jasonstalkshow",
-    "soundon": "https://player.soundon.fm/p/f1f2a53d-d42a-4752-a768-00a32b1ac9c5"
+    "soundon": "https://player.soundon.fm/p/f1f2a53d-d42a-4752-a768-00a32b1ac9c5",
+    "spotify": null
+  },
+  "stats": {
+    "_note": "episodes is updated by scripts/fetch_episodes.py (latest EP number in the feed). guestsFloor is a safe lower bound: the feed lists ~239 distinct guest names but its guest lines are inconsistent. rating/ratingCount are entered by hand from Apple Podcasts; refresh them occasionally.",
+    "episodes": 249,
+    "guestsFloor": 200,
+    "rating": 4.8,
+    "ratingCount": 211,
+    "since": 2020
   }
 }

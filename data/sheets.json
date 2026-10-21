@@ -1,0 +1,5 @@
+{
+  "_note": "Google Sheet tabs published as CSV (File → Share → Publish to web → tab → CSV). Leave a URL empty to use the local CSV in data/sheets/ instead. Only public site content goes in these tabs.",
+  "jasonPicksCsv": "",
+  "mostListenedCsv": ""
+}

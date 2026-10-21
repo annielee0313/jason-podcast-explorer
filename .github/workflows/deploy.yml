@@ -1,9 +1,12 @@
-# Build the Vite site and publish it to GitHub Pages on every push to main.
+# Build the Vite site and publish it to GitHub Pages: on every push to main, once a day
+# (to pick up edits made in the team's Google Sheet), and on demand ("Run workflow").
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "0 19 * * *" # 03:00 Taipei
   workflow_dispatch:
 
 permissions:
@@ -24,6 +27,11 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      # Jason親選 / 最多人收聽 from the Google Sheet. Bad rows are reported and skipped; never blocks the build.
+      - run: python scripts/sync_sheets.py
       - run: npm ci
       - run: npm run build
       - uses: actions/configure-pages@v5

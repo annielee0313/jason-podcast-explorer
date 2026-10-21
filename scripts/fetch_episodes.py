@@ -9,7 +9,7 @@ What it does
 - Parses each <item>: EP number, title hook (text before ➡️), date, duration,
   the 來賓 line (guest + org), the ☑️ takeaways, and the audio URL.
 - MERGES into the existing data/episodes.json: hand-curated fields
-  (themes, arc, highlight, highlightIsSummary, role, industry) are never overwritten.
+  (themes, arc, highlight, highlightIsSummary, industry) are never overwritten.
   New episodes get themes=[] — run scripts/tag_episodes.py next.
 - Writes data/audio_urls.json (EP -> mp3 URL) for scripts/transcribe.py.
 
@@ -32,12 +32,13 @@ APPLE_SHOW_ID = "1532218131"
 ROOT = Path(__file__).resolve().parent.parent
 EPISODES_PATH = ROOT / "data" / "episodes.json"
 AUDIO_PATH = ROOT / "data" / "audio_urls.json"
+ABOUT_PATH = ROOT / "data" / "about.json"
 
 NS = {
     "itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
     "content": "http://purl.org/rss/1.0/modules/content/",
 }
-CURATED_FIELDS = ("themes", "arc", "highlight", "highlightIsSummary", "appleUrl", "role", "industry")
+CURATED_FIELDS = ("themes", "arc", "highlight", "highlightIsSummary", "appleUrl", "industry")
 
 
 def fetch_feed(url: str) -> bytes:
@@ -91,6 +92,11 @@ def parse_item(item: ET.Element) -> dict | None:
         return None  # trailers / specials without an EP number
     ep = int(m.group(1))
     hook = title.split("➡️")[0].strip()
+    # Older episodes (EP.1–147) are titled 「EP.n 職稱 姓名｜標題」: keep only the part after ｜,
+    # since EP number, guest and org are shown separately on the site.
+    old_style = re.match(r"^\s*EP\.?\s*\d+\s.*?[｜|](.+)$", hook)
+    if old_style:
+        hook = old_style.group(1).strip()
 
     desc_raw = item.findtext("content:encoded", namespaces=NS) or item.findtext("description") or ""
     desc = strip_html(desc_raw)
@@ -144,6 +150,11 @@ def main() -> int:
 
     parsed = [p for p in (parse_item(i) for i in channel.findall("item")) if p]
     parsed.sort(key=lambda p: p["ep"], reverse=True)
+    # The site's headline count (「249 場對話」) follows the newest episode number in the feed.
+    if parsed:
+        about = json.loads(ABOUT_PATH.read_text("utf-8"))
+        about.setdefault("stats", {})["episodes"] = parsed[0]["ep"]
+        ABOUT_PATH.write_text(json.dumps(about, ensure_ascii=False, indent=2) + "\n", "utf-8")
     parsed = parsed[: args.limit]
 
     existing = {e["ep"]: e for e in json.loads(EPISODES_PATH.read_text("utf-8"))} if EPISODES_PATH.exists() else {}
@@ -171,7 +182,7 @@ def main() -> int:
                 row["highlightIsSummary"] = False
         else:
             added += 1
-            row.update(themes=[], arc=None, role=None, industry=None, highlight=default_highlight(p["takeaways"]), highlightIsSummary=False)
+            row.update(themes=[], arc=None, industry=None, highlight=default_highlight(p["takeaways"]), highlightIsSummary=False)
         row.setdefault("appleUrl", None)
         merged.append(row)
 
