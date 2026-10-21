@@ -4,6 +4,7 @@ import curationJson from '../../data/curation.json';
 import questionsJson from '../../data/questions.sample.json';
 import aboutJson from '../../data/about.json';
 import facetsJson from '../../data/facets.json';
+import deckJson from '../../data/deck.json';
 
 export type ThemeId = 'ai' | 'brand' | 'leadership' | 'resilience' | 'health' | 'money';
 
@@ -52,9 +53,12 @@ export const curation = curationJson as unknown as {
   mapLayout: Record<string, { x: number; y: number }>;
 };
 
-export interface Facet { id: string; name: string }
-/** Industry taxonomy (draft, see data/facets.json). */
+export interface Facet { id: string; name: string; color: string; bg: string; fg: string }
+/** Industry taxonomy (see data/facets.json). */
 export const industries = facetsJson.industries as Facet[];
+/** For guests whose industry is null: fits none of the list. */
+export const noIndustry: Facet = { id: 'none', name: '其他', color: '#A9AEB4', bg: '#EEF0F2', fg: '#4B5563' };
+export const industryOf = (e: Episode): Facet => industries.find((i) => i.id === e.industry) ?? noIndustry;
 
 /** Host bio, book, production company and show links. Sources are noted in data/about.json. */
 export const about = aboutJson;
@@ -98,6 +102,16 @@ export function formatClock(sec: number): string {
 export const takeawayLines = episodes.flatMap((e) =>
   e.takeaways.map((text) => ({ ep: e.ep, guest: e.guest, org: e.org, title: e.title, text })),
 );
+
+/**
+ * Lines for the 抽一句 card: show-note takeaways picked by scripts/pick_deck.py (rule filter,
+ * then Claude selects; text stays verbatim). A line no longer found in its episode's
+ * takeaways is dropped, so the card can never show text the show notes don't contain.
+ */
+export const deckLines = (deckJson.lines as { ep: number; text: string }[]).flatMap((d) => {
+  const e = episodeByNumber(d.ep);
+  return e && e.takeaways.includes(d.text) ? [{ ep: e.ep, guest: e.guest, org: e.org, title: e.title, text: d.text }] : [];
+});
 
 export function findTerm(text: string, terms: string[]) {
   for (const term of terms) {

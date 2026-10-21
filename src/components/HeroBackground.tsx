@@ -14,10 +14,14 @@ const SPEED = 0.12; // one slow drift, not a light show
 export function HeroBackground() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
-  const [reduced, setReduced] = useState(() => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false);
+  // The canvas only exists in the browser: the prerendered HTML ships the plain ground.
+  const [mounted, setMounted] = useState(false);
+  const [reduced, setReduced] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const mq = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+    setReduced(mq?.matches ?? false);
     const onChange = () => setReduced(mq.matches);
     mq?.addEventListener('change', onChange);
     const io = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting));
@@ -27,7 +31,7 @@ export function HeroBackground() {
 
   return (
     <div ref={ref} className="hero-bg" aria-hidden="true">
-      <MeshGradient
+      {mounted && <MeshGradient
         colors={COLORS}
         distortion={0.8}
         swirl={0.15}
@@ -36,7 +40,7 @@ export function HeroBackground() {
         speed={visible && !reduced ? SPEED : 0}
         maxPixelCount={1600 * 900}
         style={{ width: '100%', height: '100%' }}
-      />
+      />}
     </div>
   );
 }

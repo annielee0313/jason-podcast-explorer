@@ -189,7 +189,7 @@
     "highlight": "區分事實與觀點，化逆境為成長契機",
     "highlightIsSummary": false,
     "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000775285449",
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 241,
@@ -295,11 +295,13 @@
       "霸氣決策背後的企業 ESG：老闆為何甘願狠砸40億導入電子標籤？",
       "AI 時代的殘酷生存戰：流量將是成為行銷致勝的關鍵？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "「通路就是媒體」的品牌進化論，如何主動向消費者提出美好生活主張",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 236,
@@ -315,11 +317,14 @@
       "誰說做直播一定要口若懸河？打破最大迷思，揭密為何不擅言詞的「鄰家女孩」也能靠粉絲經濟完成夢想",
       "50歲後跑馬拉松、做瑜珈甚至重回校園念博士！為何看懂「選擇比努力重要」，才能學會人生的減法？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "brand"
+    ],
     "arc": null,
     "highlight": "科技越發達越空虛？為何百萬直播主賣的不是驚人才藝，而是現代人最缺乏的「陪伴」？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 235,
@@ -335,11 +340,14 @@
       "你的成功可能困在「局部最優」？帶你跳脫企業轉型的焦慮盲區",
       "回到第一性原理，看懂未來不可忽視的「DNA」與判斷力"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "brand"
+    ],
     "arc": null,
     "highlight": "連大師腦袋都能複製？揭密「ABT 數位孿生大腦」如何將頂尖決策邏輯系統化",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 234,
@@ -355,11 +363,13 @@
       "讓 AI 走出螢幕！當硬體遇上真 AI，軟硬結合帶你實現科幻生活",
       "老社區裝充電樁到底安不安全？沒裝能源管理系統，小心聞到燒焦味出危險才知怕"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "未來十年的真正競爭不是晶片？為何得「電」者才能得天下",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 233,
@@ -375,11 +385,13 @@
       "拒絕流於形式的保固！看懂日式「同層排水」工法，終結漏水惡夢",
       "未來買房新邏輯：先學會培養鑑別建材、工法與設計的能力"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "買房跟買超跑一樣？讓人買單的關鍵不是CP值，而是「情緒價值」",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "realestate"
   },
   {
     "ep": 232,
@@ -395,11 +407,14 @@
       "工程師不想當主管怎麼辦？技術狂人不必帶人也能爬到頂層",
       "為什麼強者從不相信運氣？要成為領導者，這項特質原來很重要"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "能力再強也可能被刷掉？拿不出人脈背書將成最大隱形風險？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "services"
   },
   {
     "ep": 231,
@@ -415,11 +430,14 @@
       "把客人的「痛點」變成商業的「甜蜜點」！只要學會觀察，你也能具備發明家的特質",
       "剛上大一就「休學」？聽聽人生中最瘋狂的決定，如何成就今天的電信高管之路"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "brand"
+    ],
     "arc": null,
     "highlight": "未來的貧富差距，將來自於你是否懂得「問對問題」",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 230,
@@ -435,11 +453,14 @@
       "「冰棒熱線」與「長頸鹿玩偶」：如何用「儀式感」創造記憶點與品牌忠誠度？",
       "財富自由後的終極遺憾：為何沒人提到錢，卻都遺憾「少做了這件事」？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "在《CEO的筆記本》52集旅程，誰的收穫最多？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 229,
@@ -455,11 +476,14 @@
       "「以終為始」的長線思維，如何透過規劃夢想藍圖，讓團隊願意投入日常的穩定交付 ？",
       "公司擴張如「龍蝦脫殼」？餐飲CEO如何帶領團隊面對挑戰"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "鼓勵員工斜槓，為何反而能降低離職率？揭秘吐司利亞的「太陽與風」領導術",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 228,
@@ -475,11 +499,14 @@
       "「簡單」生活哲學：創辦人如何以運動平衡工作家庭高效舒壓？",
       "未來十年「簡單」如何從敏弱保養，轉型「專業數據抗老」？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "創業資金斷裂？70封客戶信如何助「簡單」反敗為勝？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 227,
@@ -495,11 +522,14 @@
       "面對投資人期待與自我高估：學會「坦率溝通」與「自我覺察」，突破創業盲點",
       "數位行銷變革不斷，「系統化」才是企業在變局中永續生存的關鍵？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "health"
+    ],
     "arc": null,
     "highlight": "如何透過運動對抗生理衰退？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 226,
@@ -515,11 +545,13 @@
       "從嬌聯學來的行銷真諦： 小公司如何以弱勝強，掌握「策略致勝」的核心心法",
       "從六人團隊到策略聯盟： 為何日本貓壱選擇加入 MoonX 集團，開啟品牌成長新篇章？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "創業初期月薪僅 16 萬日圓？ 看日本貓壱創辦人如何靠「經營計畫」逆轉低谷、營收超標",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 225,
@@ -535,11 +567,14 @@
       "善用危機作為轉機，透過內部制度升級與食材溯源，持續強化品牌體質與競爭力",
       "將早餐提升至文化傳承與城市記憶的使命，定義「臺北味」"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "豐富的導遊與澳洲打工度假經驗，獨特的市場洞察與分享精神",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 224,
@@ -556,11 +591,14 @@
       "創業路上如何平衡「左腳自信」與「右腳自我懷疑」？以及成功創業最重要的三個關鍵詞是什麼？",
       "有圖靈就可以信！圖靈鏈如何將「People Business」的願景，最終導向成為一個「數位國家」？"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "為何創業失敗是養分？從旅遊科技到禮物AI平台，Jeff如何從中學習擴編與財務承受力的教訓？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 223,
@@ -576,11 +614,13 @@
       "成功買房與人生策略：聚焦需求「三取二」，掌握選擇權實現真正的自由",
       "人生哲學與感恩心：從偏鄉教育到職場，以真誠與感恩面對挑戰"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "從媒體跨界到不動產，20年來堅持資訊透明化",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "realestate"
   },
   {
     "ep": 222,
@@ -596,11 +636,13 @@
       "成功行銷策略的誕生：驅動數據整合與自動化",
       "創業路上的感恩心：專注當下，保持正能量與家庭支持"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "從碩士論文到數位行銷賽道的 20 年堅持",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 221,
@@ -616,11 +658,14 @@
       "你吃的魚油有幾%？成功的行銷策略如何誕生？",
       "創業路上的感恩心：如何在挑戰中保持正能量？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "brand"
+    ],
     "arc": null,
     "highlight": "如何設定目標並挑戰自我？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 220,
@@ -636,11 +681,14 @@
       "公關行業的挑戰與機會：價值觀的堅持與品牌形象的提升",
       "未來職場攻略：多向溝通的雙重挑戰與機遇"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "Abby的洞見與溝通智能的關鍵",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 219,
@@ -656,11 +704,13 @@
       "如何在產品設計中平衡科技功能與使用者舒適度？",
       "AI技術將如何影響未來的生活方式？"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "HTC如何在智慧眼鏡市場中脫穎而出，成為領導者？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 218,
@@ -676,11 +726,14 @@
       "老闆指令反覆又模糊？學會「三層式溝通」，讓他給你最大的信任與授權",
       "在最賺錢的時候卻最大幅度裁員？從微軟、Google看懂為何要「淘汰自己」"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "ai"
+    ],
     "arc": null,
     "highlight": "AI時代人人焦慮，為何頂尖領導者反而懂得「該快則快，該慢則慢」？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 217,
@@ -696,11 +749,13 @@
       "減肥不用餓肚子？光是改變「吃飯順序」就能穩住血糖的秘密",
       "從上班族到更年期婦女，不同族群的減重策略有何不同？"
     ],
-    "themes": [],
+    "themes": [
+      "health"
+    ],
     "arc": null,
     "highlight": "為什麼「肥胖」是需要治療的慢性病？新陳代謝如何影響你的健康？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 216,
@@ -716,11 +771,14 @@
       "如何把「踏實」兩字，化為支撐創業的最大底氣？",
       "B 型企業理念與永續實踐，如何讓品牌走向世界？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "從資訊業到「頭皮養護」藍海市場的創業心路",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 215,
@@ -736,11 +794,13 @@
       "視覺履歷如何記錄人生成就與打造職場優勢？",
       "如何克服「不會畫畫」的恐懼，找到屬於自己的筆記風格？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "從企業HR躍身到專業圖像紀錄師的心路歷程",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 214,
@@ -756,11 +816,13 @@
       "IPO 背後的資本市場布局與挑戰",
       "AI 在電商服務中的實戰應用與未來趨勢"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "為何放棄寶僑（P&G）穩定職位，加入一家虧損公司？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 213,
@@ -776,11 +838,13 @@
       "數位奇點獎如何搭建台灣行銷產業的生態系，帶動內容創新與國際對話？",
       "AI如何協助行銷人捕捉「微小但關鍵」的市場訊號？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "每個人都是一個品牌？從個人到企業都該思考「品牌經營力」",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 212,
@@ -797,11 +861,13 @@
       "台灣都市空間缺了什麼？",
       "給年輕設計師的建議：多看、多做、多想"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "搖滾少年如何一路闖進哈佛建築研究所？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 211,
@@ -818,11 +884,13 @@
       "高壓環境中，全球總裁「這樣」做來維持創意與心智調適",
       "AI時代，行銷人該如何「訓練大腦」不被淘汰？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "坐月子時激發創業靈感！用一條網路線開啟台灣行銷新局",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 210,
@@ -840,11 +908,14 @@
       "為什麼要投資？是為了讓人生多一種選擇？",
       "成就背後不只是能力？「謙遜」與「願意學習」的心態才是重點？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "「你還年輕，不勇敢要幹嘛？」",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 209,
@@ -862,11 +933,13 @@
       "北極熊望向鏡頭的眼神，在告訴我們什麼？",
       "從YouBike、環保杯開始，你的每個選擇，都能成為守護地球的力量？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "兩人團隊挑戰極地極限，如何拍出媲美 Discovery 的神級畫面？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 208,
@@ -885,11 +958,13 @@
       "運動賽事也能促進外交與觀光？如何透過運動賽事認識台灣？",
       "釣魚、超慢跑都算運動？找到喜歡的就能「玩一輩子」？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "沒資源、沒市場，他硬是把運動行銷做成全台最強",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 207,
@@ -907,11 +982,13 @@
       "「造山者精神」如何改寫台灣歷史？",
       "沒有奇蹟，只有累積！台灣半導體是這樣「一步一腳印」熬出來的"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "自稱「科技麻瓜」的導演為何選擇看似冰冷的科技題材？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 206,
@@ -929,11 +1006,13 @@
       "AI vs. 人情味：科技幫你省力，不取代你的貼心？",
       "餐飲新手創業者要注意！「餐點」是你的核心"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "你口袋裡的發票一定有它？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 205,
@@ -952,11 +1031,13 @@
       "與時裝跨界合作！重新打入Z世代的市場",
       "保有品牌風格才有企業永續經營的關鍵"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "最擅長將品牌落地的人是他",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 204,
@@ -976,11 +1057,14 @@
       "慢下腳步去充電！轉身攻讀博士尋突破",
       "時尚無所不在，穿出自己的風格才是真時尚"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "針織女王的成長背景與創業動機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 203,
@@ -1000,11 +1084,13 @@
       "分子合成漢堡未來可能成真？科技如何終結廚餘惡夢",
       "不只賣即期品！下一步要進軍「這個」市場！？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "用客家精神來創業？「惜食」省錢又環保？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 202,
@@ -1023,11 +1109,13 @@
       "連日本JR都膜拜！台灣觀光列車的美學神作",
       "旅行、旅遊、度假大不同！搞清楚你的目的再出發"
     ],
-    "themes": [],
+    "themes": [
+      "health"
+    ],
     "arc": null,
     "highlight": "台灣的第一台觀光列車在2003年開通",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 201,
@@ -1048,11 +1136,13 @@
       "只要180天，就能讓你開店當天就爆單？",
       "品牌溫度靠客製！提升回購率靠這招"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "數學老師變餐廳老闆！創業初期竟把「房子」拿去貸款",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 200,
@@ -1072,11 +1162,14 @@
       "想要突破有四個關鍵「天時、地利、人和、執行力」",
       "Live Podcast將會成爲下一波趨勢？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "brand"
+    ],
     "arc": null,
     "highlight": "200集特別企劃！藏鏡人揭露Jason的內心話",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 199,
@@ -1094,11 +1187,13 @@
       "不想幹的苦差事，交給AI幫你做",
       "Jason暗示200集將會有AI Jason？"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "AI不是未來，它是現在的生存工具？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 198,
@@ -1117,11 +1212,13 @@
       "善用演算優勢！小東西也能有大影響力",
       "EO家訪專欄，下一位來賓有可能是Jason？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "Eric跟Jason的緣分始於保時捷？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 197,
@@ -1139,11 +1236,13 @@
       "卸下立委光環後的生活",
       "「珍惜緣分」並「相信自己」是最重要的"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "高嘉瑜開金嗓！高歌懷舊金曲炒氣氛",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 196,
@@ -1161,11 +1260,13 @@
       "土生土長台中人，怎麼會想一口流利Singlish?",
       "兩度瀕臨破產，仍要笑著過每一天"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "純種飯店餐飲人，竟然曾是留級生？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 195,
@@ -1185,11 +1286,14 @@
       "拋棄既定框架，找尋自己想要的生活",
       "走進山林，感受天地萬物的流動"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "health"
+    ],
     "arc": null,
     "highlight": "6星集創立前，曾經靠賣花年營業額破千萬",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 194,
@@ -1209,11 +1313,14 @@
       "何謂「荒野美學」？如何找到自然與人造之間的平衡點？",
       "多加探索＆實驗，追求屬於自己的生活方式"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "brand"
+    ],
     "arc": null,
     "highlight": "「多重生活之家」是理想住宅新思維？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 193,
@@ -1229,11 +1336,14 @@
       "集結各界高手打入半導體產業",
       "未來3-5年的規劃"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "微程式資訊如何滲透你我的生活？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 192,
@@ -1255,11 +1365,13 @@
       "建立你我之間的「階梯」，搭起溝通橋樑",
       "還有什麼「未完成的動詞」？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "本是文青卻卻成為創業家？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 191,
@@ -1279,11 +1391,14 @@
       "「熱情」是可以被訓練的？",
       "時間規劃需要善用「六三一法則」"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "被政大、台大退學，竟然登上《富比世》創業家",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 190,
@@ -1303,11 +1418,14 @@
       "「感同身受」促進更深層次的溝通和理解",
       "愛是領導者應該具備的重要素質之一？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "何謂天命？找到天命有三大要素",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 189,
@@ -1327,11 +1445,14 @@
       "「無愧於心」人生只需要對得起自己就好",
       "未來《娘家》將成為世界的娘家"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "從瑞芳市場到台北職場，如何從基層打拼到執行長？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 188,
@@ -1351,11 +1472,14 @@
       "極地超馬比賽經驗，勇闖納米比亞沙漠＆戈壁挑戰賽",
       "跨出運動第一步這麼做"
     ],
-    "themes": [],
+    "themes": [
+      "health",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "都市更新案修法後有什麼改變？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "realestate"
   },
   {
     "ep": 187,
@@ -1374,11 +1498,14 @@
       "合隆毛廠作為百年企業，「信任」成為最重要的基石",
       "MIT的價值，在全球市場中的定位和影響力"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "你穿的羽絨是誰的毛？羽絨大王帶大家認識羽絨",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "manufacturing"
   },
   {
     "ep": 186,
@@ -1400,17 +1527,20 @@
       "1+1大於2，新創的技術＋天使投資人的專業知識，想成為知名企業不再是天方夜譚",
       "AI Agent將成為下一波趨勢"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "ai"
+    ],
     "arc": null,
     "highlight": "他跟馬斯克都有這項共同點",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 185,
     "date": "2024-12-27",
     "durationSec": 3378,
-    "title": "🎧EP185 feat. SIC永續影響力投資共同創辦人 黃俊傑Amos｜創新到永續，影響力投資將如何幫助台灣新創走向世界？",
+    "title": "創新到永續，影響力投資將如何幫助台灣新創走向世界？",
     "guest": "黃俊傑 Amos",
     "org": "SIC永續影響力投資共同創辦人",
     "takeaways": [
@@ -1422,17 +1552,19 @@
       "做好事也能賺錢？永續影響力投資如何衡量商業價值與社會效益的平衡？",
       "建立工作坊與國際天使網絡，推動影響力投資的成長"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "大學念十年？跨領域學習竟成為掌握創新的關鍵？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 184,
     "date": "2024-12-20",
     "durationSec": 2516,
-    "title": "🎧EP184 特別企劃「好好聊Jason」feat. 公關溫拿 王蜜穜Winner｜Jason 新書面世，首次受訪暢談新書的創作歷程",
+    "title": "Jason 新書面世，首次受訪暢談新書的創作歷程",
     "guest": "王蜜穜 Winner",
     "org": "公關溫拿",
     "takeaways": [
@@ -1445,17 +1577,20 @@
       "「每個人這一生都值得為自己出一本書」Jason出書的契機",
       "《真誠 Be real, not perfect》2024 年12月26日上市"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "企業公關與公關公司的差異",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 183,
     "date": "2024-12-13",
     "durationSec": 2931,
-    "title": "🎧EP183 feat. 天賦優勢心理學 林俊安老師｜揭露數字背後的秘密，找出你的天賦打造職場溝通力",
+    "title": "揭露數字背後的秘密，找出你的天賦打造職場溝通力",
     "guest": "林俊安老師",
     "org": "天賦優勢心理學",
     "takeaways": [
@@ -1468,17 +1603,19 @@
       "1 到 9 號人的特色介紹",
       "職場也能應用？增進人際關係的職場溝通心法在這"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "天賦優勢心理學的起源自畢達哥拉斯?",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 182,
     "date": "2024-12-06",
     "durationSec": 3089,
-    "title": "🎧EP182 feat. 台灣大哥大總經理 林之晨Jamie｜五年級CEO的心路歷程：回顧過去五年，展望下一個十年",
+    "title": "五年級CEO的心路歷程：回顧過去五年，展望下一個十年",
     "guest": "林之晨 Jamie",
     "org": "台灣大哥大總經理",
     "takeaways": [
@@ -1492,17 +1629,19 @@
       "總經理最喜歡「散步會議」，肩並肩的共事夥伴",
       "今年的最大突破是學習打鼓！目標是在香榭大道上表演？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "從AppWorks到台灣大哥大，過去五年的啟發",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 181,
     "date": "2024-11-29",
     "durationSec": 2772,
-    "title": "🎧EP181 feat. 唯品風尚集團執行長 周品均｜從東京著衣到葳老闆的辣雞湯，周品均面對挑戰的不放棄精神",
+    "title": "從東京著衣到葳老闆的辣雞湯，周品均面對挑戰的不放棄精神",
     "guest": "周品均",
     "org": "唯品風尚集團執行長",
     "takeaways": [
@@ -1516,17 +1655,20 @@
       "職場不是自助餐，職場新鮮人到管理層會面對到什麼不同挑戰？",
       "選擇比努力更重要！公司挑你，你也挑公司"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "女裝電商先驅，東京著衣如何寫下電商界的一頁傳奇？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 180,
     "date": "2024-11-22",
     "durationSec": 2986,
-    "title": "🎧EP180 feat. beBit TECH微拓科技執行長 陳鼎文Jason｜從策略顧問到數位轉型，數據時代商業思維的轉念與落地挑戰",
+    "title": "從策略顧問到數位轉型，數據時代商業思維的轉念與落地挑戰",
     "guest": "陳鼎文 Jason",
     "org": "beBit TECH微拓科技執行長",
     "takeaways": [
@@ -1540,17 +1682,20 @@
       "「真誠」與「風範」是最重要的利器",
       "Jason即將推出個人的Podcast節目！分享CEO們的心法"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "Jason遇上Jason將激出什麼火花！？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 179,
     "date": "2024-11-08",
     "durationSec": 2670,
-    "title": "🎧EP179 feat. 前KKday財務長、現任FineDayClub執行長 蔡靜芳Jenny｜如何打造極致旅遊體驗？一窺高端市場的頂級服務",
+    "title": "如何打造極致旅遊體驗？一窺高端市場的頂級服務",
     "guest": "蔡靜芳 Jenny",
     "org": "高端旅遊FineDayClub執行長",
     "takeaways": [
@@ -1563,17 +1708,19 @@
       "「Triple Win」策略，確保客戶、公司與合作夥伴皆獲益",
       "「小而美小而精」將成為下一波旅遊趨勢"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "旅遊界的私人銀行，提供高端定制的旅遊方案",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 178,
     "date": "2024-11-01",
     "durationSec": 2604,
-    "title": "🎧EP178 feat. Tatler Asia 台灣區董事總經理 廖梅淳Sophia｜從財務專業到時尚媒體產業的追夢之旅",
+    "title": "從財務專業到時尚媒體產業的追夢之旅",
     "guest": "廖梅淳 Sophia",
     "org": "Tatler Asia 台灣區董事總經理",
     "takeaways": [
@@ -1587,17 +1734,20 @@
       "進入時尚產業的建議：不要只因光鮮亮麗",
       "想清楚自己想成為什麼樣的人，找到自己的熱情"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "進入時尚媒體產業的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 177,
     "date": "2024-10-25",
     "durationSec": 2522,
-    "title": "🎧EP177 feat. 口袋證券共同創辦人暨董事長 陶韻智Sting｜危機感促成創新，從挑戰中找到自我價值與成就感",
+    "title": "危機感促成創新，從挑戰中找到自我價值與成就感",
     "guest": "陶韻智 Sting",
     "org": "口袋證券共同創辦人暨董事長",
     "takeaways": [
@@ -1609,17 +1759,20 @@
       "開始教學的契機，產學對接提供實務案例",
       "成為「可以被利用的人」，提升自己的能力增加自我價值"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "危機感驅使的跨界天王",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 176,
     "date": "2024-10-18",
     "durationSec": 3086,
-    "title": "🎧EP176 feat. 91APP產品長 李昆謀Happy｜產品長的角色與挑戰，帶領團隊的戰法與心法",
+    "title": "產品長的角色與挑戰，帶領團隊的戰法與心法",
     "guest": "李昆謀 Happy",
     "org": "91APP產品長",
     "takeaways": [
@@ -1633,17 +1786,19 @@
       "行銷業講的RMN是什麼？最早是從Amazon開始？竟然已經來到3.0？",
       "零售業講求效率化，AI是大熱趨勢"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "從小喜歡創造東西，兩週內完成「優仕共產檔」",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 175,
     "date": "2024-10-11",
     "durationSec": 2119,
-    "title": "🎧EP175 feat. SO NICE總經理 李宥宏｜虛實整合，客戶如何高效地消費將是品牌存亡的關鍵？",
+    "title": "虛實整合，客戶如何高效地消費將是品牌存亡的關鍵？",
     "guest": "李宥宏",
     "org": "SO NICE總經理",
     "takeaways": [
@@ -1655,17 +1810,20 @@
       "企業應該更重視人才的培養",
       "零售業的未來趨勢將圍繞在「效率」，OMO和AI將成為核心技術"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "求學之路，電機名校碩士生",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 174,
     "date": "2024-10-04",
     "durationSec": 2889,
-    "title": "🎧EP174 feat. 臺大管理學院產學發展副院長 謝明慧｜台灣首辦「E勢泮」將如何引領企業家迎接全球挑戰",
+    "title": "台灣首辦「E勢泮」將如何引領企業家迎接全球挑戰",
     "guest": "謝明慧",
     "org": "臺大管理學院產學發展副院長",
     "takeaways": [
@@ -1675,17 +1833,19 @@
       "「E勢泮」經典班與進階班差異",
       "臺大管理學院與納斯達克創業中心（NEC）聯手，幫助台灣企業對接國際"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "臺大管理學院產學辦公室如何縮短產學落差",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 173,
     "date": "2024-09-27",
     "durationSec": 2187,
-    "title": "🎧EP173 feat. SoWork摘星社群行銷創辦人 CJ王俊人｜洞察數據，用數據解決客戶的痛點",
+    "title": "洞察數據，用數據解決客戶的痛點",
     "guest": "CJ王俊人",
     "org": "SoWork摘星社群行銷創辦人",
     "takeaways": [
@@ -1698,17 +1858,20 @@
       "面試時，一定會問這三題",
       "AI與ChatGPT帶來的改變，未來將如何發展"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "ai"
+    ],
     "arc": null,
     "highlight": "奧美12年的經歷",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 172,
     "date": "2024-09-20",
     "durationSec": 2545,
-    "title": "🎧EP172 feat. 商戰CXO執行長 許景泰Jerry｜自媒體時代，如何建立關鍵人脈＆商業圈？",
+    "title": "自媒體時代，如何建立關鍵人脈＆商業圈？",
     "guest": "許景泰 Jerry",
     "org": "商戰CXO執行長",
     "takeaways": [
@@ -1719,17 +1882,19 @@
       "透過分享與傳承，突破自我的商業認知",
       "馬來西亞的拓展規劃，即將登陸TED演講"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "從傑思整合行銷的一份子到商戰CXO的執行長",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 171,
     "date": "2024-09-13",
     "durationSec": 2671,
-    "title": "🎧EP171 feat. 大拙匠人創辦人 林志松Rex｜五十年磨一碗麵，鵝油乾拌麵如何在血海市場中脫穎而出",
+    "title": "五十年磨一碗麵，鵝油乾拌麵如何在血海市場中脫穎而出",
     "guest": "林志松 Rex",
     "org": "大拙匠人創辦人",
     "takeaways": [
@@ -1743,17 +1908,19 @@
       "台灣食品業共存共榮，一同邁向國際",
       "計劃開發鵝油蔥油餅、鵝油麻辣鍋和素的鵝油產品"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "五十年磨一碗麵，創辦大拙匠人的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 170,
     "date": "2024-09-06",
     "durationSec": 2487,
-    "title": "🎧EP170 feat. 麥森創新創辦人暨董事長 張嘉翔Ethan｜從科技CEO到盲飲冠軍：盲飲不僅是競賽，更是一種享受過程",
+    "title": "從科技CEO到盲飲冠軍：盲飲不僅是競賽，更是一種享受過程",
     "guest": "張嘉翔 Ethan",
     "org": "麥森創新創辦人暨董事長",
     "takeaways": [
@@ -1766,17 +1933,19 @@
       "氣候、種植方式、陳年過程都會影響酒的味道",
       "未來將代表台灣出賽，為台爭光"
     ],
-    "themes": [],
+    "themes": [
+      "health"
+    ],
     "arc": null,
     "highlight": "創立麥森創新的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 169,
     "date": "2024-08-30",
     "durationSec": 2767,
-    "title": "🎧EP169 feat. Gogoro台灣總經理 姜家煒Henry｜Gogoro八年級總座：想當總經理先做好超級幕僚",
+    "title": "Gogoro八年級總座：想當總經理先做好超級幕僚",
     "guest": "姜家煒 Henry",
     "org": "Gogoro台灣總經理",
     "takeaways": [
@@ -1789,17 +1958,19 @@
       "公正轉型，希望更多車廠加入電動運具市場",
       "總經理閒暇之餘最喜歡逛櫥窗？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "過往學經歷的影響，成功大學到總經理的職位",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "manufacturing"
   },
   {
     "ep": 168,
     "date": "2024-08-23",
     "durationSec": 2514,
-    "title": "🎧EP168 feat. 資深新聞主播、主持人 岑永康Sam｜金牌主播維持幸福婚姻的關鍵！親子教育最重視「溝通」",
+    "title": "金牌主播維持幸福婚姻的關鍵！親子教育最重視「溝通」",
     "guest": "岑永康 Sam",
     "org": "資深新聞主播、主持人",
     "takeaways": [
@@ -1810,17 +1981,19 @@
       "跨界挑戰，參與舞台劇《一村喜事》、《瘋狂電視臺》的演出",
       "未來一年一家四口計畫去南極旅遊"
     ],
-    "themes": [],
+    "themes": [
+      "health"
+    ],
     "arc": null,
     "highlight": "從編輯、記者、主播到主持人的職涯發展",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 167,
     "date": "2024-08-16",
     "durationSec": 2026,
-    "title": "🎧EP167 feat. DigiAsia執行長暨安索帕台灣執行長 紀緻謙Gary｜亞洲數位盛事，一起來台北體驗AI的無限創意",
+    "title": "亞洲數位盛事，一起來台北體驗AI的無限創意",
     "guest": "紀緻謙 Gary",
     "org": "DigiAsia執行長暨安索帕台灣執行長",
     "takeaways": [
@@ -1832,17 +2005,19 @@
       "NVIDIA、台積電、Meta、Google、Microsoft等全球領先科技公司將共襄盛舉",
       "數位轉型帶來的的挑戰與機遇"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "亞洲數位盛事，DigiAsia 介紹",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 166,
     "date": "2024-08-09",
     "durationSec": 2290,
-    "title": "🎧EP166 feat. 戀家小舖創辦人 李忠儒Allen｜用態度決定一切，人生與創業中的每個「選擇」都很重要",
+    "title": "用態度決定一切，人生與創業中的每個「選擇」都很重要",
     "guest": "李忠儒 Allen",
     "org": "戀家小舖創辦人",
     "takeaways": [
@@ -1857,17 +2032,20 @@
       "如何使老品牌變得有趣？",
       "掌握底層邏輯！保持高品質，擁有消費者的信任感"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "「態度」在職場和創業中的重要性",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 165,
     "date": "2024-08-02",
     "durationSec": 2603,
-    "title": "🎧EP165 feat. PopDaily波波黛莉共同創辦人暨執行長 黃晨皓Kim｜從低潮中重生，阿金的的人生進化之路",
+    "title": "從低潮中重生，阿金的的人生進化之路",
     "guest": "黃晨皓 Kim",
     "org": "PopDaily波波黛莉共同創辦人暨執行長",
     "takeaways": [
@@ -1882,17 +2060,19 @@
       "阿金的人生觀：結構化、言行合一、創造最佳體驗",
       "從三人到三千人的演講，「登月計畫」挑戰不可能"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "不好走的創業家之路，在內容產業近15年共創業7次",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 164,
     "date": "2024-07-26",
     "durationSec": 2633,
-    "title": "🎧EP164 feat. 超級數字力創辦人 林明樟老師MJ｜負債千萬到創業成功，財報教學王MJ老師的財務思維終身受用課",
+    "title": "負債千萬到創業成功，財報教學王MJ老師的財務思維終身受用課",
     "guest": "林明樟老師 MJ",
     "org": "超級數字力創辦人",
     "takeaways": [
@@ -1905,17 +2085,20 @@
       "給那些其他創業家的建議：成敗歸因、借識賦能、指出方向、創造希望",
       "未來規劃拓學院，傳承知識給台灣的中小企業"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "money"
+    ],
     "arc": null,
     "highlight": "匪類的求學生涯，後因賭博而欠下巨額債務？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 163,
     "date": "2024-07-19",
     "durationSec": 2770,
-    "title": "🎧EP163 feat. 寵愛之名品牌創辦人暨董事長 吳蓓薇Margaret｜品牌20週年，面膜女王面對挑戰的堅定信仰",
+    "title": "品牌20週年，面膜女王面對挑戰的堅定信仰",
     "guest": "吳蓓薇 Margaret",
     "org": "寵愛之名品牌創辦人暨董事長",
     "takeaways": [
@@ -1928,17 +2111,20 @@
       "旅行中找到工作與生活的平衡",
       "給其他創業者的建議：準備資金、保持樂觀但不天真、堅持但不固執"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "從雜誌編輯到創立寵愛之名品牌",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 162,
     "date": "2024-07-12",
     "durationSec": 2702,
-    "title": "🎧EP162 feat. 牽猴子股份有限公司共同創辦人 王師｜國片推手，台灣知名電影行銷人的心路歷程",
+    "title": "國片推手，台灣知名電影行銷人的心路歷程",
     "guest": "王師",
     "org": "牽猴子股份有限公司共同創辦人",
     "takeaways": [
@@ -1950,17 +2136,19 @@
       "短影音和串流平臺對電影市場的影響",
       "未來的電影發行計畫，包括即將上映的《鬼才知道》"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "新書《幹話力》介紹",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 161,
     "date": "2024-07-05",
     "durationSec": 2507,
-    "title": "🎧EP161 feat. 金色三麥董事長暨執行長 葉冠廷 大Q｜多元經營與年輕化戰略，金色三麥IPO的成功之道",
+    "title": "多元經營與年輕化戰略，金色三麥IPO的成功之道",
     "guest": "大 Q",
     "org": "金色三麥董事長暨執行長 葉冠廷",
     "takeaways": [
@@ -1974,17 +2162,20 @@
       "經營自媒體《大Q說你要聽》 拍攝短影音的重要性",
       "未來將打造「夜間星巴克」"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "金色三麥的由來與發展歷史",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 160,
     "date": "2024-06-28",
     "durationSec": 2651,
-    "title": "🎧EP160 feat. ComHere董事執行長暨台灣行銷年會創辦人 邱永龍Joe｜網路行銷年度盛事，六大亮點告訴你！",
+    "title": "網路行銷年度盛事，六大亮點告訴你！",
     "guest": "邱永龍 Joe",
     "org": "ComHere董事執行長暨台灣行銷年會創辦人",
     "takeaways": [
@@ -1996,17 +2187,19 @@
       "歷經重大手術後，生活和工作帶來的改變",
       "未來一年的計畫"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "ComHere成為Meta官方認證合作夥伴的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 159,
     "date": "2024-06-21",
     "durationSec": 2416,
-    "title": "🎧EP159 feat. 台灣時裝品牌WANGLILING創辦人 汪俐伶｜光影的時尚革命，探索科技與美學的交叉點",
+    "title": "光影的時尚革命，探索科技與美學的交叉點",
     "guest": "汪俐伶",
     "org": "台灣時裝品牌WANGLILING創辦人",
     "takeaways": [
@@ -2019,17 +2212,19 @@
       "服裝秀是概念性設計還是實用性？",
       "給過去的自己一句話"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "如何在擔任設計師與品牌創辦人之間取得平衡",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 158,
     "date": "2024-06-14",
     "durationSec": 1979,
-    "title": "🎧EP158 feat. 法蘭絲董事長 黃大綱TK｜全台最大葡萄酒總代理如何將葡萄酒生活化？",
+    "title": "全台最大葡萄酒總代理如何將葡萄酒生活化？",
     "guest": "黃大綱 TK",
     "org": "法蘭絲董事長",
     "takeaways": [
@@ -2041,17 +2236,19 @@
       "香檳可能是下一個有潛力的投資標的？",
       "法蘭絲的未來規劃：進一步推廣葡萄酒的生活化"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "法蘭絲的發展歷程",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 157,
     "date": "2024-06-07",
     "durationSec": 2681,
-    "title": "🎧EP157 feat. 品牌雙增長戰略顧問 汪志謙老師｜如何掌握商業的底層邏輯？從「峰值體驗」中找出關鍵時刻",
+    "title": "如何掌握商業的底層邏輯？從「峰值體驗」中找出關鍵時刻",
     "guest": "汪志謙老師",
     "org": "品牌雙增長戰略顧問",
     "takeaways": [
@@ -2064,17 +2261,19 @@
       "品牌需要具備四種效率：分發效率、算法效率、迭代效率和人才效率",
       "汪老師如何建議尋求突破和成長的企業？打破認知、開闊視角並持續迭代"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "峰值體驗的概念與應用",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 156,
     "date": "2024-05-31",
     "durationSec": 2708,
-    "title": "🎧EP156 feat. 嘖嘖共同創辦人 徐震Quake｜創意到實現，嘖嘖如何助力讓「美好的事物」發生",
+    "title": "創意到實現，嘖嘖如何助力讓「美好的事物」發生",
     "guest": "徐震 Quake",
     "org": "嘖嘖共同創辦人",
     "takeaways": [
@@ -2087,17 +2286,20 @@
       "群眾募資竟然成為大品牌判斷市場需求的指標？",
       "嘖嘖的未來將開拓更多領域的產業合作？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "創立嘖嘖的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 155,
     "date": "2024-05-24",
     "durationSec": 2851,
-    "title": "🎧EP155 feat. 中國信託創投資深副總經理 邱明慧｜從類比到數位：專訪台灣文創投資先行者",
+    "title": "從類比到數位：專訪台灣文創投資先行者",
     "guest": "邱明慧",
     "org": "中國信託創投資深副總經理",
     "takeaways": [
@@ -2109,17 +2311,20 @@
       "文創業者與創投對話的技巧和關鍵要點",
       "台灣文創產業的未來發展趨勢及應對策略"
     ],
-    "themes": [],
+    "themes": [
+      "money",
+      "ai"
+    ],
     "arc": null,
     "highlight": "進入創投行業的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 154,
     "date": "2024-05-17",
     "durationSec": 2187,
-    "title": "🎧EP154 feat. 知識衛星創辦人暨執行長 游弘宇Stephen｜知識變現時代，如何打造精品級線上課",
+    "title": "知識變現時代，如何打造精品級線上課",
     "guest": "游弘宇 Stephen",
     "org": "知識衛星創辦人暨執行長",
     "takeaways": [
@@ -2130,17 +2335,19 @@
       "首次嘗試線上課程可以從何挑選課程",
       "未來的海外發展規劃"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "前幾次創業的經歷",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 153,
     "date": "2024-05-10",
     "durationSec": 2441,
-    "title": "🎧EP153 feat. 意藍資訊創辦人 楊立偉Willie｜台灣首家掛牌的AI智能數據公司如何掌握AI與大數據發展",
+    "title": "台灣首家掛牌的AI智能數據公司如何掌握AI與大數據發展",
     "guest": "楊立偉 Willie",
     "org": "意藍資訊創辦人",
     "takeaways": [
@@ -2152,17 +2359,19 @@
       "國內首家掛牌AI數據公司的管理心法",
       "未來的發展規劃"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "資訊管理學科對您來說有什麼特別之處",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 152,
     "date": "2024-05-03",
     "durationSec": 2953,
-    "title": "🎧EP152 feat. 老爺酒店集團執行長 沈方正Winston｜飯店界的熱血CEO 打造台灣的旅宿文化",
+    "title": "飯店界的熱血CEO 打造台灣的旅宿文化",
     "guest": "沈方正 Winston",
     "org": "老爺酒店集團執行長",
     "takeaways": [
@@ -2175,17 +2384,20 @@
       "旅宿業大缺工，政府應調整政策囊括好人才",
       "未來的拓展規劃"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "阿拉伯語系畢業，為何會選擇投入旅宿產業？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 151,
     "date": "2024-04-26",
     "durationSec": 2472,
-    "title": "🎧EP151 feat. 大武山牧場營運長 魏毓恆Iven｜智慧化養雞牧場如何成為全台首家上市IPO純蛋商",
+    "title": "智慧化養雞牧場如何成為全台首家上市IPO純蛋商",
     "guest": "魏毓恆 Iven",
     "org": "大武山牧場營運長",
     "takeaways": [
@@ -2197,7 +2409,10 @@
       "營運長的管理心法：不求短利的商業思維與人資的重要性",
       "未來進軍國際市場的規劃"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "傳產轉型成功的關鍵",
     "highlightIsSummary": false,
@@ -2207,7 +2422,7 @@
     "ep": 150,
     "date": "2024-04-19",
     "durationSec": 2658,
-    "title": "🎧EP150 feat. 科科科技KKCompany董事長暨執行長 王献堂Steve｜從KKBOX到KKCompany，20 年來如何以台灣為發展基地、佈局日本市場",
+    "title": "從KKBOX到KKCompany，20 年來如何以台灣為發展基地、佈局日本市場",
     "guest": "王献堂 Steve",
     "org": "科科科技KKCompany董事長暨執行長",
     "takeaways": [
@@ -2219,17 +2434,19 @@
       "為何選擇在台灣市場掛牌上市?",
       "未來還有什麼新計畫？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "KKMAN對台灣早期網路科技的發展",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 149,
     "date": "2024-04-12",
     "durationSec": 2482,
-    "title": "🎧EP149 feat. 貓下去敦北俱樂部創辦人 陳陸寬｜餐酒館老闆獨樹一格的「新台北家常菜」哲學",
+    "title": "餐酒館老闆獨樹一格的「新台北家常菜」哲學",
     "guest": "陳陸寬",
     "org": "貓下去敦北俱樂部創辦人",
     "takeaways": [
@@ -2239,17 +2456,19 @@
       "如何定義「新台北家常菜」？想像中的家常菜是什麼樣子？",
       "未來還有什麼新計畫？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "創辦「貓下去」這間餐廳的契機為何？「貓下去」的命名由來？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 148,
     "date": "2024-04-04",
     "durationSec": 2202,
-    "title": "🎧EP148 feat. 貝立德總經理、台北市廣告公會理事長 盧炳勳Robin｜「始終如一的熱情」盧總的廣告之路",
+    "title": "「始終如一的熱情」盧總的廣告之路",
     "guest": "盧炳勳 Robin",
     "org": "貝立德總經理、台北市廣告公會理事長",
     "takeaways": [
@@ -2261,11 +2480,14 @@
       "進入廣告業需要具備的條件",
       "如果能對年輕的自己說一句話，您會說什麼呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "ai"
+    ],
     "arc": null,
     "highlight": "媒體代理商最重要的任務",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 147,
@@ -2281,11 +2503,13 @@
       "對於首購族在挑選房子時，您會如何建議？",
       "投資房市有何優劣勢？台灣的房市未來將會如何發展？"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "決定創業的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "realestate"
   },
   {
     "ep": 146,
@@ -2302,11 +2526,14 @@
       "成立綠光創藝股份有限公司的契機",
       "未來一年，綠光劇團的規劃以及近期演出分享"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "如何重新找回對戲劇產業的熱愛？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 145,
@@ -2322,11 +2549,14 @@
       "請問您是如何看待台灣電子支付的發展？",
       "一卡通已成立十週年，未來還有什麼規劃？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "作為一位資訊網路與多媒體研究所博士，您曾表示對人機互動領域有的強烈的熱情，請分享您印象最深刻的研究",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 144,
@@ -2344,11 +2574,14 @@
       "「台新藝術獎」於2002年創設，至今已成為台灣當代藝術最具指標性的獎項，有沒有哪一屆讓您印象的深刻？",
       "未來這一年有什麼其他規劃？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "health"
+    ],
     "arc": null,
     "highlight": "踏入藝術文化領域的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 143,
@@ -2365,11 +2598,14 @@
       "您有句名言「做一件只有你能做的事情」，請問這句話對您的含義是什麼？",
       "鮮乳坊未來這一年的規劃"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "有別於多數獸醫治療小型動物，請問您是如何找到對大型動物的熱愛?",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 142,
@@ -2386,11 +2622,13 @@
       "有別於一般品牌顧問公司，曾舉辦「刺字專門店」創意活動的概念為何？",
       "think未來這一年的規劃"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "創立think品牌顧問公司的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 141,
@@ -2409,11 +2647,13 @@
       "什麼樣特質的人適合展演產業？",
       "未來這一年，時藝多媒體有什麼規劃？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "高雄工專電子科畢業後，為什麼會選擇進入新聞媒體業？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 140,
@@ -2430,11 +2670,14 @@
       "您創辦霓淨思到現在即將成為上市櫃公司，請跟我們分享您的管理心法",
       "未來這一年，霓淨思有什麼計畫？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "請問在什麼起心動念之下，使您創立了霓淨思？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 139,
@@ -2450,11 +2693,13 @@
       "政府預計在2030年公車全面電動化，並朝2050年淨零碳排目標邁進，成運汽車作為台灣電動巴士國家隊，是如何規劃執行策略的？",
       "近期在投資金融業中，有哪些新的發展或趨勢是大家值得關注的？"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "您作為一位天使投資人，在投資前，會先觀察一家公司什麼部分？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 138,
@@ -2470,11 +2715,13 @@
       "您的綽號是「二條線閨蜜」，作為大家的閨蜜，有什麼女性身心理健康的觀念是大家一定要注意的？各年齡的女性又應該如何自我護理？",
       "您十分關注女性心理健康的議題，包含主持Podcast節目《閨蜜聽你說》，請問未來您有什麼其他的規劃或是目標嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "health"
+    ],
     "arc": null,
     "highlight": "為什麼會選擇成為婦產科醫生？並投入生殖醫療的專業呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 137,
@@ -2490,11 +2737,14 @@
       "創辦台灣天使俱樂部的契機是什麼？",
       "根據在新創圈的創業經歷，您認為保有什麼樣的心態可以走得更長遠？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "踏入新創圈的契機？您的教育背景是否有提供不同的產業觀點？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 136,
@@ -2511,11 +2761,14 @@
       "「不敢冒險其實是最大的冒險」，請問這句話的含義",
       "未來的其他規劃或是目標"
     ],
-    "themes": [],
+    "themes": [
+      "money",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "投身證券投資業之前，曾經擔任過管理顧問、市場銷售及半導體工程師，為什麼職涯角色會有以上轉變",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 135,
@@ -2534,11 +2787,14 @@
       "生成式AI如何與微網紅行銷結合應用",
       "對於台灣網紅行銷市場趨勢有什麼看法"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "ai"
+    ],
     "arc": null,
     "highlight": "「陽光康喜鳳梨酵素精選禮盒」",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 134,
@@ -2554,11 +2810,14 @@
       "台灣影視推向國際的策略？對台灣娛樂產業未來的趨勢有何看法？",
       "未來一年，文化內容策進院有什麼計畫？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "如何從業界進入到文化內容策進院的半公務體系？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 133,
@@ -2575,11 +2834,14 @@
       "「自慢」對您的意義是什麼？",
       "請問未來一年，城邦媒體集團有什麼計畫？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "ai"
+    ],
     "arc": null,
     "highlight": "公共行政系畢業踏入新聞媒體業的契機？當年的新聞產業與現在的差異？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 132,
@@ -2595,11 +2857,13 @@
       "獲獎後，覺得生活有產生哪些變化？",
       "對於其他想要參加「璀璨之星」的人會提供什麼建議或是鼓勵？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "這十幾年來，選秀環境有什麼變化？主辦方，如何做出相應的調整？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 131,
@@ -2615,11 +2879,13 @@
       "投資的目的是什麼？",
       "給投資小白的入門心法"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "踏入財經新聞業的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 130,
@@ -2637,11 +2903,13 @@
       "企業或個人，在轉型時該具備的思維",
       "未來一年，聯合數位文創的計畫"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "電機工程系畢業，輾轉踏入新聞業的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 129,
@@ -2657,11 +2925,14 @@
       "夫妻之間的相處，與妻子如何互相扶持",
       "年紀漸長工作減少後如何調適生活重心"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "health"
+    ],
     "arc": null,
     "highlight": "從搖滾歌手轉為幕後工作的契機？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 128,
@@ -2678,11 +2949,13 @@
       "成為父親後，對工作與生活帶來的改變？",
       "未來一年的規劃"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "進入娛樂圈的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 127,
@@ -2699,11 +2972,14 @@
       "計畫分享——AI創作黃明志的MV",
       "OOPS的未來規劃——設計師之夜"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "ai"
+    ],
     "arc": null,
     "highlight": "創立OOPS的契機，命名的由來",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 126,
@@ -2719,11 +2995,13 @@
       "創業前，創業家應釐清的基礎觀念",
       "台商東進美國，對台灣創業的發展機會所造成的影響"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "為何選擇進入商業領域？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "services"
   },
   {
     "ep": 125,
@@ -2739,11 +3017,13 @@
       "元宇宙將如何與科技結合？",
       "關於AI的未來發展，台灣將如何準備？"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "是如何產生對於科技的愛好？行事的核心理念為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 124,
@@ -2758,11 +3038,14 @@
       "過往投資數十間企業，每個人生階段有不同的投資心得",
       "「生命清單」的由來？做出對得起自己的選擇"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "money"
+    ],
     "arc": null,
     "highlight": "十幾歲踏進演藝圈，一切的機緣是什麼？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 123,
@@ -2778,11 +3061,14 @@
       "進軍日本，如何擄獲軟銀、一風堂的味蕾",
       "Yo-Kai Express的未來拓展方向"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "brand"
+    ],
     "arc": null,
     "highlight": "為什麼選擇食物自動販賣機來創業",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 122,
@@ -2798,11 +3084,14 @@
       "電獺已成立十一年，您的心境有什麼改變可以跟大家分享嗎？",
       "想問未來一年，電獺有什麼規劃？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "brand"
+    ],
     "arc": null,
     "highlight": "為什麼會成立電獺？電獺主要的產品是什麼？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 121,
@@ -2818,11 +3107,13 @@
       "Salesforce今年發表了生成式人工智慧CRM，這項技術已帶來什麼改變？未來AI對該產業還會產生什麼影響？",
       "您認為台灣企業要進行產業升級與數位轉型該如何踏出第一步？有什麼建議方案能參考呢？"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "您大學畢業於經濟系與企管系，後來擔任過企業金融儲備幹部、快消品人資，現在則是資訊科技業客戶總監，為什麼職涯角色會有以上轉變呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 120,
@@ -2838,11 +3129,13 @@
       "創辦Alpha Plus過程中遭遇過哪些挑戰？最後如何克服？",
       "台灣企業可以如何去發掘或培育出更多好人才？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "在金融業有逾20年的工作經驗，從基層，從基層做到董事，這段經歷對您創業有何影響？為何選擇「人才」為主力？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "services"
   },
   {
     "ep": 119,
@@ -2858,11 +3151,13 @@
       "您過往沒有做菜的相關經驗,請問您創辦食譜分享社群網站 iCook 愛料理的契機為何?",
       "可以跟我們聊聊您未來一年的規劃嗎?"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "您在創業前曾待過遊戲公司,請問您是如何從遊戲業進入到網路產業的?",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 118,
@@ -2878,11 +3173,13 @@
       "對於主管或領導該怎麼與職場新鮮人有效溝通，您會給他哪些建議？",
       "您最近出了新書《跨界領導密碼：吳德威的團隊管理與新創智慧》，這本書想傳達什麼資訊給大家？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "您於34 歲時面臨事業上的轉折，身邊親友都往大陸發展，請問您選擇創業這條路的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 117,
@@ -2899,11 +3196,13 @@
       "請問您如何看待台灣未來五年的跨境電商市場發展？",
       "可以跟我們聊聊比比昂未來一年的規劃嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "您曾在三井物產擔任業務、在PChome擔任商店街及女性購物業務主管，請問這兩段經歷對您後來的工作產生什麼影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 116,
@@ -2919,11 +3218,14 @@
       "請問您會想給剛接觸投資的小資族哪些建議？有什麼獨門儲蓄法嗎?",
       "在規劃《小資變有錢｜Dr.Selena生活理財王》這個專為小資族設計的理財podcast節目時，您是如何找尋題材的呢？"
     ],
-    "themes": [],
+    "themes": [
+      "money",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "您從15歲到印刷廠當女工，一路上靠著自身的力量至英國攻讀碩士，最後變身網路公司CEO，可以跟我們聊聊您的心路歷程嗎？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 115,
@@ -2940,11 +3242,13 @@
       "亞立詩在今年五月在新加坡成立東南亞第一間店，您為何選擇新加坡呢？",
       "亞立詩如何與海外珠寶品牌競爭，探尋市場的突破口呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "您從小就出身珠寶世家，也曾協助您父親的鑽石批發生意，這段經歷對您後來工作產生什麼影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 114,
@@ -2960,11 +3264,13 @@
       "您對於台灣未來十年加密貨幣的發展有什麼看法？",
       "請問您會給想研究加密貨幣的新手哪些建議？"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "曾為全球第二大加密貨幣交易所 FTX 在去年 11 月破產後已近半年，FTX 的清算償還工作迎來了新進展，您認為FTX有可能重啟或出售嗎？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 113,
@@ -2981,11 +3287,13 @@
       "對於想進入公關這一行的人，有什麼建議嗎？",
       "您最近出了新書《活下來的就是狼》，這本書想傳遞什麼資訊給大家？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "您早期任職於平面媒體，後轉戰企業服務，這段經歷對您後來工作產生什麼影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 112,
@@ -3002,11 +3310,13 @@
       "您認為台灣教育該在哪些方面改進或加強，以更好地培養學生面對未來社會的挑戰？",
       "對於未來職涯發展感到迷茫的年輕人，您有什麼建議嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "請問您投入教育行業，成為一名教授的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 111,
@@ -3022,11 +3332,13 @@
       "您認為蜂行資本所投資的新創公司需要具備哪些特質或標準？",
       "可以跟我們聊聊您未來一年的規劃嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "您和其他兩位合夥人早期創業是從創辦大數據公司bShare開始，請問您們當初決定創業的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 110,
@@ -3043,11 +3355,13 @@
       "帝雉石為何要在台灣內銷？",
       "對於想裝修廚房的人，針對挑選檯面材料方面您有什麼建議嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "您於建築系畢業後曾跨足餐廳人資長，這段經歷對您後來的工作產生什麼影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 109,
@@ -3063,11 +3377,14 @@
       "您認為台灣的募資環境和過去相比，有哪些變化嗎？",
       "對於想創業的人或新創公司有什麼建議？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "money"
+    ],
     "arc": null,
     "highlight": "請問您創立PopChill拍拍圈時尚轉售平台的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 108,
@@ -3083,11 +3400,13 @@
       "目前有哪些新興產業運用LINE官方帳號跟用戶溝通？",
       "台灣用戶的影音收看習慣逐漸普及，請問LINE在影音行銷上如何佈局？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "可以跟我們介紹一下LINE台灣企業解決方案事業部的主要工作內容？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 107,
@@ -3103,11 +3422,14 @@
       "不老部落有全台第一所「原住民實驗教育高中」，解決部落青少年教育斷層的問題？如何透過學校實現部落文化的傳承呢？",
       "可以跟我們聊聊不老部落未來一年的規劃嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "可以跟我們聊聊您的父母當初決定與其他長老共同創立不老部落的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 106,
@@ -3125,11 +3447,13 @@
       "您對台灣精品咖啡的未來發展有什麼看法？",
       "對於平常不喝咖啡的人，您會推薦什麼咖啡品種或風味給他們呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "您曾經創立過多家公司，可以分享一下您如何培養出對市場的敏銳度？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 105,
@@ -3146,11 +3470,14 @@
       "VOGUE & GQ常常連結台灣在地，透過線下活動創造新話題，請問這些線下活動帶來的優勢及重要性為何？",
       "可以跟我們聊聊VOGUE & GQ未來一年的規劃嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "您大學畢業後便加入VOGUE & GQ ，從行銷專員做起，請問這段職涯經歷對您後來工作產生什麼影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 104,
@@ -3166,11 +3493,13 @@
       "請問您認為台灣要做好運動行銷有哪些關鍵因素？",
       "可以跟我們聊聊悍創運動行銷公司未來一年的規劃嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "請問您創辦悍創運動行銷公司的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 103,
@@ -3186,11 +3515,13 @@
       "你有幾十年做節目的經驗，請問您認為收視率高的節目有哪些共同點？",
       "您和藝人Melody主持的podcast節目《姐妹悄悄話》，成為藝人跨足最成功的Podcaster之一，您是如何找尋題材的呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "請問您當初進入娛樂產業成為製作人的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 102,
@@ -3207,11 +3538,13 @@
       "請問有沒有令您印象深刻的刺青故事，是讓您覺得很有成就感的？目前刺過最有挑戰性的圖案是什麼？",
       "對於初次想刺青的人，有什麼建議嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "您當初成為刺青師的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 101,
@@ -3228,11 +3561,13 @@
       "對於職場新鮮人該怎麼跟老闆、主管有效溝通，您會給他哪些建議？",
       "您最近出了新書《親愛的別怕，勇敢說yes》，這本書想傳遞什麼資訊給大家？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "您當初接任 MTV 台灣總經理的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 100,
@@ -3251,11 +3586,13 @@
       "對於現在越來越強調「政治正確」的社會，標榜「政治不正確」的你們如何看待？",
       "對於在經營Podcast的人有沒有什麼建議可以跟大家分享？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "百靈果的名字由來？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 99,
@@ -3271,11 +3608,14 @@
       "您如何經由策展的方式，將「永續生活」的概念用音樂或藝術傳達給聽眾？",
       "可以跟我們聊聊未來一年您的規劃嗎？未來一年蘇打綠的規劃？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "brand"
+    ],
     "arc": null,
     "highlight": "蘇打綠在成團過程中遭遇過哪些挑戰？如何克服這些挑戰的？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 98,
@@ -3292,11 +3632,13 @@
       "在店裡的空間設計上，麥吉奶茶為何選擇把重點放在牆上的插畫上呢？",
       "麥吉奶茶身為跨國茶飲，是否有因應不同市場調整飲品口味？如何維持全球店家品質一致？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "請問您創立麥吉奶茶的契機跟初衷為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 97,
@@ -3312,11 +3654,14 @@
       "薩泰爾娛樂旗下簽約許多優秀的喜劇創作者，請問您認為薩泰爾娛樂所合作的創作者需要具備哪些重要特質？",
       "可以跟我們聊聊您創立的月城南廣告是如何幫助到創作者的？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "可以跟我們聊聊您是如何一路從業務總監到接任執行長位置嗎？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 96,
@@ -3331,7 +3676,9 @@
       "聽說您踏入政壇的原因跟當了31年義消的經歷有關，請問您踏入政壇的契機為何？☑️您有義消、台北市議員等…多重身份，請問您如何在這些角色中與家庭間取得平衡？",
       "從義消轉為台北市議員後，可以跟我們聊聊未來一年您的規劃嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "請問您在華航擔任飛行員的契機為何？",
     "highlightIsSummary": false,
@@ -3352,11 +3699,13 @@
       "2017年PressPlay 轉型成「付費訂閱」制，為什麼要執行這項轉型?",
       "這項轉型對 PressPlay帶來的優勢以及重要性為何?"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "請問您成立 PressPlay的契機跟初衷為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 94,
@@ -3373,11 +3722,13 @@
       "請問這項轉型對PayEasy帶來的優勢以及重要性為何？",
       "可以跟我們聊聊PayEasy的未來一年規劃嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "請問您創辦17Life的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 93,
@@ -3393,11 +3744,13 @@
       "CoCo都可在與同業或異業進行合作時，如何評估或選擇合作夥伴，達到雙贏目標？",
       "手搖飲店家競爭激烈，CoCo都可身為跨國茶飲連鎖品牌，是如何建立出差異化的？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "可以跟我們聊聊CoCo都可的名稱由來嗎？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 92,
@@ -3414,11 +3767,13 @@
       "您在近幾年以投資整併的方式布局社群電商市場，也成功打造了「KOL口碑加銷售一站式服務」的新商業模式，可以跟我們聊聊這項服務嗎？",
       "對於想進行網紅行銷的品牌主有什麼行銷上的建議？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "請問您創辦女性媒體平台Maker魅客數位科技的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 91,
@@ -3435,11 +3790,14 @@
       "身為畫廊主，也代理這麼多國內外的藝術家，你同時也會策展嗎？有沒有什麼展覽讓你印象的深刻？",
       "看你們已經開始海外活動了，經過疫情有沒有什麼可以給大家的建議或分享？"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "brand"
+    ],
     "arc": null,
     "highlight": "您從小就出身藝文世家，也曾在美國就讀藝術系，可以跟我們聊聊您是如何為御書房藝廊注入創新與改變呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 90,
@@ -3455,11 +3813,14 @@
       "肯驛國際在這兩年轉攻豪宅禮賓市場，提供「新豪宅社區服務管家」服務，可以跟我們聊聊這項服務嗎？",
       "近期疫情趨緩逐步開放旅遊，肯驛國際提供如：全球機場貴賓室、全球禮遇通關、全球禮賓秘書等…服務，可以跟我們聊聊全球禮賓服務是如何幫助到消費者的？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "肯驛國際過去只提供機場接送服務，請問是什麼契機讓肯驛國際開始營運起其他服務？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "services"
   },
   {
     "ep": 89,
@@ -3476,11 +3837,14 @@
       "面對越來越多的網紅、Youtuber 等各式自媒體經營者，請問您是如何跟著時代做出改變?",
       "目前社群平台眾多，對於想開始投入自媒體經營的新人，有什麼建議?"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "我們都知道「蘇花猴」是取自台灣國語的諧音梗，那可以跟我們聊聊您成為專職部落客的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 88,
@@ -3497,11 +3861,13 @@
       "可以跟我們分享WeMo下半年有哪些計畫嗎？",
       "可以跟我們聊聊您為什麼會熱衷於三鐵嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "請問您於2011年創辦CHOCO TV的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 87,
@@ -3517,11 +3883,14 @@
       "近幾年舊振南積極與其他品牌聯名，這樣的異業合作模式能為品牌帶來什麼改變？",
       "舊振南於今年創立Podcast《二十四節氣的智慧故事》的契機為何？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "您過往有設計行銷的經歷，可以跟我們聊聊您是如何把國際行銷思維帶入到舊振南的嗎？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 86,
@@ -3537,11 +3906,14 @@
       "在集團中會面對不同世代的員工，針對不同世代有什麼管理心法可以與我們分享？",
       "可以跟我們聊聊P&G是如何創造工作與生活雙贏，打造出幸福職場嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "P&G旗下有300多個品牌，P&G的多品牌戰略如何讓P&G成為日用品的龍頭？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 85,
@@ -3557,11 +3929,13 @@
       "您透過大數據觀察，這幾年線上買鞋的消費者輪廓有什麼轉變嗎？買鞋的種類有什麼變化嗎？",
       "D+AF目前開了三間實體店面，請問您當初決定調整策略方向，從線上走到線下的契機為何？線上線下平台最大的區別是什麼？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "請問您創辦D+AF的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 84,
@@ -3578,11 +3952,14 @@
       "可以跟我們分享您是如何跟高總價客人行銷互動？",
       "您常帶著公司的員工一起運動，甚至成為公司的文化，對員工及公司有哪些正面影響？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "您當初進修台大EMBA的契機為何？聽說為了進台大EMBA還五度叩關？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "realestate"
   },
   {
     "ep": 83,
@@ -3599,11 +3976,13 @@
       "您對於台灣未來十年區塊鏈的發展有什麼看法？",
       "您認為Web3 在未來有什麼特定領域的發展？"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "可以跟我們聊聊XREX是一個提供什麼服務的平台？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 82,
@@ -3619,11 +3998,13 @@
       "中保科技集團是如何利用生活應用軟體服務做到永續經營呢？",
       "中保科技從最初的系統保全服務，後續更踏入多角化的經營策略，如：防災科技，店管系統，物流體系，健康照護，企業系統，停車場事業等…未來還有規劃哪些服務嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "您當初進修政大企家班的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 81,
@@ -3640,11 +4021,13 @@
       "您定居於英國愛丁堡21年了，請問您選擇長期定居於愛丁堡的原因為何？",
       "您這次受邀擔任國家地理頻道「南島起源」外景主持人，也榮獲第57屆金鐘獎 自然科學及人文紀實節目主持人獎，請問您這次在擔任外景主持人之前有做哪些準備嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "當初您未能完成歌手夢而改行當油漆工糊口，請問這段職涯經歷對您後來的工作產生什麼影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 80,
@@ -3661,11 +4044,13 @@
       "關於「婦科美學」，台灣女性的態度與接受度為何？是否可以給廣大女性聽眾們一些建議？",
       "最後，除了女性，是否也分享給男生聽眾們不同角度的建議，怎麼正確看待婦科美學？"
     ],
-    "themes": [],
+    "themes": [
+      "health"
+    ],
     "arc": null,
     "highlight": "您當初進修台大EMBA的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 79,
@@ -3682,11 +4067,14 @@
       "可以聊聊您推動《Meet 創業小聚》這個創業社群平台的契機嗎？",
       "AAMA台北搖籃計畫已邁入第十年，請問您如何看待台灣新創生態圈的變化？"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "brand"
+    ],
     "arc": null,
     "highlight": "您工作起步從當業務開始，請問這段職涯經歷對您後來的工作產生什麼影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 78,
@@ -3703,11 +4091,14 @@
       "您有經營「愛旅嗑食」網路商城平台，請問當時建立這個平台的契機為何？",
       "您以「大榮伯」的角色經營自媒體，如：Fb、YouTube、IG等．．．請問您創立「大榮伯」角色的契機為何？可以跟我們分享您經營自媒體的心法嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "您曾當過汽車保養廠技師，為何會想往旅遊業發展？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 77,
@@ -3723,11 +4114,14 @@
       "您擅於將素人改造成台上耀眼的明星，請問您認為您選中的人需要具備哪些重要特質？",
       "您最近出了新書《做個氣派的大人》，可以跟我們聊聊什麼是氣派的大人嗎?這本書想傳遞什麼樣的資訊給大家?"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "您很早就決定了人生志向，18歲時更是為了接演人生第一場秀，放棄參加高中畢業典禮。請問您當初決定當模特兒的契機是什麼？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 76,
@@ -3744,11 +4138,13 @@
       "您認為永續經營這個議題對店家、消費者有什麼影響呢？",
       "可以跟我們分享吧沐餐酒館是如何獲得「最佳永續經營酒吧獎」嗎? 對於未來也想朝永續經營的企業，您有什麼建議可以分享給大家呢?"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "請問當初是什麼契機讓您開始接觸調酒呢 ?",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 75,
@@ -3765,11 +4161,13 @@
       "您創新傳統書店轉型為書店自媒體，可以和我們聊聊什麼是『書媒體』嗎 ?",
       "依照您過去的經驗，您認為傳統書店到書媒體的轉型該如何做才能提升競爭力 ?"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "您曾擔任過節目企劃跟主持人，請問這段職涯經歷對您後來的工作產生什麼影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 74,
@@ -3786,11 +4184,14 @@
       "請問您投入自媒體，例如：IG、Podcast、YouTube的契機為何？",
       "空中瑜珈適合零基礎者嗎？對於想嘗試空中瑜珈的零基礎者有什麼建議？"
     ],
-    "themes": [],
+    "themes": [
+      "health",
+      "brand"
+    ],
     "arc": null,
     "highlight": "您曾經學習表演藝術、室內設計、法國和中國文學、醫學，最後是如何在瑜珈世界找到歸屬感的？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 73,
@@ -3806,11 +4207,13 @@
       "我們知道台灣大車隊車上備有如GPS、網路傳輸等…技術設備，可以跟我們聊聊台灣大車隊是如何應用這些技術設備的嗎？",
       "台灣大車隊APP 目前有居家清潔、洗衣事業、酒後代駕等生活化服務，未來還有規劃哪些服務？"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "我們都知道55688 的叫車App很方便，可以跟我們聊聊這個App的優勢是什麼？目前的活躍用戶量有多少？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "manufacturing"
   },
   {
     "ep": 72,
@@ -3826,11 +4229,13 @@
       "如果公司重要的職位一直找不到人，企業可以做什麼彈性的調整？或是怎麼拆解現有的工作進行重組呢？",
       "您在天下學習課程中有提到，企業方不只可以從人力銀行找人，也可以透過新媒體或社群達到高效獵才的目的，可以請您比較一下傳統招募跟社群招募的差別嗎?"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "您以前曾擔任過銀行行員和新航空服員，請問這段職涯經歷對您後來進入獵頭公司工作有什麼影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "services"
   },
   {
     "ep": 71,
@@ -3847,11 +4252,13 @@
       "最近萬里雲獲得由台灣大哥大領投的 C 輪投資，公司也持續發展雲端與 AI 應用服務，那您是如何在如此忙碌的行程中，維持工作與生活的平衡呢?",
       "從 Dot-com 時代到 AI 智能，深耕網路產業多年，您對現在正夯的「元宇宙」以及「Web 3.0」時代有什麼樣的看法?"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "近兩年因疫情影響，許多企業著手推動數位轉型，萬里雲從 2017 年便開始協助企業建置 雲端數據庫，請跟我們分享數位轉型對企業帶來的優勢以及重要性為何?",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 70,
@@ -3865,11 +4272,13 @@
       "「政大企家班」是華人累積企業家人才、教學個案豐厚的第一總裁班，身為「政大企家班」總導師的您，可以談談企家班的教育信念以及是如何做到傳承的嗎？",
       "40年來您教育過這麼多企業界學生，可以說一下您對台灣產業變遷的觀察嗎?"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "可以和我們聊聊您著名「聽說讀想」的個案教學法是什麼嗎？這個教法能如何幫助到學生？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 69,
@@ -3885,11 +4294,14 @@
       "台劇近年來大爆發，可以和我們談談您認為串流平台對台劇造成的正、負影響嗎？",
       "可以和我們聊聊您之後會如何帶領MOMOTV頻道走向數位轉型嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "您有台大EMBA國際企業管理組碩士學位及台北藝術大學電影創作研究所碩士MFA兩個碩士學位，請問您當初跨領域學習的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 68,
@@ -3906,11 +4318,13 @@
       "請問您有一些關於「上班族財務反轉」的關鍵能和我們分享的嗎？上班族如何不再辛苦理財？",
       "請問您投入自媒體，例如：YouTube、IG、Podcast的契機為何？"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "請問您為什麼擁有四個碩士學歷還是選擇放棄高薪？當初決定創業的契機為何？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 67,
@@ -3926,11 +4340,13 @@
       "請問您認為成功的NFT的三個元素是什麼？",
       "最後可以請您分析一下NFT未來的走向究竟是財富密碼還是曇花一現嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "您曾有當吳宗憲的經紀人的經歷，也當過周杰倫電影的製片以及NFT全球媒體策略長，請問您是如何維持這些角色間的平衡呢?",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 66,
@@ -3946,11 +4362,13 @@
       "面對初次擔任中高階管理職的新手主管，您會給他哪些建議呢?",
       "面對疫情的衝擊，請問您是如何帶領王品在萬難中進行數位轉型，甚至讓事業群營收達到 104.8 億元，在疫情中創下新高的?"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "當初您被員工貼上「魔鬼主管」的標籤十幾年，到後來開始做出種種改變。例如您開始 「以教人代替責罵」，可以跟我們多聊聊您在管理方式上還做出哪幾項重大改變嗎?",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 65,
@@ -3968,11 +4386,13 @@
       "一路走來有不同身分，從音樂製作人、音樂製作公司總經理、各大選秀節目的評審、台師大碩專班的教授到音樂學院的校長，您覺得這些角色間最大的差異是什麼?您又是如何維持這些角色間的平衡呢?",
       "近年越來越多歌手發行 NFT，站在資深音樂人的角度，你怎麼看流行音樂與 NFT 的結合?"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "您同時擔任過音樂製作人及經紀人，請跟我們分享這兩個角色分別需要什麼能力及特質?",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 64,
@@ -3989,11 +4409,13 @@
       "在節目中可以看見孩子在鏡頭前真實呈現的喜怒哀樂，面對這些情緒，您是如何與孩子溝通並調適他們的心情？",
       "《叫我野孩子》自5/14上線LINE TV後便榮登節目排行第一，對於紀錄片類型的紀實節目，在推廣上有遇到什麼困難嗎？接下來還有什麼樣的計畫讓更多人能看到這個優秀的作品呢？"
     ],
-    "themes": [],
+    "themes": [
+      "health"
+    ],
     "arc": null,
     "highlight": "您原先在大愛電視台擔任節目製作十多年，當時是什麼樣的契機，讓您決定參與紀錄片製作並進而成為一名紀錄片導演？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 63,
@@ -4009,11 +4431,13 @@
       "近年藝術家發行NFT已成常態，身為長期與藝術家合作的創意人，您覺得NFT對藝術及創意產業帶來什麼樣的影響？",
       "您近期將推出一個以孩童藝術家為主題的NFT「元夢家 Kidznft」，請跟我們分享發行的契機，以及未來對於Web3.0的創意應用您有什麼樣的看法"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "您投身創意產業至今將近三十年，在您的成長背景中是什麼啟發您對「創意產業」的好奇與熱忱？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 62,
@@ -4029,11 +4453,13 @@
       "您曾推薦超過1000位車主購買特斯拉，更在2019年前往美國觀看Space X火箭發射，您覺得特斯拉與其他車廠的不同之處，以及特斯拉的魅力是什麼？",
       "除了特斯拉，您也經手其他車廠如保時捷、賓士、奧迪所推出的電動車款，面對如此多的選項，您會如何建議初次接觸電動車的車主去挑選適合自己的車款呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "全台最大二手車媒合平台「傑克你電電」原來並不以盈利為目的經營？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "manufacturing"
   },
   {
     "ep": 61,
@@ -4050,11 +4476,14 @@
       "請問兩位平時是如何在忙碌的工作中維持與生活的平衡呢？會透過飲酒釋放壓力嗎？",
       "過去金色三麥有許多異業合作，藉由1+1>2的力量不斷擴大品牌影響力，近期金色三麥也將發行NFT，請兩位跟我們簡單介紹這個專案，以及其賦能"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "金色三麥成立至今18年，旗下擁有多家餐廳，而近年疫情影響之下，餐飲產業最首當其衝，兩位認為疫情對餐飲業帶來最大的挑戰是什麼？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 60,
@@ -4071,11 +4500,14 @@
       "人稱「最速總經理」，熱愛參加馬拉松的您，覺得跑步為您的生活帶來什麼樣的改變？",
       "運動、跑步最難也最重要的就是持之以恆，近期與跑步相關的區塊鏈應用項目STEPN主打邊跑步邊賺錢，熱愛跑步的您對這個應用有什麼樣的看法呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "health"
+    ],
     "arc": null,
     "highlight": "2021年Google宣布第三方Cookie即將退場後，許多品牌廣告主開始尋求MarTech解方，您是如何看待Cookieless時代？您認為對廣告產業帶來什麼樣的影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 59,
@@ -4091,11 +4523,13 @@
       "身為資深玩家，STEPN對兩位來說最大的魅力是什麼呢？",
       "兩位對STEPN的新手玩家有什麼樣的建議呢？"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "近期「邊玩邊賺錢」的GameFi議題正夯，您認為GameFi項目對加密貨幣市場帶來什麼樣的影響？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 58,
@@ -4112,11 +4546,14 @@
       "您在教育產業深耕多年，您認為不同世代的學子們有什麼樣的差別？您在教學方式上又有什麼樣的調整呢？",
       "近年因為疫情影響，許多人開始關注區塊鏈應用相關的金融投資，請問您是如何看待現在的虛擬貨幣及NFT的投資熱潮？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "money"
+    ],
     "arc": null,
     "highlight": "您在2014年出任政治大學校長，當時主張「將政大打造成台灣社會的良心」，您認為「良心」在教育中扮演什麼樣的角色？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 57,
@@ -4133,11 +4570,13 @@
       "您平時是如何在忙碌的行程中，維持工作與生活的平衡呢？會透過品酒釋放壓力嗎？",
       "吉本酒藏最近推出以日本清酒為主題的NFT「Sake X」，請跟我們簡單介紹一下「Sake X」NFT以及發行這個NFT的契機"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "聽說您過去完全滴酒不沾，那是什麼契機使您踏入至「日本酒代理商」這個領域呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 56,
@@ -4154,11 +4593,13 @@
       "身為幣圈專家及大學教授，對於現在年輕人瘋買NFT有什麼看法？對於區塊鏈新手有什麼樣的建議與提醒呢？",
       "除了NFT這樣的區塊鏈應用，您認為未來「元宇宙」還有什麼樣的可能性呢？"
     ],
-    "themes": [],
+    "themes": [
+      "ai"
+    ],
     "arc": null,
     "highlight": "您在2014年前往「奇點大學」就讀，請跟我們簡單介紹奇點大學，以及您當時透過「群眾募資」籌募學費的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 55,
@@ -4174,11 +4615,14 @@
       "身為景華生技的副總經理，您平常是如何保養自己的身體？又是如何在忙碌的行程中，維持工作與生活的平衡呢？",
       "您覺得疫情對生技醫療產業有帶來什麼改變嗎？面對「後疫情時代」有什麼因應策略呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "health"
+    ],
     "arc": null,
     "highlight": "景華生技過去曾代理許多知名大藥廠之藥品，是什麼樣的契機與國外合作研發「NutriMate」(你滋美得)保健食品？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 53,
@@ -4196,11 +4640,13 @@
       "您平常是如何在忙碌的行程中維持工作與生活的平衡？",
       "近期許多精品品牌加入「元宇宙」並發行NFT，您是如何看到精品數位化的潮流？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "請跟我們分享成立美之心 Minoshin並以代理國際精品為主要業務的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 52,
@@ -4218,11 +4664,13 @@
       "身為創業家，您是如何在忙碌的行程中維持工作與生活的平衡呢？",
       "如何為平台尋找適合的師資？"
     ],
-    "themes": [],
+    "themes": [
+      "health"
+    ],
     "arc": null,
     "highlight": "您曾在中國從事品牌公關與行銷產業近十年，是什麼樣的契機讓您決定於2021年回台創業？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 51,
@@ -4241,11 +4689,13 @@
       "最近常聽到虛擬貨幣或NFT的詐騙事件，請跟我們分享大眾應如何防範此類事情的發生",
       "近期區塊鏈議題因為NFT引起大眾注目，您認為虛擬貨幣或NFT會因為市場過熱而引發泡沫化嗎？未來還會有什麼樣值得關注的發展呢？"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "是什麼樣的契機以及時間點讓您開始注意到虛擬貨幣，進而投入幣圈投資？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 50,
@@ -4263,11 +4713,13 @@
       "從區塊鏈技術到現在當紅的NFT，您認為未來隨著區塊鏈服務持續發展，還會出現哪些產品或附加服務呢？",
       "現在虛擬貨幣圈以及NFT社群的年齡層偏低，您認爲未來虛擬貨幣及NFT應用什麼時候會普及到全年齡層呢？"
     ],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "在2014年虛擬貨幣還未普及時，是什麼樣的契機讓您決定以虛擬貨幣的資安管理為主題創業？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 49,
@@ -4284,11 +4736,13 @@
       "您目前主持兩個Podcast節目，並開設Podcast錄音室，投入聲音經濟至今，您覺得聲音媒體的優勢及弱勢是什麼呢？",
       "最近NFT帶起大規模的創作者經濟，您認為未來「自媒體創作」在虛擬世界中會有什樣的發展以及呈現方式？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "當年任職於華航空姐時，是什麼樣的契機讓您開始經營自媒體？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 48,
@@ -4305,11 +4759,14 @@
       "除了工作外，您也培養許多興趣如彈吉他、寫作等，您是如何在忙碌的行程中維持工作與家庭生活的平衡？",
       "近期Web3.0正夯，請問您對「元宇宙」有什麼樣的看法？您覺得數據行銷在Web3.0會有什麼樣的應用方式？"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "brand"
+    ],
     "arc": null,
     "highlight": "大學畢業於景觀學系，是什麼樣的契機讓您接觸並投入到房地產從事數據處理及應用呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 47,
@@ -4326,11 +4783,14 @@
       "您在忙碌的行程中，是如何維持工作與生活的平衡呢？",
       "丸莊身為百年品牌，除了發展海外市場外，在這個數位時代中，對於年輕族群市場的下一步是什麼呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "當年是什麼樣的契機，讓原先在科技業工作的您回到丸莊醬油呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 46,
@@ -4347,11 +4807,14 @@
       "您在忙碌的行程中，是如何維持工作與生活的平衡呢？",
       "最近元宇宙話題正夯，您對元宇宙有什麼樣的看法？您覺得未來在元宇宙內，會有哪些與廣告相關的職業呢？"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "brand"
+    ],
     "arc": null,
     "highlight": "是什麼樣的契機讓您從中文系跨領域至科技業並創立宇萌科技？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 45,
@@ -4368,11 +4831,14 @@
       "您平時熱衷跑步、參加馬拉松，您覺得運動對您的生活帶來什麼樣的改變？",
       "近年很多人都追求人生的第二曲線。請問您覺得第二曲線定義是什麼？而在人生的旅程上，您未來還想接觸什麼樣的挑戰呢？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "health"
+    ],
     "arc": null,
     "highlight": "是什麼樣的契機，讓您對寫作產生興趣，進而成為一名作家？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 44,
@@ -4389,11 +4855,14 @@
       "忙碌工作之餘，您會從事什麼樣的休閒活動維持工作與生活的平衡嗎？",
       "近年數位經濟興起，您認為想投入數位轉型的業者該如何踏出他們的第一步？未來資誠在協助企業經營上，還有什麼樣的規劃呢？"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "原先畢業於物理系，是什麼樣的契機讓您接觸到會計，並決定出國深造？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "services"
   },
   {
     "ep": 43,
@@ -4410,11 +4879,13 @@
       "您上任廣告公會理事長後，強調「產業提升」及「產學接軌」，您為什麼希望加強廣告業的「產學接軌」呢？",
       "您覺得未來的廣告業會是什麼樣的光景？廣告公會成員間可以怎麼合作，共創多贏的未來呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "鄧理事長進入廣告產業的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 42,
@@ -4431,11 +4902,14 @@
       "在忙碌的工作中，您會從事哪些休閒活動去維持工作與生活的平衡呢？",
       "恆隆行除了實體通路外，也有發展網路商城，未來是否有計劃透過數據行銷，整合現有資料，代理更符合消費者需求的品牌或商品呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "陳董事長在回台接任前，竟然在加拿大與夫人共同經營文具生意？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 41,
@@ -4451,11 +4925,14 @@
       "如何在忙碌的生活中維持工作與生活的平衡？",
       "隨著台灣老年人口比例逐年增加，未來大心生技針對老年長照還有什麼樣的計畫呢？"
     ],
-    "themes": [],
+    "themes": [
+      "health",
+      "brand"
+    ],
     "arc": null,
     "highlight": "何董從營造業跨領域投入生物科技產業的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 40,
@@ -4474,11 +4951,13 @@
       "推廣精品眼鏡品牌時，James經銷商的管理之道",
       "James如何維持工作與生活的平衡"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "James 投入眼鏡產業的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 39,
@@ -4496,11 +4975,13 @@
       "張社長如何在忙碌的工作中維持與生活的平衡？",
       "VERSE未來的計畫：《2021 Winter Festival》重大消息宣布"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "張鐵志社長創辦VERSE雜誌的契機、為什麼選擇聚焦「文化」這個主題",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 38,
@@ -4516,11 +4997,14 @@
       "近兩年因為疫情，永悅健康旗下的「健行筆記」也創造登山熱潮，您平時在忙碌的生活中也會透過登山舒壓嗎？還是您有其他的紓壓活動呢？",
       "疫情有加速「數位健康」在台灣的發展跟推廣嗎？未來針對數位醫療服務，永悅健康有什麼樣的計畫嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "health",
+      "ai"
+    ],
     "arc": null,
     "highlight": "Saxon 投入數位健康領域並成立永悅健康的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 37,
@@ -4538,11 +5022,14 @@
       "對台灣年輕人的期許與建議",
       "推薦書籍：《素書》＆《孫子兵法》"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "從法律系到房仲業務的過程，與投入醫美產業的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 36,
@@ -4560,11 +5047,14 @@
       "身為一名斜槓青年，妳如何在多種興趣中找到自己的職涯道路呢？",
       "近期BetweenGos推出職涯探索課程，身為職涯顧問，最常遇到學員們詢問哪方面的職涯問題？妳會提供什麼樣的建議？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "brand"
+    ],
     "arc": null,
     "highlight": "畢業於政大俄文系、紐約大學整合行銷碩士，經歷幾年的工作經驗後，是什麼樣的契機讓妳決定成立BetweenGos職場才女？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 35,
@@ -4582,11 +5072,13 @@
       "針對這兩年疫情的衝擊，您覺得對教育產業有什麼樣的影響呢？",
       "近年跨領域人才、通才成為產業徵才趨勢，德明科大在人才培育上有什麼樣的規劃與調整？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "盧秋玲校長對產學合作的看法與經驗談",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "education"
   },
   {
     "ep": 34,
@@ -4602,11 +5094,14 @@
       "您平時熱愛運動，曾參加多場自行車比賽，平常是如何在忙碌的工作中安排從事自己喜愛的活動呢？",
       "鬍鬚張在全球共有75家分店，包含2家日本的海外分店，鬍鬚張是如何確保海外分店的產品品質呢？未來對海外市場還有什麼樣的規劃？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "brand"
+    ],
     "arc": null,
     "highlight": "從街邊小吃，到學習麥當勞制定SOP流程，請與我們分享鬍鬚張當時決定成立中央廚房，擴大經營的契機",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 33,
@@ -4623,11 +5118,13 @@
       "品牌成立初期，您曾多次帶著產品前往海外參展，請與我們分享在參展過程中，最令您印象深刻的事",
       "J.GAO目前主打彩妝及保養品，未來在品牌經營及發展上，有什麼樣的計畫可以跟大家分享呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "您在進入演藝圈前曾是竹科工程師，當初是怎麼樣的機緣選擇走上「演戲」這條路呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 32,
@@ -4644,11 +5141,14 @@
       "近年除了電商平台，您也成立FB購物社團 —「雪倫好物分享團」，曾靠團購達到180萬的業績，當初是如何找到自己在團購市場中的定位與固定客群呢？",
       "您覺得「團媽」對消費者的魅力是什麼？對於想成為「團媽」的人，您有什麼建議呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "研究所於社工系畢業後，是什麼樣的起心動念讓您決定成立一個專為女性設計的購物平台呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 31,
@@ -4665,11 +5165,13 @@
       "在勤美學成立前，妳對露營的想像是什麼？請跟我們分享過去印象最深刻的露營經驗",
       "勤美學將香格里拉樂園改造成一個以土地故事為出發點的園區，未來有考慮經營Podcast節目，分享更多關於當地人文及土地的故事嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "過去曾跨足文創、媒體、科技業等多個產業的工作內容，請跟我們分享，妳在轉職時選擇多方嘗試各種領域的起心動念",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 30,
@@ -4687,11 +5189,14 @@
       "您因為工作，常年出差走訪多個國家，請問您最印象深刻的一次旅行經驗是什麼？",
       "您目前致力於推廣物流市場的數位整合，請跟我們簡單介紹一下「跨境物流整合平台BlueX Trade」的服務，以及這個平台將對物流產業帶來什麼跨領域的影響？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "ai"
+    ],
     "arc": null,
     "highlight": "忙碌工作之餘，您仍選擇進入學校進修，並取得多個碩博士學位，請問是什麼促使您不斷學習呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "manufacturing"
   },
   {
     "ep": 29,
@@ -4710,28 +5215,32 @@
       "您曾說過「人要活著，一定要找到自己生命中的意義與價值」，對於還在尋找目標的年輕人有什麼建議呢？",
       "請與我們分享成立FB粉絲專頁「柴姐柴知道」的起心動念"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "您是文化大學戲劇系畢業，一開始卻選擇加入綜藝節目「鑽石舞台」的幕後製作，當時是什麼契機讓您選擇製作人這個職業呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 28,
     "date": "2021-08-04",
     "durationSec": 2329,
     "title": "老闆來解惑！員工心中對老闆的千萬個好奇心（下）",
-    "guest": "",
-    "org": "",
+    "guest": "劉怡伶 Elynn",
+    "org": "傑思‧愛德威集團營運長",
     "takeaways": [
       "疫情微解封，Jason好好了不僅微解封還要來解密！員工繼續好好奇～",
       "請問兩位最想跟傑思愛德威同仁們說的一句話是什麼？"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "疫情微解封，Jason好好了不僅微解封還要來解密！員工繼續好好奇～",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 27,
@@ -4748,11 +5257,13 @@
       "老闆們為員工好奇心的解惑QA問答：",
       "更多老闆為你解惑的QA問答，敬請鎖定下週的《Jason好好聊》"
     ],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "疫情微解封，Jason好好了不僅微解封還要來解密",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 26,
@@ -4767,11 +5278,14 @@
       "兩位曾多次前往歐洲領取各種綠色企業的獎項，在這些旅程中最印象深刻的經驗是什麼呢？",
       "品牌成立15年間，歐萊德不斷用自身產品向大眾宣導各種環保、永續理念，未來有計畫開設Podcast頻道分享更多綠色企業、永續經營的經驗嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "resilience"
+    ],
     "arc": null,
     "highlight": "在品牌推出初期，面對尚未成熟的綠色產業及各界的不確定性，葛董事長也投入大量心力教育市場，請問品牌成立至今遇過最大的危機是什麼？當時是如何解決並調適心情的呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 25,
@@ -4787,11 +5301,14 @@
       "請蔡總經理跟我們分享加入歐萊德的契機",
       "不只推廣環保理念，更多的是透過綠色企業來回饋社會，葛董的綠色價值觀"
     ],
-    "themes": [],
+    "themes": [
+      "brand",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "Jason前往歐萊德綠建築總部的參訪心得分享",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 24,
@@ -4808,11 +5325,14 @@
       "跨領域經營旅館業及貿易業後，你覺得在經營方式上有什麼不同嗎？",
       "你曾走訪南美洲，實地考察多個咖啡莊園，在這趟旅程中最印象深刻的經驗是什麼呢？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "brand"
+    ],
     "arc": null,
     "highlight": "原先經營今年剛滿53歲的老牌飯店—華國大飯店，是什麼契機決定開闢新事業—Dear John Coffee？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "food"
   },
   {
     "ep": 23,
@@ -4829,11 +5349,13 @@
       "你以往因為事業發展時常奔走兩岸，出差之餘是否有時間順道遊覽當地風光呢？請跟我們分享最印象深刻的一次旅遊經驗",
       "曾說過不要為了創業而創業，對想創業或正在創業中的青年們有什麼建言嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "你在大學時期就萌發創業的念頭，之後也經歷多次創業經驗，請跟我們分享支撐你不斷嘗試的原因",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 22,
@@ -4851,11 +5373,13 @@
       "你時常在各平台發表對新創產業的分析洞見，為什麼對新創產業情有獨鍾呢？",
       "未來會想開設Podcast頻道跟大家分享更多新創產業分析嗎？"
     ],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "大學主修經濟、研究所選擇產經所，為什麼決定出國攻讀法律專業呢？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "services"
   },
   {
     "ep": 21,
@@ -4872,19 +5396,21 @@
       "對想要機車環島的朋友有什麼建議嗎？",
       "除了找代言人製作電視廣告外，近年三陽將宣傳重心轉向數位渠道，是看重數位行銷的哪些優勢呢？"
     ],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "三陽工業曾以野狼125聞名全台灣，請問在加入三陽工業前，你對三陽汽機車的印象是什麼?",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "manufacturing"
   },
   {
     "ep": 20,
     "date": "2021-03-31",
     "durationSec": 3447,
     "title": "Jason來分享：創業到底難不難？過來人的甘苦談",
-    "guest": "",
-    "org": "",
+    "guest": "楊佳燊 Jason",
+    "org": "傑思‧愛德威媒體 創辦人暨執行長",
     "takeaways": [
       "在TVBS工作了近十年，是什麼原因決定自己出來創業？",
       "創業初期怎麼找到適合的夥伴？",
@@ -4897,11 +5423,14 @@
       "創業路上得到最大的成就感是什麼？",
       "再次感謝聽眾對第一季的支持，工商時間：介紹傑思愛德威"
     ],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "在TVBS工作了近十年，是什麼原因決定自己出來創業？",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 19,
@@ -4922,11 +5451,14 @@
       "在忙碌的生活中，你如何找到工作跟生活的平衡?",
       "你在生活中有什麼習慣嗎？是如何維持的呢？"
     ],
-    "themes": [],
+    "themes": [
+      "ai",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "請分享創業過程並簡單介紹奧丁丁集團的業務服務及區塊鏈在其中的運作方式",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 18,
@@ -4936,11 +5468,13 @@
     "guest": "創辦人 CPU",
     "org": "喜舖 CiPU",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 17,
@@ -4958,11 +5492,14 @@
       "曾為拓展中國市場，登上中國的綜藝節目 -『非誠勿擾』，當時參加節目真正的想法是什麼？",
       "擁抱新媒體這塊，我們知道你與弟弟自己當網紅，開設YouTube頻道【玻璃兄弟】，請問對Podcast市場怎麼看呢?未來會想開Podcast頻道嗎?"
     ],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "當年從美國決定回台灣接班的過程?",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "manufacturing"
   },
   {
     "ep": 16,
@@ -4972,11 +5509,14 @@
     "guest": "KNOWING新聞、幣特財經、鍶科技創辦人暨總編輯楊方儒 Jet",
     "org": "",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "brand",
+      "ai"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 15,
@@ -4986,11 +5526,13 @@
     "guest": "丘紘豪 Jeffrey",
     "org": "正成集團副總經理",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 14,
@@ -5000,11 +5542,14 @@
     "guest": "合隆毛廠董事長陳彥誠 Olle",
     "org": "",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "manufacturing"
   },
   {
     "ep": 13,
@@ -5014,11 +5559,14 @@
     "guest": "林之晨 Jamie",
     "org": "台灣大哥大集團總經理，AppWorks 之初創投董事長暨合夥人",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "resilience",
+      "leadership"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 12,
@@ -5028,11 +5576,13 @@
     "guest": "陳郁佳 Tiffany",
     "org": "電影孤味製片、彼此影業的共同創辦人",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 11,
@@ -5042,11 +5592,13 @@
     "guest": "台灣工業設計教父謝榮雅 Duck",
     "org": "",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "design"
   },
   {
     "ep": 10,
@@ -5056,11 +5608,13 @@
     "guest": "HTC台灣總經理陳柏諭 Darren",
     "org": "",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 9,
@@ -5070,11 +5624,13 @@
     "guest": "宅電共同創辦人陳德威 Davy",
     "org": "",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "manufacturing"
   },
   {
     "ep": 8,
@@ -5084,11 +5640,13 @@
     "guest": "歐漾國際企業創辦人楊智斌 Ben",
     "org": "",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "health"
   },
   {
     "ep": 7,
@@ -5098,11 +5656,14 @@
     "guest": "陳立人 Roger",
     "org": "LINE 台灣董事總經理",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "leadership",
+      "brand"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 6,
@@ -5112,11 +5673,13 @@
     "guest": "邁圈廣告執行長陳仲豪 Aaron",
     "org": "",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "marketing"
   },
   {
     "ep": 5,
@@ -5126,11 +5689,13 @@
     "guest": "小光",
     "org": "分散式基礎設施共享平台Poseidon Network創辦人林弘全",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   },
   {
     "ep": 4,
@@ -5140,11 +5705,13 @@
     "guest": "張宇",
     "org": "時尚主播媽咪",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "resilience"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "media"
   },
   {
     "ep": 3,
@@ -5154,11 +5721,13 @@
     "guest": "昇恆昌總經理江建廷 kevin",
     "org": "",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "brand"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "retail"
   },
   {
     "ep": 2,
@@ -5168,11 +5737,13 @@
     "guest": "TK陳泰谷",
     "org": "達盈管顧駐點創業家",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "money"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "finance"
   },
   {
     "ep": 1,
@@ -5182,10 +5753,12 @@
     "guest": "顧立楷",
     "org": "聲浪媒體科技執行長",
     "takeaways": [],
-    "themes": [],
+    "themes": [
+      "leadership"
+    ],
     "arc": null,
     "highlight": "",
     "highlightIsSummary": false,
-    "industry": null
+    "industry": "tech"
   }
 ]

@@ -9,7 +9,7 @@ import { ArrowIcon, ArrowUpRightIcon, PlayIcon, ShuffleIcon, ThemeChip } from '.
 import { useLandingMotion } from '../lib/motion';
 import { CountUp } from '../components/CountUp';
 import {
-  about, curation, episodeByNumber, episodes, findTerm, formatDuration, takeawayLines, themeById,
+  about, curation, deckLines, episodeByNumber, episodes, findTerm, formatDuration, takeawayLines, themeById,
 } from '../lib/data';
 
 /**
@@ -57,8 +57,18 @@ export default function Landing() {
   );
   const epsWithNotes = episodes.filter((e) => e.takeaways.length > 0).length;
 
-  const deck = takeawayLines;
+  const deck = deckLines.length ? deckLines : takeawayLines;
   const current = deck[card % deck.length];
+  // A random line from a different episode each draw. The prerendered page shows the first
+  // line; the random pick happens after load so server and browser HTML match.
+  const draw = () => setCard((c) => {
+    for (let i = 0; i < 20; i++) {
+      const n = Math.floor(Math.random() * deck.length);
+      if (deck[n].ep !== deck[c % deck.length].ep) return n;
+    }
+    return (c + 1) % deck.length;
+  });
+  useEffect(draw, []); // eslint-disable-line react-hooks/exhaustive-deps
   const { host, book, company, stats } = about;
 
   return (
@@ -70,7 +80,7 @@ export default function Landing() {
         <div className="wrap hero-grid">
           <div>
             <h1 className="hero-title">
-              <span className="hero-line"><span className="hero-text"><CountUp value={stats.episodes} duration={1.8} /> 場對話</span></span>
+              <span className="hero-line"><span className="hero-text"><CountUp value={stats.episodes} /> 場對話</span></span>
               <span className="hero-line"><span className="hero-text">從哪一場開始聽？</span></span>
             </h1>
             <div className="hero-foot">
@@ -79,7 +89,7 @@ export default function Landing() {
           </div>
 
           <aside className="hero-rail" aria-label="主持人">
-            <div className="host-photo"><img src="./host.jpg" alt="" /></div>
+            <div className="host-photo"><img src={`${import.meta.env.BASE_URL}host.jpg`} alt="" /></div>
             <div style={{ fontSize: 14, fontWeight: 700 }}>主持人 {host.name} Jason</div>
             <div className="muted" style={{ fontSize: 12, lineHeight: 1.6 }}>{host.title}</div>
             <button type="button" className="link-btn" onClick={() => scrollTo('about')}>
@@ -90,7 +100,7 @@ export default function Landing() {
 
         <div className="bento">
           <div className="tile tile-dark tile-latest">
-            <img className="tile-latest-art" src="./host.jpg" alt="《Jason好好聊》節目封面：主持人楊佳燊 Jason" />
+            <img className="tile-latest-art" src={`${import.meta.env.BASE_URL}host.jpg`} alt="《Jason好好聊》節目封面：主持人楊佳燊 Jason" />
             <div className="tile-latest-body">
               <div className="kicker">最新一集 · EP.{latest.ep} · {latest.date} · {formatDuration(latest.durationSec)}</div>
             <div style={{ fontSize: 20, fontWeight: 700, lineHeight: 1.45 }}>{latest.title}</div>
@@ -214,18 +224,15 @@ export default function Landing() {
             </div>
           </div>
           <div className="deck" style={{ flex: '999 1 560px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 16 }}>
-              <span className="kicker">隨手抽一句</span>
-              <span className="mono" style={{ fontSize: 12, color: 'var(--on-dark-muted)' }}>{(card % deck.length) + 1} / {deck.length}</span>
-            </div>
-            <blockquote>「{current.text}」</blockquote>
+            <span className="kicker">隨手抽一句</span>
+            <blockquote>{current.text}</blockquote>
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
               <div className="deck-source">
                 <span className="deck-ep"><span className="mono">EP.{current.ep}</span>　{current.title}</span>
-                <span className="deck-guest">{current.guest} · {current.org}</span>
+                <span className="deck-guest">節目重點 · {current.guest}{current.org ? ` · ${current.org}` : ''}</span>
               </div>
               <div className="chips" style={{ gap: 10 }}>
-                <button type="button" className="btn btn-ghost-dark" onClick={() => setCard((c) => c + 1)}><ShuffleIcon />再抽一張</button>
+                <button type="button" className="btn btn-ghost-dark" onClick={draw}><ShuffleIcon />再抽一張</button>
                 <Link className="btn btn-light" to={`/episode/${current.ep}`}>看這一集</Link>
               </div>
             </div>
@@ -246,7 +253,7 @@ export default function Landing() {
           <SectionHead n="04" en="THE HOST" title="關於 Jason" />
           <div className="about-grid">
             <div className="card about-host">
-              <div className="about-photo"><img src="./host.jpg" alt="主持人 楊佳燊 Jason" /></div>
+              <div className="about-photo"><img src={`${import.meta.env.BASE_URL}host.jpg`} alt="主持人 楊佳燊 Jason" /></div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, minWidth: 0 }}>
                 <div>
                   <div className="about-name">{host.name} <span className="latin">{host.nameEn}</span></div>

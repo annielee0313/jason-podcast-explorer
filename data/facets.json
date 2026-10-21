@@ -1,25 +1,90 @@
 {
-  "_note": "DRAFT industry taxonomy, agreed as a demo on 2026-10-13. Like themes, keep these lists fixed: propose a change instead of adding free-form values. industry is a judgment call (authors are filed by their book's subject). null = not yet confirmed.",
+  "_note": "Industry taxonomy. 5 demo industries agreed 2026-10-13; extended to 12 on 2026-10-21 from the tagging run's proposals (data/tag_report.json → industryProposals), approved by Annie. Keep the list fixed: propose a change instead of adding free-form values. Industry is the guest's own field; authors are filed by their book's subject. null = fits none (e.g. one-off guests).",
   "industries": [
     {
       "id": "tech",
-      "name": "AI／科技"
+      "name": "AI／科技",
+      "color": "#2F6FDB",
+      "bg": "#E3ECFB",
+      "fg": "#1E4FA8"
     },
     {
       "id": "marketing",
-      "name": "行銷／業務"
+      "name": "行銷／業務",
+      "color": "#E5484D",
+      "bg": "#FDE4E4",
+      "fg": "#A3262A"
+    },
+    {
+      "id": "retail",
+      "name": "零售／消費品",
+      "color": "#F5A524",
+      "bg": "#FDF0D5",
+      "fg": "#8A5300"
+    },
+    {
+      "id": "media",
+      "name": "媒體／娛樂",
+      "color": "#8E4EC6",
+      "bg": "#EFE5F8",
+      "fg": "#6232A0"
+    },
+    {
+      "id": "finance",
+      "name": "金融／投資",
+      "color": "#0E9F8E",
+      "bg": "#DDF3EF",
+      "fg": "#0B6B60"
     },
     {
       "id": "health",
-      "name": "健康／生技"
+      "name": "健康／生技",
+      "color": "#46A758",
+      "bg": "#E3F3E2",
+      "fg": "#2A6B2E"
     },
     {
       "id": "food",
-      "name": "餐飲"
+      "name": "餐飲／旅遊",
+      "color": "#EC6A2E",
+      "bg": "#FDE8DC",
+      "fg": "#A13F12"
     },
     {
       "id": "design",
-      "name": "設計／藝術／生活"
+      "name": "設計／藝術／生活",
+      "color": "#E5539F",
+      "bg": "#FBE4F0",
+      "fg": "#A22A6C"
+    },
+    {
+      "id": "education",
+      "name": "教育",
+      "color": "#00A3BF",
+      "bg": "#DDF2F6",
+      "fg": "#0B6577"
+    },
+    {
+      "id": "manufacturing",
+      "name": "製造／交通",
+      "color": "#57534E",
+      "bg": "#ECEAE8",
+      "fg": "#44403C"
+    },
+    {
+      "id": "realestate",
+      "name": "不動產",
+      "color": "#84A31A",
+      "bg": "#EEF4DC",
+      "fg": "#4F6510"
+    },
+    {
+      "id": "services",
+      "name": "專業服務",
+      "color": "#A16207",
+      "bg": "#F6ECDC",
+      "fg": "#7A4A0A"
     }
-  ]
+  ],
+  "_colorNote": "color = the guest map's industry colour (gradients and dots; never text on white). bg/fg = tag colours, like themes.json (fg on bg ≥ 4.5:1)."
 }

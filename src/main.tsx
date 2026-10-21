@@ -1,23 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter, Route, Routes } from 'react-router-dom';
-import Landing from './pages/Landing';
-import EpisodePage from './pages/Episode';
-import Explorer from './pages/Explorer';
-import Studio from './pages/Studio';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 import './styles.css';
 
-// HashRouter so the static build works on GitHub Pages without server rewrites.
-ReactDOM.createRoot(document.getElementById('root')!).render(
+const base = import.meta.env.BASE_URL;
+
+// Old links used hash routing (…/#/episode/247). Move them to the real path; the
+// prerendered HTML is then for a different page, so render fresh instead of hydrating.
+const fromHash = location.hash.startsWith('#/');
+if (fromHash) {
+  history.replaceState(null, '', base.replace(/\/$/, '') + location.hash.slice(1));
+}
+
+const root = document.getElementById('root')!;
+const app = (
   <React.StrictMode>
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/episode/:ep" element={<EpisodePage />} />
-        <Route path="/explorer" element={<Explorer />} />
-        <Route path="/studio" element={<Studio />} />
-        <Route path="*" element={<Landing />} />
-      </Routes>
-    </HashRouter>
-  </React.StrictMode>,
+    <BrowserRouter basename={base.replace(/\/$/, '') || '/'}>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );
+
+// Prerendered pages (scripts/prerender.mjs) hydrate; the bare shell (404.html, or dev, where #root
+// only holds the <!--app--> placeholder comment) renders fresh.
+if (root.firstElementChild && !fromHash) ReactDOM.hydrateRoot(root, app);
+else ReactDOM.createRoot(root).render(app);

@@ -29,9 +29,10 @@ const matches = (e: Episode, f: Filters) =>
   (f.theme === 'all' || e.themes.includes(f.theme as Episode['themes'][number])) &&
   (f.industry === 'all' || e.industry === f.industry);
 
-const FACETS: { key: keyof Filters; label: string; options: { id: string; name: string; dot?: string }[] }[] = [
-  { key: 'theme', label: '主題', options: themes.map((t) => ({ id: t.id, name: t.name, dot: t.dot })) },
-  { key: 'industry', label: '產業', options: industries },
+// Each option carries its tag colours: a selected filter looks like the tag it filters by.
+const FACETS: { key: keyof Filters; label: string; options: { id: string; name: string; dot: string; bg: string; fg: string }[] }[] = [
+  { key: 'theme', label: '主題', options: themes.map((t) => ({ id: t.id, name: t.name, dot: t.dot, bg: t.bg, fg: t.fg })) },
+  { key: 'industry', label: '產業', options: industries.map((i) => ({ id: i.id, name: i.name, dot: i.color, bg: i.bg, fg: i.fg })) },
 ];
 
 export function EpisodeBrowser() {
@@ -112,10 +113,12 @@ export function EpisodeBrowser() {
                   <button type="button" className="tag" aria-pressed={filters[f.key] === 'all'} onClick={() => pick(f.key, 'all')}>全部</button>
                   {f.options.map((o) => {
                     const n = countFor(f.key, o.id);
+                    const on = filters[f.key] === o.id;
                     return (
-                      <button key={o.id} type="button" className="tag" aria-pressed={filters[f.key] === o.id}
-                        disabled={n === 0 && filters[f.key] !== o.id} onClick={() => pick(f.key, o.id)}>
-                        {o.dot && <span className="tag-dot" style={{ background: o.dot }} aria-hidden="true" />}{o.name}<span className="count">{n}</span>
+                      <button key={o.id} type="button" className="tag" aria-pressed={on}
+                        style={on ? { background: o.bg, color: o.fg } : undefined}
+                        disabled={n === 0 && !on} onClick={() => pick(f.key, o.id)}>
+                        <span className="tag-dot" style={{ background: on ? '#fff' : o.dot }} aria-hidden="true" />{o.name}<span className="count">{n}</span>
                       </button>
                     );
                   })}

@@ -9,3 +9,4 @@ __pycache__/
 audio/
 data/transcripts/*.wav
 data/raw/
+dist-ssr/

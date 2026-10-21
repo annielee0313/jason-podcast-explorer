@@ -94,7 +94,8 @@ def parse_item(item: ET.Element) -> dict | None:
     hook = title.split("➡️")[0].strip()
     # Older episodes (EP.1–147) are titled 「EP.n 職稱 姓名｜標題」: keep only the part after ｜,
     # since EP number, guest and org are shown separately on the site.
-    old_style = re.match(r"^\s*EP\.?\s*\d+\s.*?[｜|](.+)$", hook)
+    # Also EP.148–185: 「🎧EP173 feat. 職稱 姓名｜標題」 (an emoji before EP).
+    old_style = re.match(r"^\W*EP\.?\s*\d+\s.*?[｜|](.+)$", hook)
     if old_style:
         hook = old_style.group(1).strip()
 

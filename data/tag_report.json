@@ -1,0 +1,3295 @@
+{
+  "episodes": {
+    "237": {
+      "guest": "劉鴻徵",
+      "org": "全聯行銷部協理暨發言人",
+      "title": "從OPEN將到福利熊，行銷鬼才親授打造「神級企業 IP」的破關法則",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為全聯行銷部協理，本集核心在企業IP打造與通路品牌行銷策略。",
+      "confidence": "high"
+    },
+    "234": {
+      "guest": "林松慶 Mort",
+      "org": "湛積＆好友電共同創辦人兼董事長",
+      "title": "未來趨勢大解密：打通實體與虛擬的任督二脈，「軟硬整合」才是終極解方",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓經營充電樁與AI客服等軟硬整合科技事業，本集核心在AI結合硬體的轉型應用。",
+      "confidence": "high"
+    },
+    "235": {
+      "guest": "汪志謙 Vincent",
+      "org": "ABT3.0 數位孿生大腦創始人",
+      "title": "連大師腦袋都能複製？峰值體驗大公開，揭密ABT數位孿生大腦！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "brand"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓創立ABT數位孿生大腦，探討AI時代企業轉型與峰值體驗等品牌行銷觀點，核心為AI與轉型。",
+      "confidence": "medium"
+    },
+    "236": {
+      "guest": "葉冠義 Daniel",
+      "org": "UP直播創辦人",
+      "title": "短短五個月引爆全球！創辦人的逆向思考：為何「不確定性」才是好生意？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為直播平台創辦人屬科技業，內容聚焦熬過燒錢低潮與逆向思考的創業心態，並談粉絲經濟與出海市場經營。",
+      "confidence": "medium"
+    },
+    "233": {
+      "guest": "林志鑫",
+      "org": "璞億建設&寶徠建設副總經理",
+      "title": "超跑達人的跨界真心話！用「挑超跑的眼光」教你看懂好房子的價值",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "realestate",
+      "industry_proposal": "",
+      "reason": "來賓為建設公司副總，談買房的情緒價值、品牌信任與建案價值判斷，核心屬品牌與行銷，產業為不動產。",
+      "confidence": "medium",
+      "industry_reason": "來賓為建設公司副總經理，內容聚焦以情緒價值、信任形象與工法品質打造建案價值，屬品牌與行銷思維。"
+    },
+    "232": {
+      "guest": "Hsu",
+      "org": "佰德集團COO 許道君 Michael",
+      "title": "很優秀卻沒被看見？專業獵頭教你打造「被挖角體質」，這幾個關鍵字一定要有！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "services",
+      "industry_proposal": "",
+      "reason": "來賓為獵頭集團營運長，談職涯被看見、個人品牌、薪資談判與領導者特質，核心在職涯發展與領導。",
+      "confidence": "medium",
+      "industry_reason": "來賓為獵頭集團營運長，談職涯發展、被挖角、薪資談判與領導特質，屬專業服務（人力資源）產業，核心主題為職涯與領導。"
+    },
+    "229": {
+      "guest": "張琇茹 Joey",
+      "org": "吐司利亞餐飲集團執行長暨合夥人",
+      "title": "一位舞者，如何把「感受力」變成一家餐飲集團最難被複製的競爭力？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為餐飲集團執行長，內容聚焦員工斜槓的領導術、團隊擴張管理，以及地中海文化的品牌體驗。",
+      "confidence": "high"
+    },
+    "230": {
+      "guest": "陳鼎文 Jason",
+      "org": "beBit TECH創辦人暨執行長",
+      "title": "影響「有影響力的人」：從52篇 CEO 筆記看見創業者在十字路口的勇氣",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "resilience"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為beBit TECH創辦人，本集從52篇CEO筆記談創業者在十字路口的抉擇、領導策略與人生階段的心態轉變。",
+      "confidence": "medium"
+    },
+    "231": {
+      "guest": "林東閔 Tony",
+      "org": "台灣大哥大商務長",
+      "title": "從15歲創業修電腦到台哥大決策核心：一條靠「被需要」撐起來的人生路徑！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為電信業台哥大商務長，內容聚焦職涯低潮與轉換的心態，以及門市體驗與品牌經營，AI僅輕微提及。",
+      "confidence": "medium"
+    },
+    "226": {
+      "guest": "Takeuchi",
+      "org": "日本猫壱創辦人 竹內淳 Jun",
+      "title": "貓壱如何用「貓奴」思維在日本創造全球爆品，打造「最懂貓」的品牌！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "本集聚焦貓壱如何以貓奴思維與行銷策略打造寵物用品品牌並拓展通路，來賓為寵物用品品牌創辦人，不屬於既有產業類別。",
+      "confidence": "medium",
+      "industry_reason": "來賓為日本寵物用品品牌貓壱創辦人，內容聚焦品牌打造、行銷策略與通路布局，屬消費品產業。"
+    },
+    "227": {
+      "guest": "Sun",
+      "org": "酷訊搜索 共同創辦人暨CEO 孫健慎 Jason",
+      "title": "男人 50+ 的第二人生：創業、女兒、期待與恐懼",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "health"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "本集聚焦50歲後的人生焦慮、創業代價與自我覺察等心態課題，並談運動與身體管理；來賓為酷訊搜索共同創辦人，屬科技產業。",
+      "confidence": "medium"
+    },
+    "228": {
+      "guest": "邵柏崴 Wilson",
+      "org": "台灣植萃品牌＿簡單JAN DAN創辦人",
+      "title": "危機變轉機：透明溝通如何成就「簡單」品牌靈魂",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓創辦植萃保養品牌，本集聚焦透明溝通的品牌經營與資金斷裂、公關及裁員等危機的逆境應對。",
+      "confidence": "medium"
+    },
+    "225": {
+      "guest": "張文哲",
+      "org": "真芳碳烤吐司創辦人",
+      "title": "不只賣早餐，更要當「城市英雄」：真芳阿瘦的臺北早餐願景",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為真芳碳烤吐司創辦人屬餐飲業，內容聚焦品牌價值與產品策略，並談及化危機為轉機。",
+      "confidence": "high"
+    },
+    "224": {
+      "guest": "胡耀傑 Jeff",
+      "org": "台灣圖靈鏈創辦人暨執行長",
+      "title": "未滿30歲三度創業！圖靈鏈CEO重塑數位信任新時代",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "resilience"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為區塊鏈數位身份認證新創CEO，談AI深偽時代的數位信任與多次創業失敗的心態調適。",
+      "confidence": "high"
+    },
+    "222": {
+      "guest": "張元溢 Mars",
+      "org": "紅門互動創辦人",
+      "title": "品牌主的副駕駛？紅門獨有經營引領 MIT 品牌走向世界",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為數位行銷公司紅門互動創辦人，本集聚焦數據驅動行銷與協助台灣品牌走向國際。",
+      "confidence": "high"
+    },
+    "223": {
+      "guest": "徐佳馨",
+      "org": "住商不動產企劃研究室執行總監",
+      "title": "從媒體到不動產：親授買房不踩雷，人生不後悔的實戰指南！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "realestate",
+      "industry_proposal": "",
+      "reason": "來賓為不動產業研究主管，本集核心在買房決策與房產市場資訊，屬理財主題。",
+      "confidence": "high",
+      "industry_reason": "來賓為住商不動產企劃研究室執行總監，本集核心在買房決策與資產規劃的實戰建議，屬理財主題。"
+    },
+    "220": {
+      "guest": "謝馨慧 Abby",
+      "org": "台灣奧美公關/奧美集團董事總經理",
+      "title": "溝通藝術的極致：學會閱讀空氣、讀懂人心",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為奧美公關董事總經理，內容聚焦公關溝通與品牌形象，並談及高壓職場中建立自信與逆襲的心態。",
+      "confidence": "medium"
+    },
+    "221": {
+      "guest": "張家銘",
+      "org": "尚凡國際創新科技 / 大研生醫董事長",
+      "title": "創業就像打怪闖關！無私分享跨界成功的通關秘笈！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為大研生醫董事長，本集聚焦創業心態、挑戰中保持正能量與保健品行銷策略。",
+      "confidence": "medium"
+    },
+    "219": {
+      "guest": "黃昭穎 Charles",
+      "org": "HTC資深副總裁",
+      "title": "從科技到時尚！AI眼鏡的時代來臨了！你準備好了嗎？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為HTC資深副總裁，談AI智慧眼鏡產品與AI對未來生活的影響，核心為AI與科技轉型。",
+      "confidence": "high"
+    },
+    "217": {
+      "guest": "邱勝博醫師",
+      "org": "享新代診所院長",
+      "title": "減肥不用餓肚子！專業醫師揭秘：光是改變「吃飯順序」就能穩住血糖、健康瘦",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為診所院長醫師，整集聚焦肥胖治療、瘦瘦針與飲食順序等健康減重議題。",
+      "confidence": "high"
+    },
+    "218": {
+      "guest": "郭憲誌 Andy",
+      "org": "前遠傳電信副總、科技業千人團隊的實戰教頭",
+      "title": "AI時代只求快？領導者更該懂「踩煞車」！多年實戰教頭的「變速領導力」心法大公開！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "本集以「變速領導力」、跨部門溝通與向上管理為核心，並扣合 AI 時代的轉型議題；來賓為前遠傳電信副總、科技業團隊主管，因此產業歸為科技。",
+      "confidence": "high"
+    },
+    "216": {
+      "guest": "陳俊偉 Eric",
+      "org": "美科實業創辦人",
+      "title": "負債四千萬還敢創業？他憑「熱情」打造明星商品熱銷23國！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓負債四千萬仍創業，打造頭皮養護髮品品牌並熱銷23國，核心在品牌信賴與逆境心態；產品以藥品標準研發屬健康產業。",
+      "confidence": "medium"
+    },
+    "215": {
+      "guest": "趙千萱 Ruby",
+      "org": "視覺圖像記錄師",
+      "title": "全台不到十人！視覺圖像紀錄師教你抓會議中的「有效資訊」",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為視覺圖像記錄師，屬設計／藝術領域，內容談視覺筆記與視覺履歷打造個人職場優勢，較接近個人品牌。",
+      "confidence": "low"
+    },
+    "213": {
+      "guest": "邵懿文 Freda",
+      "org": "數位奇點獎執行長",
+      "title": "台灣廣告界的金馬獎？！讓好的「創意行銷與技術應用」更多人看見！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為數位奇點獎執行長，內容聚焦品牌經營、廣告創意與行銷產業生態系，AI僅為輔助話題。",
+      "confidence": "high"
+    },
+    "211": {
+      "guest": "林友琴 Jean",
+      "org": "電通行銷傳播集團全球專業服務總裁",
+      "title": "光靠努力還不夠！跨國CEO掌握高效溝通力靠這招？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為電通行銷傳播集團全球總裁，本集核心在跨國領導與跨文化溝通，屬行銷產業。",
+      "confidence": "high"
+    },
+    "214": {
+      "guest": "黃懷恩 Vince",
+      "org": "欣新網總經理",
+      "title": "公司虧損中怎麼先獲利？總經理的決策方法大公開",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為欣新網總經理，聚焦於帶領虧損公司轉型獲利的經營決策，所屬為品牌電商經銷與行銷服務產業。",
+      "confidence": "medium"
+    },
+    "212": {
+      "guest": "沈中怡",
+      "org": "中怡設計創辦人",
+      "title": "為什麼真正偉大的建築，不需要流行？哈佛建築師這樣說",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為建築設計師，談設計哲學、建築雋永價值與說服力，最接近品牌與設計價值的主題，產業屬設計。",
+      "confidence": "low"
+    },
+    "210": {
+      "guest": "羅申駿 Johnason",
+      "org": "JL Design創辦人",
+      "title": "「問對問題」才能解決問題？打通人生任督二脈靠這招！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為JL Design創辦人、曾任HBO創意總監，本集聚焦個人品牌與以品牌推動金融教育，並談勇敢、謙遜等心態。",
+      "confidence": "medium"
+    },
+    "209": {
+      "guest": "舒夢蘭",
+      "org": "金鐘主持人《守護我們的星球》導演",
+      "title": "唯有了解，才會在乎！這不是一部紀錄片，是一場喚醒？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為主持人兼紀錄片導演，分享極地拍攝的挑戰、等待與人生方向轉變，核心偏逆境與心態，產業屬影視紀錄片。",
+      "confidence": "low",
+      "industry_reason": "來賓為金鐘主持人兼紀錄片導演，屬媒體產業；內容聚焦極地拍攝的挑戰、等待與人生方向的心境轉變。"
+    },
+    "207": {
+      "guest": "蔣顯斌 Ben",
+      "org": "《造山者》紀錄片 導演 蕭菊貞、製片人",
+      "title": "一場不被看好的世紀豪賭，如何讓台灣站上世界舞台？！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為紀錄片《造山者》的導演與製片人，屬影像藝術創作；內容聚焦台灣半導體不被看好、一步一腳印累積的造山者精神，核心在逆境與堅持。",
+      "confidence": "medium"
+    },
+    "208": {
+      "guest": "黃成翰 Simon",
+      "org": "名衍行銷創辦人",
+      "title": "運動魂也能搞行銷？他上山下海靠熱血翻身！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓是名衍行銷創辦人，本集聚焦運動行銷、HBL打造成全民IP與賽事品牌經營，核心為品牌與行銷。",
+      "confidence": "high"
+    },
+    "206": {
+      "guest": "吳佳駿 Benjamin",
+      "org": "iCHEF共同創辦人暨執行長",
+      "title": "餐廳經營好難？那是你還沒遇到會用AI的神隊友！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為餐飲POS系統iCHEF執行長，本集聚焦以AI與數位工具協助小餐廳轉型，產業屬科技。",
+      "confidence": "high"
+    },
+    "205": {
+      "guest": "王馥蕙 Petty",
+      "org": "Clarks臺灣區代理展路企業副總經理",
+      "title": "快時尚OUT！200年英國鞋王怎麼讓Z世代也買單？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "本集聚焦Clarks老牌如何透過數據、通路整合與跨界合作重新打入Z世代，核心為品牌經營；來賓為鞋類品牌代理商副總，屬鞋業零售。",
+      "confidence": "medium",
+      "industry_reason": "來賓為Clarks鞋履品牌臺灣代理副總，內容聚焦老品牌年輕化、跨界合作與品牌落地，屬品牌行銷與零售消費品。"
+    },
+    "203": {
+      "guest": "葉柏軍 Barson",
+      "org": "Tasteme創辦人暨執行長",
+      "title": "台灣食物浪費有多嚴重？堆起來比101大樓還高！？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓創辦惜食即期品平台Tasteme，屬餐飲食品領域，節目聚焦創業時挨家拜訪被拒的艱辛與食物浪費議題。",
+      "confidence": "medium"
+    },
+    "202": {
+      "guest": "王岳聰 Eagle",
+      "org": "雄獅旅遊國旅入境暨全球鐵道總經理",
+      "title": "你的旅行屬於哪個層次？總經理帶你重新定義旅行、旅遊、度假！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為雄獅旅遊總經理，內容聚焦鐵道觀光與慢活深度旅行等生活型態，屬旅遊產業且主題偏向生活。",
+      "confidence": "medium",
+      "industry_reason": "來賓為雄獅旅遊總經理，屬旅遊業，內容聚焦觀光列車的產品魅力、美學與旅遊定位，偏品牌與產品行銷面向。"
+    },
+    "204": {
+      "guest": "潘怡良",
+      "org": "服裝設計師",
+      "title": "時尚不是跟風！聽設計師說如何自信穿出你的風格！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為服裝設計師，內容聚焦品牌跨界合作與海外參展撞牆後突破的歷程。",
+      "confidence": "medium"
+    },
+    "201": {
+      "guest": "魏昭寧 James",
+      "org": "開吧餐飲顧問創辦人",
+      "title": "得正、五桐號為何爆紅？顧問分析「差異化」超重要！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為餐飲顧問創辦人，本集核心在分析手搖飲與餐飲品牌如何靠差異化與行銷爆紅。",
+      "confidence": "high"
+    },
+    "199": {
+      "guest": "李慕約",
+      "org": "生成式 AI 年會策展人",
+      "title": "AI搶飯碗不恐怖！真正可怕的是會用AI的人！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "本集以 AI 作為生存工具與職場轉型為核心，來賓為生成式 AI 年會策展人，屬 AI／科技產業。",
+      "confidence": "high"
+    },
+    "200": {
+      "guest": "楊佳燊 Jason",
+      "org": "傑思愛德威創辦人暨執行長",
+      "title": "五週年200集里程碑！Jason漫談人生及Podcast之旅",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "本集為主持人Jason的五週年回顧，聚焦面對低潮的心態與突破關鍵，並談個人影響力（KOP）與Podcast趨勢；Jason為傑思愛德威創辦人，歸為行銷產業。",
+      "confidence": "medium"
+    },
+    "198": {
+      "guest": "邱維濤 Eric",
+      "org": "EVERYDAY OBJECT創辦人",
+      "title": "別再當冤大頭！這個品牌超懂你的心，教你聰明買對物！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為生活選物品牌EVERYDAY OBJECT創辦人，內容聚焦品牌理念、生活風格與社群行銷打造EO宇宙。",
+      "confidence": "high"
+    },
+    "195": {
+      "guest": "江慶鐘",
+      "org": "6星集總經理",
+      "title": "一年花三百萬在按摩！按過一次就上癮的「６星集」體驗究竟有何魔力？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "health"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為按摩連鎖品牌6星集總經理，內容聚焦品牌差異化經營（開發票、奢華平價體驗）以及退休、旅行、山林等生活態度。",
+      "confidence": "medium"
+    },
+    "196": {
+      "guest": "王劭仁 Arthur",
+      "org": "慕舍酒店執行董事",
+      "title": "從留級生到米其林級飯店大亨，逆襲關鍵竟然藏在這裡！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為飯店餐飲業者，分享從留級生逆襲、兩度瀕臨破產仍正向面對的心路歷程，核心在逆境與心態。",
+      "confidence": "high"
+    },
+    "197": {
+      "guest": "高嘉瑜",
+      "org": "中廣「人來瘋」節目主持人",
+      "title": "螢光幕前後一個樣？高嘉瑜坦言：「我就是做自己！」",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "高嘉瑜分享從基隆成長、助理起步到卸下立委光環後做自己、相信自己的心態與人生歷程，來賓身分為前立委及廣播主持人，屬政治與媒體領域。",
+      "confidence": "medium",
+      "industry_reason": "來賓現為中廣節目主持人，內容聚焦成長歷程、卸下立委光環後的生活與做自己、相信自己的心態。"
+    },
+    "194": {
+      "guest": "吳書原",
+      "org": "太研規劃設計顧問創辦人暨設計總監",
+      "title": "當大家追求國際化，他卻選擇深耕台灣，原來最接地氣的才最驚人！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為景觀設計顧問創辦人，分享留英受挫、返台深耕在地並以台中花博建立荒野美學風格的歷程，核心在心態轉折與在地特色定位。",
+      "confidence": "medium"
+    },
+    "193": {
+      "guest": "吳騰彥 Tony",
+      "org": "微程式資訊創辦人暨總經理",
+      "title": "嗶一下秒借YouBike！背後的科技推手竟然是它？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "leadership"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為微程式資訊創辦人，談YouBike系統科技升級、打入半導體產業及創業與未來規劃，屬科技產業並涉及科技轉型與經營領導。",
+      "confidence": "medium"
+    },
+    "192": {
+      "guest": "張瑋軒",
+      "org": "女人迷創辦人暨執行長",
+      "title": "累到想放棄？記住「休息不是偷懶，是戰略」！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "本集聚焦張瑋軒創業路上面對無知、無力感與疲憊時的心態調適，強調休息是戰略；來賓為女人迷創辦人，屬媒體內容產業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為女人迷媒體創辦人，內容聚焦創業挫折、無力感與休息保持動力的心態調適。"
+    },
+    "190": {
+      "guest": "李瑞華",
+      "org": "政治大學商學院教授",
+      "title": "什麼是真莫反感？這集聽完讓你人生不一樣！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "resilience"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "來賓為商學院教授，談天命、初衷與「真莫反感」等領導者素質及心態修練，核心在領導與心態。",
+      "confidence": "medium",
+      "industry_reason": "來賓為政大商學院教授，談「真莫反感」領導心法、天命與初衷，核心在領導素質與心態修練。"
+    },
+    "191": {
+      "guest": "林大涵",
+      "org": "貝殼放大創辦人暨執行長",
+      "title": "學業不行又怎樣？被台大退學的他竟登上《富比世》創業家",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "leadership"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓被兩校退學仍創業成功並談犯錯學習與管理哲學，其貝殼放大為群眾募資顧問，屬行銷相關產業。",
+      "confidence": "medium"
+    },
+    "188": {
+      "guest": "黃張維 Vincent",
+      "org": "耕薪建設董事長",
+      "title": "鮪魚肚變六塊肌！跑步讓他找到人生新方向",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health",
+        "resilience"
+      ],
+      "industry": "realestate",
+      "industry_proposal": "",
+      "reason": "來賓為建設公司董事長，談都更經營，但標題與重點聚焦以跑步逆轉脂肪肝、挑戰極地超馬的健康與心態轉變。",
+      "confidence": "medium",
+      "industry_reason": "來賓為建設公司董事長談都更，本集標題與重點聚焦跑步逆轉脂肪肝、挑戰極地超馬的健康與心態轉變。"
+    },
+    "189": {
+      "guest": "林香蘭",
+      "org": "娘家品牌執行長",
+      "title": "只需一口，就能精神飽滿？忙碌人的最佳救星是這個！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "leadership"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為保健食品品牌娘家執行長，內容聚焦品牌經營、行銷方法與從基層到執行長的領導歷程。",
+      "confidence": "medium"
+    },
+    "186": {
+      "guest": "劉俊成 Leo",
+      "org": "Xelerate Ventures創辦人",
+      "title": "「在馬斯克身邊四年還沒瘋掉!」前特斯拉科技長生存法則大公開",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為前特斯拉科技長、現創投創辦人，本集核心談在馬斯克身邊的高壓生存與「沒有不可能」心態，並延伸談 AI Agent 趨勢與新創科技。",
+      "confidence": "medium"
+    },
+    "187": {
+      "guest": "陳彥誠 Olle",
+      "org": "合隆毛廠董事長",
+      "title": "這家百年企業「毛超多」！連你睡覺用什麼都要管？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "manufacturing",
+      "industry_proposal": "",
+      "reason": "來賓為百年羽絨企業合隆毛廠董事長，談世代接班經營理念與創立寢具品牌、MIT價值定位，屬傳統製造業。",
+      "confidence": "high",
+      "industry_reason": "來賓為百年羽絨製造企業合隆毛廠董事長，內容聚焦世代接班經營理念與創立寢具品牌、MIT價值。"
+    },
+    "185": {
+      "guest": "黃俊傑 Amos",
+      "org": "SIC永續影響力投資共同創辦人",
+      "title": "🎧EP185 feat. SIC永續影響力投資共同創辦人 黃俊傑Amos｜創新到永續，影響力投資將如何幫助台灣新創走向世界？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為影響力投資共同創辦人，本集核心在於如何以投資資源協助新創並平衡商業與社會效益，屬投資領域。",
+      "confidence": "medium",
+      "industry_reason": "來賓為永續影響力投資共同創辦人，談創業歷程與影響力投資如何兼顧商業價值與社會效益，核心在投資與創業挑戰。"
+    },
+    "183": {
+      "guest": "林俊安老師",
+      "org": "天賦優勢心理學",
+      "title": "🎧EP183 feat. 天賦優勢心理學 林俊安老師｜揭露數字背後的秘密，找出你的天賦打造職場溝通力",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "來賓以天賦優勢心理學（數字學）教人了解自我並應用於職場溝通與人際關係，最接近領導與團隊溝通主題，產業屬心理教育類不在既有選項中。",
+      "confidence": "low",
+      "industry_reason": "來賓以天賦優勢心理學（數字學）授課，探討認識自我天賦與職場溝通、人際關係，偏向職場領導溝通，產業歸為教育。"
+    },
+    "182": {
+      "guest": "林之晨 Jamie",
+      "org": "台灣大哥大總經理",
+      "title": "🎧EP182 feat. 台灣大哥大總經理 林之晨Jamie｜五年級CEO的心路歷程：回顧過去五年，展望下一個十年",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為台灣大哥大總經理，內容聚焦企業共識、併購、長期策略與培育下一代領袖，屬電信科技產業的領導主題。",
+      "confidence": "high"
+    },
+    "184": {
+      "guest": "王蜜穜 Winner",
+      "org": "公關溫拿",
+      "title": "🎧EP184 特別企劃「好好聊Jason」feat. 公關溫拿 王蜜穜Winner｜Jason 新書面世，首次受訪暢談新書的創作歷程",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為公關專業人士，內容聚焦企業公關與危機處理，並談及Jason新書《真誠》的心路歷程與空杯心態。",
+      "confidence": "medium"
+    },
+    "180": {
+      "guest": "陳鼎文 Jason",
+      "org": "beBit TECH微拓科技執行長",
+      "title": "🎧EP180 feat. beBit TECH微拓科技執行長 陳鼎文Jason｜從策略顧問到數位轉型，數據時代商業思維的轉念與落地挑戰",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "leadership"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為數據科技公司微拓科技執行長，談策略顧問到數位轉型及CEO思維與風範，核心為轉型與領導。",
+      "confidence": "medium"
+    },
+    "179": {
+      "guest": "蔡靜芳 Jenny",
+      "org": "高端旅遊FineDayClub執行長",
+      "title": "🎧EP179 feat. 前KKday財務長、現任FineDayClub執行長 蔡靜芳Jenny｜如何打造極致旅遊體驗？一窺高端市場的頂級服務",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為高端旅遊公司執行長，內容聚焦高端市場定位、極致客戶服務與品牌經營策略，旅遊業不屬於既有產業類別。",
+      "confidence": "medium",
+      "industry_reason": "來賓為高端旅遊品牌FineDayClub執行長，內容聚焦高端旅遊市場定位、極致客戶服務與品牌經營策略，屬餐飲／旅遊產業。"
+    },
+    "181": {
+      "guest": "周品均",
+      "org": "唯品風尚集團執行長",
+      "title": "🎧EP181 feat. 唯品風尚集團執行長 周品均｜從東京著衣到葳老闆的辣雞湯，周品均面對挑戰的不放棄精神",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "leadership"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為女裝電商創業者，本集聚焦二次創業面對挫折的不放棄心態，以及老闆思維與職場管理挑戰。",
+      "confidence": "medium",
+      "industry_reason": "來賓為女裝電商東京著衣與Wstyle創辦人，屬零售消費品產業，內容聚焦挫折後再創業的不放棄心態與職場管理思維。"
+    },
+    "178": {
+      "guest": "廖梅淳 Sophia",
+      "org": "Tatler Asia 台灣區董事總經理",
+      "title": "🎧EP178 feat. Tatler Asia 台灣區董事總經理 廖梅淳Sophia｜從財務專業到時尚媒體產業的追夢之旅",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為時尚媒體 Tatler 台灣區董事總經理，分享從財務轉入媒體的職涯、跨文化管理與好內容經營之道。",
+      "confidence": "medium",
+      "industry_reason": "來賓為時尚媒體 Tatler Asia 台灣區董事總經理，內容聚焦職涯轉折、跨文化管理與以財務背景經營企業。"
+    },
+    "175": {
+      "guest": "李宥宏",
+      "org": "SO NICE總經理",
+      "title": "🎧EP175 feat. SO NICE總經理 李宥宏｜虛實整合，客戶如何高效地消費將是品牌存亡的關鍵？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為服飾品牌SO NICE總經理，談接班改革與以客戶為導向的虛實整合品牌經營，屬零售業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為服飾品牌SO NICE總經理，談接班改革與虛實整合的品牌消費體驗，屬零售業。"
+    },
+    "177": {
+      "guest": "陶韻智 Sting",
+      "org": "口袋證券共同創辦人暨董事長",
+      "title": "🎧EP177 feat. 口袋證券共同創辦人暨董事長 陶韻智Sting｜危機感促成創新，從挑戰中找到自我價值與成就感",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "leadership"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為口袋證券董事長、曾參與LINE Pay創立，屬金融科技產業，本集聚焦危機感驅動創新、從失敗中復活及自我價值等心態與領導課題。",
+      "confidence": "medium",
+      "industry_reason": "來賓為口袋證券董事長，屬金融業，內容聚焦危機感驅動創新、LINE Pay失敗後復活等逆境心態與領導經驗。"
+    },
+    "174": {
+      "guest": "謝明慧",
+      "org": "臺大管理學院產學發展副院長",
+      "title": "🎧EP174 feat. 臺大管理學院產學發展副院長 謝明慧｜台灣首辦「E勢泮」將如何引領企業家迎接全球挑戰",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "來賓為臺大管理學院副院長，談高階主管進修課程與領導人決策的視野格局與心理素質，核心在領導力培養，產業屬學術教育。",
+      "confidence": "high",
+      "industry_reason": "來賓為臺大管理學院副院長，談高階主管進修課程與領導人決策的視野與心理素質，核心為領導培育。"
+    },
+    "176": {
+      "guest": "李昆謀 Happy",
+      "org": "91APP產品長",
+      "title": "🎧EP176 feat. 91APP產品長 李昆謀Happy｜產品長的角色與挑戰，帶領團隊的戰法與心法",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為零售科技公司91APP的產品長，本集核心在產品長的角色定位與帶領團隊的戰法心法，AI僅為次要話題。",
+      "confidence": "high"
+    },
+    "173": {
+      "guest": "CJ王俊人",
+      "org": "SoWork摘星社群行銷創辦人",
+      "title": "🎧EP173 feat. SoWork摘星社群行銷創辦人 CJ王俊人｜洞察數據，用數據解決客戶的痛點",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "ai"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為社群行銷公司創辦人、具奧美背景，內容聚焦行銷數據運用與提案，並談及AI與ChatGPT對行銷的影響。",
+      "confidence": "high"
+    },
+    "170": {
+      "guest": "張嘉翔 Ethan",
+      "org": "麥森創新創辦人暨董事長",
+      "title": "🎧EP170 feat. 麥森創新創辦人暨董事長 張嘉翔Ethan｜從科技CEO到盲飲冠軍：盲飲不僅是競賽，更是一種享受過程",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為科技公司麥森創新創辦人，本集多談葡萄酒盲飲興趣與品酒生活，偏向健康與生活主題。",
+      "confidence": "medium"
+    },
+    "172": {
+      "guest": "許景泰 Jerry",
+      "org": "商戰CXO執行長",
+      "title": "🎧EP172 feat. 商戰CXO執行長 許景泰Jerry｜自媒體時代，如何建立關鍵人脈＆商業圈？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "來賓經營商戰CXO商業社群與生態圈，本集聚焦自媒體時代的人脈經營與知識變現，核心偏向品牌與個人影響力經營。",
+      "confidence": "medium",
+      "industry_reason": "來賓經營商戰CXO商業社群與知識學習平台，內容聚焦自媒體時代的人脈經營與知識變現，屬品牌行銷主題，產業偏商業教育。"
+    },
+    "171": {
+      "guest": "林志松 Rex",
+      "org": "大拙匠人創辦人",
+      "title": "🎧EP171 feat. 大拙匠人創辦人 林志松Rex｜五十年磨一碗麵，鵝油乾拌麵如何在血海市場中脫穎而出",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為乾拌麵品牌大拙匠人創辦人，內容聚焦品牌命名、IP合作與國際市場行銷，屬餐飲業品牌經營。",
+      "confidence": "high"
+    },
+    "169": {
+      "guest": "姜家煒 Henry",
+      "org": "Gogoro台灣總經理",
+      "title": "🎧EP169 feat. Gogoro台灣總經理 姜家煒Henry｜Gogoro八年級總座：想當總經理先做好超級幕僚",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "manufacturing",
+      "industry_proposal": "",
+      "reason": "來賓為Gogoro台灣總經理，核心談年輕總座的職涯養成與經營策略，屬領導主題，產業為電動機車交通。",
+      "confidence": "medium",
+      "industry_reason": "Gogoro台灣總經理分享從幕僚到總座的職涯與經營之道，並談產品、通路與服務策略，屬電動運具交通產業。"
+    },
+    "168": {
+      "guest": "岑永康 Sam",
+      "org": "資深新聞主播、主持人",
+      "title": "🎧EP168 feat. 資深新聞主播、主持人 岑永康Sam｜金牌主播維持幸福婚姻的關鍵！親子教育最重視「溝通」",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "本集聚焦資深新聞主播岑永康的婚姻經營、親子溝通與家庭生活平衡，屬健康與生活主題，來賓為媒體產業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為資深新聞主播暨主持人，屬媒體產業；本集核心在婚姻經營、親子溝通與家庭生活平衡，最貼近健康與生活主題。"
+    },
+    "167": {
+      "guest": "紀緻謙 Gary",
+      "org": "DigiAsia執行長暨安索帕台灣執行長",
+      "title": "🎧EP167 feat. DigiAsia執行長暨安索帕台灣執行長 紀緻謙Gary｜亞洲數位盛事，一起來台北體驗AI的無限創意",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "本集以DigiAsia「AI4U」主題探討AI應用與數位轉型，來賓為數位行銷代理商安索帕台灣執行長，屬行銷產業。",
+      "confidence": "medium"
+    },
+    "166": {
+      "guest": "李忠儒 Allen",
+      "org": "戀家小舖創辦人",
+      "title": "🎧EP166 feat. 戀家小舖創辦人 李忠儒Allen｜用態度決定一切，人生與創業中的每個「選擇」都很重要",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為戀家小舖創辦人，內容聚焦態度與選擇的心態，以及私域流量、老品牌經營等品牌行銷議題。",
+      "confidence": "medium",
+      "industry_reason": "戀家小舖為寢具消費品牌，內容聚焦私域流量、與消費者溝通及老品牌活化，並強調態度與選擇的創業心態。"
+    },
+    "164": {
+      "guest": "林明樟老師 MJ",
+      "org": "超級數字力創辦人",
+      "title": "🎧EP164 feat. 超級數字力創辦人 林明樟老師MJ｜負債千萬到創業成功，財報教學王MJ老師的財務思維終身受用課",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "money"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "來賓從賭博負債千萬到創業成功，並以財報與財務思維教學聞名，核心為逆境心態與理財思維。",
+      "confidence": "medium",
+      "industry_reason": "來賓為財報教學課程創辦人，本集聚焦從負債千萬走出逆境到創業成功，以及財務思維教學。"
+    },
+    "162": {
+      "guest": "王師",
+      "org": "牽猴子股份有限公司共同創辦人",
+      "title": "🎧EP162 feat. 牽猴子股份有限公司共同創辦人 王師｜國片推手，台灣知名電影行銷人的心路歷程",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為電影行銷公司共同創辦人，內容聚焦口碑、情感共鳴等電影行銷與發行策略。",
+      "confidence": "high"
+    },
+    "165": {
+      "guest": "黃晨皓 Kim",
+      "org": "PopDaily波波黛莉共同創辦人暨執行長",
+      "title": "🎧EP165 feat. PopDaily波波黛莉共同創辦人暨執行長 黃晨皓Kim｜從低潮中重生，阿金的的人生進化之路",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "本集以來賓從低潮中重生、成為心態教練與人生進化為核心；來賓為內容媒體平台 PopDaily 創辦人，現有產業類別皆不貼切。",
+      "confidence": "medium",
+      "industry_reason": "來賓為PopDaily波波黛莉創辦人，身處內容媒體產業，本集聚焦創業低潮重生、心態成長，並談及建立個人品牌。"
+    },
+    "161": {
+      "guest": "大 Q",
+      "org": "金色三麥董事長暨執行長 葉冠廷",
+      "title": "🎧EP161 feat. 金色三麥董事長暨執行長 葉冠廷 大Q｜多元經營與年輕化戰略，金色三麥IPO的成功之道",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "金色三麥為餐飲啤酒品牌，本集聚焦家族企業轉型上市、管理心法與品牌多元化及年輕化經營。",
+      "confidence": "high"
+    },
+    "163": {
+      "guest": "吳蓓薇 Margaret",
+      "org": "寵愛之名品牌創辦人暨董事長",
+      "title": "🎧EP163 feat. 寵愛之名品牌創辦人暨董事長 吳蓓薇Margaret｜品牌20週年，面膜女王面對挑戰的堅定信仰",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為面膜保養品牌創辦人，內容聚焦品牌經營20年歷程與面對韓系競爭等挑戰的心態，美妝保養不屬於既有產業類別。",
+      "confidence": "medium",
+      "industry_reason": "來賓為面膜保養品牌創辦人，屬消費品產業，內容聚焦品牌經營二十年歷程與面對韓系競爭等挑戰的堅定心態。"
+    },
+    "160": {
+      "guest": "邱永龍 Joe",
+      "org": "ComHere董事執行長暨台灣行銷年會創辦人",
+      "title": "🎧EP160 feat. ComHere董事執行長暨台灣行銷年會創辦人 邱永龍Joe｜網路行銷年度盛事，六大亮點告訴你！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為網路行銷公司執行長暨台灣行銷年會創辦人，內容聚焦Meta合作、廣告趨勢與行銷年會。",
+      "confidence": "high"
+    },
+    "158": {
+      "guest": "黃大綱 TK",
+      "org": "法蘭絲董事長",
+      "title": "🎧EP158 feat. 法蘭絲董事長 黃大綱TK｜全台最大葡萄酒總代理如何將葡萄酒生活化？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為葡萄酒總代理董事長，本集聚焦葡萄酒的通路行銷策略與生活化推廣，屬餐飲飲品產業的品牌行銷議題。",
+      "confidence": "medium"
+    },
+    "159": {
+      "guest": "汪俐伶",
+      "org": "台灣時裝品牌WANGLILING創辦人",
+      "title": "🎧EP159 feat. 台灣時裝品牌WANGLILING創辦人 汪俐伶｜光影的時尚革命，探索科技與美學的交叉點",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為時裝品牌創辦人兼設計師，內容聚焦品牌創立、設計靈感與合作經歷，屬品牌主題與設計產業。",
+      "confidence": "high"
+    },
+    "156": {
+      "guest": "徐震 Quake",
+      "org": "嘖嘖共同創辦人",
+      "title": "🎧EP156 feat. 嘖嘖共同創辦人 徐震Quake｜創意到實現，嘖嘖如何助力讓「美好的事物」發生",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為群眾募資平台嘖嘖共同創辦人，內容聚焦公司管理文化（少開會、自律員工）與募資作為品牌驗證市場需求的工具。",
+      "confidence": "medium",
+      "industry_reason": "來賓為群眾募資平台嘖嘖共同創辦人，內容涵蓋募資作為品牌市場驗證與公司管理文化（少開會、自律員工）。"
+    },
+    "157": {
+      "guest": "汪志謙老師",
+      "org": "品牌雙增長戰略顧問",
+      "title": "🎧EP157 feat. 品牌雙增長戰略顧問 汪志謙老師｜如何掌握商業的底層邏輯？從「峰值體驗」中找出關鍵時刻",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為品牌雙增長戰略顧問，內容聚焦峰值體驗、品牌洞察與增長策略，屬品牌行銷主題。",
+      "confidence": "high"
+    },
+    "155": {
+      "guest": "邱明慧",
+      "org": "中國信託創投資深副總經理",
+      "title": "🎧EP155 feat. 中國信託創投資深副總經理 邱明慧｜從類比到數位：專訪台灣文創投資先行者",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money",
+        "ai"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為中信創投資深副總，聚焦文創影視投資策略與數位顛覆式創新，屬創投產業，主題涉及投資與數位轉型。",
+      "confidence": "medium",
+      "industry_reason": "來賓為中信創投資深副總，談創投投資文創影視的策略及數位顛覆式創新，產業屬金融投資。"
+    },
+    "154": {
+      "guest": "游弘宇 Stephen",
+      "org": "知識衛星創辦人暨執行長",
+      "title": "🎧EP154 feat. 知識衛星創辦人暨執行長 游弘宇Stephen｜知識變現時代，如何打造精品級線上課",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "來賓創辦線上課程平台知識衛星，內容聚焦平台差異化與精品級課程打造，屬品牌經營，產業為線上教育。",
+      "confidence": "medium",
+      "industry_reason": "來賓創辦線上課程平台知識衛星，內容聚焦平台差異化與打造精品級課程的產品品牌定位，屬教育產業。"
+    },
+    "152": {
+      "guest": "沈方正 Winston",
+      "org": "老爺酒店集團執行長",
+      "title": "🎧EP152 feat. 老爺酒店集團執行長 沈方正Winston｜飯店界的熱血CEO 打造台灣的旅宿文化",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為老爺酒店集團執行長，談經營理念、台灣旅宿文化特色與品牌定位，以及疫情衝擊與缺工下的領導挑戰，屬旅宿業，現有產業分類皆不貼切。",
+      "confidence": "medium",
+      "industry_reason": "來賓為老爺酒店集團執行長，談旅宿產業經營、疫情衝擊與缺工挑戰，屬餐飲／旅遊產業，核心在經營領導與逆境應對。"
+    },
+    "153": {
+      "guest": "楊立偉 Willie",
+      "org": "意藍資訊創辦人",
+      "title": "🎧EP153 feat. 意藍資訊創辦人 楊立偉Willie｜台灣首家掛牌的AI智能數據公司如何掌握AI與大數據發展",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為台灣首家掛牌AI智能數據公司意藍資訊創辦人，本集聚焦AI與大數據發展及生成式AI平台。",
+      "confidence": "high"
+    },
+    "151": {
+      "guest": "魏毓恆 Iven",
+      "org": "大武山牧場營運長",
+      "title": "🎧EP151 feat. 大武山牧場營運長 魏毓恆Iven｜智慧化養雞牧場如何成為全台首家上市IPO純蛋商",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "leadership"
+      ],
+      "industry": "other",
+      "industry_proposal": "農業／畜牧",
+      "reason": "來賓為蛋品牧場營運長，聚焦傳產以數據智慧化轉型及營運管理心法，產業屬畜牧農業不在既有分類中。",
+      "confidence": "medium",
+      "industry_reason": "來賓為蛋商牧場營運長，聚焦傳產智慧化數據轉型與營運管理心法，產業屬畜牧農業。"
+    },
+    "150": {
+      "guest": "王献堂 Steve",
+      "org": "科科科技KKCompany董事長暨執行長",
+      "title": "🎧EP150 feat. 科科科技KKCompany董事長暨執行長 王献堂Steve｜從KKBOX到KKCompany，20 年來如何以台灣為發展基地、佈局日本市場",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為KKCompany董事長暨執行長，談從KKBOX到KKCompany的二十年經營歷程、訂閱模式、日本市場佈局與上市決策，核心在企業經營領導，屬科技產業。",
+      "confidence": "medium"
+    },
+    "149": {
+      "guest": "陳陸寬",
+      "org": "貓下去敦北俱樂部創辦人",
+      "title": "🎧EP149 feat. 貓下去敦北俱樂部創辦人 陳陸寬｜餐酒館老闆獨樹一格的「新台北家常菜」哲學",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為餐酒館創辦人，內容聚焦餐廳命名、定位與「新台北家常菜」的品牌特色。",
+      "confidence": "medium"
+    },
+    "147": {
+      "guest": "吳建賢 Cosmo",
+      "org": "財富方舟創辦人暨執行長",
+      "title": "包租公養成教練，分享「買房出租」的投資技巧",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "realestate",
+      "industry_proposal": "",
+      "reason": "本集聚焦買房出租、被動收入與房市投資，來賓為房地產投資教育創辦人，屬理財主題。",
+      "confidence": "high",
+      "industry_reason": "來賓為包租公養成教練，聚焦買房出租、被動收入與房市投資，屬理財主題與不動產產業。"
+    },
+    "148": {
+      "guest": "盧炳勳 Robin",
+      "org": "貝立德總經理、台北市廣告公會理事長",
+      "title": "🎧EP148 feat. 貝立德總經理、台北市廣告公會理事長 盧炳勳Robin｜「始終如一的熱情」盧總的廣告之路",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "ai"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為媒體代理商總經理暨廣告公會理事長，內容聚焦廣告媒體產業經營，並討論ChatGPT與AI對廣告業的影響。",
+      "confidence": "high"
+    },
+    "145": {
+      "guest": "鄭鎧尹 Keynes",
+      "org": "一卡通總經理",
+      "title": "一卡通十週年，下一步如何掌握電子支付市場",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為一卡通總經理，談從新創到企業的管理差異、一卡通品牌特色與電子支付市場布局，屬支付金融科技產業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為一卡通總經理，談電子支付市場發展與從新創到企業的管理經驗，屬金融支付產業與領導主題。"
+    },
+    "146": {
+      "guest": "王芝方 Jerome",
+      "org": "綠光劇團總經理",
+      "title": "綠光30年，如何轉型追尋劇場永續發展",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為綠光劇團總經理，屬劇場藝術產業，內容聚焦劇團三十年經營轉型、成立公司與票房長紅的關鍵。",
+      "confidence": "medium"
+    },
+    "144": {
+      "guest": "鄭家鐘 Simon",
+      "org": "台新文化藝術基金會董事長",
+      "title": "「把每件事作成天命」，資深媒體人的藝術探索之路",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "health"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為台新文化藝術基金會董事長，屬藝術領域；內容聚焦天命觀與《一個人的活法》等人生觀與生活態度。",
+      "confidence": "medium"
+    },
+    "142": {
+      "guest": "賴盈菁 Jojo",
+      "org": "think品牌顧問創辦人暨執行總監",
+      "title": "品牌成功關鍵，品牌顧問的心法分享",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為品牌顧問公司創辦人，內容聚焦品牌建立、品牌力與品牌轉型案例。",
+      "confidence": "high"
+    },
+    "141": {
+      "guest": "林宜標",
+      "org": "時藝多媒體董事總經理",
+      "title": "「將世界引進台灣，讓世界看見台灣」，台灣展演的幕後推手",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為時藝多媒體董事總經理，談策展IP挑選、展演產業與場館經營，屬設計／藝術展演領域，核心在品牌與內容經營。",
+      "confidence": "medium"
+    },
+    "143": {
+      "guest": "龔建嘉",
+      "org": "鮮乳坊創辦人",
+      "title": "做一件只有你能做的事，叛逆獸醫的白色革命",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為鮮乳坊創辦人，以獸醫身分透過群眾募資打造乳品品牌並推動產業永續，屬餐飲（乳品）產業，內容聚焦品牌創立與堅持理念。",
+      "confidence": "medium"
+    },
+    "140": {
+      "guest": "謝玠揚",
+      "org": "Neogence霓淨思創辦人暨總經理",
+      "title": "打造肌膚保養新局面，化工博士的創業管理心法",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "leadership"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為保養品牌霓淨思創辦人，談品牌創立、海外市場拓展與邁向上市的管理心法，產業屬保養／生技相關。",
+      "confidence": "medium"
+    },
+    "138": {
+      "guest": "陳菁徽",
+      "org": "禾馨宜蘊生殖中心主治醫師、不孕症權威",
+      "title": "不孕症權威，「閨蜜醫師」的女性健康探索",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為不孕症權威醫師，內容聚焦凍卵、生殖醫療與女性身心健康，屬健康主題與健康產業。",
+      "confidence": "high"
+    },
+    "137": {
+      "guest": "詹益鑑 IC",
+      "org": "TGA台灣天使俱樂部創辦人、《科技解密》Podcast主持人",
+      "title": "矽谷旅人的新第一手見聞：放大市場視野，尋找無限可能",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "resilience"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為天使投資俱樂部創辦人與加速器合夥人，談矽谷新創生態、台灣新創優劣勢與創業長遠心態，屬創投新創產業。",
+      "confidence": "low",
+      "industry_reason": "來賓為台灣天使俱樂部創辦人、加速器合夥人，屬新創投資領域，談矽谷新創生態、獨角獸關鍵與創業心態。"
+    },
+    "139": {
+      "guest": "楊承羲 Erik",
+      "org": "國票金控董事",
+      "title": "天使投資人如何選擇潛力企業？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為國票金控董事暨天使投資人，本集聚焦天使投資、家族辦公室與金融業投資趨勢，核心屬理財投資主題。",
+      "confidence": "high",
+      "industry_reason": "來賓為國票金控董事暨天使投資人，內容聚焦天使投資選股、家族辦公室與金融投資趨勢。"
+    },
+    "136": {
+      "guest": "楊應超 Kirk",
+      "org": "美商科克蘭資本董事長",
+      "title": "「不敢冒險，是最大的冒險」外資首席分析師的成功心法",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money",
+        "resilience"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為外資首席分析師與資本公司董事長，內容聚焦投資觀念、退休金規劃及勇於冒險的心態。",
+      "confidence": "high",
+      "industry_reason": "來賓為外資首席分析師、資本公司董事長，內容聚焦退休金規劃與投資觀念，並談冒險心態與職涯轉變。"
+    },
+    "135": {
+      "guest": "柯景倫 Allan",
+      "org": "圈圈科技創辦人暨執行長",
+      "title": "網紅行銷新趨勢，微網紅也能創造大效益！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "ai"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為圈圈科技創辦人，本集聚焦微網紅行銷與成效評估，並談及生成式AI在網紅行銷的應用。",
+      "confidence": "high"
+    },
+    "133": {
+      "guest": "何飛鵬",
+      "org": "城邦媒體集團首席執行長",
+      "title": "全台創辦最多雜誌和出版社的人，如何走出自己的變革之路",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "ai"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為城邦媒體集團執行長，內容聚焦於創業、領導策略與紙本到數位的企業轉型。",
+      "confidence": "medium",
+      "industry_reason": "來賓為城邦媒體集團首席執行長，訪談聚焦創業、領導策略與紙本到數位的企業轉型。"
+    },
+    "132": {
+      "guest": "李宣如",
+      "org": "伊林娛樂創意活動事業部副總經理 曹慧如Kay＆「璀璨之星」網紅組冠亞軍 呂巧涵",
+      "title": "娛樂圈的新星製造機",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓來自伊林娛樂與選秀網紅冠亞軍，聊選秀環境變化、影響力獎與個人曝光經營，核心在個人品牌與影響力。",
+      "confidence": "medium",
+      "industry_reason": "來賓來自伊林娛樂及選秀網紅冠亞軍，討論選秀環境變化、影響力獎與個人品牌經營，屬媒體娛樂產業的品牌議題。"
+    },
+    "134": {
+      "guest": "蔡嘉駿 Homme",
+      "org": "文化內容策進院董事長",
+      "title": "文策院如何串連政府與民間資源，成為台灣娛樂產業的助力",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "leadership"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為文策院董事長，談從業界轉入半公務體系的領導角色及台灣影視內容推向國際的策略，產業屬文化內容與影視，不屬既有類別。",
+      "confidence": "medium",
+      "industry_reason": "來賓為文策院董事長，談從業界轉入半公務體系的領導經驗與台灣影視娛樂產業國際化策略，產業屬媒體／娛樂。"
+    },
+    "131": {
+      "guest": "李兆華 River",
+      "org": "東森財經新聞台總監",
+      "title": "財經新聞主播的「聲」意頭腦，教小資族錢滾錢",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為東森財經新聞台總監，本集聚焦投資經驗與給小資族的理財入門心法，核心主題為理財。",
+      "confidence": "high",
+      "industry_reason": "來賓為東森財經新聞台總監，屬媒體產業，內容聚焦投資理財經驗與給小資族的入門心法。"
+    },
+    "130": {
+      "guest": "李彥甫 Owen",
+      "org": "聯合數位文創董事長",
+      "title": "創造本土IP大舞台，台灣文創的領航者",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為聯合數位文創董事長，談策展、本土IP發揚國際等文創品牌議題，屬設計／藝術／生活產業。",
+      "confidence": "medium"
+    },
+    "129": {
+      "guest": "李亞明",
+      "org": "新人教父",
+      "title": "流行音樂界打造當紅歌手的推手",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "health"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為流行音樂製作人，內容聚焦從台前轉幕後的轉折、家庭相處與年長後的生活調適，屬心態與生活主題；音樂屬藝術領域。",
+      "confidence": "medium"
+    },
+    "126": {
+      "guest": "黃沛聲 Bryan",
+      "org": "創投律師",
+      "title": "創投律師的商業哲學：台灣新創的優勢與挑戰",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "services",
+      "industry_proposal": "",
+      "reason": "來賓為創投律師，談台灣新創環境、創業家基本觀念與評估新創潛力，核心偏向創業經營與領導思維，產業屬法律與創投領域。",
+      "confidence": "low",
+      "industry_reason": "來賓為創投律師，屬專業服務業，內容聚焦台灣新創環境與創業家應具備的觀念，較貼近經營與領導面向。"
+    },
+    "128": {
+      "guest": "陳鎮川 Isaac",
+      "org": "天后製作人",
+      "title": "台灣演唱會&頒獎典禮製作的第一把交椅",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓陳鎮川為演唱會與頒獎典禮製作人，屬娛樂產業，內容聚焦職涯經歷、經驗傳承與人際維繫，較貼近領導與傳承。",
+      "confidence": "medium",
+      "industry_reason": "來賓為演唱會與頒獎典禮製作人，屬媒體娛樂產業，內容聚焦職涯經歷、經驗傳承與人際維繫，偏向領導與傳承。"
+    },
+    "125": {
+      "guest": "蕭安助 Andrew",
+      "org": "和碩 軟體研發部處長",
+      "title": "掌握未來科技！擁抱AI探索數位孿生的無限可能",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為和碩軟體研發部處長，談數位孿生、Omniverse與AI未來發展，核心為AI與科技轉型。",
+      "confidence": "high"
+    },
+    "127": {
+      "guest": "江家瑀 Andy",
+      "org": "OOPS創潮玩圈創辦人",
+      "title": "集結知識、娛樂、社交的共享空間",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "ai"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓創辦結合藝術展覽、音樂與社交活動的共享空間OOPS，聊空間規劃、活動經營與元宇宙、AI創作MV等計畫，屬設計／藝術生活領域，核心在品牌經營與AI科技應用。",
+      "confidence": "medium"
+    },
+    "124": {
+      "guest": "彭小刀 Rio",
+      "org": "5566成員、超級斜槓全方位藝人",
+      "title": "從藝人到企業家，「衝」滿幹勁的人生哲學",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "money"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為藝人轉型多家企業執行長，談人生哲學、生命清單與各階段投資心得，產業以演藝文創歸於設計／藝術／生活。",
+      "confidence": "medium"
+    },
+    "123": {
+      "guest": "林志鴻 Andy",
+      "org": "Yo-Kai Express創辦人",
+      "title": "用半導體做拉麵自販機，連馬斯克都推文喊好吃",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓以半導體與自動化科技打造拉麵自販機，屬餐飲科技創業，內容聚焦科技改變餐飲生態與品牌拓展。",
+      "confidence": "medium"
+    },
+    "122": {
+      "guest": "謝綸 Konois",
+      "org": "電獺共同創辦人暨執行長",
+      "title": "「任性vs.韌性」科技媒體的創業之路",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為科技媒體電獺創辦人，本集以「任性vs.韌性」的十一年創業心境為核心，並談電獺少女在創作者經濟中的品牌經營。",
+      "confidence": "medium"
+    },
+    "121": {
+      "guest": "吳承漢 Hank",
+      "org": "Salesforce企業客戶總監",
+      "title": "訂閱經濟的先驅，探索數位轉型的關鍵",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓任職Salesforce資訊科技業，訪談聚焦生成式AI CRM與台灣企業數位轉型。",
+      "confidence": "high"
+    },
+    "120": {
+      "guest": "石恬華 Judy",
+      "org": "Alpha Plus人才加速器共同創辦人",
+      "title": "最年輕投信董座，培育台灣人才永續發展",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "services",
+      "industry_proposal": "",
+      "reason": "來賓從金融業董座轉而創辦人才加速器，核心談人才培育與企業發掘人才，屬領導與人才發展議題。",
+      "confidence": "medium",
+      "industry_reason": "來賓為前投信董座、現創辦人才加速器Alpha Plus，本集聚焦人才培育與企業如何發掘好人才，屬領導與人才發展，產業以人才服務為主。"
+    },
+    "118": {
+      "guest": "吳德威 David",
+      "org": "橡子園太平洋基金合夥人",
+      "title": "跨界領導的管理心法",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "本集聚焦跨界領導、團隊管理與與新世代溝通，來賓為創投基金合夥人，屬創投投資產業。",
+      "confidence": "high",
+      "industry_reason": "來賓為創投基金合夥人，本集聚焦跨界領導、團隊管理與主管溝通心法。"
+    },
+    "119": {
+      "guest": "蕭上農 Fox",
+      "org": "iCook 愛料理＆ INSIDE 共同創辦人",
+      "title": "關於原生網路世界的那些事",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓是網路媒體與食譜社群平台創辦人，屬網路科技產業，內容聚焦創業歷程與克服挑戰。",
+      "confidence": "medium"
+    },
+    "117": {
+      "guest": "羅薇琳 Vivian",
+      "org": "Bibian比比昂創辦人暨社長",
+      "title": "購買日本商品的專家",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為跨境電商比比昂創辦人，訪談聚焦創業契機、經營困難、吸引投資與未來規劃，屬創業經營領導面向，產業為電商不屬既有類別。",
+      "confidence": "medium",
+      "industry_reason": "來賓為跨境電商代購平台比比昂創辦人，訪談聚焦創業歷程、經營挑戰與公司未來規劃，屬零售電商領域的經營領導議題。"
+    },
+    "115": {
+      "guest": "游竣文 John",
+      "org": "Aluxe亞立詩鑽石創辦人暨執行長",
+      "title": "台灣頂級珠寶品牌如何探尋市場突破口？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為珠寶品牌創辦人，內容聚焦品牌創立、線上線下通路與海外市場競爭，屬品牌與行銷主題，珠寶產業不在既有分類中。",
+      "confidence": "medium",
+      "industry_reason": "來賓為珠寶品牌亞立詩創辦人，內容聚焦品牌創立、線上線下通路與海外市場競爭，屬零售消費品的品牌經營。"
+    },
+    "116": {
+      "guest": "Dr.Selena楊倩琳",
+      "org": "小資理財教主",
+      "title": "小錢變大錢，小資如何錢滾錢？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money",
+        "resilience"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "本集聚焦小資族投資儲蓄的理財建議，並談及來賓從印刷廠女工奮鬥至CEO的逆境歷程，來賓為理財領域專家。",
+      "confidence": "high",
+      "industry_reason": "來賓為小資理財教主，本集核心談小資族投資儲蓄，並分享從女工到CEO的逆境奮鬥歷程。"
+    },
+    "114": {
+      "guest": "楊淳嵐",
+      "org": "加密貨幣Matrixport 台灣區負責人",
+      "title": "談談FTX有可能重啟或出售嗎？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "本集聚焦FTX破產、矽谷銀行倒閉與加密貨幣投資發展，核心為理財與金融議題，來賓為加密貨幣金融服務公司負責人。",
+      "confidence": "high",
+      "industry_reason": "來賓為加密貨幣金融服務商Matrixport台灣負責人，內容聚焦FTX破產、矽谷銀行倒閉與加密貨幣投資建議，屬理財主題。"
+    },
+    "113": {
+      "guest": "黃鼎翎",
+      "org": "十分好創意執行長",
+      "title": "公關界闖蕩30年的行業洞見",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為公關公司執行長，內容聚焦公關操作與提升品牌能見度，屬品牌行銷主題與行銷產業。",
+      "confidence": "high"
+    },
+    "111": {
+      "guest": "李彥樞",
+      "org": "Hive Ventures 蜂行資本共同創辦人",
+      "title": "看好台灣未來十年創業前景",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為創投共同創辦人，內容聚焦合夥創業經驗、團隊決策與投資新創的標準，核心較貼近領導與創業經營。",
+      "confidence": "medium",
+      "industry_reason": "來賓為創投蜂行資本共同創辦人，談共同創業、合夥決策與新創投資標準，屬金融投資產業，核心在創業領導與投資。"
+    },
+    "109": {
+      "guest": "郭家齊 Andy",
+      "org": "PopChill拍拍圈共同創辦人",
+      "title": "創業達人的15年創業之路",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "money"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為時尚轉售科技平台共同創辦人，內容聚焦創業挑戰克服與創投募資環境。",
+      "confidence": "medium"
+    },
+    "110": {
+      "guest": "吳鉑源",
+      "org": "Saiens集團帝雉石品牌負責人",
+      "title": "讓市場認識台灣好石材",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓經營帝雉石石材品牌，談如何讓市場認識台灣石材並提供廚房檯面選材建議，屬品牌行銷主題，產業偏向建材與居家設計。",
+      "confidence": "medium"
+    },
+    "112": {
+      "guest": "葉丙成",
+      "org": "臺大電機工程學系教授",
+      "title": "翻轉教室的創新教育思維",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "來賓為臺大教授，談翻轉教學與教育創新及對年輕人的職涯建議，偏向人才培育與引導，產業屬教育界。",
+      "confidence": "low",
+      "industry_reason": "來賓為臺大教授，談翻轉教學與教育創新，產業屬教育；主題貼近教育理念與培養人才，勉強歸於領導，貼切度有限。"
+    },
+    "108": {
+      "guest": "王俞蓉 Susan",
+      "org": "LINE台灣企業解決方案事業部總經理",
+      "title": "打造品牌新方向，個人化行銷的重要",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為LINE台灣企業解決方案事業部總經理，具15年網路行銷業務經驗，本集聚焦個人化行銷、官方帳號推播與影音行銷等品牌行銷議題。",
+      "confidence": "high"
+    },
+    "107": {
+      "guest": "潘崴 Kwali",
+      "org": "宜蘭不老部落執行長",
+      "title": "自給自足的觀光秘境，探索部落永續的力量",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為不老部落第二代執行長，談承接父母創立的部落事業、未宣傳卻天天客滿的口碑經營與文化傳承，屬觀光與原住民文化產業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為不老部落執行長，經營部落觀光並承接父母創立的事業，談接班傳承與不靠宣傳仍客滿的品牌力，產業屬餐飲／旅遊。"
+    },
+    "106": {
+      "guest": "曾仲銘 Ben",
+      "org": "BEMO Café創辦人",
+      "title": "咖啡門外漢融合東西品飲文化，打造亞洲精品咖啡品牌",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為精品咖啡品牌BEMO Café創辦人，內容聚焦咖啡品牌創立與市場經營，屬餐飲產業的品牌議題。",
+      "confidence": "medium"
+    },
+    "105": {
+      "guest": "劉震紳 CM Liu",
+      "org": "VOGUE & GQ 董事總經理",
+      "title": "走在時尚流行最前線，從雜誌轉型至數位",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "leadership"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為時尚雜誌媒體董事總經理，談品牌影響力、線下活動與組織創新領導，產業屬時尚媒體出版。",
+      "confidence": "medium",
+      "industry_reason": "來賓為時尚雜誌媒體 VOGUE & GQ 董事總經理，談品牌影響力、線下活動行銷與組織創新領導，並涉及雜誌數位轉型。"
+    },
+    "104": {
+      "guest": "張運智 Eric",
+      "org": "悍創運動行銷創辦人",
+      "title": "台灣運動行銷界「鬼才」",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為悍創運動行銷創辦人，本集聚焦運動行銷、賽事經營與創業歷程，核心屬品牌與行銷。",
+      "confidence": "high"
+    },
+    "103": {
+      "guest": "王貞妮 Jenny",
+      "org": "王牌製作人",
+      "title": "台灣綜藝節目的幕後推手",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為綜藝節目製作人，內容聚焦節目企劃、收視趨勢與Podcast內容經營，屬娛樂媒體產業，主題最接近內容品牌與行銷。",
+      "confidence": "medium",
+      "industry_reason": "來賓為綜藝節目製作人，談節目企劃、收視率與內容題材經營，屬媒體娛樂產業，核心在內容與品牌行銷。"
+    },
+    "102": {
+      "guest": "正義刺青師 Hedy",
+      "org": "",
+      "title": "把人體當畫布，紋身職人的修煉之路",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為刺青藝術職人，內容聚焦入行契機、克服挑戰與找到個人風格的修煉歷程，屬設計／藝術產業並以逆境心態為核心。",
+      "confidence": "medium"
+    },
+    "99": {
+      "guest": "阿福",
+      "org": "蘇打綠團長",
+      "title": "微笑阿福溫柔地改變世界！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為蘇打綠團長，轉型投入音樂與永續策展，屬藝術領域；內容聚焦成團挑戰的克服與透過策展傳遞永續理念。",
+      "confidence": "medium"
+    },
+    "101": {
+      "guest": "鄒開蓮 Rose",
+      "org": "前Yahoo董事總經理",
+      "title": "台灣電商教母帶Yahoo奇摩業績翻40倍",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為前Yahoo台灣董事總經理，內容聚焦跨國管理心法、領導者特質與職場溝通，核心為領導主題，產業屬網路科技。",
+      "confidence": "medium"
+    },
+    "98": {
+      "guest": "范牧群",
+      "org": "麥吉machi machi手搖飲料品牌創辦人",
+      "title": "周杰倫也愛喝的奶茶品牌",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為手搖飲品牌麥吉創辦人，內容聚焦品牌差異化、空間設計與跨國經營，屬餐飲業的品牌議題。",
+      "confidence": "high"
+    },
+    "100": {
+      "guest": "百靈果",
+      "org": "",
+      "title": "百靈果為何盤據台灣最有人氣Podcast排行榜前三名？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓百靈果為人氣Podcast節目，內容聚焦節目經營、內容吸引力與粉絲經營，屬品牌與行銷主題，產業為媒體內容創作。",
+      "confidence": "medium",
+      "industry_reason": "來賓為知名Podcast節目百靈果，內容聚焦節目定位、內容吸引力與粉絲經營，屬媒體產業的品牌經營。"
+    },
+    "97": {
+      "guest": "潘瑋翔 Hawkins",
+      "org": "薩泰爾娛樂執行長",
+      "title": "向市場證明喜劇的品牌價值",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "leadership"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為喜劇娛樂公司執行長，談喜劇品牌價值與廣告合作，並分享從業務總監接任執行長的歷程。",
+      "confidence": "medium",
+      "industry_reason": "來賓為喜劇娛樂公司執行長，談喜劇品牌價值、廣告合作與從業務總監升任執行長的歷程。"
+    },
+    "96": {
+      "guest": "張志豪",
+      "org": "前華航機長、義消、台北市議員",
+      "title": "熱血機長，火鳳凰義消守護民眾安全",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "other",
+      "industry_proposal": "公共服務／政治",
+      "reason": "來賓為前機長、義消與市議員，訪談聚焦重大災害救災經歷與高壓下的心態調適，核心為逆境與心態。",
+      "confidence": "medium",
+      "industry_reason": "來賓為前機長、義消轉任市議員，內容聚焦救災高壓下的心態調適與角色轉換，現職為政治公職。"
+    },
+    "95": {
+      "guest": "林鼎鈞",
+      "org": "PressPlay共同創辦人暨PressPlay Academy執行長",
+      "title": "影響力經濟當道，臺灣最大線上學習平台的幕後推手",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "本集聚焦PressPlay協助創作者品牌化、影響力經濟與付費訂閱模式，來賓為線上學習與創作者平台創辦人，屬內容／教育平台產業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為線上學習平台PressPlay創辦人，訪談聚焦創作者品牌化與影響力經濟的商業模式轉型。"
+    },
+    "93": {
+      "guest": "劉經綸",
+      "org": "CoCo都可總經理",
+      "title": "揭秘CoCo都可從飲料界中脫穎而出的致勝秘密",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為手搖飲品牌CoCo都可總經理，內容聚焦品牌命名、社群行銷、異業合作與差異化策略。",
+      "confidence": "high"
+    },
+    "94": {
+      "guest": "李易騰",
+      "org": "PayEasy總經理、17Life創辦人",
+      "title": "電商轉型靠封閉式會員開拓新商機",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為電商平台經營者，聚焦PayEasy轉型封閉式會員的商業模式與市場定位，屬品牌與行銷策略範疇。",
+      "confidence": "medium",
+      "industry_reason": "來賓為電商平台PayEasy總經理與17Life創辦人，核心談電商轉型為封閉式會員經營模式與市場定位。"
+    },
+    "92": {
+      "guest": "張倫維",
+      "org": "FashionGuide共同創辦人、C Channel執行長",
+      "title": "掌握網紅行銷商機的關鍵",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓經營女性媒體與KOL帶貨電商，整集聚焦網紅行銷與品牌主的行銷建議。",
+      "confidence": "high"
+    },
+    "91": {
+      "guest": "王品茜",
+      "org": "isart gallery御書房藝廊總監",
+      "title": "台灣藝廊轉型數位先驅",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為藝廊總監，屬藝術產業，核心談藝廊早年推出線上展售平台的數位轉型，以及連結企業與藝術家、經營收藏家客群的品牌經營。",
+      "confidence": "medium"
+    },
+    "89": {
+      "guest": "蘇花猴愛敗家",
+      "org": "部落客始祖",
+      "title": "網紅始祖一路走來的生存法則",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為部落客始祖，談自媒體內容經營、創立服飾品牌與克服困難、隨時代轉變，核心在品牌經營與逆境生存。",
+      "confidence": "medium"
+    },
+    "88": {
+      "guest": "劉于遜",
+      "org": "共享機車威摩科技WeMo執行長",
+      "title": "編織交通共享經濟，以車聯網科技改變台灣",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為共享機車車聯網科技公司WeMo執行長，內容聚焦創業歷程、服務差異化與品牌經營，屬科技產業。",
+      "confidence": "medium"
+    },
+    "90": {
+      "guest": "黃中村",
+      "org": "肯驛國際執行長",
+      "title": "揭開全球禮賓服務的神秘面紗",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "services",
+      "industry_proposal": "",
+      "reason": "來賓為禮賓服務公司執行長，內容聚焦服務轉型、B2B2C商業模式與疫情下的經營及行銷策略調整。",
+      "confidence": "medium",
+      "industry_reason": "來賓經營機場接送與全球禮賓服務，談疫情衝擊下的轉型（轉攻豪宅禮賓）與行銷策略調整，屬專業服務業。"
+    },
+    "87": {
+      "guest": "李立元",
+      "org": "百年餅店舊振南總經理",
+      "title": "百年老店的品牌再造，最大使命「傳承」",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "leadership"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為百年餅店舊振南總經理，內容聚焦老品牌再造、儀式感行銷與聯名合作，並觸及文化傳承。",
+      "confidence": "high"
+    },
+    "86": {
+      "guest": "香港台灣產品供應部總經理王國榮",
+      "org": "P&G寶僑家品",
+      "title": "解密一流外商的品牌、供應鏈、人才戰略",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "leadership"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "本集聚焦P&G多品牌戰略與人才培養、跨世代管理，來賓為寶僑供應部總經理，屬日用消費品產業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為P&G寶僑家品產品供應部總經理，屬消費品產業，內容聚焦多品牌戰略與跨世代人才管理。"
+    },
+    "84": {
+      "guest": "陳建慶",
+      "org": "大師房屋董事長",
+      "title": "房產界先驅，豪宅銷售王成功的秘訣",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "realestate",
+      "industry_proposal": "",
+      "reason": "來賓為房仲業董事長，談從業務成為頂尖銷售、高總價客戶行銷與創業挑戰，核心在銷售行銷與逆境心態。",
+      "confidence": "medium",
+      "industry_reason": "來賓為房仲公司董事長，訪談聚焦從業務做到頂尖、豪宅客戶行銷互動與創業挑戰、五度叩關EMBA的堅持。"
+    },
+    "83": {
+      "guest": "黃耀文",
+      "org": "XREX共同創辦人暨執行長",
+      "title": "FTX破產，加密貨幣的未來走向？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為加密貨幣平台XREX執行長，聚焦FTX破產後加密貨幣走向與投資建議，屬理財主題，產業為區塊鏈科技。",
+      "confidence": "medium"
+    },
+    "85": {
+      "guest": "張士祺",
+      "org": "電商女鞋品牌D+AF共同創辦人暨執行長",
+      "title": "走過十八年，靠大數據創造破億商機",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "本集聚焦女鞋電商品牌D+AF的創立、以大數據鎖定受眾及線上走向線下的品牌經營策略，來賓屬電商時尚零售業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為電商女鞋品牌D+AF執行長，內容聚焦品牌創立、以大數據鎖定受眾及線上到線下的經營策略，屬品牌行銷與零售消費品。"
+    },
+    "81": {
+      "guest": "優席夫",
+      "org": "旅英原住民藝術家",
+      "title": "將台灣原住民文化推向國際舞台",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為旅英原住民藝術家，訪談聚焦其從歌手夢碎、當油漆工到非科班自學作畫並推廣原住民文化的轉折歷程。",
+      "confidence": "medium"
+    },
+    "80": {
+      "guest": "洪芝晨醫師",
+      "org": "婦科美學專家",
+      "title": "性好有她，比女人更了解女人！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為婦科美學醫師，內容聚焦婦科美學與性健康門診，屬健康與生活主題、健康產業。",
+      "confidence": "high"
+    },
+    "79": {
+      "guest": "陳素蘭",
+      "org": "數位時代共同創辦人暨執行長",
+      "title": "數位時代與時俱進，傳統媒體轉型創新價值",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為數位時代共同創辦人暨執行長，本集聚焦傳統媒體的數位轉型與媒體品牌經營，屬媒體出版產業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為數位時代共同創辦人暨執行長，屬媒體產業，內容聚焦傳統媒體的數位轉型與媒體品牌經營。"
+    },
+    "82": {
+      "guest": "張廼森",
+      "org": "中興保全科技 智慧系統本部總經理",
+      "title": "中興保全不只是保全！從保全業到科技業的數位轉型",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "本集聚焦中興保全從傳統保全走向雲端、物聯網與生活應用的數位轉型，來賓為中保科技智慧系統本部總經理，屬科技產業。",
+      "confidence": "high"
+    },
+    "78": {
+      "guest": "郭文瑞",
+      "org": "大榮旅遊集團董事長",
+      "title": "後疫情時代台灣旅行業的走向",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為旅行社集團董事長，訪談聚焦差異化、自媒體「大榮伯」經營與疫情期間的轉型行銷策略。",
+      "confidence": "medium",
+      "industry_reason": "來賓為旅行社集團董事長，內容聚焦疫情期間轉型、差異化行銷與經營「大榮伯」自媒體品牌。"
+    },
+    "77": {
+      "guest": "陳婉若",
+      "org": "伊林娛樂副董事長",
+      "title": "台灣「名模教母」37年演藝經歷談",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為伊林娛樂副董事長，談模特兒生涯、創辦經紀公司與培養明星的選才眼光，屬娛樂經紀產業，核心在創業領導與個人形象打造。",
+      "confidence": "medium",
+      "industry_reason": "來賓為伊林娛樂副董事長，談模特兒生涯、創辦經紀公司與挑選培養新人，屬媒體娛樂產業，核心在創業領導與個人品牌塑造。"
+    },
+    "76": {
+      "guest": "吳盈憲 Nick",
+      "org": "吧沐餐酒館創辦人",
+      "title": "以永續經營聞名的創意餐酒館",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為餐酒館創辦人，訪談聚焦調酒經歷、經營理念與永續經營如何塑造店家品牌與消費者認同。",
+      "confidence": "medium"
+    },
+    "75": {
+      "guest": "蔡瑞珊",
+      "org": "青鳥書店創辦人",
+      "title": "書的策展人，創新傳統書店的「書媒體」",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為青鳥書店創辦人，談書店經營理念與轉型為「書媒體」的品牌創新，產業屬書店出版領域。",
+      "confidence": "medium",
+      "industry_reason": "來賓為青鳥書店創辦人，核心在書店經營理念與轉型為「書媒體」的品牌創新，書店屬零售業。"
+    },
+    "74": {
+      "guest": "洪念萱",
+      "org": "諾瑪瑜珈創辦人 Shany",
+      "title": "活出屬於諾瑪你我的美學態度",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health",
+        "brand"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為諾瑪瑜珈創辦人，內容聚焦瑜珈與生活美學、創業展店及自媒體經營，屬健康產業並涉及品牌行銷。",
+      "confidence": "medium"
+    },
+    "72": {
+      "guest": "陳玉芬",
+      "org": "藝珂人事顧問公司總經理",
+      "title": "精準用人學，獵頭CEO的獨門心法",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "services",
+      "industry_proposal": "",
+      "reason": "來賓為人事顧問公司總經理，內容聚焦企業用人、招募與人才配置，屬領導管理範疇，產業為人力資源。",
+      "confidence": "medium",
+      "industry_reason": "來賓為人事顧問公司總經理，屬專業服務業，內容聚焦企業用人、招募與人才管理，最貼近領導與組織議題。"
+    },
+    "73": {
+      "guest": "林念臻",
+      "org": "55688集團_台灣大車隊執行長",
+      "title": "多角化的商業模式，透過數據變出魔法",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "manufacturing",
+      "industry_proposal": "",
+      "reason": "台灣大車隊執行長談叫車App、數據應用與科技設備帶動多角化轉型，核心為數據與數位轉型，來賓屬交通運輸業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為台灣大車隊執行長，屬交通產業，內容聚焦叫車App、數據應用與科技設備驅動的多角化轉型。"
+    },
+    "71": {
+      "guest": "劉永信",
+      "org": "萬里雲集團創辦人暨執行長",
+      "title": "萬里雲讓台灣成為 AI 商業應用搖籃",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為雲端與AI服務公司萬里雲創辦人，內容聚焦企業數位轉型與AI應用發展。",
+      "confidence": "high"
+    },
+    "70": {
+      "guest": "司徒達賢",
+      "org": "政大企管研究所名譽暨講座教授",
+      "title": "培養大企業家們的總導師",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "來賓為企管教授暨政大企家班總導師，談個案教學、企業家培育與傳承，核心在領導與接班。",
+      "confidence": "high",
+      "industry_reason": "來賓為政大企管教授、企家班總導師，談個案教學法與培育企業家及傳承，屬教育產業、領導主題。"
+    },
+    "69": {
+      "guest": "鄭偉柏",
+      "org": "MOMOTV總經理",
+      "title": "從傳統媒體到融媒體的全面轉型",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "leadership"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "本集聚焦MOMOTV總經理談傳統媒體轉型融媒體與帶領頻道數位轉型，來賓屬媒體影視產業。",
+      "confidence": "medium",
+      "industry_reason": "來賓為MOMOTV總經理，屬媒體產業，本集核心在談傳統媒體轉型為融媒體的數位轉型策略，以及如何帶領頻道前進。"
+    },
+    "68": {
+      "guest": "李易遠",
+      "org": "UDB資創集團董事長",
+      "title": "創新金融服務專家，教你如何財富自由",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為創新金融服務集團董事長，本集核心在有錢人理財思維與上班族財務反轉，屬理財主題。",
+      "confidence": "high",
+      "industry_reason": "來賓為創新金融服務集團董事長，本集核心在分享有錢人理財思維與上班族財務反轉、財富自由。"
+    },
+    "67": {
+      "guest": "江秉承",
+      "org": "Phanta Bear NFT全球媒體策略長",
+      "title": "「杰倫熊」NFT的幕後推手",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為藝人經紀、電影製片及NFT媒體策略長，談IP發展與杰倫熊NFT的打造與行銷，核心在品牌與IP經營，產業屬娛樂與IP領域。",
+      "confidence": "medium",
+      "industry_reason": "來賓為經紀人、電影製片出身的NFT媒體策略長，談IP打造與杰倫熊NFT的品牌操作，屬媒體娛樂產業、品牌主題。"
+    },
+    "66": {
+      "guest": "李森斌",
+      "org": "王品集團副董事長",
+      "title": "從「魔鬼主管」到「鄰家斌哥」收服人心",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "王品集團副董事長分享從魔鬼主管轉型的管理心法、留才與帶領團隊，核心為領導，來賓屬餐飲業。",
+      "confidence": "high"
+    },
+    "65": {
+      "guest": "陳子鴻",
+      "org": "喜歡音樂創辦人",
+      "title": "從流行音樂天王天后推手到實現音樂傳承的校長",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為資深音樂製作人與音樂學院校長，談多重角色轉換與培育傳承音樂人才，音樂屬藝術領域。",
+      "confidence": "medium"
+    },
+    "64": {
+      "guest": "陳芝安",
+      "org": "紀錄片導演",
+      "title": "《叫我野孩子》讓大自然釋放心中的野靈魂！都市孩童的返璞歸真之旅",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為紀錄片導演屬影視藝術創作領域，本集聚焦兒童親近大自然、返璞歸真的生活與成長議題，最貼近健康與生活主題。",
+      "confidence": "medium"
+    },
+    "62": {
+      "guest": "林裕傑",
+      "org": "傑克你電電 Jackev.com 二手電動車媒合平台 創辦人 傑克",
+      "title": "從車主到二手車媒合平台創辦人，跟著特斯拉亞洲第一推薦人一窺電動車的迷人之處！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "manufacturing",
+      "industry_proposal": "",
+      "reason": "來賓為二手電動車媒合平台創辦人，內容聚焦平台創立、特斯拉品牌魅力與推薦經驗，產業屬電動車交易而非既有類別。",
+      "confidence": "medium",
+      "industry_reason": "來賓經營二手電動車媒合平台並以特斯拉推薦人身分分享電動車魅力與選車建議，產業屬交通（汽車），內容偏向品牌魅力與推薦。"
+    },
+    "63": {
+      "guest": "包益民",
+      "org": "PPAPER共同創辦人—華人創意教父",
+      "title": "激發無數創意與品牌的跨界合作，不設限開啟的無限人生",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓包益民為PPAPER共同創辦人、資深創意人，訪談聚焦創意產業、跨界品牌合作與藝術NFT應用，核心在品牌與創意行銷。",
+      "confidence": "medium"
+    },
+    "60": {
+      "guest": "王冠翔",
+      "org": "電通行銷傳播集團 電通智能中心總經理 兼任 安浦菲總經理",
+      "title": "征服世界六大馬拉松的最速總經理！象總的運動能量管理人生",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "health"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為電通行銷集團總經理，談Cookieless時代品牌廣告調整，並大篇幅分享馬拉松跑步帶來的生活改變。",
+      "confidence": "medium"
+    },
+    "59": {
+      "guest": "大 Q",
+      "org": "STEPN大使、中文討論區版主 Zora Chen feat. STEPN玩家 金色三麥執行長 葉冠廷",
+      "title": "從「邊玩邊賺」到「邊跑步邊賺」，GameFi到底夯什麼？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "本集聚焦GameFi與STEPN等區塊鏈加密貨幣項目的賺錢機制與投資建議，來賓主要為區塊鏈應用社群代表，歸屬科技產業。",
+      "confidence": "medium"
+    },
+    "61": {
+      "guest": "李怡明",
+      "org": "金色三麥餐飲集團執行長 葉冠廷 ＆ 品牌副總經理",
+      "title": "金色三麥的品牌之路 — 不斷挑戰台灣飲酒文化的餐飲集團！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為金色三麥餐飲集團高層，內容聚焦精釀啤酒品牌推廣、異業合作與疫情下的營運調整。",
+      "confidence": "high"
+    },
+    "58": {
+      "guest": "周行一",
+      "org": "政大前校長、現任政大財管系名譽教授",
+      "title": "透過教育建立社會良心，橫跨世代的良心教育學",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "money"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "來賓為前大學校長暨財管系教授，談教育理念、大學治理與世代差異，並涉及中美經濟、投資策略及虛擬貨幣理財議題。",
+      "confidence": "medium",
+      "industry_reason": "來賓為政大前校長，談教育理念、治校良心與世代教學，也談中美經濟、投資策略與虛擬貨幣，故歸教育產業並以領導與理財為主題。"
+    },
+    "57": {
+      "guest": "Kuo",
+      "org": "吉力酒藏 執行長 Irina",
+      "title": "極力推廣日本酒精神，異業合作創造嶄新商機",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為日本酒代理商執行長，屬餐飲酒類產業，內容聚焦異業合作、市集活動與NFT等品牌行銷推廣。",
+      "confidence": "medium"
+    },
+    "55": {
+      "guest": "莊淑玲",
+      "org": "景華生技 副總經理",
+      "title": "經營41年的台灣保健企業如何脫穎而出？你滋美得的服務經營哲學！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "health"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為保健生技企業副總，談自有品牌保健食品的經營、服務與數位化銷售，並分享個人保養與生活平衡。",
+      "confidence": "medium"
+    },
+    "53": {
+      "guest": "陳冠燁 Kuan",
+      "org": "美之心 Minoshin 創辦人暨執行長",
+      "title": "主動發掘精品的魅力，RIMOWA台灣總代理的經營哲學",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為國際精品代理商創辦人，訪談核心在於代理精品品牌並推廣至台灣市場的品牌經營。",
+      "confidence": "high",
+      "industry_reason": "來賓經營國際精品代理（RIMOWA、Delvaux），核心談品牌引進與在台推廣經營，屬零售／消費品產業。"
+    },
+    "56": {
+      "guest": "葛如鈞",
+      "org": "寶博朋友說 Podcast 主持人、臺北科技大學互動設計學系專任助理教授",
+      "title": "深耕區塊鏈研究發掘無限可能！寶博士不願被定義的雜學人生",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓葛如鈞為區塊鏈與科技專家，本集聚焦奇點大學、區塊鏈、NFT與元宇宙等科技趨勢與轉型。",
+      "confidence": "medium"
+    },
+    "51": {
+      "guest": "黃文逸",
+      "org": "幣圈專家、《比特幣投資金律：加密貨幣實戰教學與進階獲利法》作者 腦哥",
+      "title": "掌握區塊鏈未來趨勢，加速成長搶佔幣圈先機",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為幣圈專家暨比特幣投資書作者，內容聚焦虛擬貨幣與NFT投資、防詐與泡沫風險，核心屬理財主題，產業為加密貨幣金融。",
+      "confidence": "high",
+      "industry_reason": "來賓為幣圈專家並著有比特幣投資書，內容聚焦加密貨幣投資、NFT與防詐，核心屬理財與金融投資。"
+    },
+    "52": {
+      "guest": "共同創辦人 Angela",
+      "org": "ness wellness 身心靈健康平台",
+      "title": "打開身體與心靈的連結，迎向更健康的自己",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓創辦身心靈健康平台，本集核心在推廣Wellness練習、企業健康課程與工作生活平衡。",
+      "confidence": "high"
+    },
+    "50": {
+      "guest": "歐仕邁",
+      "org": "庫幣科技創辦人暨執行長",
+      "title": "看準趨勢走向，讓CoolWallet守住你的加密貨幣！",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓創辦庫幣科技、打造加密貨幣冷錢包，屬區塊鏈科技產業，內容聚焦加密貨幣資產保管與趨勢，與理財最相關。",
+      "confidence": "medium"
+    },
+    "49": {
+      "guest": "Chao",
+      "org": "KOL、I Select 創辦人 Ivy",
+      "title": "在多種身份中找到最喜歡的自己，斜槓女性的精彩人生",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為前空姐轉型的KOL與服飾品牌創辦人，內容聚焦自媒體個人定位、粉絲經營與自有品牌創業，核心屬品牌與行銷。",
+      "confidence": "medium"
+    },
+    "47": {
+      "guest": "莊偉中",
+      "org": "丸莊食品工業股份有限公司 副總經理",
+      "title": "百年醬油多元發展，傳承台灣好滋味",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "leadership"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為百年醬油品牌丸莊的副總經理，內容聚焦品牌定位差異化、轉型多元發展與從科技業回家族企業的接班歷程。",
+      "confidence": "high"
+    },
+    "46": {
+      "guest": "白璧珍 Jennifer",
+      "org": "宇萌數位科技創辦人暨執行長",
+      "title": "透過AR/VR加入元宇宙，將科技落實生活與工作",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "brand"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為AR/VR科技公司創辦人，談元宇宙等科技應用與AR廣告創作，核心為科技轉型與行銷應用。",
+      "confidence": "medium"
+    },
+    "45": {
+      "guest": "蔡詩萍",
+      "org": "作家、資深媒體人",
+      "title": "人生「中場」後不斷設立目標，為自己開創更多元的舞台",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "health"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "本集聚焦人生中場、第二曲線與持續設立目標的心態，並談到跑步運動與親子生活；來賓為作家暨資深媒體人，不屬於既有產業類別。",
+      "confidence": "medium",
+      "industry_reason": "來賓為作家暨資深媒體人，本集聚焦人生中場、第二曲線的心態，以及跑步運動與親子相處等生活面向。"
+    },
+    "48": {
+      "guest": "林庭箴 Jason",
+      "org": "愛酷智能科技股份有限公司 創辦人暨執行長",
+      "title": "掌握市場先機，攜手企業著手數位轉型",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "brand"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓創辦數據科技公司，訪談聚焦企業數位轉型與數據行銷應用。",
+      "confidence": "high"
+    },
+    "43": {
+      "guest": "鄧博文",
+      "org": "廣告公會理事長、台灣偉門智威 執行長",
+      "title": "廣告不會消失，而是會有更精彩多元的呈現",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為廣告公會理事長暨廣告公司執行長，內容聚焦廣告產業轉變與如何抓住人心，屬品牌行銷主題。",
+      "confidence": "high"
+    },
+    "42": {
+      "guest": "陳政鴻",
+      "org": "恆隆行貿易股份有限公司 董事長",
+      "title": "用心選好物，共創精緻美好生活",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "leadership"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為生活家電代理商恆隆行董事長，內容聚焦品牌代理與行銷打開知名度，並談及回台接任的接班歷程，產業屬精緻生活用品領域。",
+      "confidence": "medium"
+    },
+    "44": {
+      "guest": "周建宏 Joseph",
+      "org": "資誠聯合會計師事務所 PwC Taiwan 所長暨執行長",
+      "title": "著手數位轉型，協助客戶創造新價值",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "leadership"
+      ],
+      "industry": "services",
+      "industry_proposal": "",
+      "reason": "來賓為資誠會計師事務所所長，核心談協助企業數位轉型，並分享其職涯歷練與領導事務所差異化策略。",
+      "confidence": "medium",
+      "industry_reason": "來賓為資誠會計師事務所所長，訪談核心在協助企業數位轉型及其領導與差異化策略，屬專業服務業。"
+    },
+    "41": {
+      "guest": "何金軒",
+      "org": "大心生物科技股份有限公司 董事長",
+      "title": "為老年長照打造最「貼心」的智能醫療輔具",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health",
+        "brand"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為生物科技公司董事長，研發長照智能尿布，內容聚焦長照醫療輔具與產品推廣行銷。",
+      "confidence": "medium"
+    },
+    "40": {
+      "guest": "張祐誠 James",
+      "org": "ic! berlin 總代理 嘉晏光學創辦人暨執行長",
+      "title": "從無到有協助 ic! berlin 佈局全亞洲",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為精品眼鏡品牌總代理，內容聚焦於代理品牌在台在地化行銷、通路與經銷商管理，核心屬品牌與行銷。",
+      "confidence": "high",
+      "industry_reason": "來賓為精品眼鏡品牌總代理及直營門市經營者，內容聚焦品牌代理、在地化行銷與經銷管理。"
+    },
+    "38": {
+      "guest": "陳俊嘉",
+      "org": "永悅健康 H2U 集團創辦人暨執行長",
+      "title": "從廠區走向社區，打造數位健康生態圈",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "health",
+        "ai"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓創辦數位健康集團永悅健康，談健康內容媒體經營、紓壓生活與疫情下數位醫療轉型，核心為健康與數位轉型。",
+      "confidence": "medium"
+    },
+    "37": {
+      "guest": "林信一",
+      "org": "星醫美學集團創辦人暨執行長",
+      "title": "透過系統化經營，打造橫跨兩岸的醫美帝國",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為醫美集團創辦人，內容聚焦系統化經營擴張與流量時代留住消費者的品牌經營，產業屬醫美健康。",
+      "confidence": "medium"
+    },
+    "39": {
+      "guest": "張鐵志",
+      "org": "VERSE 社長暨總編輯",
+      "title": "用文化串起跨界合作與商業創新",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為文化雜誌VERSE社長暨總編輯，內容聚焦雜誌品牌創辦、紙本堅持與媒體定位，屬品牌經營主題，產業為媒體出版。",
+      "confidence": "medium",
+      "industry_reason": "來賓為VERSE雜誌社長暨總編輯，屬媒體產業，內容聚焦文化雜誌的品牌定位、紙本堅持與跨界合作。"
+    },
+    "36": {
+      "guest": "李冠萱 Grace",
+      "org": "BetweenGos 職場才女 共同創辦人",
+      "title": "結合自身經驗，設計專屬自己的人生職涯",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓經營女性職涯內容平台並擔任職涯顧問，訪談聚焦職涯選擇、斜槓心態與內容平台經營，產業屬職涯教育與內容媒體。",
+      "confidence": "medium",
+      "industry_reason": "來賓經營女性職涯內容平台與Podcast，談職涯探索、斜槓心態與內容平台經營，屬媒體內容產業。"
+    },
+    "35": {
+      "guest": "盧秋玲",
+      "org": "德明財經科技大學校長",
+      "title": "產學合作協助教育與社會接軌",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "education",
+      "industry_proposal": "",
+      "reason": "來賓為大學校長，談產學合作、人才培育與出任校長的治校經驗，核心偏向教育領導，產業屬教育界。",
+      "confidence": "medium",
+      "industry_reason": "來賓為科技大學校長，談產學合作、人才培育與出任校長的治校經驗，核心屬教育界的領導與人才發展。"
+    },
+    "34": {
+      "guest": "張世杰",
+      "org": "鬍鬚張副董事長",
+      "title": "如何超前部署，讓台灣美食延續一甲子?",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為鬍鬚張副董事長屬餐飲業，內容聚焦面對口蹄疫、疫情等危機的超前部署轉型，以及品牌擴張與海外經營。",
+      "confidence": "medium"
+    },
+    "33": {
+      "guest": "高宇蓁",
+      "org": "J.GAO 創辦人、演員",
+      "title": "從演員到個人品牌CEO",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為演員轉型創立彩妝保養品牌J.GAO，訪談核心在自有品牌創立與經營，產業屬美妝保養，不在既有分類中。",
+      "confidence": "medium",
+      "industry_reason": "來賓為演員轉型創立美妝保養品牌J.GAO，內容聚焦自有品牌創立與經營，屬零售／消費品產業。"
+    },
+    "32": {
+      "guest": "彭思齊 Sharon",
+      "org": "Shopping99 耐德科技 共同創辦人",
+      "title": "從購物網站到團購社團，不斷嘗試的電商人生",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為女性購物平台與團購社團經營者，內容聚焦電商定位、團購客群經營與海外拓展困難的克服。",
+      "confidence": "medium"
+    },
+    "29": {
+      "guest": "柴智屏",
+      "org": "群星瑞智藝能股份有限公司董事長、知名製作人",
+      "title": "專注並堅持做好每一件事",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為影視製作人兼經紀公司董事長，訪談聚焦職涯選擇、面對困難的心態調適與尋找生命意義，屬逆境與心態主題。",
+      "confidence": "medium",
+      "industry_reason": "來賓為影視製作人柴智屏，內容聚焦其製作歷程、遇困難時的心態調適與堅持找尋人生意義。"
+    },
+    "30": {
+      "guest": "戴治中",
+      "org": "海霆國際物流集團創辦人暨董事長",
+      "title": "從台灣啟程的物流王國",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "ai"
+      ],
+      "industry": "manufacturing",
+      "industry_proposal": "",
+      "reason": "來賓為物流集團創辦人，內容聚焦創業經營、帶領團隊轉型及推動物流數位整合平台，屬物流產業。",
+      "confidence": "medium",
+      "industry_reason": "物流集團創辦人分享創業、國際拓展與帶領團隊轉型，並推動物流數位整合平台，物流歸屬製造／交通產業。"
+    },
+    "31": {
+      "guest": "陸嘉琪 Jessie",
+      "org": "勤美學營運長",
+      "title": "讓旅遊回歸土地與文化",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為勤美學營運長，談沈浸式露營體驗與以土地文化為核心的品牌經營，產業屬旅遊觀光。",
+      "confidence": "medium",
+      "industry_reason": "來賓為沉浸式露營園區勤美學營運長，內容聚焦慢遊體驗與土地文化的品牌定位，屬餐飲／旅遊產業。"
+    },
+    "28": {
+      "guest": "",
+      "org": "",
+      "title": "老闆來解惑！員工心中對老闆的千萬個好奇心（下）",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "本集由傑思愛德威老闆回答員工對老闆的好奇問題並對同仁喊話，核心為領導與組織關係，來賓即行銷公司經營者。",
+      "confidence": "medium"
+    },
+    "27": {
+      "guest": "劉怡伶 Elynn",
+      "org": "傑思‧愛德威集團營運長",
+      "title": "老闆來解惑！員工心中對老闆的千萬個好奇心（上）",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為傑思‧愛德威集團營運長，內容聚焦老闆與員工的互動解惑及組織領導，集團屬行銷相關產業。",
+      "confidence": "medium"
+    },
+    "25": {
+      "guest": "蔡怡穎",
+      "org": "歐萊德董事長 葛望平 ＆ 總經理",
+      "title": "讓環保成為企業的基石，歐萊德的綠色經營學（上）",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "leadership"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "本集聚焦歐萊德以環保為核心的綠色經營理念與企業價值觀，涉及品牌定位與經營者理念，來賓屬綠色洗護產品產業。",
+      "confidence": "medium",
+      "industry_reason": "歐萊德為綠色洗髮護髮品牌，本集談綠色企業價值觀、總部設計與經營理念，屬消費品產業的品牌與經營領導主題。"
+    },
+    "26": {
+      "guest": "蔡怡穎",
+      "org": "歐萊德董事長 葛望平 ＆ 總經理",
+      "title": "讓環保成為企業的基石，歐萊德的綠色經營學（下）",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "resilience"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "本集聚焦歐萊德以環保理念經營品牌、面對最大危機的調適與國際化經驗，來賓為綠色洗髮美妝品牌經營者，不完全屬於既有產業類別。",
+      "confidence": "medium",
+      "industry_reason": "歐萊德為綠色洗護髮消費品牌，本集談品牌危機處理、市場教育與國際化經營。"
+    },
+    "24": {
+      "guest": "廖海帆",
+      "org": "Dear John Coffee 創辦人暨董事長",
+      "title": "逆風飛翔的咖啡精神",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "來賓為咖啡品牌創辦人並經營飯店，訪談聚焦創業初期困難與心態調適，以及品牌命名與經營，屬餐飲產業。",
+      "confidence": "medium"
+    },
+    "22": {
+      "guest": "司徒嘉恒",
+      "org": "創拓國際法律事務所 執行董事",
+      "title": "從不斷調整的人生中學習，律師司徒嘉恒的法律之旅",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "services",
+      "industry_proposal": "",
+      "reason": "來賓為併購律師，訪談聚焦其不斷調整的職涯選擇與成長歷程，核心偏向人生轉折與心態。",
+      "confidence": "low",
+      "industry_reason": "來賓為併購律師屬專業服務業，內容聚焦職涯轉折、父親教育與新創觀察，較貼近領導與傳承面向。"
+    },
+    "23": {
+      "guest": "葉建漢",
+      "org": "iDrip 創辦人暨執行長",
+      "title": "淬煉而生的iDrip智能咖啡機，連續創業家葉建漢的創業心法",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "本集聚焦連續創業家葉建漢歷經多次創業的困難、調適與心法，來賓創辦智能咖啡機硬體品牌 iDrip，屬科技產品創業。",
+      "confidence": "medium"
+    },
+    "21": {
+      "guest": "吳奕成",
+      "org": "三陽工業董事長室經理、產品管理部產品經理",
+      "title": "從野狼125到DRG，三陽工業重磅回歸成為環島霸主",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "manufacturing",
+      "industry_proposal": "",
+      "reason": "來賓為三陽工業產品經理，內容聚焦DRG新車款、IP聯名、年輕市場與數位行銷等品牌行銷策略，產業屬汽機車製造。",
+      "confidence": "high",
+      "industry_reason": "來賓任職機車製造商三陽工業，內容聚焦DRG新車款、年輕市場聯名企劃與數位行銷等品牌行銷策略。"
+    },
+    "20": {
+      "guest": "",
+      "org": "",
+      "title": "Jason來分享：創業到底難不難？過來人的甘苦談",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "leadership"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "本集由主持人Jason分享從TVBS離職創業的低潮、堅持與管理經驗，核心在創業心態與經營管理，其公司傑思愛德威屬行銷領域。",
+      "confidence": "medium"
+    },
+    "16": {
+      "guest": "KNOWING新聞、幣特財經、鍶科技創辦人暨總編輯楊方儒 Jet",
+      "org": "",
+      "title": "卸下財經雜誌總編光環向網路世代取經，內容創業家楊方儒打造出新媒體矩陣",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand",
+        "ai"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓從財經雜誌總編轉型為新媒體創業家，打造內容媒體矩陣，核心在媒體品牌經營與數位轉型。",
+      "confidence": "low",
+      "industry_reason": "來賓楊方儒從財經雜誌總編轉型創辦新媒體矩陣，屬媒體產業，核心談內容創業與品牌經營及放下光環的轉型心態。"
+    },
+    "19": {
+      "guest": "王俊凱",
+      "org": "奧丁丁集團創辦人暨執行長",
+      "title": "堅持做對的事，從台灣也可以征服世界",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "ai",
+        "leadership"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為區塊鏈科技公司奧丁丁創辦人，內容聚焦區塊鏈技術應用於產業轉型，以及創業經營與人才管理。",
+      "confidence": "medium"
+    },
+    "18": {
+      "guest": "創辦人 CPU",
+      "org": "喜舖 CiPU",
+      "title": "創立一個陪自己成長的品牌，人生就是一段不可逆的旅程",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "標題聚焦創立並經營陪伴自己成長的品牌，來賓為喜舖 CiPU 創辦人，屬生活風格品牌，故歸為品牌主題與設計／生活產業。",
+      "confidence": "low"
+    },
+    "17": {
+      "guest": "廖冠傑 Richard",
+      "org": "華夏玻璃 執行長",
+      "title": "玻璃要性感！看華夏玻璃四代廖冠傑如何經歷接班傳承、轉型到創新？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "manufacturing",
+      "industry_proposal": "",
+      "reason": "本集聚焦華夏玻璃第四代接班傳承與轉型，並談及以創意與新媒體經營品牌，來賓屬傳統玻璃製造業。",
+      "confidence": "high",
+      "industry_reason": "華夏玻璃第四代執行長分享回台接班傳承與轉型，並談玻璃創意商品及上節目、經營YouTube等品牌行銷，屬玻璃製造業。"
+    },
+    "15": {
+      "guest": "丘紘豪 Jeffrey",
+      "org": "正成集團副總經理",
+      "title": "台灣近八成Podcaster都用它，延續60年的影視設備品牌",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "標題聚焦延續60年的影視設備品牌及其在Podcaster間的普及，來賓為設備集團副總，屬影音器材產業。",
+      "confidence": "low",
+      "industry_reason": "來賓為延續60年影視設備品牌的正成集團副總，標題聚焦品牌經營與傳承，產業屬影視設備相關媒體領域。"
+    },
+    "14": {
+      "guest": "合隆毛廠董事長陳彥誠 Olle",
+      "org": "",
+      "title": "把每次挑戰當作成長的養分，專訪百年企業合隆毛廠董事長陳彥誠",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "leadership"
+      ],
+      "industry": "manufacturing",
+      "industry_proposal": "",
+      "reason": "標題強調把挑戰當成長養分，且來賓為百年企業董事長，涉及逆境心態與傳承領導；合隆毛廠屬羽絨製造業，不在既有產業類別中。",
+      "confidence": "low",
+      "industry_reason": "來賓為百年企業合隆毛廠董事長，屬製造業，標題強調面對挑戰成長，涉及百年企業經營領導與逆境心態。"
+    },
+    "13": {
+      "guest": "林之晨 Jamie",
+      "org": "台灣大哥大集團總經理，AppWorks 之初創投董事長暨合夥人",
+      "title": "如何找到時代的破口，創造屬於自己的路?",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "leadership"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓林之晨為台灣大哥大總經理及AppWorks創投董事長，屬科技產業；標題談找到時代破口、開創自己的路，偏向心態與領導，但無節目說明僅能依標題推測。",
+      "confidence": "low"
+    },
+    "12": {
+      "guest": "陳郁佳 Tiffany",
+      "org": "電影孤味製片、彼此影業的共同創辦人",
+      "title": "融合金融背景和電影熱情，《孤味》電影製片陳郁佳如何創出1.8億票房?",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為電影《孤味》製片暨影業共同創辦人，標題聚焦如何創造1.8億票房，偏向作品行銷與市場經營；因無節目說明，主題判斷僅依標題。",
+      "confidence": "low",
+      "industry_reason": "來賓為電影《孤味》製片及影業共同創辦人，屬媒體娛樂產業，內容聚焦如何打造1.8億票房的電影推廣與市場經營。"
+    },
+    "11": {
+      "guest": "台灣工業設計教父謝榮雅 Duck",
+      "org": "",
+      "title": "與人創造有溫度的連結-專訪台灣工業設計教父謝榮雅",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為台灣工業設計教父謝榮雅，屬設計產業；標題談與人創造有溫度的連結，較貼近品牌與設計溝通，但因無節目說明僅能依標題推測。",
+      "confidence": "low"
+    },
+    "10": {
+      "guest": "HTC台灣總經理陳柏諭 Darren",
+      "org": "",
+      "title": "把每個專案當作自己的事業經營-HTC總座陳柏諭的職場絕學",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為HTC台灣總經理，屬科技業，標題聚焦職場經營與專案當事業的領導心法。",
+      "confidence": "low"
+    },
+    "7": {
+      "guest": "陳立人 Roger",
+      "org": "LINE 台灣董事總經理",
+      "title": "和一群人成就一件事情，LINE生態圈的佈局與應用",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "brand"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為LINE台灣董事總經理，屬科技平台產業；標題「和一群人成就一件事情」偏向團隊領導，LINE生態圈的佈局與應用則涉及平台品牌與行銷應用。",
+      "confidence": "low"
+    },
+    "8": {
+      "guest": "歐漾國際企業創辦人楊智斌 Ben",
+      "org": "",
+      "title": "用5千元換回50萬業績的歐漾,如何打造出台灣保養品帝國？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "health",
+      "industry_proposal": "",
+      "reason": "來賓為保養品品牌歐漾創辦人，標題聚焦以小成本創造業績、打造保養品品牌帝國，核心屬品牌與行銷；保養品歸入健康／生技產業。",
+      "confidence": "low"
+    },
+    "6": {
+      "guest": "邁圈廣告執行長陳仲豪 Aaron",
+      "org": "",
+      "title": "如何將創意與媒體結合，打一場漂亮的群架?",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "marketing",
+      "industry_proposal": "",
+      "reason": "來賓為廣告公司執行長，標題談創意與媒體整合，核心屬品牌與行銷。",
+      "confidence": "low"
+    },
+    "9": {
+      "guest": "宅電共同創辦人陳德威 Davy",
+      "org": "",
+      "title": "電動車市場高速成長【宅電】如何提供完善充電服務?",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "manufacturing",
+      "industry_proposal": "",
+      "reason": "來賓為電動車充電服務新創宅電共同創辦人，標題聚焦在市場成長下如何提供服務，屬商業經營與品牌拓展，但無節目說明可佐證。",
+      "confidence": "low",
+      "industry_reason": "來賓為電動車充電服務新創宅電共同創辦人，屬交通相關產業，主題聚焦電動車市場轉型與服務。"
+    },
+    "5": {
+      "guest": "小光",
+      "org": "分散式基礎設施共享平台Poseidon Network創辦人林弘全",
+      "title": "從無名小站、flyingV到Poseidon Network，揭密平台創業家的心路歷程",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓林弘全歷經無名小站、flyingV到Poseidon Network等科技平台創業，標題強調創業心路歷程，故歸為逆境與心態、科技產業。",
+      "confidence": "low"
+    },
+    "4": {
+      "guest": "張宇",
+      "org": "時尚主播媽咪",
+      "title": "那些年，我們在電視台工作的日子",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience"
+      ],
+      "industry": "media",
+      "industry_proposal": "",
+      "reason": "來賓為前電視台主播，標題回顧電視台工作經歷，產業屬媒體；但無節目說明，主題只能依標題推測為職涯回顧與心態。",
+      "confidence": "low",
+      "industry_reason": "來賓為主播，標題回顧電視台工作經歷，屬媒體產業；因無節目說明，主題僅能推測為職涯心路歷程。"
+    },
+    "3": {
+      "guest": "昇恆昌總經理江建廷 kevin",
+      "org": "",
+      "title": "像極了出國!【免稅店王國】昇恆昌的銷售轉型之路",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "brand"
+      ],
+      "industry": "retail",
+      "industry_proposal": "",
+      "reason": "來賓為免稅店龍頭昇恆昌總經理，標題聚焦銷售轉型，屬品牌與行銷主題，產業為零售通路。",
+      "confidence": "low",
+      "industry_reason": "來賓為免稅店昇恆昌總經理，屬零售業，標題聚焦銷售轉型，最貼近品牌與行銷主題。"
+    },
+    "2": {
+      "guest": "TK陳泰谷",
+      "org": "達盈管顧駐點創業家",
+      "title": "創業之後的下一步，你敢創投嗎?",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "標題聚焦創業後投入創投，來賓為創投管顧的駐點創業家，屬投資相關產業。",
+      "confidence": "low",
+      "industry_reason": "標題談創業後轉向創投，來賓為達盈管顧駐點創業家，屬金融／投資領域，主題偏向投資。"
+    },
+    "1": {
+      "guest": "顧立楷",
+      "org": "聲浪媒體科技執行長",
+      "title": "看見市場商機，你有創業的膽量和視野嗎?",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership"
+      ],
+      "industry": "tech",
+      "industry_proposal": "",
+      "reason": "來賓為聲浪媒體科技執行長，標題聚焦創業膽量與市場視野，偏向創業領導；因無節目說明，判斷僅依標題與頭銜。",
+      "confidence": "low"
+    },
+    "242": {
+      "guest": "黃士豪 Will",
+      "org": "GoodWhale 共同創辦人",
+      "title": "從負債三千萬到財務自由：重新定義金錢與人生的「逆向工程」",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "money",
+        "resilience"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "本集以負債翻身、財務自由與槓桿理財為核心，兼談逆境心態；來賓為投資理財相關平台GoodWhale共同創辦人。",
+      "confidence": "medium"
+    }
+  },
+  "industryProposals": {
+    "農業／畜牧": [
+      151
+    ],
+    "公共服務／政治": [
+      96
+    ]
+  }
+}
