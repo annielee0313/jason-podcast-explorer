@@ -649,3 +649,13 @@ mark { background: #BDEBEF; color: var(--ink); padding: 1px 3px; border-radius: 
 .yt-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; border-radius: 50%; background: var(--teal); color: var(--ink); display: flex; align-items: center; justify-content: center; transition: transform .2s; }
 .yt-play svg { width: 22px; height: 22px; }
 .yt-poster:hover .yt-play, .yt-poster:focus-visible .yt-play { transform: translate(-50%, -50%) scale(1.08); }
+
+/* Cookie notice: bottom card, quiet; stacks on phones */
+.consent { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 90; max-width: 720px; margin: 0 auto; display: flex; align-items: center; gap: 16px 24px; padding: 16px 16px 16px 24px; border-radius: var(--radius); background: var(--ink); color: #fff; box-shadow: 0 12px 32px rgba(20, 30, 36, .25); }
+.consent p { margin: 0; flex: 1; font-size: 13px; line-height: 1.7; color: var(--on-dark-muted); }
+.consent-actions { display: flex; gap: 8px; flex: none; }
+.consent-no { background: rgba(255, 255, 255, .1); color: #fff; }
+.consent-no:hover { background: rgba(255, 255, 255, .18); color: #fff; }
+@media (max-width: 640px) { .consent { flex-direction: column; align-items: stretch; padding: 16px; } .consent-actions > * { flex: 1; justify-content: center; } }
+.footer-linkbtn { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.footer-linkbtn:hover { text-decoration: underline; }

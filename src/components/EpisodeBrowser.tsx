@@ -134,7 +134,7 @@ export function EpisodeBrowser() {
         <div className="ep-grid-clip">
         <div ref={gridRef} className="ep-grid">
           {shown.map((e) => (
-            <Link key={e.ep} to={`/episode/${e.ep}`} className="ep-card">
+            <Link key={e.ep} to={`/episode/${e.ep}`} className="ep-card" data-track="episode_card_click" data-ep={e.ep}>
               <span className="meta">EP.{e.ep} · {e.date} · {formatDuration(e.durationSec)}</span>
               <span className="title">{e.title}</span>
               <span className="muted" style={{ fontSize: 13 }}>{e.guest} · {e.org}</span>

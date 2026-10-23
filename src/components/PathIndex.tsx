@@ -42,7 +42,7 @@ export function PathIndex() {
                 <ol className="ep-lines">
                   {eps.map((e) => (
                     <li key={e.ep}>
-                      <Link to={`/episode/${e.ep}`} className="ep-line">
+                      <Link to={`/episode/${e.ep}`} className="ep-line" data-track="path_click" data-ep={e.ep}>
                         <span className="ep-line-n">EP.{e.ep}</span>
                         <span className="ep-line-title">{e.title}</span>
                         <span className="ep-line-guest">{e.guest}</span>

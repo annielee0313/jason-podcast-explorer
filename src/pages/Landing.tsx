@@ -9,6 +9,7 @@ import { ArrowIcon, ArrowUpRightIcon, PlayIcon, ShuffleIcon, ThemeChip } from '.
 import { useLandingMotion } from '../lib/motion';
 import { CountUp } from '../components/CountUp';
 import { WordModal } from '../components/WordModal';
+import { track } from '../lib/analytics';
 import {
   about, curation, deckLines, type Phrase, episodeByNumber, episodes, findTerm, formatDuration, takeawayLines, themeById,
 } from '../lib/data';
@@ -54,7 +55,7 @@ function TopList({ title, flag, note, items }: {
           if (!e) return null;
           return (
             <li key={ep}>
-              <Link to={`/episode/${e.ep}`} className="rank-row">
+              <Link to={`/episode/${e.ep}`} className="rank-row" data-track="top_list_click" data-list={title} data-ep={e.ep}>
                 <span className="rank-n">{String(i + 1).padStart(2, '0')}</span>
                 <span className="pick-main">
                   <span className="pick-title">{e.title}</span>
@@ -214,7 +215,7 @@ export default function Landing() {
             </p>
             <div className="chips" style={{ gap: 10 }}>
               {words.map((w) => (
-                <button key={w.label} type="button" className="toggle soft" aria-haspopup="dialog" onClick={() => setWord(w.phrase)}
+                <button key={w.label} type="button" className="toggle soft" aria-haspopup="dialog" onClick={() => { setWord(w.phrase); track('word_open', { word: w.label }); }}
                   style={{ fontWeight: 700, fontSize: 14 + Math.round((14 * w.count) / words[0].count) }}>
                   {w.label}<span className="count muted" style={{ fontWeight: 400 }}>×{w.count}</span>
                 </button>
@@ -231,7 +232,7 @@ export default function Landing() {
               <span className="deck-guest">節目重點 · {current.guest}{current.org ? ` · ${current.org}` : ''}</span>
             </div>
             <div className="deck-actions">
-              <button type="button" className="btn btn-ghost-dark" onClick={draw}><ShuffleIcon />再抽一張</button>
+              <button type="button" className="btn btn-ghost-dark" onClick={() => { draw(); track('deck_draw'); }}><ShuffleIcon />再抽一張</button>
               <Link className="btn btn-light" to={`/episode/${current.ep}`}>看這一集</Link>
             </div>
           </div>

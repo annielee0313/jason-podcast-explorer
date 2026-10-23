@@ -18,8 +18,13 @@ export interface Head {
   url: string;
   type: 'website' | 'article';
   noindex?: boolean;
+  /** Share image (og:image). Episodes get their own card from scripts/og-images.mjs. */
+  image?: string;
   jsonLd?: object;
 }
+
+/** The episode's share card, written to dist/og/ at build time. */
+export const episodeImage = (ep: number) => `${SITE_URL}og/EP${ep}.jpg`;
 
 const abs = (path: string) => SITE_URL + path.replace(/^\//, '');
 
@@ -60,6 +65,7 @@ export function headFor(pathname: string): Head {
         description: episodeDescription(e),
         url,
         type: 'article',
+        image: episodeImage(e.ep),
         jsonLd: {
           '@context': 'https://schema.org',
           '@type': 'PodcastEpisode',
@@ -123,7 +129,8 @@ export function headHtml(h: Head) {
     `<meta property="og:title" content="${esc(h.title)}" />`,
     `<meta property="og:description" content="${esc(h.description)}" />`,
     `<meta property="og:url" content="${h.url}" />`,
-    `<meta property="og:image" content="${IMAGE}" />`,
+    `<meta property="og:image" content="${h.image ?? IMAGE}" />`,
+    h.image ? '<meta property="og:image:width" content="1200" />\n    <meta property="og:image:height" content="630" />' : '',
     `<meta name="twitter:card" content="summary_large_image" />`,
     h.jsonLd ? `<script type="application/ld+json" id="ld-json">${JSON.stringify(h.jsonLd).replace(/</g, '\\u003c')}</script>` : '',
   ].filter(Boolean).join('\n    ');
@@ -142,6 +149,7 @@ export function applyHead(h: Head) {
   meta('property', 'og:description', h.description);
   meta('property', 'og:url', h.url);
   meta('property', 'og:type', h.type);
+  meta('property', 'og:image', h.image ?? IMAGE);
   let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
   if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
   canonical.href = h.url;

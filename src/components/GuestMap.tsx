@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { episodes, industryOf, themeById, type Episode } from '../lib/data';
 import { CHIP, CLUSTER_MIN, chipGrid, focusLayout, smallOffsets, type Group } from './guestMapLayout';
 import { ArrowIcon, ThemeChip } from './ui';
+import { track } from '../lib/analytics';
 
 const ZOOM_MIN = 0.25;
 const ZOOM_MAX = 2.5;
@@ -57,7 +58,7 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
     return () => ro.disconnect();
   }, []);
 
-  const select = (ep: number) => { setOpenKey(null); setSelEp(ep); };
+  const select = (ep: number) => { setOpenKey(null); setSelEp(ep); track('map_select_guest', { ep }); };
 
   // Where the camera should be: the whole neighbourhood, or the opened cluster.
   const goal = useMemo((): Camera | null => {
@@ -242,7 +243,7 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
                     : (
                       <button type="button" className="map-cluster" style={{ left: g.x, top: g.y }} aria-expanded={false}
                         aria-label={`${g.industry.name}${isClose(g) ? '（同產業）' : ''}，${viaLabel(g)}，${g.guests.length} 位來賓，展開`}
-                        onClick={() => setOpenKey(g.key)}>
+                        onClick={() => { setOpenKey(g.key); track('map_open_cluster', { industry: g.industry.id }); }}>
                         <b>{g.guests.length}</b>
                         <span>{g.industry.name}</span>
                       </button>

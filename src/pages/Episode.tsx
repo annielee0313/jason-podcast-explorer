@@ -63,7 +63,7 @@ export default function EpisodePage() {
             {ep.youtubeId && (
               <div className="card">
                 <h2 style={{ fontSize: 20, marginBottom: 16 }}>看完整訪談</h2>
-                <YouTubeEmbed id={ep.youtubeId} title={ep.title} />
+                <YouTubeEmbed id={ep.youtubeId} title={ep.title} ep={ep.ep} />
               </div>
             )}
             {ep.takeaways.length > 0 && (
@@ -91,7 +91,7 @@ export default function EpisodePage() {
             <h2 style={{ fontSize: 18 }}>聽完這集，接著聽</h2>
             <p className="muted" style={{ margin: '0 0 4px', fontSize: 13 }}>依共同主題推薦，不是依日期。</p>
             {related.map(({ e, shared }) => (
-              <Link key={e.ep} to={`/episode/${e.ep}`} className="ep-card" style={{ padding: 18, gap: 8 }}>
+              <Link key={e.ep} to={`/episode/${e.ep}`} className="ep-card" style={{ padding: 18, gap: 8 }} data-track="related_click" data-ep={e.ep}>
                 <span style={{ fontSize: 12, color: themeById[shared[0]].fg }}>同樣聊 {shared.map((s) => themeById[s].name).join(' · ')}</span>
                 <span style={{ fontSize: 14, fontWeight: 700, lineHeight: 1.5 }}>{e.title}</span>
                 <span className="meta">EP.{e.ep} · {e.guest}</span>

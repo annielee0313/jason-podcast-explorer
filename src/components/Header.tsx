@@ -159,6 +159,7 @@ export function Footer() {
           <a href={company.website} target="_blank" rel="noreferrer">官網 · {company.websiteLabel}</a>
           <a href={company.facebook} target="_blank" rel="noreferrer">粉絲團</a>
           <a href={`mailto:${company.email}`}>聯絡我們 · {company.email}</a>
+          <button type="button" className="footer-linkbtn" onClick={() => window.dispatchEvent(new Event('jhl-open-consent'))}>Cookie 設定</button>
         </div>
         <div className="footer-col">
           <span className="footer-h">收聽</span>

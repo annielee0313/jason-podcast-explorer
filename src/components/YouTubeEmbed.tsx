@@ -6,7 +6,7 @@ import { PlayIcon } from './ui';
  * thumbnail (no YouTube scripts or cookies on page load); the click swaps in the
  * privacy-enhanced youtube-nocookie.com player and starts it.
  */
-export function YouTubeEmbed({ id, title }: { id: string; title: string }) {
+export function YouTubeEmbed({ id, title, ep }: { id: string; title: string; ep: number }) {
   const [on, setOn] = useState(false);
   return (
     <div className="yt">
@@ -18,7 +18,7 @@ export function YouTubeEmbed({ id, title }: { id: string; title: string }) {
           allowFullScreen
         />
       ) : (
-        <button type="button" className="yt-poster" onClick={() => setOn(true)} aria-label={`播放影片：${title}`}>
+        <button type="button" className="yt-poster" data-track="video_play" data-ep={ep} onClick={() => setOn(true)} aria-label={`播放影片：${title}`}>
           <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" />
           <span className="yt-play"><PlayIcon /></span>
         </button>
