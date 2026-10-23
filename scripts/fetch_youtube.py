@@ -57,8 +57,9 @@ def api_key() -> str | None:
     return None
 
 
-def from_api(key: str) -> list[tuple[str, str]]:
-    """Every upload, via the channel's uploads playlist (UU + channel ID without 'UC')."""
+def from_api(key: str, limit: int = 0) -> list[tuple[str, str]]:
+    """Uploads, newest first, via the channel's uploads playlist (UU + channel ID without 'UC').
+    limit=0 reads them all."""
     playlist = "UU" + CHANNEL_ID[2:]
     out: list[tuple[str, str]] = []
     token = ""
@@ -71,7 +72,7 @@ def from_api(key: str) -> list[tuple[str, str]]:
             sn = item["snippet"]
             out.append((sn["resourceId"]["videoId"], sn["title"]))
         token = data.get("nextPageToken", "")
-        if not token:
+        if not token or (limit and len(out) >= limit):
             return out
 
 
@@ -80,15 +81,22 @@ def main() -> int:
     ap.add_argument("--all", action="store_true", help="list the whole channel with the YouTube Data API")
     args = ap.parse_args()
 
+    key = api_key()
+    if args.all and not key:
+        print("--all needs YOUTUBE_API_KEY (in the environment or .env)", file=sys.stderr)
+        return 1
     try:
         if args.all:
-            key = api_key()
-            if not key:
-                print("--all needs YOUTUBE_API_KEY (in the environment or .env)", file=sys.stderr)
-                return 1
             videos = from_api(key)
         else:
-            videos = from_feed()
+            try:
+                videos = from_feed()
+            except Exception as exc:
+                # The public feed has been flaky (404s); fall back to the official API when we have a key.
+                if not key:
+                    raise
+                print(f"Feed failed ({exc}); using the YouTube Data API")
+                videos = from_api(key, limit=50)
     except Exception as exc:  # never block a deploy over YouTube being unreachable
         print(f"YouTube not reachable ({exc}); keeping existing video links")
         return 0

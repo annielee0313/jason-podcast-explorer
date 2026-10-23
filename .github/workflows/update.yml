@@ -1,0 +1,50 @@
+# Watch for new episodes (SoundOn feed) and new YouTube videos, and publish them.
+# New episode → import, tag with Claude, pick 抽一句 lines; new video → link it.
+# When something changed: commit the data and start the deploy workflow.
+# Times are UTC (Taipei = UTC+8).
+name: Check for new episodes
+
+on:
+  schedule:
+    # Fridays 12:00–24:00 Taipei, every 30 minutes (04:00–16:00 UTC)
+    - cron: "0,30 4-15 * * 5"
+    - cron: "0 16 * * 5"
+    # Other days every 6 hours (Taipei 02:00, 08:00, 14:00, 20:00)
+    - cron: "0 0,6,12,18 * * 0-4,6"
+  workflow_dispatch:
+
+permissions:
+  contents: write # commit the updated data
+  actions: write  # start the deploy workflow
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install --quiet anthropic
+      - id: update
+        run: python scripts/update_site.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }} # optional: fallback when YouTube's public feed is down
+      - name: Commit and deploy
+        if: steps.update.outputs.message != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MESSAGE: ${{ steps.update.outputs.message }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "$MESSAGE"
+          git push
+          # Pushes made with the workflow token don't trigger other workflows; start the deploy explicitly.
+          gh workflow run deploy.yml --ref main

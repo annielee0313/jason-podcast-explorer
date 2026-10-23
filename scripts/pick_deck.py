@@ -4,6 +4,7 @@ Choose the lines for the landing page's 抽一句 card, writing data/deck.json.
 
     python scripts/pick_deck.py --dry-run     # rule filter only: counts + cost estimate
     python scripts/pick_deck.py               # rule filter, then Claude picks per episode
+    python scripts/pick_deck.py --eps 250     # just these episodes, merged into deck.json
 
 Two steps:
 A. Rules (free): keep show-note takeaways of 12–40 characters that are not interview
@@ -110,11 +111,12 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--eps", type=int, nargs="*", default=[], help="only these episodes; other lines in deck.json are kept")
     args = ap.parse_args()
 
     episodes = json.loads(EPISODES_PATH.read_text("utf-8"))
     candidates = {e["ep"]: [t for t in e.get("takeaways", []) if passes_rules(t)] for e in episodes}
-    candidates = {k: v for k, v in candidates.items() if v}
+    candidates = {k: v for k, v in candidates.items() if v and (not args.eps or k in args.eps)}
     total = sum(len(e.get("takeaways", [])) for e in episodes)
     n_lines = sum(len(v) for v in candidates.values())
     est = len(candidates) * (650 * 4 + 150 * 20) / 1e6
@@ -147,6 +149,10 @@ def main() -> int:
             picks.extend(got)
             print(f"  EP.{n:>3} {len(got)} picked" + "".join(f"\n        「{p['text']}」" for p in got))
 
+    if args.eps and DECK_PATH.exists():
+        # keep every other episode's lines; replace only the ones we just picked for
+        kept = [l for l in json.loads(DECK_PATH.read_text("utf-8"))["lines"] if l["ep"] not in set(args.eps)]
+        picks = kept + picks
     picks.sort(key=lambda p: -p["ep"])
     DECK_PATH.write_text(json.dumps({
         "_note": "Lines for 抽一句. Verbatim show-note takeaways: rule-filtered, then selected (not rewritten) by "

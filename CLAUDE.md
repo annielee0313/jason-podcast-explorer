@@ -17,6 +17,9 @@ A static React (Vite + TypeScript) site that helps new listeners discover episod
 - **All 248 feed episodes are imported** (EP.54 is missing from the feed). All are tagged with themes and an industry by `scripts/tag_episodes.py` (Claude Opus 5.5, 2026-10-21; reasons and confidence in `data/tag_report.json`, low-confidence rows worth a human look). EP.20 (Jason solo) and EP.28 (Elynn, part 2 of EP.27) have hand-entered guests. Older titles (EP.1–147, 「EP.n 職稱 姓名｜標題」) are trimmed to the part after ｜ by the fetch script.
 - **Stats** live in `data/about.json` → `stats`. Only the headline episode count animates (count-up on arrival); guests (`200+`, a safe floor) and the Apple rating are static.
 
+## Automatic updates
+`.github/workflows/update.yml` runs `scripts/update_site.py`: Fridays 12:00–24:00 Taipei every 30 min, other days every 6 h. New feed episode → import, Claude tags (`ANTHROPIC_API_KEY` secret), 抽一句 picks for that episode; new YouTube upload → link by EP number (public feed; `YOUTUBE_API_KEY` secret is an optional fallback because the feed is flaky). Commits only real changes, then starts the deploy workflow. The `github-actions` Anthropic key (jason-podcast workspace) expires 2026-12-31: create a new one and replace the secret before then. `fetch_episodes.py` writes fields in a fixed order so no-change runs leave files identical.
+
 ## Commands
 - `npm run dev` runs the dev server.
 - `npm run build` typechecks and builds. Run it before committing UI changes.

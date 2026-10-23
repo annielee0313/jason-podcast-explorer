@@ -38,6 +38,8 @@ NS = {
     "itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
     "content": "http://purl.org/rss/1.0/modules/content/",
 }
+FIELD_ORDER = ["ep", "date", "durationSec", "title", "guest", "org", "takeaways", "themes", "arc", "highlight",
+               "highlightIsSummary", "industry", "appleUrl", "soundonUrl", "youtubeId"]
 CURATED_FIELDS = ("themes", "arc", "highlight", "highlightIsSummary", "appleUrl", "industry", "youtubeId")
 
 
@@ -228,10 +230,12 @@ def main() -> int:
     merged += [e for ep, e in existing.items() if ep not in kept_eps]
     merged.sort(key=lambda r: r["ep"], reverse=True)
 
-    # drop null appleUrl so the JSON stays tidy
+    # drop null appleUrl so the JSON stays tidy, and write fields in one fixed order so a
+    # re-import with no real changes leaves the file byte-for-byte identical
     for r in merged:
         if r.get("appleUrl") is None:
             r.pop("appleUrl", None)
+    merged = [{k: r[k] for k in sorted(r, key=lambda k: (FIELD_ORDER.index(k) if k in FIELD_ORDER else 99, k))} for r in merged]
 
     EPISODES_PATH.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + "\n", "utf-8")
     AUDIO_PATH.write_text(json.dumps(audio, ensure_ascii=False, indent=2, sort_keys=True) + "\n", "utf-8")
