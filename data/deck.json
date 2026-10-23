@@ -2,6 +2,16 @@
   "_note": "Lines for 抽一句. Verbatim show-note takeaways: rule-filtered, then selected (not rewritten) by claude-opus-5-5 via scripts/pick_deck.py. Delete a line here to veto it.",
   "lines": [
     {
+      "ep": 250,
+      "text": "主動關閉無效選擇，在專注中累積人生複利",
+      "reason": "「主動關閉選擇、在專注中累積複利」是反直覺又實用的心法，單獨閱讀也能引發好奇。"
+    },
+    {
+      "ep": 250,
+      "text": "承認個人能力極限，以求助替換無效內耗",
+      "reason": "點出承認極限、用求助取代內耗的洞察，貼近許多人的處境，容易引起共鳴。"
+    },
+    {
       "ep": 249,
       "text": "整理的底層邏輯：擺脫美感堆疊，讓空間成為內心的具象化",
       "reason": "點出整理不只是追求美感，而是讓空間反映內心，觀點鮮明，容易引起共鳴與好奇。"

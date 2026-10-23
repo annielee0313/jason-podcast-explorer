@@ -3282,6 +3282,20 @@
       "industry_proposal": "",
       "reason": "本集以負債翻身、財務自由與槓桿理財為核心，兼談逆境心態；來賓為投資理財相關平台GoodWhale共同創辦人。",
       "confidence": "medium"
+    },
+    "250": {
+      "guest": "工頭堅 Ken",
+      "org": "資深旅遊創作者",
+      "title": "前半生拼命累積，後半生學會放下：我們到底捨不得什麼？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "ai"
+      ],
+      "industry": "food",
+      "industry_proposal": "",
+      "reason": "本集聚焦放下焦慮、承認極限與擺脫被淘汰恐懼的心態調整，並談到轉型為AI知識策展人；來賓為資深旅遊創作者，歸於餐飲／旅遊。",
+      "confidence": "medium"
     }
   },
   "industryProposals": {

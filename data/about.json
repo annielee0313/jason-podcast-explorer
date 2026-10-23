@@ -48,7 +48,7 @@
   },
   "stats": {
     "_note": "episodes is updated by scripts/fetch_episodes.py (latest EP number in the feed). guestsFloor is a safe lower bound: the feed lists ~239 distinct guest names but its guest lines are inconsistent. rating/ratingCount are entered by hand from Apple Podcasts; refresh them occasionally.",
-    "episodes": 249,
+    "episodes": 250,
     "guestsFloor": 200,
     "rating": 4.8,
     "ratingCount": 211,
