@@ -199,7 +199,10 @@ def main() -> int:
     merged, added, updated = [], 0, 0
     for p in parsed:
         audio_url = p.pop("_audio")
-        if audio_url:
+        # SoundOn changes the ?timestamp= on every re-save of the file; same path = same audio,
+        # so keep the stored link (otherwise every re-save becomes a commit and a redeploy).
+        old_audio = audio.get(str(p["ep"]), "")
+        if audio_url and old_audio.split("?")[0] != audio_url.split("?")[0]:
             audio[str(p["ep"])] = audio_url
         old = existing.get(p["ep"])
         row = {**p}
