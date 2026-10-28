@@ -1,9 +1,10 @@
 /**
- * Site measurement: Google Analytics 4 and Microsoft Clarity, behind a consent choice.
+ * Site measurement: Google Analytics 4 and Microsoft Clarity.
  *
- * - GA4 always loads (production only) but starts in Consent Mode "denied": no cookies,
- *   only anonymous, modelled counts. Accepting the notice grants analytics storage.
- * - Clarity (heatmaps, recordings) loads only after the visitor accepts.
+ * Consent (decided 2026-10-28): Taiwan and everywhere outside Europe measure by default with a
+ * notice and an opt-out (「不要追蹤」), the norm for Taiwanese sites. Europe/UK/Switzerland stay
+ * opt-in: GA4 applies that by the visitor's location (consent `region` default), the bar and
+ * Clarity by the browser's time zone. A stored choice ('granted' / 'denied') always wins.
  * - Page views are sent by the app after each route change (title is correct by then),
  *   so GA4's own "browser history" page views should be switched off in the stream settings.
  * - Events: one click listener classifies platform links (listen_click), company links
@@ -18,6 +19,18 @@ const CLARITY_ID: string | null = 'z26bvcq21m'; // clarity.microsoft.com → Set
 
 const CONSENT_KEY = 'jhl-consent'; // 'granted' | 'denied'
 export type Consent = 'granted' | 'denied' | null;
+
+/** EEA + UK + Switzerland: analytics only after an explicit 接受. */
+const OPT_IN_REGIONS = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT',
+  'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'];
+
+/** Best guess in the browser (no location lookup): a European time zone means opt-in. */
+export const needsOptIn = () => {
+  try { return /^Europe\//.test(Intl.DateTimeFormat().resolvedOptions().timeZone); } catch { return false; }
+};
+
+/** The choice in effect: the stored one, else the default for this visitor. */
+const effective = (): 'granted' | 'denied' => getConsent() ?? (needsOptIn() ? 'denied' : 'granted');
 
 declare global {
   interface Window {
@@ -39,6 +52,8 @@ export function setConsent(choice: 'granted' | 'denied') {
   try { localStorage.setItem(CONSENT_KEY, choice); } catch { /* private mode: choice lasts this visit */ }
   window.gtag?.('consent', 'update', { analytics_storage: choice });
   if (choice === 'granted') loadClarity();
+  // Clarity can't be unloaded cleanly once running: reload so an opt-out takes effect at once.
+  else if (window.clarity) location.reload();
   window.dispatchEvent(new Event('jhl-consent'));
 }
 
@@ -62,8 +77,9 @@ export function track(name: string, params: Record<string, string | number | und
   window.gtag?.('event', name, params);
 }
 
-export function trackPageView(path: string, title: string) {
-  track('page_view', { page_location: location.origin + path, page_title: title });
+/** `path` is the router path; the full URL (with the site's base folder) comes from location. */
+export function trackPageView(_path: string, title: string) {
+  track('page_view', { page_location: location.href, page_title: title });
 }
 
 const epFromPath = () => location.pathname.match(/\/episode\/(\d+)/)?.[1];
@@ -95,14 +111,18 @@ export function initAnalytics() {
   window.dataLayer = window.dataLayer || [];
   // gtag must push the `arguments` object itself, not an array.
   window.gtag = function gtag() { window.dataLayer!.push(arguments); }; // eslint-disable-line prefer-rest-params
-  window.gtag('consent', 'default', {
-    analytics_storage: consent === 'granted' ? 'granted' : 'denied',
-    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
-  });
+  const ads = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }; // never used for ads
+  if (consent) {
+    window.gtag('consent', 'default', { analytics_storage: consent, ...ads });
+  } else {
+    // No choice yet: opt-in regions denied (by location, Google-side), everyone else granted.
+    window.gtag('consent', 'default', { analytics_storage: 'denied', ...ads, region: OPT_IN_REGIONS });
+    window.gtag('consent', 'default', { analytics_storage: 'granted', ...ads });
+  }
   window.gtag('js', new Date());
   window.gtag('config', GA_ID, { send_page_view: false });
   loadScript(`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`);
-  if (consent === 'granted') loadClarity();
+  if (effective() === 'granted') loadClarity();
 
   document.addEventListener('click', (e) => {
     const el = (e.target as HTMLElement | null)?.closest<HTMLElement>('[data-track], a[href]');
