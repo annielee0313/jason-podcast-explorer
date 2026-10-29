@@ -71,10 +71,18 @@ function loadClarity() {
   loadScript(`https://www.clarity.ms/tag/${CLARITY_ID}`);
 }
 
-/** Send a GA4 event. Safe to call anywhere; does nothing in dev or before init. */
+/**
+ * Send an event to GA4, and mirror it into Clarity (when Clarity is running) so recordings can
+ * be filtered by what people did: the event name as a Clarity custom event, and its details as
+ * session tags (e.g. platform=youtube). Safe to call anywhere; does nothing in dev or before init.
+ */
 export function track(name: string, params: Record<string, string | number | undefined> = {}) {
   if (!enabled()) return;
   window.gtag?.('event', name, params);
+  if (window.clarity && name !== 'page_view') {
+    window.clarity('event', name);
+    for (const [k, v] of Object.entries(params)) if (v !== undefined) window.clarity('set', k, String(v));
+  }
 }
 
 /** `path` is the router path; the full URL (with the site's base folder) comes from location. */
