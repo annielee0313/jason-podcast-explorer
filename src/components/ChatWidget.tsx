@@ -73,15 +73,51 @@ export function ChatWidget() {
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
-  useEffect(() => { setMsgs(load()); }, []);
-  useEffect(() => { try { sessionStorage.setItem(STORE, JSON.stringify(msgs.slice(-20))); } catch { /* private mode */ } }, [msgs]);
-  useEffect(() => { listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: 'smooth' }); }, [msgs, busy, open]);
+  const [ready, setReady] = useState(false);
+  useEffect(() => { setMsgs(load()); setReady(true); }, []);
+  // Save only after the stored conversation is back, so the first empty render can't erase it.
+  useEffect(() => {
+    if (!ready) return;
+    try { sessionStorage.setItem(STORE, JSON.stringify(msgs.slice(-20))); } catch { /* private mode */ }
+  }, [msgs, ready]);
+  // Keep the newest question at the top of the list so a long answer is read from its start,
+  // not from its last card.
+  useEffect(() => {
+    const list = listRef.current;
+    if (!list) return;
+    const asked = list.querySelectorAll<HTMLElement>('.chat-user');
+    const last = asked[asked.length - 1];
+    list.scrollTo({ top: last ? last.offsetTop - 12 : list.scrollHeight, behavior: 'smooth' });
+  }, [msgs, busy, open]);
   useEffect(() => {
     if (!open) return;
-    inputRef.current?.focus();
+    const phone = window.matchMedia('(max-width: 640px)').matches;
+    // On phones the keyboard would cover the starters, so wait for a tap; desktops get focus.
+    if (!phone) inputRef.current?.focus();
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    if (!phone) return () => window.removeEventListener('keydown', onKey);
+    // Full-screen sheet on phones: stop the page scrolling behind it, and fit the sheet to the
+    // visible area so the input stays above the on-screen keyboard.
+    const root = document.documentElement;
+    const vv = window.visualViewport;
+    const fit = () => {
+      if (!vv) return;
+      root.style.setProperty('--chat-vh', `${vv.height}px`);
+      root.style.setProperty('--chat-top', `${vv.offsetTop}px`);
+    };
+    fit();
+    vv?.addEventListener('resize', fit);
+    vv?.addEventListener('scroll', fit);
+    root.classList.add('chat-open');
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      vv?.removeEventListener('resize', fit);
+      vv?.removeEventListener('scroll', fit);
+      root.classList.remove('chat-open');
+      root.style.removeProperty('--chat-vh');
+      root.style.removeProperty('--chat-top');
+    };
   }, [open]);
 
   if (!CHAT_URL) return null;
