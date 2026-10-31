@@ -128,6 +128,6 @@ is static.
 ## Copy
 
 Traditional Chinese, Taiwan usage; warm and plain, not corporate. Label what things are honestly:
-show-note lines are 「節目重點」 without quotation marks (the production team wrote them, not the
-guest); machine transcripts say so. Don't name missing sources on public pages; just leave the
+show-note lines (抽一句) never get quotation marks (the production team wrote them, not the
+guest), and only the guest's name sits under them; machine transcripts say so. Don't name missing sources on public pages; just leave the
 block out.

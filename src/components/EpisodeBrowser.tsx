@@ -66,8 +66,8 @@ export function EpisodeBrowser() {
   };
   const active = FACETS.flatMap((f) => f.options.filter((o) => o.id === filters[f.key]).map((o) => o.name));
 
-  // Page changes slide like a carousel: forward moves the cards out to the left
-  // and the next set in from the right; back does the reverse.
+  // Page changes: a short, simple move out / move in of the whole grid (one element, GPU
+  // transform, no per-card stagger). Forward goes left, back goes right.
   const dir = useRef(0);
   const busy = useRef(false);
   const reduced = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
@@ -80,7 +80,7 @@ export function EpisodeBrowser() {
     if (reduced()) { setPage(p); return; }
     busy.current = true;
     gsap.to(gridRef.current, {
-      x: -dir.current * 80, autoAlpha: 0, duration: 0.25, ease: 'power2.in',
+      x: -dir.current * 40, autoAlpha: 0, duration: 0.18, ease: 'power1.in', force3D: true,
       onComplete: () => setPage(p),
     });
   };
@@ -94,13 +94,11 @@ export function EpisodeBrowser() {
     // A context so cleanup (including React's dev double-run) fully reverts the tweens.
     const ctx = gsap.context(() => {
       if (d !== 0) {
-        // Incoming page: slide in from the side we are moving towards.
-        gsap.fromTo(grid, { x: d * 80, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.4, ease: 'power3.out', clearProps: 'transform,opacity,visibility' });
-        gsap.from(grid.children, { x: d * 24, duration: 0.5, stagger: 0.03, ease: 'power3.out', clearProps: 'transform' });
+        gsap.fromTo(grid, { x: d * 40, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.28, ease: 'power2.out', force3D: true, clearProps: 'transform,opacity,visibility' });
         return;
       }
-      // Filter or sort change: a quiet rise.
-      gsap.from(grid.children, { y: 14, autoAlpha: 0, duration: 0.45, stagger: 0.03, ease: 'power2.out', clearProps: 'transform,opacity,visibility' });
+      // Filter or sort change: a quick fade of the whole grid.
+      gsap.fromTo(grid, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2, ease: 'power1.out', clearProps: 'opacity,visibility' });
     }, grid);
     return () => ctx.revert();
   }, [filters, order, current]);

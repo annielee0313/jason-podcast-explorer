@@ -232,7 +232,7 @@ export default function Landing() {
             <blockquote>{current.text}</blockquote>
             <div className="deck-source">
               <span className="deck-ep"><span className="mono">EP.{current.ep}</span>　{current.title}</span>
-              <span className="deck-guest">節目重點 · {current.guest}{current.org ? ` · ${current.org}` : ''}</span>
+              <span className="deck-guest">{current.guest}</span>
             </div>
             <div className="deck-actions">
               <button type="button" className="btn btn-ghost-dark" onClick={() => { draw(); track('deck_draw'); }}><ShuffleIcon />再抽一張</button>
