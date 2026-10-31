@@ -8,6 +8,7 @@ import { applyHead, headFor } from './lib/seo';
 import { initAnalytics, trackPageView } from './lib/analytics';
 import { ConsentBar } from './components/ConsentBar';
 import { PageTransition } from './components/PageTransition';
+import { ChatWidget } from './components/ChatWidget';
 
 /** Routes shared by the browser entry (main.tsx) and the prerenderer (entry-server.tsx). */
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
   return (
     <>
     <ConsentBar />
+    <ChatWidget />
     <PageTransition>{(shown) => (
     <Routes location={shown}>
       <Route path="/" element={<Landing />} />

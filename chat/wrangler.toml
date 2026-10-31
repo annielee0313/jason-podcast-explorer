@@ -1,0 +1,23 @@
+# 《Jason好好聊》小幫手 API (Cloudflare Worker). Local: npm run chat:dev  ·  Deploy: npm run chat:deploy
+# The Anthropic key is a secret: `npx wrangler secret put ANTHROPIC_API_KEY --config chat/wrangler.toml`
+# (locally it comes from chat/.dev.vars, which is gitignored).
+name = "jason-podcast-chat"
+main = "worker.ts"
+compatibility_date = "2026-05-01"
+compatibility_flags = ["nodejs_compat"]
+# Public at https://jason-podcast-chat.annielee.workers.dev; no extra per-version preview URLs.
+workers_dev = true
+preview_urls = false
+
+[vars]
+ALLOWED_ORIGINS = "https://annielee0313.github.io,http://localhost:5188,http://localhost:5189"
+CHAT_ENABLED = "true"
+
+# Per-visitor rate limit: 8 questions per minute.
+[[ratelimits]]
+name = "CHAT_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 8
+  period = 60

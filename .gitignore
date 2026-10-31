@@ -10,3 +10,8 @@ audio/
 data/transcripts/*.wav
 data/raw/
 dist-ssr/
+
+# Chat worker local secrets
+chat/.dev.vars
+chat/.wrangler/
+.wrangler/
