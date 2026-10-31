@@ -10,7 +10,7 @@ import { about, episodeByNumber, episodes, type Episode } from './data';
 export const SITE_URL = __SITE_URL__; // e.g. https://annielee0313.github.io/jason-podcast-explorer/
 const SHOW = 'Jason好好聊';
 const FEED = 'https://feeds.soundon.fm/podcasts/f1f2a53d-d42a-4752-a768-00a32b1ac9c5.xml';
-const IMAGE = `${SITE_URL}host.jpg`;
+const IMAGE = `${SITE_URL}jason-wide.jpg`;
 
 export interface Head {
   title: string;

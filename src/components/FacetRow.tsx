@@ -65,7 +65,7 @@ export function FacetRow({ label, options, selected, countFor, onPick }: {
       <button key={o.id} type="button" className={`tag${overflow ? ' is-overflow' : ''}`} aria-pressed={on}
         style={on ? { background: o.bg, color: o.fg } : undefined}
         disabled={n === 0 && !on} onClick={() => { if (!on) track('filter_select', { facet: label, value: o.id }); onPick(o.id); }}>
-        <span className="tag-dot" style={{ background: on ? '#fff' : o.dot }} aria-hidden="true" />{o.name}<span className="count">{n}</span>
+        <span className="tag-dot" style={{ background: o.dot }} aria-hidden="true" />{o.name}<span className="count">{n}</span>
       </button>
     );
   };

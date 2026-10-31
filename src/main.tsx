@@ -6,6 +6,10 @@ import './styles.css';
 
 const base = import.meta.env.BASE_URL;
 
+// Page transitions manage scroll themselves (top for new pages, the old position when going back);
+// the browser's own restoration would jump the outgoing page before the transition covers it.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
 // Old links used hash routing (…/#/episode/247). Move them to the real path; the
 // prerendered HTML is then for a different page, so render fresh instead of hydrating.
 const fromHash = location.hash.startsWith('#/');

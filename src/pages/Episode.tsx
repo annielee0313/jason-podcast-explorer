@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Footer, Header } from '../components/Header';
 import { PlayIcon, ThemeChip } from '../components/ui';
@@ -12,7 +11,6 @@ export default function EpisodePage() {
   const { ep: epParam } = useParams();
   const ep = episodeByNumber(Number(epParam));
 
-  useEffect(() => { window.scrollTo(0, 0); }, [epParam]);
 
   if (!ep) {
     return (
@@ -34,14 +32,14 @@ export default function EpisodePage() {
   return (
     <>
       <Header />
-      <section className="hero" style={{ paddingTop: 40, paddingBottom: 56 }}>
+      <section className="hero" style={{ paddingTop: 40, paddingBottom: 40 }}>
         <div className="wrap ep-hero">
           <p className="kicker" style={{ margin: 0, fontSize: 13, color: 'var(--teal-strong)' }}>EP.{ep.ep} · {ep.date} · {formatDuration(ep.durationSec)}</p>
           <h1 className="ep-title">{ep.title}</h1>
-          {/* Guest sits right under the title: who this conversation is with. */}
+          <div className="chips" style={{ gap: 8 }}>{ep.themes.map((t) => <ThemeChip key={t} id={t} />)}</div>
+          {/* Who this conversation is with: 來賓 + name on one line, company below. */}
           <div className="ep-guest">
-            <span className="ep-guest-label">來賓</span>
-            <span className="ep-guest-name">{ep.guest}</span>
+            <span className="ep-guest-line"><span className="ep-guest-label">來賓</span>{ep.guest}</span>
             {ep.org && <span className="ep-guest-org">{ep.org}</span>}
           </div>
           <div className="chips" style={{ gap: 10, marginTop: 8 }}>
@@ -54,18 +52,11 @@ export default function EpisodePage() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 48, paddingBottom: 80 }}>
+      <section className="section" style={{ paddingTop: 16, paddingBottom: 80 }}>
         <div className="wrap row" style={{ gap: 32, alignItems: 'flex-start' }}>
           <div className="grow" style={{ flex: '999 1 640px', display: 'flex', flexDirection: 'column', gap: 24 }}>
-            <div className="chips" style={{ gap: 8 }}>{ep.themes.map((t) => <ThemeChip key={t} id={t} />)}</div>
-
             {/* Only what this episode actually has: no empty placeholders for missing data. */}
-            {ep.youtubeId && (
-              <div className="card">
-                <h2 style={{ fontSize: 20, marginBottom: 16 }}>看完整訪談</h2>
-                <YouTubeEmbed id={ep.youtubeId} title={ep.title} ep={ep.ep} />
-              </div>
-            )}
+            {ep.youtubeId && <YouTubeEmbed id={ep.youtubeId} title={ep.title} ep={ep.ep} />}
             {ep.takeaways.length > 0 && (
               <div className="card">
                 <h2 style={{ fontSize: 20, marginBottom: 20 }}>這集在聊</h2>
@@ -89,11 +80,15 @@ export default function EpisodePage() {
 
           <aside aria-label="也可以聽" className="side" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <h2 style={{ fontSize: 18 }}>聽完這集，接著聽</h2>
-            <p className="muted" style={{ margin: '0 0 4px', fontSize: 13 }}>依共同主題推薦，不是依日期。</p>
             {related.map(({ e, shared }) => (
-              <Link key={e.ep} to={`/episode/${e.ep}`} className="ep-card" style={{ padding: 18, gap: 8 }} data-track="related_click" data-ep={e.ep}>
-                <span style={{ fontSize: 12, color: themeById[shared[0]].fg }}>同樣聊 {shared.map((s) => themeById[s].name).join(' · ')}</span>
-                <span style={{ fontSize: 14, fontWeight: 700, lineHeight: 1.5 }}>{e.title}</span>
+              <Link key={e.ep} to={`/episode/${e.ep}`} className="ep-card related-card" data-track="related_click" data-ep={e.ep}>
+                <span className="related-why">
+                  同樣聊{' '}
+                  {shared.map((t, i) => (
+                    <span key={t}>{i > 0 && ' · '}<span style={{ color: themeById[t].fg }}>{themeById[t].name}</span></span>
+                  ))}
+                </span>
+                <span className="title">{e.title}</span>
                 <span className="meta">EP.{e.ep} · {e.guest}</span>
               </Link>
             ))}

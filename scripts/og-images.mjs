@@ -4,7 +4,7 @@
 // Fonts: Noto Serif TC / Noto Sans TC from Google Fonts, subset per card to exactly the characters
 // on it (Satori doesn't fall back across several files of the same family). Saved as JPEG.
 // If anything fails (e.g. no network), it returns an empty set and pages keep the default image.
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
@@ -71,7 +71,11 @@ function card(e, themes, cover) {
 /** Write dist/og/EP###.jpg for every episode. Returns the set of episode numbers written. */
 export async function generateOgImages({ episodes, themes, publicDir, outDir }) {
   try {
-    const cover = `data:image/jpeg;base64,${readFileSync(join(publicDir, 'host.jpg')).toString('base64')}`;
+    // The right-hand panel: a tall crop of jason-wide.jpg around Jason (he sits right of centre).
+    const coverJpg = await sharp(join(publicDir, 'jason-wide.jpg'))
+      .extract({ left: 600, top: 0, width: 393, height: 576 })
+      .resize(COVER, H).jpeg({ quality: 86 }).toBuffer();
+    const cover = `data:image/jpeg;base64,${coverJpg.toString('base64')}`;
     mkdirSync(outDir, { recursive: true });
     const done = new Set();
     await pool(episodes, 6, async (e) => {

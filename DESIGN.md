@@ -58,7 +58,7 @@ change **two** of size / family / weight / colour, not just size by 1–2px.
 | Role | Token | Size | Face | Where |
 |---|---|---|---|---|
 | Display | `--fs-display` | 34–60px | Serif 600 | Hero 「249 場對話」 |
-| Page title | (episode `h1`) | 30–52px | Serif 600 | Episode title |
+| Page title | (episode `h1`) | 26–36px | Serif 600 | Episode title |
 | Section title | `--fs-xl` | 22–28px | Serif 600 | 「全部集數」, section heads |
 | Card title | `--fs-lg` | 20px | Serif 600 | Jason 親選, 最多人收聽, 這集在聊, guest name |
 | Quote / feature line | — | 18–22px | Serif 500 | 抽一句 quote |
@@ -99,8 +99,8 @@ which use the serif.
   `btn-primary` (teal-strong, white text), `link-btn` (text + round arrow). Primary actions on a
   dark card sit on their **own row** below the content (抽一句).
 - **Tags.** Theme and industry tags are small squares of colour: `bg`/`fg` from the data files,
-  2px radius. Filters: white with a colour square; selected = the tag's own colours, square turns
-  white, same weight (width never shifts). Rows stay on one line: `+N` expands on desktop, × folds
+  2px radius. Filters (compact: 12px text, 34px tall): white with a colour square; selected = the tag's own
+  colours, square keeps its colour, same weight (width never shifts). Rows stay on one line: `+N` expands on desktop, × folds
   back; phones scroll the row sideways with a right-edge fade.
 - **Top lists** (Jason 親選 / 最多人收聽): two identical cards, 1:1, three rows each, serif
   01–03 numerals in teal-strong, title / EP · guest / arrow.
@@ -109,8 +109,9 @@ which use the serif.
   7, current page a short teal bar (guest map list).
 - **Pop-up / sheet** (`Modal`): white, 8px radius, 680px max; bottom sheet on phones. Escape,
   backdrop and × close it; focus is trapped and returned; page scroll locks; body scrolls inside.
-- **Episode page:** one left-aligned header column (meta → title → 來賓 name · org → listen
-  buttons), then 看完整訪談 (YouTube, thumbnail until played), 這集在聊, and 接著聽 on the right.
+- **Episode page:** one left-aligned header column (meta → title → theme tags → 「來賓 name」 with
+  the company below → listen buttons), then the YouTube video (no card, thumbnail until played),
+  這集在聊, and 接著聽 on the right.
 - **Guest map:** focus view. Centre guest = dark label with a crosshair through it; themes = tag-
   coloured labels with a soft halo sized by guest count; related guests = industry clusters (soft
   colour halos, dark count chip, teal when same industry). Faint grid, hairline links. Side panel

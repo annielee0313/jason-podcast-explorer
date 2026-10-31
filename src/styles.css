@@ -144,11 +144,19 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 .hero-bg { position: absolute; left: 0; right: 0; top: -72px; bottom: 0; z-index: -1; pointer-events: none; background: var(--ground); }
 @media (max-width: 860px) { .hero-bg { top: -60px; } }
 @media (max-width: 640px) { .hero { padding: 48px 0 0; } .bento { margin-top: 56px; } }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: 40px; align-items: end; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; align-items: end; }
 @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
-.hero-rail { display: flex; flex-direction: column; gap: 8px; }
-.host-photo { width: 72px; height: 72px; border-radius: var(--r-md); overflow: hidden; background: var(--ink-2); margin-bottom: 6px; }
-.host-photo img { display: block; width: 200px; height: 200px; max-width: none; margin-left: -114px; margin-top: -26px; }
+/* Host byline: a 4:5 portrait (head with room above it, shoulders, tie) beside a short text stack,
+   bottom-aligned with the hero copy. */
+.hero-rail { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 20px; align-items: end; padding-bottom: 6px; }
+.host-photo { width: 104px; aspect-ratio: 4 / 5; border-radius: var(--r-sm); overflow: hidden; background: var(--ink-2); }
+.host-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transform: scale(1.5); transform-origin: 50% 8%; } /* jason-portrait.jpg */
+.hero-rail-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.hero-rail-kicker { font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.16em; color: var(--teal-strong); }
+.hero-rail-name { font-family: var(--serif); font-size: 19px; font-weight: 600; line-height: 1.4; }
+.hero-rail-name .latin { font-size: 15px; color: var(--muted-2); }
+.hero-rail-title { font-size: var(--fs-sm); line-height: 1.6; color: var(--muted); }
+.hero-rail .link-btn { margin-top: 6px; min-height: 40px; }
 .hero-title { font-size: var(--fs-display); line-height: 1.35; font-weight: 600; letter-spacing: 0.04em; display: flex; flex-direction: column; gap: 4px; }
 .hero-line { display: block; }
 .hero-foot { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; margin-top: 40px; }
@@ -169,7 +177,7 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 .tile-white .stat-l { color: var(--muted); }
 /* Latest episode: 2/3 of the grid, cover art fading in from the right behind the text. */
 .tile-latest { grid-column: span 4; grid-row: span 2; position: relative; padding: 0; }
-.tile-latest-art { position: absolute; top: 0; right: 0; height: 100%; width: auto; aspect-ratio: 1 / 1; object-fit: cover; display: block;
+.tile-latest-art { position: absolute; top: 0; right: 0; height: 100%; width: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 88% 30%; display: block;
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40%); mask-image: linear-gradient(to right, transparent 0, #000 40%); }
 .tile-latest-body { position: relative; display: flex; flex-direction: column; gap: 14px; height: 100%; max-width: 58%; padding: 40px 32px 40px max(56px, calc((100vw - 1200px) / 2)); }
 /* The four small tiles share the remaining 1/3 as a 2 × 2 grid. */
@@ -269,17 +277,17 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 /* Episode page guest block: name, then role and company. */
 /* Episode hero: one left-aligned column — meta, title, guest, listen buttons. */
 .ep-hero { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
-.ep-title { font-size: clamp(30px, 4.4vw, 52px); max-width: 22em; margin: 0; }
-.ep-guest { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
-.ep-guest-label { font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.12em; color: var(--muted-2); }
-.ep-guest-name { font-family: var(--serif); font-size: 20px; font-weight: 600; color: var(--ink); }
+.ep-title { font-size: clamp(26px, 3vw, 36px); line-height: 1.4; max-width: 24em; margin: 0; } /* page title role, DESIGN.md */
+.ep-guest { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
+.ep-guest-line { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); }
+.ep-guest-label { margin-right: 10px; color: var(--muted-2); } /* 來賓: same size, lighter */
 .ep-guest-org { font-size: var(--fs-base); color: var(--muted); }
 
 /* Episode browser: filter tags, sort, status, pager */
 .browse-tools { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; justify-content: space-between; }
 .facets { display: flex; flex-direction: column; gap: 10px; flex: 1 1 600px; min-width: 0; }
 .facet-row { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; align-items: start; }
-.facet-label { padding-top: 11px; font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.12em; color: var(--muted-2); }
+.facet-label { padding-top: 8px; font-family: var(--mono); font-size: var(--fs-xs); letter-spacing: 0.12em; color: var(--muted-2); }
 @media (max-width: 640px) { .facet-row { grid-template-columns: 1fr; gap: 6px; } .facet-label { padding-top: 0; } }
 .tag:disabled { opacity: 0.4; cursor: default; }
 .tag:disabled:hover { background: #fff; }
@@ -289,7 +297,7 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 .filter-tags .tag { flex: none; }
 .filter-tags .is-overflow { display: none; }
 .tag-more { font-family: var(--mono); color: var(--teal-strong); }
-.tag-close { width: 40px; padding: 0; justify-content: center; color: var(--muted); }
+.tag-close { width: 34px; padding: 0; justify-content: center; color: var(--muted); }
 /* Phones: one horizontally scrolling line with every tag; the right edge fades to hint at more. */
 @media (max-width: 640px) {
   .filter-tags, .filter-tags.is-expanded { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -16px; padding-right: 40px;
@@ -300,16 +308,16 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 }
 .filter-measure { position: absolute; visibility: hidden; pointer-events: none; display: flex; gap: 8px; white-space: nowrap; height: 0; overflow: hidden; }
 .filter-measure .tag { flex: none; }
-.tag { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px; border: 0; border-radius: var(--r-xs); background: #fff; color: var(--ink); font: inherit; font-size: 13px; cursor: pointer; }
+.tag { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 10px; border: 0; border-radius: var(--r-xs); background: #fff; color: var(--ink); font: inherit; font-size: var(--fs-sm); cursor: pointer; } /* compact: caption size, like the 主題 / 產業 labels */
 .tag:hover { background: var(--soft); }
 .tag .count { font-family: var(--mono); font-size: var(--fs-xs); color: var(--muted-2); }
 .tag[aria-pressed='true'] { background: var(--ink); color: #fff; }
 .tag[aria-pressed='true'] .count { color: var(--on-dark-muted); }
-/* A selected theme/industry takes its tag colours (set inline) and its square turns white; same weight, so the width never shifts. Only 全部 stays ink. */
+/* A selected theme/industry takes its tag colours (set inline) and keeps its colour square; same weight, so the width never shifts. Only 全部 stays ink. */
 .tag[aria-pressed='true'][style] .count { color: inherit; opacity: .7; }
 .tag-dot { width: 8px; height: 8px; border-radius: 2px; flex: none; }
-.seg { display: flex; padding: 4px; gap: 2px; background: #fff; border-radius: var(--r-sm); }
-.seg button { min-height: 36px; min-width: 56px; padding: 0 14px; border: 0; border-radius: var(--r-xs); background: none; color: var(--ink); font: inherit; font-size: var(--fs-sm); cursor: pointer; }
+.seg { display: flex; padding: 3px; gap: 2px; background: #fff; border-radius: var(--r-xs); }
+.seg button { min-height: 28px; min-width: 48px; padding: 0 10px; border: 0; border-radius: var(--r-xs); background: none; color: var(--ink); font: inherit; font-size: var(--fs-sm); cursor: pointer; }
 .seg button[aria-pressed='true'] { background: var(--ink); color: #fff; }
 .browse-status { margin: 20px 0 16px; font-family: var(--mono); font-size: var(--fs-sm); color: var(--muted); }
 /* Pager: quiet text numbers, the current page underlined in teal; arrows at the ends. */
@@ -342,7 +350,7 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 .about-host { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; align-items: start; }
 @media (max-width: 640px) { .about-host { grid-template-columns: 1fr; } }
 .about-photo { width: 100%; aspect-ratio: 4 / 5; border-radius: var(--r-md); overflow: hidden; background: var(--ink-2); }
-.about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 78% 30%; transform: scale(1.5); transform-origin: 78% 40%; display: block; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 15%; display: block; } /* jason-portrait.jpg */
 .about-name { font-family: var(--serif); font-size: 24px; font-weight: 600; }
 .about-name .latin { font-size: 18px; color: var(--muted-2); }
 .fact-list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px 20px; }
@@ -422,18 +430,19 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 .map-controls .map-back { width: auto; border-radius: var(--r-sm); padding: 0 14px; font-size: 13px; font-weight: 700; }
 
 /* Guest map side panel: fixed facts on top, the related list scrolls inside. */
-.map-panel { display: flex; flex-direction: column; min-height: 0; background: #fff; border-radius: var(--radius); overflow: hidden; }
-.map-panel-head { display: flex; flex-direction: column; gap: 10px; padding: 22px 24px 10px; }
+.map-panel { display: flex; flex-direction: column; min-height: 0; } /* open column on the page ground, no card box */
+.map-panel-head { display: flex; flex-direction: column; gap: 10px; padding: 8px 0 10px 8px; }
 .map-panel-meta { font-family: var(--mono); font-size: var(--fs-sm); color: var(--muted-2); }
 .map-panel-name { font-family: var(--serif); font-size: 20px; font-weight: 600; line-height: 1.35; }
 .map-panel-org { margin-top: 2px; font-size: 13px; color: var(--muted); }
 .map-panel-themes { display: flex; flex-wrap: wrap; gap: 6px; }
 .map-panel-quote { margin: 0; font-family: var(--serif); font-size: 14px; line-height: 1.7; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .map-panel-quote .muted { font-family: var(--font); font-size: var(--fs-xs); }
-.map-panel-related { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 4px 24px 12px; }
-.map-panel-label { display: flex; align-items: center; min-height: 32px; font-size: var(--fs-sm); color: var(--muted-2); }
+.map-panel-related { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 4px 0 0 8px; }
+.map-panel-label { display: flex; align-items: center; gap: 6px; min-height: 32px; font-size: var(--fs-sm); color: var(--muted-2); }
 .map-rows { flex: 1; min-height: 0; overflow: hidden; margin: 0; padding: 0; list-style: none; }
 .map-row { height: 40px; display: flex; align-items: center; }
+.map-row-empty { padding: 8px 0; font-size: 13px; line-height: 1.7; color: var(--muted); }
 .map-row button { display: flex; align-items: center; gap: 8px; width: 100%; height: 100%; padding: 0; border: 0; background: none; font: inherit; color: var(--ink); text-align: left; cursor: pointer; }
 .map-panel-ghead { font-size: 13px; font-weight: 700; white-space: nowrap; }
 .map-ghead-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
@@ -441,12 +450,12 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 .map-panel-ghead small { font-weight: 400; color: var(--muted-2); }
 .map-panel-ghead:disabled { cursor: default; }
 .map-panel-ghead .mono { margin-left: auto; font-size: var(--fs-xs); font-weight: 400; color: var(--muted-2); }
-.map-row .map-panel-guest { justify-content: space-between; padding-left: 16px; font-size: var(--fs-base); }
+.map-row .map-panel-guest { justify-content: space-between; padding-left: 0; font-size: var(--fs-base); }
 .map-row .map-panel-guest:hover { color: var(--teal-strong); }
 .map-panel-guest .mono { font-size: var(--fs-xs); color: var(--muted-2); }
 .map-panel-back { align-self: flex-start; min-height: 32px; padding: 0; border: 0; background: none; font: inherit; font-size: 13px; font-weight: 700; color: var(--teal-strong); cursor: pointer; }
 .map-pager { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 8px; }
-.map-pager-arrow { width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--ground); color: var(--ink); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+.map-pager-arrow { width: 44px; height: 44px; border: 0; border-radius: 50%; background: #fff; color: var(--ink); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
 .map-pager-arrow:disabled { opacity: .35; cursor: default; }
 .map-pager-dots { display: flex; align-items: center; }
 .map-pager-dots button { width: 20px; height: 44px; padding: 0; border: 0; background: none; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
@@ -659,3 +668,15 @@ mark { background: #BDEBEF; color: var(--ink); padding: 1px 3px; border-radius: 
 @media (max-width: 640px) { .consent { flex-direction: column; align-items: stretch; padding: 16px; } .consent-actions > * { flex: 1; justify-content: center; } }
 .footer-linkbtn { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
 .footer-linkbtn:hover { text-decoration: underline; }
+
+/* Page transitions (PageTransition.tsx) slide this wrapper; it holds no layout of its own. */
+.pt-page { min-height: 100vh; }
+
+/* Host byline arrow: white disc, ink on hover */
+.hero-rail .link-btn .dot-icon { background: #fff; color: var(--ink); transition: background .2s, color .2s; }
+.hero-rail .link-btn:hover .dot-icon, .hero-rail .link-btn:focus-visible .dot-icon { background: var(--ink); color: #fff; }
+
+/* 「聽完這集，接著聽」 cards: ink label, theme names in their own colours, serif title */
+.related-card { padding: 18px 20px; gap: 8px; }
+.related-why { font-size: var(--fs-sm); color: var(--ink); }
+.related-card .title { font-size: 17px; line-height: 1.55; }

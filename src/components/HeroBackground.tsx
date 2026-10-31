@@ -3,7 +3,9 @@ import { MeshGradient } from '@paper-design/shaders-react';
 
 // Pale ground and soft teals from the brand palette: low contrast, so the ink
 // headline on top keeps full contrast (well above 4.5:1 everywhere).
-const COLORS = ['#F2F5F6', '#D8F1F3', '#E7EDEF', '#BEE7EB', '#F7F9FA'];
+// Slightly deeper teals than the first version (2026-10-31) so the drift is visible; the ink
+// headline still has > 9:1 contrast on the darkest stop.
+const COLORS = ['#EEF3F4', '#C6EBEE', '#E0E9EB', '#A2DCE2', '#F5F8F9'];
 const SPEED = 0.12; // one slow drift, not a light show
 
 /**
@@ -34,7 +36,7 @@ export function HeroBackground() {
       {mounted && <MeshGradient
         colors={COLORS}
         distortion={0.8}
-        swirl={0.15}
+        swirl={0.22}
         grainMixer={0}
         grainOverlay={0.12}
         speed={visible && !reduced ? SPEED : 0}

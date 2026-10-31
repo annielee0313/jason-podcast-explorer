@@ -134,18 +134,21 @@ export default function Landing() {
           </div>
 
           <aside className="hero-rail" aria-label="主持人">
-            <div className="host-photo"><img src={`${import.meta.env.BASE_URL}host.jpg`} alt="" /></div>
-            <div style={{ fontSize: 14, fontWeight: 700 }}>主持人 {host.name} Jason</div>
-            <div className="muted" style={{ fontSize: 12, lineHeight: 1.6 }}>{host.title}</div>
-            <button type="button" className="link-btn" onClick={() => scrollTo('about')}>
-              認識 Jason <span className="dot-icon"><ArrowIcon /></span>
-            </button>
+            <div className="host-photo"><img src={`${import.meta.env.BASE_URL}jason-portrait.jpg`} alt="" /></div>
+            <div className="hero-rail-text">
+              <span className="hero-rail-kicker">主持人 · HOST</span>
+              <span className="hero-rail-name">{host.name} <span className="latin">Jason</span></span>
+              <span className="hero-rail-title">{host.title}</span>
+              <button type="button" className="link-btn" onClick={() => scrollTo('about')}>
+                認識 Jason <span className="dot-icon"><ArrowIcon /></span>
+              </button>
+            </div>
           </aside>
         </div>
 
         <div className="bento">
           <div className="tile tile-dark tile-latest">
-            <img className="tile-latest-art" src={`${import.meta.env.BASE_URL}host.jpg`} alt="《Jason好好聊》節目封面：主持人楊佳燊 Jason" />
+            <img className="tile-latest-art" src={`${import.meta.env.BASE_URL}jason-wide.jpg`} alt="主持人楊佳燊 Jason" />
             <div className="tile-latest-body">
               <div className="kicker">最新一集 · EP.{latest.ep} · {latest.date} · {formatDuration(latest.durationSec)}</div>
             <div style={{ fontSize: 20, fontWeight: 700, lineHeight: 1.45 }}>{latest.title}</div>
@@ -252,7 +255,7 @@ export default function Landing() {
           <SectionHead n="04" en="THE HOST" title="關於 Jason" />
           <div className="about-grid">
             <div className="card about-host">
-              <div className="about-photo"><img src={`${import.meta.env.BASE_URL}host.jpg`} alt="主持人 楊佳燊 Jason" /></div>
+              <div className="about-photo"><img src={`${import.meta.env.BASE_URL}jason-portrait.jpg`} alt="主持人 楊佳燊 Jason" /></div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14, minWidth: 0 }}>
                 <div>
                   <div className="about-name">{host.name} <span className="latin">{host.nameEn}</span></div>

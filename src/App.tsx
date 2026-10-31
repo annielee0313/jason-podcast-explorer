@@ -7,6 +7,7 @@ import Studio from './pages/Studio';
 import { applyHead, headFor } from './lib/seo';
 import { initAnalytics, trackPageView } from './lib/analytics';
 import { ConsentBar } from './components/ConsentBar';
+import { PageTransition } from './components/PageTransition';
 
 /** Routes shared by the browser entry (main.tsx) and the prerenderer (entry-server.tsx). */
 export default function App() {
@@ -22,7 +23,8 @@ export default function App() {
   return (
     <>
     <ConsentBar />
-    <Routes>
+    <PageTransition>{(shown) => (
+    <Routes location={shown}>
       <Route path="/" element={<Landing />} />
       <Route path="/episode/:ep" element={<EpisodePage />} />
       {/* Internal tools are hidden on the public site for now: dev server only (npm run dev). */}
@@ -30,6 +32,7 @@ export default function App() {
       {import.meta.env.DEV && <Route path="/studio" element={<Studio />} />}
       <Route path="*" element={<Landing />} />
     </Routes>
+    )}</PageTransition>
     </>
   );
 }

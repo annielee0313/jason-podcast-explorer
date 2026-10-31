@@ -349,8 +349,10 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
 
           <RelatedList
             key={`${sel.ep}-${openKey ?? ''}`}
-            groups={open ? [open] : groupsSorted}
-            total={open ? open.guests.length : layout.related.length}
+            // The panel lists only the closest matches (same industry + a shared theme), not
+            // everyone who shares a theme; opening a cluster on the map still lists that cluster.
+            groups={open ? [open] : groupsSorted.filter(isClose)}
+            total={open ? open.guests.length : closeCount}
             closeCount={open ? 0 : closeCount}
             isClose={isClose}
             open={open}
@@ -379,16 +381,10 @@ function dotWindow(current: number, total: number, size = 7) {
 type Row = { kind: 'head'; g: Group; cont?: boolean } | { kind: 'guest'; g: Group; e: Episode };
 const ROW_H = 40; // px; keep in sync with .map-row
 
-/** Split rows into pages of `cap`; a page that starts mid-group repeats that group's heading. */
+/** Split rows into pages of `cap`. */
 function paginate(rows: Row[], cap: number) {
   const pages: Row[][] = [];
-  let cur: Row[] = [];
-  for (const row of rows) {
-    if (cur.length === cap || (row.kind === 'head' && cur.length === cap - 1)) { pages.push(cur); cur = []; }
-    if (!cur.length && row.kind === 'guest') cur.push({ kind: 'head', g: row.g, cont: true });
-    cur.push(row);
-  }
-  if (cur.length) pages.push(cur);
+  for (let i = 0; i < rows.length; i += cap) pages.push(rows.slice(i, i + cap));
   return pages;
 }
 
@@ -412,25 +408,31 @@ function RelatedList({ groups, total, closeCount, isClose, open, onOpen, onClose
     return () => ro.disconnect();
   }, []);
 
-  const rows: Row[] = groups.flatMap((g) => [{ kind: 'head', g } as Row, ...g.guests.map((e) => ({ kind: 'guest', g, e }) as Row)]);
+  // A plain list of guests: those sharing every theme first, then newest first. No group headings.
+  const rows: Row[] = groups
+    .flatMap((g) => g.guests.map((e) => ({ kind: 'guest', g, e }) as Row))
+    .sort((a, b) => (a.g.via === 'both' ? 0 : 1) - (b.g.via === 'both' ? 0 : 1) || (b as { e: Episode }).e.ep - (a as { e: Episode }).e.ep);
   const pages = paginate(rows, cap);
   const current = Math.min(page, pages.length - 1);
 
   return (
     <div className="map-panel-related">
       {open ? (
-        <button type="button" className="map-panel-back" onClick={onClose}>← 所有相關來賓</button>
+        <span className="map-panel-label">
+          <button type="button" className="map-panel-back" onClick={onClose}>← 相關來賓</button>
+          <span>· {open.industry.name} · {total}</span>
+        </span>
       ) : (
-        <span className="map-panel-label">聊過相同主題的來賓 · {total} 位{closeCount > 0 && `，其中 ${closeCount} 位同產業`}</span>
+        <span className="map-panel-label">相關來賓 · {total}</span>
       )}
       <ul ref={boxRef} className="map-rows">
+        {!rows.length && <li className="map-row-empty">目前沒有同產業又聊過相同主題的來賓，點地圖上的色塊看看其他人。</li>}
         {pages[current]?.map((r) => r.kind === 'head' ? (
           <li key={`h-${r.g.key}`} className="map-row">
             <button type="button" className="map-panel-ghead" onClick={() => onOpen(r.g.key)}
               disabled={!!open || r.g.guests.length < CLUSTER_MIN}>
               <i style={{ background: r.g.industry.color }} aria-hidden="true" />
               <span className="map-ghead-name">{r.g.industry.name}{r.cont && <small>（續）</small>}</span>
-              {isClose(r.g) && <span className="map-close-tag">同產業</span>}
               <span className="mono">{r.g.via === 'both' ? '兩個主題' : viaLabel(r.g)} · {r.g.guests.length}</span>
             </button>
           </li>
