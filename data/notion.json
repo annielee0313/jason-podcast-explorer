@@ -1,0 +1,6 @@
+{
+  "_note": "Notion data sources on the page 「Jason好好聊」 (JS Adways). IDs only, not secret; the token is the NOTION_TOKEN secret. Read by scripts/sync_notion.py.",
+  "page": "https://app.notion.com/p/40a5192086a2815ea7fcf75dc6ef90fe",
+  "jasonPicks": "95990605-c561-4d24-82bb-6847572a29e5",
+  "mostListened": "dc234629-bb69-4506-b979-d7c723c2a534"
+}

@@ -49,9 +49,9 @@ export const themeById = Object.fromEntries(themes.map((t) => [t.id, t])) as Rec
 
 export const curation = curationJson as unknown as {
   paths: Path[];
-  /** From the team's Google Sheet (scripts/sync_sheets.py). tentative = placeholder until Jason confirms. */
+  /** From the team's Notion page (scripts/sync_notion.py). tentative = placeholder until Jason confirms. */
   jasonPicks: { ep: number; reason: string; order: number; tentative: boolean }[];
-  /** From the sheet; source says where the ranking comes from (e.g. SoundOn). */
+  /** From Notion; source says where the ranking comes from (e.g. SoundOn). */
   mostListened: { rank: number; ep: number; source: string; period: string; updated: string }[];
   phrases: Phrase[];
   mapLayout: Record<string, { x: number; y: number }>;

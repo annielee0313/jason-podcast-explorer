@@ -1,5 +1,5 @@
 # Build the Vite site and publish it to GitHub Pages: on every push to main, once a day
-# (to pick up edits made in the team's Google Sheet), and on demand ("Run workflow").
+# (to pick up edits made in the team's Notion page), and on demand ("Run workflow").
 name: Deploy to GitHub Pages
 
 on:
@@ -30,8 +30,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      # Jason親選 / 最多人收聽 from the Google Sheet. Bad rows are reported and skipped; never blocks the build.
-      - run: python scripts/sync_sheets.py
+      # Jason 親選 / 最多人收聽 from the Notion page. Bad rows keep the last good lists; never blocks the build.
+      - run: python scripts/sync_notion.py
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
       # New episodes' YouTube videos from the channel's public feed (latest 15). Never blocks the build.
       - run: python scripts/fetch_youtube.py
       - run: npm ci

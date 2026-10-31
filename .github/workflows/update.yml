@@ -1,5 +1,6 @@
 # Watch for new episodes (SoundOn feed) and new YouTube videos, and publish them.
-# New episode → import, tag with Claude, pick 抽一句 lines; new video → link it.
+# New episode → import, tag with Claude, pick 抽一句 lines; new video → link it;
+# edits to Jason 親選 / 最多人收聽 in Notion → apply them.
 # When something changed: commit the data and start the deploy workflow.
 # Times are UTC (Taipei = UTC+8).
 name: Check for new episodes
@@ -35,6 +36,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }} # optional: fallback when YouTube's public feed is down
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }} # Jason 親選 / 最多人收聽 edits
       - name: Commit and deploy
         if: steps.update.outputs.message != ''
         env:

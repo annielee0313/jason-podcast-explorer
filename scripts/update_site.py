@@ -25,6 +25,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 EPISODES = ROOT / "data" / "episodes.json"
+CURATION = ROOT / "data" / "curation.json"
 
 
 def run(*args: str) -> bool:
@@ -50,6 +51,9 @@ def main() -> int:
             print("ANTHROPIC_API_KEY not set: new episodes stay untagged until the next run with a key")
 
     run("scripts/fetch_youtube.py")
+    curation_before = CURATION.read_text("utf-8")
+    run("scripts/sync_notion.py")
+    lists_changed = CURATION.read_text("utf-8") != curation_before
     final = snapshot()
     new_videos = sorted(ep for ep, e in final.items() if e.get("youtubeId") and not before.get(ep, {}).get("youtubeId"))
 
@@ -58,6 +62,8 @@ def main() -> int:
         parts.append("Add " + ", ".join(f"EP.{n}" for n in new_eps))
     if new_videos:
         parts.append("link video " + ", ".join(f"EP.{n}" for n in new_videos))
+    if lists_changed:
+        parts.append("update Jason 親選 / 最多人收聽 from Notion")
     # Real content changes only (tracked files; ignores local-only folders like data/clips).
     changed = subprocess.run(["git", "status", "--porcelain", "--untracked-files=no", "data"],
                              cwd=ROOT, capture_output=True, text=True).stdout.strip()
