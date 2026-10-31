@@ -30,6 +30,31 @@ function fitBox(box: { x0: number; y0: number; x1: number; y1: number }, size: {
   return { x: -((box.x0 + box.x1) / 2) * z, y: -((box.y0 + box.y1) / 2) * z, z };
 }
 
+type Placed = Map<string, Pt>;
+
+/**
+ * Where each item is drawn, by stable id: `g:<ep>` guests (centre and named chips), `t:<theme>`
+ * themes, `c:<group key>` closed clusters. `member` maps every guest inside a closed cluster to
+ * that cluster's position, so a guest who becomes visible can start from its old cluster.
+ */
+function placements(layout: ReturnType<typeof focusLayout>, centreEp: number, open: Group | null, chips: ReturnType<typeof chipGrid> | null) {
+  const at: Placed = new Map([[`g:${centreEp}`, { x: 0, y: 0 }]]);
+  const member: Placed = new Map();
+  for (const t of layout.themes) at.set(t.id, { x: t.x, y: t.y });
+  for (const g of layout.groups) {
+    if (g.guests.length < CLUSTER_MIN) {
+      const offs = smallOffsets(g.guests.length);
+      g.guests.forEach((e, i) => at.set(`g:${e.ep}`, { x: g.x + offs[i].x, y: g.y + offs[i].y }));
+    } else if (g === open && chips) {
+      g.guests.forEach((e, i) => { const c = chips.at(i); at.set(`g:${e.ep}`, { x: g.x + c.x, y: g.y + c.y }); });
+    } else {
+      at.set(`c:${g.key}`, { x: g.x, y: g.y });
+      g.guests.forEach((e) => member.set(`g:${e.ep}`, { x: g.x, y: g.y }));
+    }
+  }
+  return { at, member };
+}
+
 /**
  * Guest map: the selected guest pinned at the centre of a crosshair, their
  * themes either side, and everyone who shares a theme grouped by industry.
@@ -58,7 +83,29 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
     return () => ro.disconnect();
   }, []);
 
-  const select = (ep: number) => { setOpenKey(null); setSelEp(ep); track('map_select_guest', { ep }); };
+  // Changing the centre guest moves everything: items that exist before and after slide from
+  // their old spot to the new one (the clicked guest glides to the centre), new ones fade in.
+  const [move, setMove] = useState<{ from: Placed; member: Placed; k: number } | null>(null);
+  const select = (ep: number) => {
+    if (ep === sel.ep) return;
+    const { at, member } = placements(layout, sel.ep, open, chips);
+    setMove(prefersReducedMotion() ? null : { from: at, member, k: 0 });
+    setOpenKey(null);
+    setSelEp(ep);
+    track('map_select_guest', { ep });
+  };
+  useEffect(() => {
+    if (!move || move.k > 0) return;
+    let raf = 0;
+    const t0 = performance.now();
+    const tick = (now: number) => {
+      const k = Math.min(1, (now - t0) / TWEEN_MS);
+      setMove((m) => (m ? { ...m, k: ease(k) } : m));
+      if (k < 1) raf = requestAnimationFrame(tick); else setMove(null);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [move?.from]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Where the camera should be: the whole neighbourhood, or the opened cluster.
   const goal = useMemo((): Camera | null => {
@@ -172,8 +219,19 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
   const groupsSorted = [...layout.groups].sort((a, b) => rank(a) - rank(b) || b.guests.length - a.guests.length);
   const grid = 48 * cam.z;
 
-  const guestChip = (e: Episode, p: Pt, key: string) => (
-    <button key={key} type="button" className="map-guest" style={{ left: p.x, top: p.y }} onClick={() => select(e.ep)}
+  const target = placements(layout, sel.ep, open, chips).at;
+  /** Drawn position of an item: between where it was and where it belongs while moving. */
+  const pos = (id: string): Pt => {
+    const to = target.get(id) ?? { x: 0, y: 0 };
+    if (!move) return to;
+    const from = move.from.get(id) ?? move.member.get(id);
+    return from ? { x: from.x + (to.x - from.x) * move.k, y: from.y + (to.y - from.y) * move.k } : to;
+  };
+  /** Items with no earlier position fade in. */
+  const fade = (id: string) => (!move || move.from.has(id) || move.member.has(id) ? undefined : move.k);
+
+  const guestChip = (e: Episode, _p: Pt, key: string) => (
+    <button key={key} type="button" className="map-guest" style={{ left: pos(`g:${e.ep}`).x, top: pos(`g:${e.ep}`).y, opacity: fade(`g:${e.ep}`) }} onClick={() => select(e.ep)}
       aria-label={`${e.guest}，EP.${e.ep}，設為中心`}>
       <i style={{ background: industryOf(e).color }} aria-hidden="true" />
       <span>{e.guest}</span>
@@ -195,22 +253,28 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
             backgroundPosition: `${size.w / 2 + cam.x}px ${size.h / 2 + cam.y}px`,
           }}
         >
-          <div className="map-world" key={sel.ep}
+          <div className="map-world"
             style={{ transform: `translate(${size.w / 2 + cam.x}px, ${size.h / 2 + cam.y}px) scale(${cam.z})` }}>
             <svg className="map-lines" aria-hidden="true">
               {/* Crosshair through the selected guest. */}
               <line x1={-8000} y1={0} x2={8000} y2={0} className="map-axis" />
               <line x1={0} y1={-8000} x2={0} y2={8000} className="map-axis" />
-              {layout.themes.map((t) => <line key={t.id} x1={0} y1={0} x2={t.x} y2={t.y} className="map-link-strong" />)}
-              {layout.groups.flatMap((g) => (g.via === 'both' ? layout.themes : [themePos[g.via]]).map((t) => (
-                <line key={`${g.key}-${t.id}`} x1={t.x} y1={t.y} x2={g.x} y2={g.y} className="map-link" />
-              )))}
+              {layout.themes.map((t) => {
+                const c = pos(`g:${sel.ep}`);
+                const p = pos(t.id);
+                return <line key={t.id} x1={c.x} y1={c.y} x2={p.x} y2={p.y} className="map-link-strong" style={{ opacity: fade(t.id) }} />;
+              })}
+              {layout.groups.flatMap((g) => (g.via === 'both' ? layout.themes : [themePos[g.via]]).map((t) => {
+                const a = pos(t.id);
+                const gp = g.guests.length >= CLUSTER_MIN && g !== open ? pos(`c:${g.key}`) : { x: g.x, y: g.y };
+                return <line key={`${g.key}-${t.id}`} x1={a.x} y1={a.y} x2={gp.x} y2={gp.y} className="map-link" style={{ opacity: move ? move.k : undefined }} />;
+              }))}
             </svg>
 
             {layout.themes.map((t) => {
               const th = themeById[t.theme];
               return (
-                <div key={t.id} className="map-theme" style={{ left: t.x, top: t.y }}>
+                <div key={t.id} className="map-theme" style={{ left: pos(t.id).x, top: pos(t.id).y, opacity: fade(t.id) }}>
                   <span className="map-halo" style={{ width: t.r * 3, height: t.r * 3, background: halo(th.dot, '66') }} />
                   {/* A single theme shares the centre with the guest, so its label sits just below them. */}
                   <span className="map-label" style={{ background: th.bg, color: th.fg, top: t.x === 0 && t.y === 0 ? 54 : 0 }}>{th.name}<b>{t.count}</b></span>
@@ -233,7 +297,8 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
               return (
                 <div key={g.key} className={`map-group${dim ? ' is-dim' : ''}${recede ? ' is-recede' : ''}${isOpen ? ' is-open' : ''}${isClose(g) ? ' is-close' : ''}`}>
                   <span className="map-halo" style={{
-                    left: g.x, top: g.y,
+                    left: isOpen ? g.x : pos(`c:${g.key}`).x, top: isOpen ? g.y : pos(`c:${g.key}`).y,
+                    opacity: isOpen ? undefined : fade(`c:${g.key}`),
                     width: isOpen ? Math.max(chips!.w, chips!.h) * 1.5 : g.r * 3,
                     height: isOpen ? Math.max(chips!.w, chips!.h) * 1.5 : g.r * 3,
                     background: halo(g.industry.color, isOpen ? '30' : '99'),
@@ -241,7 +306,7 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
                   {isOpen
                     ? g.guests.map((e, i) => { const p = chips!.at(i); return guestChip(e, { x: g.x + p.x, y: g.y + p.y }, `${g.key}-${e.ep}`); })
                     : (
-                      <button type="button" className="map-cluster" style={{ left: g.x, top: g.y }} aria-expanded={false}
+                      <button type="button" className="map-cluster" style={{ left: pos(`c:${g.key}`).x, top: pos(`c:${g.key}`).y, opacity: fade(`c:${g.key}`) }} aria-expanded={false}
                         aria-label={`${g.industry.name}${isClose(g) ? '（同產業）' : ''}，${viaLabel(g)}，${g.guests.length} 位來賓，展開`}
                         onClick={() => { setOpenKey(g.key); track('map_open_cluster', { industry: g.industry.id }); }}>
                         <b>{g.guests.length}</b>
@@ -252,7 +317,7 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
               );
             })}
 
-            <div className="map-center" style={{ left: 0, top: 0 }}>
+            <div className="map-center" style={{ left: pos(`g:${sel.ep}`).x, top: pos(`g:${sel.ep}`).y }}>
               <span className="map-halo" style={{ width: 180, height: 180, background: halo(selIndustry.color, '55') }} />
               <span className="map-center-chip">{sel.guest}<small>EP.{sel.ep}</small></span>
             </div>
