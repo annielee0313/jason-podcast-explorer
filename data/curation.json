@@ -211,22 +211,34 @@
       "rank": 1,
       "ep": 131,
       "source": "SoundOn",
-      "period": "",
-      "updated": "2026-10-21"
+      "period": "2026-10",
+      "updated": ""
     },
     {
       "rank": 2,
       "ep": 63,
       "source": "SoundOn",
-      "period": "",
-      "updated": "2026-10-21"
+      "period": "2026-10",
+      "updated": ""
     },
     {
       "rank": 3,
       "ep": 65,
       "source": "SoundOn",
-      "period": "",
-      "updated": "2026-10-21"
+      "period": "2026-10",
+      "updated": ""
+    }
+  ],
+  "mostListenedByMonth": [
+    {
+      "month": "2026-10",
+      "eps": [
+        131,
+        63,
+        65
+      ],
+      "source": "SoundOn",
+      "note": "2026-10-21 從 SoundOn 後台查詢，統計區間未註明"
     }
   ]
 }

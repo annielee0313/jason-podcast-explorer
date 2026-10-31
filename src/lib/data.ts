@@ -53,6 +53,8 @@ export const curation = curationJson as unknown as {
   jasonPicks: { ep: number; reason: string; order: number; tentative: boolean }[];
   /** From Notion; source says where the ranking comes from (e.g. SoundOn). */
   mostListened: { rank: number; ep: number; source: string; period: string; updated: string }[];
+  /** Every month's top 3 as recorded in Notion, newest first (the record; the site shows mostListened). */
+  mostListenedByMonth?: { month: string; eps: number[]; source: string; note: string }[];
   phrases: Phrase[];
   mapLayout: Record<string, { x: number; y: number }>;
 };

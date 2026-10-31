@@ -195,7 +195,7 @@ export default function Landing() {
           <TopList
             title="最多人收聽"
             note={curation.mostListened.length
-              ? `依 ${[...new Set(curation.mostListened.map((t) => t.source).filter(Boolean))].join('、') || '收聽數'} 統計${curation.mostListened[0].period ? `（${curation.mostListened[0].period}）` : ''} · ${curation.mostListened[0].updated} 更新`
+              ? `依 ${[...new Set(curation.mostListened.map((t) => t.source).filter(Boolean))].join('、') || '收聽數'} 統計${curation.mostListened[0].period ? `（${curation.mostListened[0].period.replace(/^(\d{4})-0?(\d+)$/, '$1 年 $2 月')}）` : ''}`
               : '大家最常聽的幾集。'}
             items={curation.mostListened.slice(0, TOP_N).map((t) => ({ ep: t.ep }))}
           />

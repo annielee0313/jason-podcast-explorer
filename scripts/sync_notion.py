@@ -5,10 +5,11 @@ Pull the two editable lists from the team's Notion page 「Jason好好聊」 int
     NOTION_TOKEN=... python scripts/sync_notion.py   # run by the deploy and update workflows
 
 Databases (property names exactly as below; IDs in data/notion.json, not secret):
-  Jason 親選    標題, EP, 順序, 顯示, 推薦理由, 暫定, 備註
-  最多人收聽     標題, 排名, EP, 顯示, 來源, 期間, 更新日期
+  Jason 親選        集數 (title, e.g. "EP.249"), 順序, 推薦理由, 暫定
+  每月最多人收聽     月份 (title, e.g. "2026-10"), 第1名, 第2名, 第3名, 來源, 備註
 
-Only rows with 顯示 checked go on the site. 標題 is for the editors; the site uses EP.
+Every Jason 親選 row is on the site (delete a row to drop it). 每月最多人收聽 keeps one
+row per month as a record; the site shows the latest month.
 
 Safety: every row is checked (EP exists, numbers present). If any check fails, nothing is
 written and the site keeps the last good lists. Without NOTION_TOKEN, or if Notion is down,
@@ -18,6 +19,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -87,32 +89,46 @@ def main() -> int:
     problems: list[str] = []
     picks = []
     for row in pick_rows:
-        if not row.get("顯示"):
-            continue
-        where = f"Jason 親選 「{row.get('標題') or '(no title)'}」"
-        ep = as_int(row.get("EP"), "EP", where, problems)
-        if ep is not None and ep not in known:
+        label = row.get("集數", "")
+        if not label:
+            continue  # blank row
+        where = f"Jason 親選 「{label}」"
+        m = re.search(r"\d+", label)
+        ep = int(m.group()) if m else None
+        if ep is None:
+            problems.append(f"{where}: 集數 has no episode number")
+        elif ep not in known:
             problems.append(f"{where}: EP.{ep} is not in the episode list")
         order = row.get("順序")
         picks.append({"ep": ep, "reason": row.get("推薦理由", ""),
-                      "order": int(order) if isinstance(order, (int, float)) else 999,
+                      "order": order if isinstance(order, (int, float)) else 999,
                       "tentative": bool(row.get("暫定"))})
     picks.sort(key=lambda p: (p["order"], -(p["ep"] or 0)))
     for i, p in enumerate(picks, start=1):
         p["order"] = i
 
-    top = []
+    months = []
     for row in top_rows:
-        if not row.get("顯示"):
+        month = row.get("月份", "")
+        if not month:
             continue
-        where = f"最多人收聽 「{row.get('標題') or '(no title)'}」"
-        rank = as_int(row.get("排名"), "排名", where, problems)
-        ep = as_int(row.get("EP"), "EP", where, problems)
-        if ep is not None and ep not in known:
-            problems.append(f"{where}: EP.{ep} is not in the episode list")
-        top.append({"rank": rank, "ep": ep, "source": row.get("來源", ""),
-                    "period": row.get("期間", ""), "updated": row.get("更新日期", "")})
-    top.sort(key=lambda t: t["rank"] or 0)
+        where = f"每月最多人收聽 「{month}」"
+        if not re.fullmatch(r"\d{4}-\d{2}", month):
+            problems.append(f"{where}: 月份 must look like 2026-10")
+        eps = []
+        for col in ("第1名", "第2名", "第3名"):
+            ep = as_int(row.get(col), col, where, problems) if row.get(col) is not None else None
+            if ep is not None and ep not in known:
+                problems.append(f"{where}: {col} EP.{ep} is not in the episode list")
+            if ep is not None:
+                eps.append(ep)
+        if not eps:
+            problems.append(f"{where}: no episodes filled in")
+        months.append({"month": month, "eps": eps, "source": row.get("來源", ""), "note": row.get("備註", "")})
+    months.sort(key=lambda m: m["month"], reverse=True)
+    latest = months[0] if months else None
+    top = [{"rank": i, "ep": ep, "source": latest["source"], "period": latest["month"], "updated": ""}
+           for i, ep in enumerate(latest["eps"], start=1)] if latest else []
 
     if problems:
         print("Notion NOT applied; the site keeps its last good lists. Fix these in Notion:")
@@ -121,13 +137,14 @@ def main() -> int:
         return 0
 
     curation = json.loads(CURATION.read_text("utf-8"))
-    if curation.get("jasonPicks") == picks and curation.get("mostListened") == top:
+    if (curation.get("jasonPicks"), curation.get("mostListened"), curation.get("mostListenedByMonth")) == (picks, top, months):
         print("Notion lists unchanged")
         return 0
     curation["jasonPicks"] = picks
     curation["mostListened"] = top
+    curation["mostListenedByMonth"] = months
     CURATION.write_text(json.dumps(curation, ensure_ascii=False, indent=2) + "\n", "utf-8")
-    print(f"Applied: {len(picks)} Jason picks, {len(top)} most-listened episodes")
+    print(f"Applied: {len(picks)} Jason picks; most listened from {len(months)} month(s), showing {latest and latest['month']}")
     return 0
 
 
