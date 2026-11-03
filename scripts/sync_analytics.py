@@ -154,12 +154,18 @@ def main() -> int:
     days = [today - timedelta(days=n) for n in (3, 2, 1)]
     rows: dict[str, dict] = {d.isoformat(): {} for d in days}
     try:
-        for k, v in ga4_days(days).items():
+        ga = ga4_days(days)
+        for k, v in ga.items():
             rows.setdefault(k, {}).update(v)
+        if ga:
+            print("GA4 ok: " + ", ".join(f"{k} {v.get('訪客', 0)} visitors" for k, v in sorted(ga.items())))
     except Exception as err:  # one source failing must not block the other
         print(f"GA4 failed: {err}")
     try:
-        rows[(today - timedelta(days=1)).isoformat()].update(clarity_yesterday())
+        cl = clarity_yesterday()
+        rows[(today - timedelta(days=1)).isoformat()].update(cl)
+        if cl:
+            print(f"Clarity ok: {cl.get('Clarity 工作階段', 0)} sessions in the last 24 h")
     except (urllib.error.URLError, ValueError) as err:
         print(f"Clarity failed: {err}")
     try:
