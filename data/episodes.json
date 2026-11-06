@@ -1,5 +1,30 @@
 [
   {
+    "ep": 251,
+    "date": "2026-11-06",
+    "durationSec": 3854,
+    "title": "當你不再需要證明自己，接下來想成為誰？",
+    "guest": "林伯翰 Boice",
+    "org": "一春資本創辦人",
+    "takeaways": [
+      "學會放開方向盤，不再搶著親自解題",
+      "卸下「被需要」的焦慮：不用靠證明來確認自我價值",
+      "把換位思考變成習慣：學會站在對方視角看全局",
+      "做自己的 Role Model：三十歲後活出自己的底氣",
+      "選人與評估的防守底線：把誠信視為基石"
+    ],
+    "themes": [
+      "leadership",
+      "resilience"
+    ],
+    "arc": null,
+    "highlight": "學會放開方向盤，不再搶著親自解題",
+    "highlightIsSummary": false,
+    "industry": "finance",
+    "appleUrl": "https://podcasts.apple.com/tw/podcast/id1532218131?i=1000800207653",
+    "soundonUrl": "https://player.soundon.fm/p/f1f2a53d-d42a-4752-a768-00a32b1ac9c5/episodes/90b84f42-5067-4220-8f93-ab863692e475"
+  },
+  {
     "ep": 250,
     "date": "2026-10-23",
     "durationSec": 3578,

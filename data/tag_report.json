@@ -3296,6 +3296,20 @@
       "industry_proposal": "",
       "reason": "本集聚焦放下焦慮、承認極限與擺脫被淘汰恐懼的心態調整，並談到轉型為AI知識策展人；來賓為資深旅遊創作者，歸於餐飲／旅遊。",
       "confidence": "medium"
+    },
+    "251": {
+      "guest": "林伯翰 Boice",
+      "org": "一春資本創辦人",
+      "title": "當你不再需要證明自己，接下來想成為誰？",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "leadership",
+        "resilience"
+      ],
+      "industry": "finance",
+      "industry_proposal": "",
+      "reason": "來賓為一春資本創辦人屬投資領域，內容聚焦放手授權、選人誠信等領導課題，以及卸下證明自我焦慮的心態轉變。",
+      "confidence": "medium"
     }
   },
   "industryProposals": {
