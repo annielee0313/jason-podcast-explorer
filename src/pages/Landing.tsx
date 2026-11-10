@@ -179,7 +179,7 @@ export default function Landing() {
 
       <section className="section section-white" id="paths">
         <div className="wrap">
-          <SectionHead n="01" en="WHERE TO START" title={<>不知道先聽哪集？<br />從你現在的處境開始</>} note="我們照幾種常見的處境，把相關的集數串成一條路。點一條展開，從第一集往下聽就好。" />
+          <SectionHead n="01" en="WHERE TO START" title={<>不知道先聽哪集？<br />從你現在的處境開始</>} note="照幾種常見的處境，把相關的集數串成一條路。" />
           <PathIndex />
         </div>
       </section>
@@ -206,7 +206,7 @@ export default function Landing() {
           <div className="card" style={{ flex: '1 1 380px', minWidth: 0 }}>
             <h3 className="kicker kicker-light">常被聊到的詞</h3>
             <p className="muted" style={{ margin: '8px 0 24px', fontSize: 14 }}>
-              這幾個詞在 {epsWithNotes} 集的節目重點裡一再出現。點一個，看它出現在哪幾集。
+              這幾個詞在 {epsWithNotes} 集的節目重點裡一再出現。
             </p>
             <div className="chips" style={{ gap: 10 }}>
               {words.map((w) => (
@@ -236,7 +236,7 @@ export default function Landing() {
 
       <section className="section" id="browse">
         <div className="wrap">
-          <SectionHead n="02" en="ALL EPISODES" title="全部集數" note="用主題或來賓產業篩選，或一頁一頁往回翻。" />
+          <SectionHead n="02" en="ALL EPISODES" title="全部集數" />
           <EpisodeBrowser />
         </div>
       </section>
@@ -244,7 +244,7 @@ export default function Landing() {
       <section className="section" id="map">
         <div className="wrap">
           <SectionHead n="03" en="GUEST MAP" title={`${stats.guestsFloor} 多位來賓，怎麼連在一起？`}
-            note="聊過同一個主題的來賓，會被線連在一起。點一位你認識的人，看看還有誰聊過一樣的主題。" />
+            note="聊過同一個主題的來賓，被線連在一起。" />
           <GuestMap initialEp={latest.ep} />
         </div>
       </section>

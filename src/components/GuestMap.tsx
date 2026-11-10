@@ -363,7 +363,6 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
         </aside>
       </div>
 
-      <p className="muted" style={{ margin: '14px 0 0', fontSize: 12 }}>點色塊看這群來賓；點名字，換他當中心。拖曳可以移動，按住 ⌘／Ctrl 滾動或雙指捏合可以縮放。</p>
     </div>
   );
 }
