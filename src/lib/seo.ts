@@ -1,4 +1,4 @@
-import { about, episodeByNumber, episodes, type Episode } from './data';
+import { about, curation, episodeByNumber, episodes, industryOf, themeById, type Episode } from './data';
 
 /**
  * Per-route <head>: title, description, canonical URL, Open Graph and JSON-LD.
@@ -171,5 +171,60 @@ export function sitemapXml() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${u.loc}</loc>${u.lastmod ? `<lastmod>${u.lastmod}</lastmod>` : ''}</url>`).join('\n')}
 </urlset>
+`;
+}
+
+/**
+ * llms.txt: a plain-Markdown map of the site for AI crawlers and answer engines
+ * (https://llmstxt.org). llms-full.txt adds every episode's show-note points, so a model can
+ * answer "which episode talks about X" from one file. Only facts from data/; nothing invented.
+ */
+const epLine = (e: Episode) =>
+  `- [EP.${e.ep}｜${e.title}](${abs(`/episode/${e.ep}/`)}): 來賓 ${e.guest}${e.org ? `（${e.org}）` : ''}；${e.date}` +
+  `${e.themes.length ? `；主題 ${e.themes.map((t) => themeById[t].name).join('、')}` : ''}；產業 ${industryOf(e).name}`;
+
+function llmsHeader() {
+  const h = about.host;
+  return `# 《${SHOW}》
+
+> ${about.company.name}（${about.company.nameEn}）創辦人${h.name} ${h.nameEn} 主持的繁體中文商業訪談 Podcast，${about.stats.since} 年至今 ${episodes.length} 集，每集訪問一位不同產業的創業家或經理人，約每兩週更新。
+
+- 主持人：${h.name} ${h.nameEn}，${h.title}。${h.facts.join('；')}。
+- 主持人著作：《${about.book.title}》（${about.book.publisher}，${about.book.date}）：${about.book.url}
+- 製作：${about.company.name}，${about.company.website}；聯絡 ${about.company.email}
+- 收聽：Apple Podcasts ${about.show.apple}；YouTube ${about.show.youtube}；SoundOn ${about.show.soundon}${about.show.spotify ? `；Spotify ${about.show.spotify}` : ''}
+- RSS：${FEED}
+- 每集頁面有標題、來賓、日期、主題、產業、節目重點與影片；重點取自節目說明原文。
+`;
+}
+
+export function llmsTxt() {
+  return `${llmsHeader()}
+## 推薦從這裡開始
+
+${curation.paths.map((p) => `- ${p.title}：${p.blurb} ${p.eps.map((n) => `[EP.${n}](${abs(`/episode/${n}/`)})`).join('、')}`).join('\n')}
+
+## 全部集數（新到舊）
+
+${episodes.map(epLine).join('\n')}
+
+## 更多
+
+- [完整版（含每集節目重點）](${abs('/llms-full.txt')})
+- [網站地圖](${abs('/sitemap.xml')})
+`;
+}
+
+export function llmsFullTxt() {
+  return `${llmsHeader()}
+## 全部集數與節目重點（新到舊）
+
+${episodes.map((e) => `### EP.${e.ep}｜${e.title}
+
+- 網址：${abs(`/episode/${e.ep}/`)}
+- 來賓：${e.guest}${e.org ? `（${e.org}）` : ''}
+- 日期：${e.date}
+- 主題：${e.themes.map((t) => themeById[t].name).join('、') || '—'}；產業：${industryOf(e).name}
+${e.takeaways.length ? `- 節目重點：\n${e.takeaways.map((t) => `  - ${t}`).join('\n')}` : ''}`).join('\n\n')}
 `;
 }

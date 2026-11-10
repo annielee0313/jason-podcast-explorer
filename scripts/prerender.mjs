@@ -9,7 +9,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 const ssrDir = join(root, 'dist-ssr');
 const template = readFileSync(join(dist, 'index.html'), 'utf-8');
-const { render, routes, headFor, headHtml, sitemapXml, episodes, themes } = await import(pathToFileURL(join(ssrDir, 'entry-server.js')).href);
+const { render, routes, headFor, headHtml, sitemapXml, llmsTxt, llmsFullTxt, episodes, themes } = await import(pathToFileURL(join(ssrDir, 'entry-server.js')).href);
 const { generateOgImages } = await import('./og-images.mjs');
 
 // Per-episode share cards; any episode without one keeps the default image.
@@ -41,6 +41,9 @@ write(join(dist, '404.html'), page({ ...headFor('/'), noindex: true }, ''));
 const sitemapUrl = new URL('sitemap.xml', headFor('/').url).href;
 writeFileSync(join(dist, 'sitemap.xml'), sitemapXml());
 writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${sitemapUrl}\n`);
+// llms.txt for AI crawlers and answer engines; llms-full.txt adds every episode's show-note points.
+writeFileSync(join(dist, 'llms.txt'), llmsTxt());
+writeFileSync(join(dist, 'llms-full.txt'), llmsFullTxt());
 
 rmSync(ssrDir, { recursive: true, force: true });
-console.log(`prerendered ${routes.length} pages, plus 404.html, sitemap.xml and robots.txt`);
+console.log(`prerendered ${routes.length} pages, plus 404.html, sitemap.xml, robots.txt and llms(-full).txt`);
