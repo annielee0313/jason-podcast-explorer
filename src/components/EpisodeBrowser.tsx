@@ -1,5 +1,5 @@
-import { useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { Link, useNavigationType } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { episodes, formatDuration, industries, themes, type Episode } from '../lib/data';
 import { ArrowIcon, ArrowUpRightIcon, CloseIcon, SearchIcon, ThemeChip } from './ui';
@@ -8,17 +8,21 @@ import { FacetRow } from './FacetRow';
 
 const PAGE_SIZE = 8; // 4 columns × 2 rows on desktop
 
-/** Page numbers to show: first, last, current ±1, with null for an ellipsis gap. */
-function pageList(current: number, total: number): (number | null)[] {
-  const keep = new Set([1, total, current - 1, current, current + 1].filter((p) => p >= 1 && p <= total));
-  const sorted = [...keep].sort((a, b) => a - b);
-  const out: (number | null)[] = [];
-  sorted.forEach((p, i) => {
-    if (i > 0 && p - sorted[i - 1] > 1) out.push(null);
-    out.push(p);
-  });
-  return out;
+/**
+ * Page numbers to show, at most `slots` of them: all pages if they fit, otherwise the first,
+ * the last and a run around the current page, with null for an ellipsis gap.
+ */
+function pageList(current: number, total: number, slots: number): (number | null)[] {
+  if (total <= slots) return Array.from({ length: total }, (_, i) => i + 1);
+  const inner = slots - 2;
+  const start = Math.min(Math.max(current - Math.floor((inner - 1) / 2), 2), total - inner);
+  const run = Array.from({ length: inner }, (_, i) => start + i);
+  return [1, ...(start > 2 ? [null] : []), ...run, ...(start + inner < total ? [null] : []), total];
 }
+
+/** Where the visitor was in the list, so the back button returns to the same page. */
+const STATE_KEY = 'jhl-browse';
+type Saved = { page: number; order: 'new' | 'old'; query: string; theme: string; industry: string };
 
 /**
  * The full, growing episode list: filter rows (theme, guest industry),
@@ -63,6 +67,35 @@ export function EpisodeBrowser() {
   const [query, setQuery] = useState('');
   const [searching, setSearching] = useState(false); // the icon opens the field; empty + blur folds it
   const searchRef = useRef<HTMLInputElement>(null);
+  const [slots, setSlots] = useState(8); // page numbers shown; fewer on phones
+  const navType = useNavigationType();
+
+  // Coming back (browser back) restores the page, filters and search; a fresh visit starts at page 1.
+  // Saving waits until this has run, so the first render can't overwrite what we're about to read.
+  const [restored, setRestored] = useState(false);
+  useLayoutEffect(() => {
+    if (restored) return;
+    if (navType === 'POP') {
+      try {
+        const s: Saved | null = JSON.parse(sessionStorage.getItem(STATE_KEY) ?? 'null');
+        if (s) {
+          setFilters({ theme: s.theme, industry: s.industry });
+          setOrder(s.order);
+          setQuery(s.query);
+          setPage(s.page);
+        }
+      } catch { /* private mode */ }
+    }
+    setRestored(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 640px)');
+    const fit = () => setSlots(mq.matches ? 5 : 8);
+    fit();
+    mq.addEventListener('change', fit);
+    return () => mq.removeEventListener('change', fit);
+  }, []);
   const found = useMemo(() => searchFilter(query), [query]);
   const pool = useMemo(() => (found ? episodes.filter(found) : episodes), [found]);
   const [page, setPage] = useState(1);
@@ -76,6 +109,12 @@ export function EpisodeBrowser() {
 
   const pages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
   const current = Math.min(page, pages);
+  useEffect(() => {
+    if (!restored) return;
+    try {
+      sessionStorage.setItem(STATE_KEY, JSON.stringify({ page: current, order, query, ...filters } satisfies Saved));
+    } catch { /* private mode */ }
+  }, [restored, current, order, query, filters]);
   const shown = results.slice((current - 1) * PAGE_SIZE, current * PAGE_SIZE);
   const countFor = (key: keyof Filters, id: string) => pool.filter((e) => matches(e, { ...filters, [key]: id })).length;
 
@@ -199,7 +238,7 @@ export function EpisodeBrowser() {
           <nav className="pager" aria-label="分頁">
             <button type="button" className="pager-arrow prev" aria-label="上一頁" disabled={current === 1} onClick={() => goTo(current - 1)}><ArrowIcon /></button>
             <ol>
-              {pageList(current, pages).map((p, i) => (
+              {pageList(current, pages, slots).map((p, i) => (
                 <li key={p ?? `gap-${i}`}>
                   {p === null ? <span className="pager-gap" aria-hidden="true">…</span> : (
                     <button type="button" aria-current={p === current ? 'page' : undefined} aria-label={`第 ${p} 頁`} onClick={() => goTo(p)}>{String(p).padStart(2, '0')}</button>
