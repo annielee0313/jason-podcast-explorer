@@ -7,13 +7,13 @@ in data/episodes.json, so episode pages can embed the full interview.
     YOUTUBE_API_KEY=... python scripts/fetch_youtube.py --all   # whole channel (one-time backfill)
 
 Matching: full episodes are titled 「【Jason好好聊】專訪 …｜Podcast EP247 完整採訪」; the EP
-number in the title links the video to the episode. Titles without an EP number are skipped,
-and so are side videos that carry one (花絮, 精華, 預告, Shorts): only the full interview is
-embedded. Only metadata (ID, title) is read; nothing is downloaded.
+number in the title links the video to the episode. Only titles that say 完整採訪 (the full
+interview) are linked; side videos that also carry an EP number (花絮, 精華, 預告, Shorts) never
+are. Only metadata (ID, title) is read; nothing is downloaded.
 
 Merge, don't overwrite: an episode that already has a youtubeId keeps it (fix a wrong
 match by editing episodes.json by hand). The one exception: if the linked video shows up in
-the list as a side video, it is unlinked and the full interview (when listed) takes its place. Runs before every deploy (no key needed there).
+the list without 完整採訪 in its title, it is unlinked and the full interview (when listed) takes its place. Runs before every deploy (no key needed there).
 --all needs a YouTube Data API v3 key in the environment or in .env as YOUTUBE_API_KEY.
 """
 from __future__ import annotations
@@ -33,6 +33,7 @@ EPISODES_PATH = ROOT / "data" / "episodes.json"
 CHANNEL_ID = "UC5kR8PlAjkLa2IIJKNE_c4Q"  # youtube.com/@Jasonstalkshow
 FEED = f"https://www.youtube.com/feeds/videos.xml?channel_id={CHANNEL_ID}"
 EP_IN_TITLE = re.compile(r"EP\s*\.?\s*(\d{1,4})", re.I)
+FULL_INTERVIEW = "完整採訪"
 SIDE_VIDEO = re.compile(r"花絮|精華|預告|搶先看|shorts", re.I)
 NS = {"atom": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
 
@@ -107,15 +108,15 @@ def main() -> int:
     episodes = json.loads(EPISODES_PATH.read_text("utf-8"))
     by_ep = {e["ep"]: e for e in episodes}
     added, skipped, unlinked = [], 0, []
-    # Undo earlier links to side videos first, so the full interview can take the slot below.
-    side = {vid for vid, title in videos if SIDE_VIDEO.search(title)}
+    # Undo earlier links to anything that isn't the full interview, so it can take the slot below.
+    side = {vid for vid, title in videos if SIDE_VIDEO.search(title) or FULL_INTERVIEW not in title}
     for e in episodes:
-        if e.get("youtubeId") in side and "完整" not in dict(videos).get(e["youtubeId"], ""):
+        if e.get("youtubeId") in side:
             del e["youtubeId"]
             unlinked.append(e["ep"])
     for vid, title in videos:
         m = EP_IN_TITLE.search(title)
-        if not vid or not m or (vid in side and "完整" not in title):
+        if not vid or not m or vid in side:
             skipped += 1
             continue
         e = by_ep.get(int(m.group(1)))

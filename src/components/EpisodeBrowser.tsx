@@ -2,7 +2,8 @@ import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { episodes, formatDuration, industries, themes, type Episode } from '../lib/data';
-import { ArrowIcon, ArrowUpRightIcon, ThemeChip } from './ui';
+import { ArrowIcon, ArrowUpRightIcon, CloseIcon, SearchIcon, ThemeChip } from './ui';
+import { track } from '../lib/analytics';
 import { FacetRow } from './FacetRow';
 
 const PAGE_SIZE = 8; // 4 columns × 2 rows on desktop
@@ -30,6 +31,20 @@ const matches = (e: Episode, f: Filters) =>
   (f.theme === 'all' || e.themes.includes(f.theme as Episode['themes'][number])) &&
   (f.industry === 'all' || e.industry === f.industry);
 
+/**
+ * Free-text search: an episode number ("163", "EP163", "ep.163", full-width digits too) finds
+ * that episode; anything else matches guest, company or title, case-insensitively.
+ */
+const norm = (s: string) => s.normalize('NFKC').toLowerCase().replace(/\s+/g, '');
+const SEARCH_TEXT = new Map(episodes.map((e) => [e.ep, norm(`${e.guest}|${e.org}|${e.title}`)]));
+function searchFilter(raw: string): ((e: Episode) => boolean) | null {
+  const q = norm(raw);
+  if (!q) return null;
+  const num = q.match(/^(?:ep\.?)?(\d{1,4})$/);
+  if (num) return (e) => e.ep === Number(num[1]);
+  return (e) => SEARCH_TEXT.get(e.ep)!.includes(q);
+}
+
 /** Biggest first, by episodes over the whole catalogue (fixed, so tags never reorder while filtering). */
 function byTotal<T extends { id: string }>(opts: T[], key: keyof Filters) {
   const total = (id: string) => episodes.filter((e) => matches(e, { ...ALL, [key]: id })).length;
@@ -45,19 +60,22 @@ const FACETS: { key: keyof Filters; label: string; options: { id: string; name: 
 export function EpisodeBrowser() {
   const [filters, setFilters] = useState<Filters>(ALL);
   const [order, setOrder] = useState<'new' | 'old'>('new');
+  const [query, setQuery] = useState('');
+  const found = useMemo(() => searchFilter(query), [query]);
+  const pool = useMemo(() => (found ? episodes.filter(found) : episodes), [found]);
   const [page, setPage] = useState(1);
   const gridRef = useRef<HTMLDivElement>(null);
   const topRef = useRef<HTMLDivElement>(null);
 
   const results = useMemo(() => {
-    const list = episodes.filter((e) => matches(e, filters));
+    const list = pool.filter((e) => matches(e, filters));
     return order === 'new' ? list : list.slice().reverse();
-  }, [filters, order]);
+  }, [pool, filters, order]);
 
   const pages = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
   const current = Math.min(page, pages);
   const shown = results.slice((current - 1) * PAGE_SIZE, current * PAGE_SIZE);
-  const countFor = (key: keyof Filters, id: string) => episodes.filter((e) => matches(e, { ...filters, [key]: id })).length;
+  const countFor = (key: keyof Filters, id: string) => pool.filter((e) => matches(e, { ...filters, [key]: id })).length;
 
   // Any filter change starts again from page 1; a second click on a tag clears it.
   const pick = (key: keyof Filters, id: string) => {
@@ -101,7 +119,7 @@ export function EpisodeBrowser() {
       gsap.fromTo(grid, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2, ease: 'power1.out', clearProps: 'opacity,visibility' });
     }, grid);
     return () => ctx.revert();
-  }, [filters, order, current]);
+  }, [pool, filters, order, current]);
 
   const from = results.length ? (current - 1) * PAGE_SIZE + 1 : 0;
   const to = Math.min(current * PAGE_SIZE, results.length);
@@ -109,6 +127,21 @@ export function EpisodeBrowser() {
   return (
     <div ref={topRef}>
       <div className="browse-body">
+        <div className="browse-search">
+          <SearchIcon />
+          <input
+            type="search"
+            value={query}
+            placeholder="搜尋來賓、公司、標題或集數（例如 163）"
+            aria-label="搜尋集數"
+            enterKeyHint="search"
+            onChange={(e) => { setQuery(e.target.value); setPage(1); }}
+            onBlur={() => { if (query.trim()) track('search', { results: results.length }); }}
+          />
+          {query && (
+            <button type="button" className="browse-search-clear" aria-label="清除搜尋" onClick={() => { setQuery(''); setPage(1); }}><CloseIcon /></button>
+          )}
+        </div>
         <div className="browse-tools">
           <div className="facets">
             {FACETS.map((f) => (
@@ -122,10 +155,11 @@ export function EpisodeBrowser() {
           </div>
         </div>
         <p className="browse-status" aria-live="polite">
+          {query.trim() && <>「{query.trim()}」 · </>}
           {active.length > 0 && <>{active.join(' · ')} · </>}
           {results.length ? <>第 {from}–{to} 集，共 {results.length} 集</> : '沒有符合的集數'}
-          {active.length > 0 && (
-            <button type="button" className="clear-filters" onClick={() => { setFilters(ALL); setPage(1); }}>清除篩選</button>
+          {(active.length > 0 || query) && (
+            <button type="button" className="clear-filters" onClick={() => { setFilters(ALL); setQuery(''); setPage(1); }}>清除篩選</button>
           )}
         </p>
 
@@ -145,7 +179,7 @@ export function EpisodeBrowser() {
         </div>
         </div>
 
-        {results.length === 0 && <p className="muted" style={{ marginTop: 24 }}>這個組合還沒有收錄的集數，換一個篩選看看。</p>}
+        {results.length === 0 && <p className="muted" style={{ marginTop: 24 }}>{query.trim() ? '找不到符合的集數。試試來賓的名字、公司，或直接輸入集數。' : '這個組合還沒有收錄的集數，換一個篩選看看。'}</p>}
 
         {pages > 1 && (
           <nav className="pager" aria-label="分頁">
