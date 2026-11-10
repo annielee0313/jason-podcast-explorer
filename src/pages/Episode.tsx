@@ -61,10 +61,7 @@ export default function EpisodePage() {
               <div className="card">
                 <h2 style={{ fontSize: 20, marginBottom: 20 }}>這集在聊</h2>
                 <ol className="ep-points">
-                  {ep.takeaways.map((t) => {
-                    const [head, ...rest] = t.split('：');
-                    return <li key={t}>{rest.length ? <><strong>{head}</strong>：{rest.join('：')}</> : t}</li>;
-                  })}
+                  {ep.takeaways.map((t) => <li key={t}>{t}</li>)}
                 </ol>
                 <p className="muted" style={{ margin: '16px 0 0', fontSize: 13 }}>重點取自節目說明。</p>
               </div>

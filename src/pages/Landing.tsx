@@ -243,8 +243,7 @@ export default function Landing() {
 
       <section className="section" id="map">
         <div className="wrap">
-          <SectionHead n="03" en="GUEST MAP" title={`${stats.guestsFloor} 多位來賓，怎麼連在一起？`}
-            note="聊過同一個主題的來賓，被線連在一起。" />
+          <SectionHead n="03" en="GUEST MAP" title={`${stats.guestsFloor} 多位來賓，怎麼連在一起？`} />
           <GuestMap initialEp={latest.ep} />
         </div>
       </section>
