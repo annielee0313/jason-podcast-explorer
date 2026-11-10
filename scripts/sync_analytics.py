@@ -119,23 +119,39 @@ def clarity_yesterday() -> dict:
 
 # ---------- Notion ----------
 
-def notion_props(day: str, values: dict) -> dict:
+def column_names(token: str, ds: str) -> dict[str, str]:
+    """Chinese column name → the column's full name in Notion. Columns may carry an English label
+    after a space ("訪客 Visitors"), so the labels can change without touching this script."""
+    names = http(f"{NOTION}/data_sources/{ds}", token, extra={"Notion-Version": NOTION_VERSION})["properties"]
+    out = {}
+    for full in names:
+        out[full] = full
+        out.setdefault(full.rsplit(" ", 1)[0] if full.startswith("Clarity") else full.split(" ", 1)[0], full)
+    return out
+
+
+def notion_props(day: str, values: dict, col: dict[str, str]) -> dict:
     d = date.fromisoformat(day)
-    props = {"日期": {"title": [{"text": {"content": f"{day}（{WEEKDAY[d.weekday()]}）"}}]}, "日": {"date": {"start": day}}}
+    props = {col["日期"]: {"title": [{"text": {"content": f"{day}（{WEEKDAY[d.weekday()]}）"}}]},
+             col["日"]: {"date": {"start": day}}}
     for name, v in values.items():
-        props[name] = {"rich_text": [{"text": {"content": v}}]} if isinstance(v, str) else {"number": v}
+        if name not in col:
+            print(f"Notion has no column for {name}; skipped")
+            continue
+        props[col[name]] = {"rich_text": [{"text": {"content": v}}]} if isinstance(v, str) else {"number": v}
     return props
 
 
 def write(token: str, rows: dict[str, dict]) -> None:
     ds = CONFIG["analytics"]
     extra = {"Notion-Version": NOTION_VERSION}
+    col = column_names(token, ds)
     for day, values in sorted(rows.items()):
         if not values:
             continue
         found = http(f"{NOTION}/data_sources/{ds}/query", token, "POST", extra=extra, body={
-            "filter": {"property": "日", "date": {"equals": day}}, "page_size": 1})["results"]
-        props = notion_props(day, values)
+            "filter": {"property": col["日"], "date": {"equals": day}}, "page_size": 1})["results"]
+        props = notion_props(day, values, col)
         if found:
             http(f"{NOTION}/pages/{found[0]['id']}", token, "PATCH", {"properties": props}, extra)
             print(f"{day}: updated ({', '.join(values)})")

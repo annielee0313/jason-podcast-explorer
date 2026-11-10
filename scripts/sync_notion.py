@@ -49,9 +49,12 @@ def query(token: str, data_source: str) -> list[dict]:
 
 
 def flatten(props: dict) -> dict:
-    """Notion property objects → plain values (text, number, bool, date string)."""
+    """Notion property objects → plain values (text, number, bool, date string).
+    Columns may carry an English label after a space ("集數 Episode"); they are keyed by the
+    Chinese part, so the bilingual labels in Notion can change without touching this script."""
     out = {}
-    for name, p in props.items():
+    for full, p in props.items():
+        name = full.split(" ", 1)[0]
         kind = p["type"]
         v = p.get(kind)
         if kind in ("title", "rich_text"):
@@ -87,6 +90,10 @@ def main() -> int:
         return 0
 
     problems: list[str] = []
+    # A renamed column would otherwise read as "no rows" and empty the homepage list.
+    for rows, table, col in ((pick_rows, "Jason 親選", "集數"), (top_rows, "每月最多人收聽", "月份")):
+        if rows and col not in rows[0]:
+            problems.append(f"{table}: no column named {col} (found: {', '.join(rows[0])})")
     picks = []
     for row in pick_rows:
         label = row.get("集數", "")
