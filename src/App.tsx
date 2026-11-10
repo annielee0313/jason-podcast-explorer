@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Landing from './pages/Landing';
 import EpisodePage from './pages/Episode';
+import TopicPage, { TopicIndex } from './pages/Topic';
 import Explorer from './pages/Explorer';
 import Studio from './pages/Studio';
 import { applyHead, headFor } from './lib/seo';
@@ -29,6 +30,8 @@ export default function App() {
     <Routes location={shown}>
       <Route path="/" element={<Landing />} />
       <Route path="/episode/:ep" element={<EpisodePage />} />
+      <Route path="/topics" element={<TopicIndex />} />
+      <Route path="/topics/:id" element={<TopicPage />} />
       {/* Internal tools are hidden on the public site for now: dev server only (npm run dev). */}
       {import.meta.env.DEV && <Route path="/explorer" element={<Explorer />} />}
       {import.meta.env.DEV && <Route path="/studio" element={<Studio />} />}

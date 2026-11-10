@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useNavigate } from 'react-router-dom';
-import { about } from '../lib/data';
+import { about, themes } from '../lib/data';
 import { ArrowIcon, ArrowUpRightIcon, CloseIcon } from './ui';
 
 /** Landing-page sections the nav can jump to; Landing reads `state.scrollTo`. */
@@ -160,6 +160,10 @@ export function Footer() {
           <a href={company.facebook} target="_blank" rel="noreferrer">粉絲團</a>
           <a href={`mailto:${company.email}`}>聯絡我們 · {company.email}</a>
           <button type="button" className="footer-linkbtn" onClick={() => window.dispatchEvent(new Event('jhl-open-consent'))}>Cookie 設定</button>
+        </div>
+        <div className="footer-col">
+          <span className="footer-h">主題</span>
+          {themes.map((t) => <Link key={t.id} to={`/topics/${t.id}/`}>{t.name}</Link>)}
         </div>
         <div className="footer-col">
           <span className="footer-h">收聽</span>

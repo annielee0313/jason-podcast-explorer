@@ -8,7 +8,7 @@ export { headFor, headHtml, llmsFullTxt, llmsTxt, sitemapXml } from './lib/seo';
 export { episodes, themes };
 
 /** Paths written as static HTML by scripts/prerender.mjs. The internal tools are not published. */
-export const routes = ['/', ...episodes.map((e) => `/episode/${e.ep}`)];
+export const routes = ['/', '/topics', ...themes.map((t) => `/topics/${t.id}`), ...episodes.map((e) => `/episode/${e.ep}`)];
 
 export function render(path: string) {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '') || '/';

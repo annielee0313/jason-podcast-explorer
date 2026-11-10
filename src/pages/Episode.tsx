@@ -36,7 +36,7 @@ export default function EpisodePage() {
         <div className="wrap ep-hero">
           <p className="kicker" style={{ margin: 0, fontSize: 13, color: 'var(--teal-strong)' }}>EP.{ep.ep} · {ep.date} · {formatDuration(ep.durationSec)}</p>
           <h1 className="ep-title">{ep.title}</h1>
-          <div className="chips" style={{ gap: 8 }}>{ep.themes.map((t) => <ThemeChip key={t} id={t} />)}</div>
+          <div className="chips" style={{ gap: 8 }}>{ep.themes.map((t) => <Link key={t} to={`/topics/${t}/`} className="chip-link" data-track="topic_click" data-topic={t}><ThemeChip id={t} /></Link>)}</div>
           {/* Who this conversation is with: 來賓 + name on one line, company below. */}
           <div className="ep-guest">
             <span className="ep-guest-line"><span className="ep-guest-label">來賓</span>{ep.guest}</span>

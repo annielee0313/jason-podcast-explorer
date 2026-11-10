@@ -158,3 +158,12 @@ export async function loadTranscript(ep: number): Promise<Transcript | null> {
   const key = transcriptKey(ep);
   return key ? (await transcriptFiles[key]()).default : null;
 }
+
+/** Topic pages (/topics/<theme>/): a theme's episodes, newest first, and the facts its intro states. */
+export function topicFacts(id: ThemeId) {
+  const eps = episodes.filter((e) => e.themes.includes(id));
+  const byIndustry = new Map<string, number>();
+  eps.forEach((e) => { const n = industryOf(e).name; byIndustry.set(n, (byIndustry.get(n) ?? 0) + 1); });
+  const topIndustries = [...byIndustry].filter(([n]) => n !== noIndustry.name).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([n]) => n);
+  return { eps, topIndustries, latest: eps[0], first: eps[eps.length - 1], paths: curation.paths.filter((p) => p.theme === id) };
+}

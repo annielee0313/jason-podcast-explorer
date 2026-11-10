@@ -1,4 +1,4 @@
-import { about, curation, episodeByNumber, episodes, industryOf, themeById, type Episode } from './data';
+import { about, curation, episodeByNumber, episodes, industryOf, themeById, themes, topicFacts, type Episode, type ThemeId } from './data';
 
 /**
  * Per-route <head>: title, description, canonical URL, Open Graph and JSON-LD.
@@ -54,7 +54,60 @@ function episodeDescription(e: Episode) {
   return lead;
 }
 
+function topicDescription(id: ThemeId) {
+  const t = themeById[id];
+  const f = topicFacts(id);
+  return `《${SHOW}》聊到「${t.name}」的 ${f.eps.length} 集對話${f.topIndustries.length ? `，來賓多來自${f.topIndustries.join('、')}等產業` : ''}。每集附來賓、日期與節目重點，從最新的 EP.${f.latest?.ep} 開始。`;
+}
+
+const crumbs = (items: [string, string][]) => ({
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map(([name, path], i) => ({ '@type': 'ListItem', position: i + 1, name, item: abs(path) })),
+});
+
 export function headFor(pathname: string): Head {
+  if (/^\/topics\/?$/.test(pathname)) {
+    return {
+      title: `依主題找集數｜${SHOW}`,
+      description: `《${SHOW}》的 ${themes.length} 個主題：${themes.map((t) => `${t.name}（${topicFacts(t.id as ThemeId).eps.length} 集）`).join('、')}。`,
+      url: abs('/topics/'),
+      type: 'website',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@graph': [
+          { '@type': 'CollectionPage', name: `依主題找集數｜${SHOW}`, url: abs('/topics/'), inLanguage: 'zh-Hant-TW', isPartOf: { '@id': `${SITE_URL}#series` } },
+          crumbs([['首頁', '/'], ['主題', '/topics/']]),
+        ],
+      },
+    };
+  }
+  const topic = pathname.match(/^\/topics\/([a-z]+)\/?$/);
+  if (topic && themeById[topic[1] as ThemeId]) {
+    const id = topic[1] as ThemeId;
+    const t = themeById[id];
+    const f = topicFacts(id);
+    const url = abs(`/topics/${id}/`);
+    return {
+      title: `${t.name}：${f.eps.length} 集相關對話｜${SHOW}`,
+      description: topicDescription(id),
+      url,
+      type: 'website',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'CollectionPage', name: `${t.name}｜${SHOW}`, url, description: topicDescription(id), inLanguage: 'zh-Hant-TW',
+            isPartOf: { '@id': `${SITE_URL}#series` },
+            mainEntity: {
+              '@type': 'ItemList', numberOfItems: f.eps.length,
+              itemListElement: f.eps.map((e, i) => ({ '@type': 'ListItem', position: i + 1, url: abs(`/episode/${e.ep}/`), name: `EP.${e.ep} ${e.title}` })),
+            },
+          },
+          crumbs([['首頁', '/'], ['主題', '/topics/'], [t.name, `/topics/${id}/`]]),
+        ],
+      },
+    };
+  }
   const ep = pathname.match(/^\/episode\/(\d+)\/?$/);
   if (ep) {
     const e = episodeByNumber(Number(ep[1]));
@@ -165,6 +218,8 @@ export function applyHead(h: Head) {
 export function sitemapXml() {
   const urls = [
     { loc: SITE_URL, lastmod: episodes[0]?.date },
+    { loc: abs('/topics/'), lastmod: episodes[0]?.date },
+    ...themes.map((t) => ({ loc: abs(`/topics/${t.id}/`), lastmod: topicFacts(t.id as ThemeId).latest?.date })),
     ...episodes.map((e) => ({ loc: abs(`/episode/${e.ep}/`), lastmod: e.date })),
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -203,6 +258,10 @@ export function llmsTxt() {
 ## 推薦從這裡開始
 
 ${curation.paths.map((p) => `- ${p.title}：${p.blurb} ${p.eps.map((n) => `[EP.${n}](${abs(`/episode/${n}/`)})`).join('、')}`).join('\n')}
+
+## 依主題
+
+${themes.map((t) => `- [${t.name}](${abs(`/topics/${t.id}/`)}): ${topicFacts(t.id as ThemeId).eps.length} 集`).join('\n')}
 
 ## 全部集數（新到舊）
 
