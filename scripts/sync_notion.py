@@ -7,7 +7,8 @@ Pull the editable homepage lists from the team's Notion page 「Jason好好聊�
 Databases (property names exactly as below; IDs in data/notion.json, not secret):
   我們推薦          集數 (title, e.g. "EP.249"), 順序, 推薦理由, 暫定
   每月最多人收聽     月份 (title, e.g. "2026-10"), 第1名, 第2名, 第3名, 來源, 備註
-  從哪裡開始         路線 (title), 說明, 集數 ("247, 246, 243" in listening order), 主題, 順序
+  從哪裡開始         路線 (title), 說明, 集數 ("247, 246, 243" in listening order), 順序
+                    (its colour dot is the theme most of its episodes share; no column needed)
 Columns may carry an English label after a space ("集數 Episode"); only the Chinese part counts.
 
 Every Jason 親選 row is on the site (delete a row to drop it). 每月最多人收聽 keeps one
@@ -143,7 +144,8 @@ def main() -> int:
            for i, ep in enumerate(latest["eps"], start=1)] if latest else []
 
     # 從哪裡開始: listening paths. An empty table keeps the current paths (never an empty section).
-    theme_id = {t["name"]: t["id"] for t in json.loads(THEMES.read_text("utf-8"))}
+    theme_order = [t["id"] for t in json.loads(THEMES.read_text("utf-8"))]
+    themes_of = {e["ep"]: e.get("themes", []) for e in json.loads(EPISODES.read_text("utf-8"))}
     paths = []
     for row in path_rows:
         title = row.get("路線", "")
@@ -160,9 +162,9 @@ def main() -> int:
         for n in eps:
             if n not in known:
                 problems.append(f"{where}: EP.{n} is not in the episode list")
-        theme = theme_id.get(row.get("主題", ""))
-        if not theme:
-            problems.append(f"{where}: 主題 must be one of {', '.join(theme_id)}")
+        # The theme most of these episodes share (ties: taxonomy order) colours the path's dot.
+        tally = [sum(t in themes_of.get(n, []) for n in eps) for t in theme_order]
+        theme = theme_order[tally.index(max(tally))] if eps else theme_order[0]
         order = row.get("順序")
         paths.append({"title": title, "blurb": row.get("說明", ""), "theme": theme, "eps": eps,
                       "_order": order if isinstance(order, (int, float)) else 999})
