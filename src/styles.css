@@ -294,7 +294,7 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 .browse-search input { width: 220px; height: 34px; padding: 0 32px 0 32px; border: 0; border-radius: var(--r-xs); background: #fff; color: var(--ink); font: inherit; font-size: var(--fs-sm); -webkit-appearance: none; appearance: none; }
 .browse-search input::placeholder { color: var(--muted-2); }
 .browse-search input::-webkit-search-cancel-button { display: none; }
-.browse-search input:focus-visible { outline: 2px solid var(--teal-strong); outline-offset: 1px; }
+.browse-search input:focus, .browse-search input:focus-visible { outline: none; box-shadow: none; }
 .browse-search-clear { position: absolute; right: 0; width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 0; background: none; color: var(--muted); cursor: pointer; }
 .browse-search-clear svg { width: 14px; height: 14px; }
 @media (max-width: 640px) { .browse-search input { width: min(220px, 52vw); font-size: 16px; } }
