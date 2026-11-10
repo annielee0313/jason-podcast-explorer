@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
-Pull the two editable lists from the team's Notion page 「Jason好好聊」 into data/curation.json.
+Pull the editable homepage lists from the team's Notion page 「Jason好好聊」 into data/curation.json.
 
     NOTION_TOKEN=... python scripts/sync_notion.py   # run by the deploy and update workflows
 
 Databases (property names exactly as below; IDs in data/notion.json, not secret):
-  Jason 親選        集數 (title, e.g. "EP.249"), 順序, 推薦理由, 暫定
+  我們推薦          集數 (title, e.g. "EP.249"), 順序, 推薦理由, 暫定
   每月最多人收聽     月份 (title, e.g. "2026-10"), 第1名, 第2名, 第3名, 來源, 備註
+  從哪裡開始         路線 (title), 說明, 集數 ("247, 246, 243" in listening order), 主題, 順序
+Columns may carry an English label after a space ("集數 Episode"); only the Chinese part counts.
 
 Every Jason 親選 row is on the site (delete a row to drop it). 每月最多人收聽 keeps one
 row per month as a record; the site shows the latest month.
@@ -29,6 +31,8 @@ ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "data" / "notion.json"
 CURATION = ROOT / "data" / "curation.json"
 EPISODES = ROOT / "data" / "episodes.json"
+THEMES = ROOT / "data" / "themes.json"
+MAX_PATH_EPS = 10
 API = "https://api.notion.com/v1"
 VERSION = "2025-09-03"
 
@@ -85,13 +89,14 @@ def main() -> int:
     try:
         pick_rows = query(token, config["jasonPicks"])
         top_rows = query(token, config["mostListened"])
+        path_rows = query(token, config["paths"]) if config.get("paths") else []
     except (urllib.error.URLError, KeyError, ValueError) as err:
         print(f"Notion not reachable ({err}): keeping the current lists")
         return 0
 
     problems: list[str] = []
     # A renamed column would otherwise read as "no rows" and empty the homepage list.
-    for rows, table, col in ((pick_rows, "Jason 親選", "集數"), (top_rows, "每月最多人收聽", "月份")):
+    for rows, table, col in ((pick_rows, "我們推薦", "集數"), (top_rows, "每月最多人收聽", "月份"), (path_rows, "從哪裡開始", "路線")):
         if rows and col not in rows[0]:
             problems.append(f"{table}: no column named {col} (found: {', '.join(rows[0])})")
     picks = []
@@ -137,6 +142,32 @@ def main() -> int:
     top = [{"rank": i, "ep": ep, "source": latest["source"], "period": latest["month"], "updated": ""}
            for i, ep in enumerate(latest["eps"], start=1)] if latest else []
 
+    # 從哪裡開始: listening paths. An empty table keeps the current paths (never an empty section).
+    theme_id = {t["name"]: t["id"] for t in json.loads(THEMES.read_text("utf-8"))}
+    paths = []
+    for row in path_rows:
+        title = row.get("路線", "")
+        if not title:
+            continue
+        where = f"從哪裡開始 「{title}」"
+        eps = [int(n) for n in re.findall(r"\d+", row.get("集數") or "")]
+        if not eps:
+            problems.append(f"{where}: 集數 is empty (write e.g. 247, 246, 243)")
+        if len(eps) > MAX_PATH_EPS:
+            problems.append(f"{where}: {len(eps)} episodes; keep it to {MAX_PATH_EPS} or fewer")
+        if len(set(eps)) != len(eps):
+            problems.append(f"{where}: an episode is listed twice")
+        for n in eps:
+            if n not in known:
+                problems.append(f"{where}: EP.{n} is not in the episode list")
+        theme = theme_id.get(row.get("主題", ""))
+        if not theme:
+            problems.append(f"{where}: 主題 must be one of {', '.join(theme_id)}")
+        order = row.get("順序")
+        paths.append({"title": title, "blurb": row.get("說明", ""), "theme": theme, "eps": eps,
+                      "_order": order if isinstance(order, (int, float)) else 999})
+    paths.sort(key=lambda p: p.pop("_order"))
+
     if problems:
         print("Notion NOT applied; the site keeps its last good lists. Fix these in Notion:")
         for p in problems:
@@ -144,14 +175,17 @@ def main() -> int:
         return 0
 
     curation = json.loads(CURATION.read_text("utf-8"))
-    if (curation.get("jasonPicks"), curation.get("mostListened"), curation.get("mostListenedByMonth")) == (picks, top, months):
+    if not paths:
+        paths = curation.get("paths", [])
+    if (curation.get("jasonPicks"), curation.get("mostListened"), curation.get("mostListenedByMonth"), curation.get("paths")) == (picks, top, months, paths):
         print("Notion lists unchanged")
         return 0
     curation["jasonPicks"] = picks
     curation["mostListened"] = top
     curation["mostListenedByMonth"] = months
+    curation["paths"] = paths
     CURATION.write_text(json.dumps(curation, ensure_ascii=False, indent=2) + "\n", "utf-8")
-    print(f"Applied: {len(picks)} Jason picks; most listened from {len(months)} month(s), showing {latest and latest['month']}")
+    print(f"Applied: {len(paths)} paths, {len(picks)} picks; most listened from {len(months)} month(s), showing {latest and latest['month']}")
     return 0
 
 
