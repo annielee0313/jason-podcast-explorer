@@ -80,9 +80,33 @@ def from_api(key: str, limit: int = 0) -> list[tuple[str, str]]:
             return out
 
 
+def oembed_title(vid: str) -> str | None:
+    """A video's public title via YouTube's oEmbed endpoint (metadata only, no key)."""
+    try:
+        q = urllib.parse.urlencode({"url": f"https://www.youtube.com/watch?v={vid}", "format": "json"})
+        return json.loads(get(f"https://www.youtube.com/oembed?{q}")).get("title")
+    except Exception:
+        return None  # private, removed or unreachable: leave the link alone
+
+
+def check_links(episodes: list[dict], count: int) -> list[int]:
+    """Re-read the titles of the newest `count` linked videos and unlink any that isn't the
+    full interview. Works even when the channel feed is down."""
+    linked = sorted((e for e in episodes if e.get("youtubeId")), key=lambda e: -e["ep"])[:count]
+    dropped = []
+    for e in linked:
+        title = oembed_title(e["youtubeId"])
+        if title and FULL_INTERVIEW not in title:
+            print(f"EP.{e['ep']}: linked video is not the full interview ({title}); unlinked")
+            del e["youtubeId"]
+            dropped.append(e["ep"])
+    return dropped
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--all", action="store_true", help="list the whole channel with the YouTube Data API")
+    ap.add_argument("--check-all", action="store_true", help="re-check every linked video's title (default: newest 10)")
     args = ap.parse_args()
 
     key = api_key()
@@ -102,8 +126,8 @@ def main() -> int:
                 print(f"Feed failed ({exc}); using the YouTube Data API")
                 videos = from_api(key, limit=50)
     except Exception as exc:  # never block a deploy over YouTube being unreachable
-        print(f"YouTube not reachable ({exc}); keeping existing video links")
-        return 0
+        print(f"YouTube list not reachable ({exc}); only re-checking existing links")
+        videos = []
 
     episodes = json.loads(EPISODES_PATH.read_text("utf-8"))
     by_ep = {e["ep"]: e for e in episodes}
@@ -123,6 +147,8 @@ def main() -> int:
         if e and not e.get("youtubeId"):
             e["youtubeId"] = vid
             added.append(e["ep"])
+
+    unlinked += check_links(episodes, 10_000 if args.check_all else 10)
 
     if added or unlinked:
         EPISODES_PATH.write_text(json.dumps(episodes, ensure_ascii=False, indent=2) + "\n", "utf-8")
