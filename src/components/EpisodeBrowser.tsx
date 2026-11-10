@@ -61,6 +61,8 @@ export function EpisodeBrowser() {
   const [filters, setFilters] = useState<Filters>(ALL);
   const [order, setOrder] = useState<'new' | 'old'>('new');
   const [query, setQuery] = useState('');
+  const [searching, setSearching] = useState(false); // the icon opens the field; empty + blur folds it
+  const searchRef = useRef<HTMLInputElement>(null);
   const found = useMemo(() => searchFilter(query), [query]);
   const pool = useMemo(() => (found ? episodes.filter(found) : episodes), [found]);
   const [page, setPage] = useState(1);
@@ -127,21 +129,6 @@ export function EpisodeBrowser() {
   return (
     <div ref={topRef}>
       <div className="browse-body">
-        <div className="browse-search">
-          <SearchIcon />
-          <input
-            type="search"
-            value={query}
-            placeholder="搜尋來賓、公司、標題或集數（例如 163）"
-            aria-label="搜尋集數"
-            enterKeyHint="search"
-            onChange={(e) => { setQuery(e.target.value); setPage(1); }}
-            onBlur={() => { if (query.trim()) track('search', { results: results.length }); }}
-          />
-          {query && (
-            <button type="button" className="browse-search-clear" aria-label="清除搜尋" onClick={() => { setQuery(''); setPage(1); }}><CloseIcon /></button>
-          )}
-        </div>
         <div className="browse-tools">
           <div className="facets">
             {FACETS.map((f) => (
@@ -149,9 +136,36 @@ export function EpisodeBrowser() {
                 countFor={(id) => countFor(f.key, id)} onPick={(id) => pick(f.key, id)} />
             ))}
           </div>
+          <div className="browse-side">
+          <div className={`browse-search${searching || query ? ' is-open' : ''}`}>
+            {searching || query ? (
+              <>
+                <SearchIcon />
+                <input
+                  ref={searchRef}
+                  type="search"
+                  value={query}
+                  autoFocus
+                  placeholder="來賓、公司或集數"
+                  aria-label="搜尋來賓、公司、標題或集數"
+                  enterKeyHint="search"
+                  onChange={(e) => { setQuery(e.target.value); setPage(1); }}
+                  onKeyDown={(e) => { if (e.key === 'Escape') { setQuery(''); setSearching(false); setPage(1); } }}
+                  onBlur={() => { if (query.trim()) track('search', { results: results.length }); else setSearching(false); }}
+                />
+                {query && (
+                  <button type="button" className="browse-search-clear" aria-label="清除搜尋"
+                    onClick={() => { setQuery(''); setPage(1); searchRef.current?.focus(); }}><CloseIcon /></button>
+                )}
+              </>
+            ) : (
+              <button type="button" className="browse-search-open" aria-label="搜尋集數" onClick={() => setSearching(true)}><SearchIcon /></button>
+            )}
+          </div>
           <div role="group" aria-label="排序" className="seg">
             <button type="button" aria-pressed={order === 'new'} onClick={() => { setOrder('new'); setPage(1); }}>最新</button>
             <button type="button" aria-pressed={order === 'old'} onClick={() => { setOrder('old'); setPage(1); }}>最早</button>
+          </div>
           </div>
         </div>
         <p className="browse-status" aria-live="polite">
@@ -159,7 +173,7 @@ export function EpisodeBrowser() {
           {active.length > 0 && <>{active.join(' · ')} · </>}
           {results.length ? <>第 {from}–{to} 集，共 {results.length} 集</> : '沒有符合的集數'}
           {(active.length > 0 || query) && (
-            <button type="button" className="clear-filters" onClick={() => { setFilters(ALL); setQuery(''); setPage(1); }}>清除篩選</button>
+            <button type="button" className="clear-filters" onClick={() => { setFilters(ALL); setQuery(''); setSearching(false); setPage(1); }}>清除篩選</button>
           )}
         </p>
 

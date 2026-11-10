@@ -36,7 +36,7 @@ const TOP_N = 3;
 const picks = curation.jasonPicks.slice(0, TOP_N);
 
 /**
- * Jason 親選 and 最多人收聽 share this card: numbered rows (01–03), title, EP · guest,
+ * 我們推薦 and 最多人收聽 share this card: numbered rows (01–03), title, EP · guest,
  * and the pick reason when Jason has written one. Nothing is shown for missing reasons.
  */
 function TopList({ title, flag, note, items }: {
@@ -187,9 +187,9 @@ export default function Landing() {
       <section className="section">
         <div className="wrap top-lists">
           <TopList
-            title="Jason 親選"
-            flag={picks.some((p) => p.tentative) ? '暫定，待 Jason 確認' : undefined}
-            note="如果只能推薦三集給新朋友，Jason 會選這些。"
+            title="我們推薦"
+            flag={picks.some((p) => p.tentative) ? '暫定，待確認' : undefined}
+            note="如果只能推薦三集給新朋友，我們會選這些。"
             items={picks.map((p) => ({ ep: p.ep, reason: p.reason }))}
           />
           <TopList
@@ -199,13 +199,6 @@ export default function Landing() {
               : '大家最常聽的幾集。'}
             items={curation.mostListened.slice(0, TOP_N).map((t) => ({ ep: t.ep }))}
           />
-        </div>
-      </section>
-
-      <section className="section" id="browse">
-        <div className="wrap">
-          <SectionHead n="02" en="ALL EPISODES" title="全部集數" note="用主題或來賓產業篩選，或一頁一頁往回翻。" />
-          <EpisodeBrowser />
         </div>
       </section>
 
@@ -239,6 +232,13 @@ export default function Landing() {
               <Link className="btn btn-light" to={`/episode/${current.ep}`}>看這一集</Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section" id="browse">
+        <div className="wrap">
+          <SectionHead n="02" en="ALL EPISODES" title="全部集數" note="用主題或來賓產業篩選，或一頁一頁往回翻。" />
+          <EpisodeBrowser />
         </div>
       </section>
 

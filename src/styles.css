@@ -202,11 +202,11 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 
 /* Panel (large white container) */
 
-/* Jason 親選 / 最多人收聽 lists */
+/* 我們推薦 / 最多人收聽 lists */
 .list-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
 .list-flag { font-size: var(--fs-xs); letter-spacing: 0.04em; padding: 3px 8px; border-radius: var(--r-xs); background: var(--soft); color: var(--muted); }
 .pick-list, .rank-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
-/* Jason 親選 and 最多人收聽: two identical cards side by side (1:1), stacked on narrow screens. */
+/* 我們推薦 and 最多人收聽: two identical cards side by side (1:1), stacked on narrow screens. */
 .top-lists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 @media (max-width: 860px) { .top-lists { grid-template-columns: 1fr; } }
 .top-list { display: flex; flex-direction: column; }
@@ -286,14 +286,18 @@ h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; letter-spac
 .ep-guest-org { font-size: var(--fs-base); color: var(--muted); }
 
 /* Episode browser: search, filter tags, sort, status, pager */
-.browse-search { position: relative; display: flex; align-items: center; max-width: 560px; margin-bottom: 20px; color: var(--muted-2); }
-.browse-search > svg { position: absolute; left: 14px; pointer-events: none; }
-.browse-search input { flex: 1; min-width: 0; height: 44px; padding: 0 44px 0 40px; border: 0; border-radius: var(--r-sm); background: #fff; color: var(--ink); font: inherit; font-size: var(--fs-base); -webkit-appearance: none; appearance: none; }
+.browse-side { display: flex; align-items: center; gap: 8px; flex: none; }
+.browse-search { position: relative; display: flex; align-items: center; color: var(--muted-2); }
+.browse-search-open { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: var(--r-xs); background: #fff; color: var(--ink); cursor: pointer; }
+.browse-search-open:hover { background: var(--soft); }
+.browse-search > svg { position: absolute; left: 10px; pointer-events: none; }
+.browse-search input { width: 220px; height: 34px; padding: 0 32px 0 32px; border: 0; border-radius: var(--r-xs); background: #fff; color: var(--ink); font: inherit; font-size: var(--fs-sm); -webkit-appearance: none; appearance: none; }
 .browse-search input::placeholder { color: var(--muted-2); }
 .browse-search input::-webkit-search-cancel-button { display: none; }
 .browse-search input:focus-visible { outline: 2px solid var(--teal-strong); outline-offset: 1px; }
-.browse-search-clear { position: absolute; right: 0; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 0; background: none; color: var(--muted); cursor: pointer; }
-@media (max-width: 640px) { .browse-search { max-width: none; } .browse-search input { font-size: 16px; } }
+.browse-search-clear { position: absolute; right: 0; width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border: 0; background: none; color: var(--muted); cursor: pointer; }
+.browse-search-clear svg { width: 14px; height: 14px; }
+@media (max-width: 640px) { .browse-search input { width: min(220px, 52vw); font-size: 16px; } }
 .browse-tools { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; justify-content: space-between; }
 .facets { display: flex; flex-direction: column; gap: 10px; flex: 1 1 600px; min-width: 0; }
 .facet-row { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; align-items: start; }
