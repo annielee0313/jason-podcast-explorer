@@ -30,7 +30,7 @@
     {
       "title": "接手一個老品牌",
       "blurb": "二代接班、老字號重塑、危機後重建團隊。",
-      "theme": "leadership",
+      "theme": "brand",
       "eps": [
         245,
         17,
@@ -59,30 +59,18 @@
       "ep": 249,
       "reason": "",
       "order": 1,
-      "tentative": true
+      "tentative": false
     },
     {
       "ep": 243,
       "reason": "",
       "order": 2,
-      "tentative": true
+      "tentative": false
     },
     {
       "ep": 241,
       "reason": "",
       "order": 3,
-      "tentative": true
-    },
-    {
-      "ep": 240,
-      "reason": "",
-      "order": 4,
-      "tentative": false
-    },
-    {
-      "ep": 239,
-      "reason": "",
-      "order": 5,
       "tentative": false
     }
   ],
