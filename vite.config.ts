@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // Public address of the site. Set SITE_URL when moving to the company domain
 // (e.g. SITE_URL=https://podcast.js-adways.com.tw/); paths, canonicals and the sitemap follow it.
-const SITE_URL = (process.env.SITE_URL ?? 'https://annielee0313.github.io/jason-podcast-explorer/').replace(/\/?$/, '/');
+const SITE_URL = (process.env.SITE_URL ?? 'https://jasonstalk.com/').replace(/\/?$/, '/');
 
 export default defineConfig({
   plugins: [react()],

@@ -10,7 +10,7 @@ workers_dev = true
 preview_urls = false
 
 [vars]
-ALLOWED_ORIGINS = "https://annielee0313.github.io,http://localhost:5188,http://localhost:5189"
+ALLOWED_ORIGINS = "https://jasonstalk.com,https://www.jasonstalk.com,https://annielee0313.github.io,http://localhost:5188,http://localhost:5189"
 CHAT_ENABLED = "true"
 
 # Per-visitor rate limit: 8 questions per minute.
