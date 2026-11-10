@@ -188,7 +188,6 @@ export default function Landing() {
         <div className="wrap top-lists">
           <TopList
             title="我們推薦"
-            flag={picks.some((p) => p.tentative) ? '暫定，待確認' : undefined}
             note="如果只能推薦三集給新朋友，我們會選這些。"
             items={picks.map((p) => ({ ep: p.ep, reason: p.reason }))}
           />
