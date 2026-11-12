@@ -29,7 +29,7 @@ export function WordModal({ phrase, onClose }: { phrase: Phrase; onClose: () => 
       <ol className="word-list">
         {[...byEp.entries()].map(([ep, ls]) => (
           <li key={ep}>
-            <Link to={`/episode/${ep}`} className="word-ep" onClick={onClose}>
+            <Link to={`/episode/${ep}/`} className="word-ep" onClick={onClose}>
               <span className="mono">EP.{ep}</span>
               <span className="word-ep-title">{ls[0].title}</span>
               <span className="word-ep-guest">{ls[0].guest}</span>

@@ -58,7 +58,7 @@ export function TranscriptSearch() {
         const e = episodeByNumber(g.ep);
         return (
           <div key={g.ep} className="tsearch-group">
-            <Link to={`/episode/${g.ep}`} className="tsearch-ep">
+            <Link to={`/episode/${g.ep}/`} className="tsearch-ep">
               <span className="mono">EP.{g.ep}</span> {e?.title}
               <span className="muted"> · {e?.guest} · {g.hits.length} 段</span>
             </Link>

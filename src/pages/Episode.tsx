@@ -78,7 +78,7 @@ export default function EpisodePage() {
           <aside aria-label="也可以聽" className="side" style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <h2 style={{ fontSize: 18 }}>聽完這集，接著聽</h2>
             {related.map(({ e, shared }) => (
-              <Link key={e.ep} to={`/episode/${e.ep}`} className="ep-card related-card" data-track="related_click" data-ep={e.ep}>
+              <Link key={e.ep} to={`/episode/${e.ep}/`} className="ep-card related-card" data-track="related_click" data-ep={e.ep}>
                 <span className="related-why">
                   同樣聊{' '}
                   {shared.map((t, i) => (

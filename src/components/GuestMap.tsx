@@ -344,7 +344,7 @@ export function GuestMap({ initialEp = 247 }: { initialEp?: number }) {
             {sel.highlight && (
               <p className="map-panel-quote">「{sel.highlight}」{sel.highlightIsSummary && <span className="muted">（摘要）</span>}</p>
             )}
-            <Link to={`/episode/${sel.ep}`} className="link-btn">看這一集 <span className="dot-icon"><ArrowIcon /></span></Link>
+            <Link to={`/episode/${sel.ep}/`} className="link-btn">看這一集 <span className="dot-icon"><ArrowIcon /></span></Link>
           </div>
 
           <RelatedList

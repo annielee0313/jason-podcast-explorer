@@ -34,7 +34,7 @@ function Answer({ m, question, onNavigate }: { m: Extract<ChatMessage, { role: '
             if (!e) return null;
             return (
               <li key={ep}>
-                <Link to={`/episode/${ep}`} className="chat-ep" onClick={onNavigate} data-track="chat_rec_click" data-ep={ep}>
+                <Link to={`/episode/${ep}/`} className="chat-ep" onClick={onNavigate} data-track="chat_rec_click" data-ep={ep}>
                   <span className="chat-ep-meta mono">EP.{ep} · {e.guest}</span>
                   <span className="chat-ep-title">{e.title}</span>
                   <span className="chat-ep-why">{reason}</span>

@@ -94,7 +94,7 @@ export default function Explorer() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {hits.map((h) => (
                     <div key={h.text} className="hit">
-                      <Link to={`/episode/${h.ep}`} className="mono" style={{ fontSize: 12, color: 'var(--muted)' }}>EP.{h.ep} · {h.guest}</Link>
+                      <Link to={`/episode/${h.ep}/`} className="mono" style={{ fontSize: 12, color: 'var(--muted)' }}>EP.{h.ep} · {h.guest}</Link>
                       <span style={{ fontSize: 15, lineHeight: 1.65 }}>{h.pre}<mark>{h.hit}</mark>{h.post}</span>
                     </div>
                   ))}
@@ -121,7 +121,7 @@ export default function Explorer() {
               const e = episodeByNumber(a.ep);
               return (
                 <div key={a.ep} className="card" style={{ padding: 22, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  <Link to={`/episode/${a.ep}`} className="mono muted" style={{ fontSize: 12 }}>EP.{a.ep}</Link>
+                  <Link to={`/episode/${a.ep}/`} className="mono muted" style={{ fontSize: 12 }}>EP.{a.ep}</Link>
                   <span style={{ fontSize: 19, fontWeight: 700, lineHeight: 1.55 }}>{a.text}</span>
                   <span className="muted" style={{ fontSize: 13, marginTop: 'auto' }}>{e?.guest} · {e?.org}</span>
                   <span className="mono" style={{ fontSize: 12, color: 'var(--muted-2)' }}>

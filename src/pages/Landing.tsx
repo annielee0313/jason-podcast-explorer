@@ -55,7 +55,7 @@ function TopList({ title, flag, note, items }: {
           if (!e) return null;
           return (
             <li key={ep}>
-              <Link to={`/episode/${e.ep}`} className="rank-row" data-track="top_list_click" data-list={title} data-ep={e.ep}>
+              <Link to={`/episode/${e.ep}/`} className="rank-row" data-track="top_list_click" data-list={title} data-ep={e.ep}>
                 <span className="rank-n">{String(i + 1).padStart(2, '0')}</span>
                 <span className="pick-main">
                   <span className="pick-title">{e.title}</span>
@@ -155,7 +155,7 @@ export default function Landing() {
             <div style={{ fontSize: 14, color: 'var(--on-dark-muted)' }}>{latest.guest} · {latest.org}</div>
             <div className="chips" style={{ gap: 10, marginTop: 'auto' }}>
               {latest.appleUrl && <a className="btn btn-light" href={latest.appleUrl}><PlayIcon />Apple Podcasts 收聽</a>}
-              <Link className="btn btn-ghost-dark" to={`/episode/${latest.ep}`}>先看重點</Link>
+              <Link className="btn btn-ghost-dark" to={`/episode/${latest.ep}/`}>先看重點</Link>
             </div>
             </div>
           </div>
@@ -228,7 +228,7 @@ export default function Landing() {
             </div>
             <div className="deck-actions">
               <button type="button" className="btn btn-ghost-dark" onClick={() => { draw(); track('deck_draw'); }}><ShuffleIcon />再抽一張</button>
-              <Link className="btn btn-light" to={`/episode/${current.ep}`}>看這一集</Link>
+              <Link className="btn btn-light" to={`/episode/${current.ep}/`}>看這一集</Link>
             </div>
           </div>
         </div>
