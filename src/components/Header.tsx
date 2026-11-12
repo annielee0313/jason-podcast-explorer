@@ -9,8 +9,8 @@ export type NavState = { scrollTo?: string };
 
 const SECTIONS = [
   { id: 'paths', label: '從哪開始' },
-  { id: 'browse', label: '全部集數' },
   { id: 'map', label: '來賓地圖' },
+  { id: 'browse', label: '全部集數' },
   { id: 'about', label: '關於 Jason' },
 ];
 

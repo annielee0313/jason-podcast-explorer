@@ -234,17 +234,17 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className="section" id="browse">
+      <section className="section" id="map">
         <div className="wrap">
-          <SectionHead n="02" en="ALL EPISODES" title="全部集數" />
-          <EpisodeBrowser />
+          <SectionHead n="02" en="GUEST MAP" title={`${stats.guestsFloor} 多位來賓，怎麼連在一起？`} />
+          <GuestMap initialEp={latest.ep} />
         </div>
       </section>
 
-      <section className="section" id="map">
+      <section className="section" id="browse">
         <div className="wrap">
-          <SectionHead n="03" en="GUEST MAP" title={`${stats.guestsFloor} 多位來賓，怎麼連在一起？`} />
-          <GuestMap initialEp={latest.ep} />
+          <SectionHead n="03" en="ALL EPISODES" title="全部集數" />
+          <EpisodeBrowser />
         </div>
       </section>
 
