@@ -131,7 +131,8 @@ export async function answer(client: Anthropic, turns: ChatTurn[]): Promise<Chat
     max_tokens: 2000,
     betas: ['server-side-fallback-2026-07-01'],
     fallbacks: 'default', // a declined request is retried server-side on the recommended model
-    system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral', ttl: '1h' } }],
+    // 5-minute cache: questions are sparse, so the cheaper cache write (1.25x vs 2x for 1h) wins.
+    system: [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }],
     output_config: { effort: 'low', format: { type: 'json_schema', schema: SCHEMA } },
     messages: turns,
   } as Parameters<typeof client.beta.messages.create>[0]) as Anthropic.Beta.BetaMessage;
