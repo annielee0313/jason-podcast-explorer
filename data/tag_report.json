@@ -3310,6 +3310,20 @@
       "industry_proposal": "",
       "reason": "來賓為一春資本創辦人屬投資領域，內容聚焦放手授權、選人誠信等領導課題，以及卸下證明自我焦慮的心態轉變。",
       "confidence": "medium"
+    },
+    "252": {
+      "guest": "謝榮雅 Duck",
+      "org": "奇想創造創辦人",
+      "title": "得獎無數之後才明白：真正的成功，是擁有人生的選擇權",
+      "model": "claude-opus-5-5",
+      "themes": [
+        "resilience",
+        "brand"
+      ],
+      "industry": "design",
+      "industry_proposal": "",
+      "reason": "來賓為設計師創辦人，談從設計顧問轉型品牌經營、研發挫折中磨掉傲氣與心態轉變，核心在逆境心態與品牌經營。",
+      "confidence": "medium"
     }
   },
   "industryProposals": {
