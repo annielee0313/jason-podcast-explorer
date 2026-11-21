@@ -1,0 +1,49 @@
+# Weekly site report (scripts/weekly_report.py).
+#   Monday 07:00 Taipei (Sun 23:00 UTC): draft a 週報 page in Notion and email GMAIL_USER that it's ready.
+#   Monday 10:00–18:00 Taipei, every 30 min: send any page marked 已核准 (so approving late still sends that day).
+#   Manual: Actions → Weekly report → Run workflow → draft / send / test (test mails GMAIL_USER only).
+name: Weekly report
+
+on:
+  schedule:
+    - cron: "0 23 * * 0"
+    - cron: "0,30 2-9 * * 1"
+    - cron: "0 10 * * 1"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "draft, send, or test (test = newest page to GMAIL_USER only)"
+        type: choice
+        options: [test, draft, send]
+        default: test
+
+permissions:
+  contents: read
+
+concurrency:
+  group: weekly-report
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install --quiet google-analytics-data anthropic
+      - name: Pick mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 23 * * 0" ]; then echo "mode=draft" >> "$GITHUB_OUTPUT"
+          else echo "mode=send" >> "$GITHUB_OUTPUT"; fi
+      - run: python scripts/weekly_report.py ${{ steps.mode.outputs.mode }}
+        env:
+          NOTION_ANALYTICS_TOKEN: ${{ secrets.NOTION_ANALYTICS_TOKEN }}
+          GA4_SERVICE_ACCOUNT: ${{ secrets.GA4_SERVICE_ACCOUNT }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          REPLY_TO: ${{ secrets.REPLY_TO }}

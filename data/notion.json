@@ -1,9 +1,12 @@
 {
-  "_note": "Notion data sources on the page 「Jason好好聊」 (JS Adways) and the GA4 property ID. IDs only, not secret; tokens are GitHub secrets. Read by scripts/sync_notion.py and scripts/sync_analytics.py.",
+  "_note": "Notion data sources on the page 「Jason好好聊」 (JS Adways) and the GA4 property ID. IDs only, not secret; tokens are GitHub secrets. Read by scripts/sync_notion.py, sync_analytics.py and weekly_report.py.",
   "page": "https://app.notion.com/p/40a5192086a2815ea7fcf75dc6ef90fe",
   "jasonPicks": "95990605-c561-4d24-82bb-6847572a29e5",
   "mostListened": "33735c26-7774-4835-bd1f-4d90a05f5e9b",
   "analytics": "643efac7-efa5-4368-8e2f-b852d22aee1a",
   "ga4Property": "560515892",
-  "paths": "6e143717-4192-4251-b0eb-be81162155da"
+  "paths": "6e143717-4192-4251-b0eb-be81162155da",
+  "work": "41f51920-86a2-8123-b7b1-000b617bcad7",
+  "weekly": "41f51920-86a2-816a-9aae-000b64277af0",
+  "recipients": "41f51920-86a2-8194-b017-000b43a7ccb0"
 }
