@@ -354,11 +354,8 @@ def kpi_html(page: dict, previous: dict | None, col: dict[str, str]) -> str:
         bars = bar(round(100 * (v or 0) / top), THIS)
         if has_before:
             bars += '<div style="height:3px;font-size:0;line-height:0;">&nbsp;</div>' + bar(round(100 * before / top), LAST)
-        delta = ""
-        if has_before and v is not None:
-            d = v - before
-            delta = (f'<div style="font-size:12px;color:{MUTED};white-space:nowrap;">{before:,.0f}　'
-                     + (f"+{d:,.0f}" if d > 0 else f"−{-d:,.0f}" if d < 0 else "持平") + "</div>")
+        delta = (f'<div style="font-size:12px;color:{MUTED};white-space:nowrap;">{before:,.0f}</div>'
+                 if has_before else "")
         shown = "—" if v is None else f"{v:,.0f}"
         rows.append(f'<tr><td width="34%" valign="middle" style="padding:0 12px 14px 0;font-size:14px;color:{INK};">{label}</td>'
                     f'<td width="40%" valign="middle" style="padding:0 12px 14px 0;">{bars}</td>'
@@ -487,6 +484,8 @@ def draft() -> int:
         block("heading_2", text("三、接下來")), *bullets(upcoming, "（待補）"),
         block("heading_2", text("四、需要協助")),
         {"object": "block", "type": "divider", "divider": {}},
+        block("paragraph", text("有任何問題或想法，直接回覆這封信就能找到我。")),
+        block("paragraph", text("祝這週順利！")),
         block("paragraph", text("Annie")),
     ]
     page = notion("/pages", "POST", {"parent": {"type": "data_source_id", "data_source_id": ds},
