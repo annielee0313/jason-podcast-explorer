@@ -12,6 +12,8 @@ preview_urls = false
 [vars]
 ALLOWED_ORIGINS = "https://jasonstalk.com,https://www.jasonstalk.com,https://annielee0313.github.io,http://localhost:5188,http://localhost:5189"
 CHAT_ENABLED = "true"
+# Anonymous question log (chat/log.ts): the Notion table 「小幫手提問」. Token is the secret NOTION_LOG_TOKEN.
+NOTION_LOG_DS = "42151920-86a2-814b-a9a0-000bf3954f0d"
 
 # Per-visitor rate limit: 8 questions per minute.
 [[ratelimits]]

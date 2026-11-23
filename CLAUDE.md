@@ -28,6 +28,7 @@ A static React (Vite + TypeScript) site that helps new listeners discover episod
 - Grounding: answer only from that catalog; no quotes, timestamps, links or invented facts; "not covered" + 「把問題留給我們」 otherwise. The worker drops unknown episode numbers and strips links; the site renders each episode card (title, guest, 「來源：EP.x 節目說明」) from its own data.
 - Abuse limits: allowed origins only, 300-character questions, last 6 turns, 8 requests/min per visitor (rate-limit binding), 40/day per visitor, `CHAT_ENABLED` kill switch, and the Claude Console workspace spend limit as the backstop.
 - Secrets: the Worker secret `ANTHROPIC_API_KEY` (local: `chat/.dev.vars`, gitignored). The widget (`ChatWidget.tsx`) only renders when `VITE_CHAT_URL` is set (`.env.development` → local worker).
+- Question log: every answered question goes to the Notion table 「小幫手提問 · Chat questions」 (`chat/log.ts`; question, Taipei time, kind, recommended EPs, reply, turn number; never IP or visitor ID; not from localhost). Needs the Worker secret `NOTION_LOG_TOKEN` (insert-only connection `jason-podcast-chat-log`, shared with that table only); `NOTION_LOG_DS` is in wrangler.toml. The widget note tells visitors questions are kept anonymously. For the team only, not in the weekly report.
 - SRT transcripts are not used yet; episode recommendations rely on show notes.
 
 ## Automatic updates

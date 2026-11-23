@@ -186,7 +186,7 @@ export function ChatWidget() {
             />
             <button type="submit" className="chat-send" disabled={busy || !text.trim()} aria-label="送出"><ArrowIcon /></button>
           </form>
-          <p className="chat-note">AI 依節目說明整理，可能不完整；以節目內容為準。{text.length > MAX_QUESTION - 50 && ` ${text.length}/${MAX_QUESTION}`}</p>
+          <p className="chat-note">AI 依節目說明整理，可能不完整。提問會匿名保存以改善小幫手，請勿輸入個資。{text.length > MAX_QUESTION - 50 && ` ${text.length}/${MAX_QUESTION}`}</p>
         </div>
       )}
     </>
