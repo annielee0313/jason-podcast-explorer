@@ -357,12 +357,12 @@ def kpi_html(page: dict, previous: dict | None, col: dict[str, str]) -> str:
         delta = ""
         if has_before and v is not None:
             d = v - before
-            delta = (f'<div style="font-size:12px;color:{MUTED};">上週 {before:,.0f}　'
+            delta = (f'<div style="font-size:12px;color:{MUTED};white-space:nowrap;">{before:,.0f}　'
                      + (f"+{d:,.0f}" if d > 0 else f"−{-d:,.0f}" if d < 0 else "持平") + "</div>")
         shown = "—" if v is None else f"{v:,.0f}"
         rows.append(f'<tr><td width="34%" valign="middle" style="padding:0 12px 14px 0;font-size:14px;color:{INK};">{label}</td>'
                     f'<td width="40%" valign="middle" style="padding:0 12px 14px 0;">{bars}</td>'
-                    f'<td width="26%" valign="middle" style="padding:0 0 14px;text-align:right;">'
+                    f'<td width="26%" valign="middle" style="padding:0 0 14px;text-align:left;white-space:nowrap;">'
                     f'<div style="font-size:20px;font-weight:300;line-height:1.2;color:{INK};">{shown}</div>{delta}</td></tr>')
     return "".join(rows)
 
