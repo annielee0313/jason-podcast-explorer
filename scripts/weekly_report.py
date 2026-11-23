@@ -186,6 +186,30 @@ def ga4_week(start: date, end: date) -> dict:
     return out
 
 
+def search_queries(start: date, end: date, limit: int = 10) -> list[dict]:
+    """Top Google search phrases that showed the site (Search Console). Google hides rare phrases
+    for privacy and its data lags ~2–3 days, so the last days of the week may be incomplete.
+    Needs the GA4 service account added as a user (Restricted is enough) on the Search Console property."""
+    raw, site = os.environ.get("GA4_SERVICE_ACCOUNT"), CONFIG.get("searchConsole")
+    if not raw or not site:
+        print("Search Console skipped: GA4_SERVICE_ACCOUNT or searchConsole not set")
+        return []
+    from urllib.parse import quote
+    from google.auth.transport.requests import AuthorizedSession
+    from google.oauth2 import service_account
+    creds = service_account.Credentials.from_service_account_info(
+        json.loads(raw), scopes=["https://www.googleapis.com/auth/webmasters.readonly"])
+    r = AuthorizedSession(creds).post(
+        f"https://searchconsole.googleapis.com/webmasters/v3/sites/{quote(site, safe='')}/searchAnalytics/query",
+        json={"startDate": start.isoformat(), "endDate": end.isoformat(), "dimensions": ["query"], "rowLimit": limit},
+        timeout=60)
+    if r.status_code != 200:
+        print(f"Search Console failed: {r.status_code} {r.text[:300]}")
+        return []
+    return [{"query": row["keys"][0], "clicks": int(row["clicks"]), "impressions": int(row["impressions"]),
+             "position": round(row["position"], 1)} for row in r.json().get("rows", [])]
+
+
 def clarity_week(start: date, end: date) -> dict:
     """Clarity has no history API; sum the daily rows sync_analytics.py wrote to 網站數據."""
     ds = CONFIG["analytics"]
@@ -312,18 +336,34 @@ def body_html(blocks: list[dict]) -> str:
 
 
 def kpi_html(page: dict, previous: dict | None, col: dict[str, str]) -> str:
-    tiles = []
+    """This week vs last week as horizontal bars (HTML tables, so it works in every mail app).
+    Each metric is scaled on its own, so small numbers stay visible next to big ones."""
+    THIS, LAST = LINK, "#c5ced3"
+    bar = lambda pct, color: (f'<div style="background:{color};height:10px;width:{max(pct, 1)}%;'
+                              f'min-width:3px;font-size:0;line-height:0;">&nbsp;</div>')
+    rows = [f'<tr><td colspan="3" style="padding:0 0 12px;font-size:12px;color:{MUTED};">'
+            f'<span style="color:{THIS};">■</span> 本週　<span style="color:{LAST};">■</span> 上週</td></tr>'] if previous else []
     for key, label in KPIS:
         if key not in col:
             continue
         v = value(page, col[key])
         before = value(previous, col[key]) if previous else None
+        has_before = isinstance(before, (int, float))
+        top = max(v or 0, before if has_before else 0, 1)
+        bars = bar(round(100 * (v or 0) / top), THIS)
+        if has_before:
+            bars += '<div style="height:3px;font-size:0;line-height:0;">&nbsp;</div>' + bar(round(100 * before / top), LAST)
+        delta = ""
+        if has_before and v is not None:
+            d = v - before
+            delta = (f'<div style="font-size:12px;color:{MUTED};">上週 {before:,.0f}　'
+                     + (f"+{d:,.0f}" if d > 0 else f"−{-d:,.0f}" if d < 0 else "持平") + "</div>")
         shown = "—" if v is None else f"{v:,.0f}"
-        prev = f'<div style="font-size:12px;color:{MUTED};margin-top:2px;">上週 {before:,.0f}</div>' if isinstance(before, (int, float)) else ""
-        tiles.append(f'<td width="33%" valign="top" style="padding:0 8px 16px 0;"><div style="background:{GROUND};padding:14px 14px 12px;">'
-                     f'<div style="font-size:28px;font-weight:300;line-height:1.2;color:{INK};">{shown}</div>'
-                     f'<div style="font-size:13px;color:{MUTED};margin-top:4px;">{label}</div>{prev}</div></td>')
-    return "".join("<tr>" + "".join(tiles[i:i + 3]) + "</tr>" for i in range(0, len(tiles), 3))
+        rows.append(f'<tr><td width="34%" valign="middle" style="padding:0 12px 14px 0;font-size:14px;color:{INK};">{label}</td>'
+                    f'<td width="40%" valign="middle" style="padding:0 12px 14px 0;">{bars}</td>'
+                    f'<td width="26%" valign="middle" style="padding:0 0 14px;text-align:right;">'
+                    f'<div style="font-size:20px;font-weight:300;line-height:1.2;color:{INK};">{shown}</div>{delta}</td></tr>')
+    return "".join(rows)
 
 
 def render(page: dict) -> tuple[str, str]:
@@ -386,9 +426,14 @@ def draft() -> int:
     except SystemExit as err:
         print(f"Clarity rows skipped: {err}")
         clarity = {}
+    try:
+        queries = search_queries(start, end)
+    except Exception as err:  # optional source; never blocks the draft
+        print(f"Search Console failed: {err}")
+        queries = []
     done, upcoming = work_items(start, end)
     facts = {"期間": span(start, end), "本週": numbers, "上週": {k: v for k, v in before.items() if isinstance(v, int)},
-             "Clarity": clarity, "本週完成": done, "接下來": upcoming}
+             "Clarity": clarity, "Google 搜尋字詞": queries[:5], "本週完成": done, "接下來": upcoming}
     summary = summarize(facts)
 
     week_no = len(existing) + 1
@@ -407,6 +452,8 @@ def draft() -> int:
     if clarity.get("Clarity 工作階段") is not None:
         detail.append(f"Clarity 工作階段：{clarity['Clarity 工作階段']}" +
                       (f"，平均捲動深度 {clarity['平均捲動深度%']}%" if "平均捲動深度%" in clarity else ""))
+    search_blocks = [block("bulleted_list_item", text(f"「{q['query']}」"), text(f"　點擊 {q['clicks']}・出現 {q['impressions']} 次", color="gray"))
+                     for q in queries[:8]]
     children_blocks = [
         {"object": "block", "type": "callout", "callout": {"icon": {"type": "emoji", "emoji": "✏️"}, "color": "gray_background", "rich_text": [
             text("草稿，尚未寄出。", bold=True),
@@ -416,6 +463,8 @@ def draft() -> int:
         block("paragraph", text(summary)),
         block("heading_2", text("一、本週完成")), *bullets(done, "（在「工作與內容」把完成的項目勾「進週報」，或直接在這裡寫）"),
         block("heading_2", text(f"二、數字補充（{span(start, end)}）")), *[block("bulleted_list_item", text(s)) for s in detail],
+        block("heading_2", text("Google 搜尋字詞")),
+        *(search_blocks or [block("paragraph", text("（本週沒有足夠的搜尋資料，Google 會隱藏次數太少的字詞）", color="gray"))]),
         block("heading_2", text("三、接下來")), *bullets(upcoming, "（待補）"),
         block("heading_2", text("四、需要協助")),
         {"object": "block", "type": "divider", "divider": {}},
