@@ -50,7 +50,7 @@ MODEL = "claude-opus-5-5"
 AI_SOURCES = r".*(chatgpt|openai|perplexity|copilot|gemini|bard|claude|anthropic|deepseek|grok).*"
 # KPI tiles: Notion column (Chinese part) → label in the mail
 KPIS = [("訪客", "訪客（每日加總）"), ("瀏覽", "頁面瀏覽"), ("收聽點擊", "收聽點擊"),
-        ("小幫手提問", "小幫手提問"), ("搜尋流量", "搜尋帶來的造訪"), ("AI", "AI 帶來的造訪")]
+        ("小幫手提問", "小幫手提問"), ("搜尋流量", "搜尋造訪"), ("AI", "AI 造訪")]
 DRAFT, APPROVED, SENT = "草稿", "已核准", "已寄出"
 INK, MUTED, LINK, WASH, GROUND = "#1e2b33", "#565c6a", "#0e7c86", "#d8f1f3", "#f2f5f6"
 
@@ -336,6 +336,7 @@ def body_html(blocks: list[dict]) -> str:
 
 
 def kpi_html(page: dict, previous: dict | None, col: dict[str, str]) -> str:
+    """`previous`: last week's numbers keyed like KPIS ("訪客": 30, ...), or None."""
     """This week vs last week as horizontal bars (HTML tables, so it works in every mail app).
     Each metric is scaled on its own, so small numbers stay visible next to big ones."""
     THIS, LAST = LINK, "#c5ced3"
@@ -347,7 +348,7 @@ def kpi_html(page: dict, previous: dict | None, col: dict[str, str]) -> str:
         if key not in col:
             continue
         v = value(page, col[key])
-        before = value(previous, col[key]) if previous else None
+        before = previous.get(key) if previous else None
         has_before = isinstance(before, (int, float))
         top = max(v or 0, before if has_before else 0, 1)
         bars = bar(round(100 * (v or 0) / top), THIS)
@@ -366,16 +367,34 @@ def kpi_html(page: dict, previous: dict | None, col: dict[str, str]) -> str:
     return "".join(rows)
 
 
+def ga4_previous(period: str) -> dict | None:
+    """No earlier 週報 page (the first report, or a skipped week): read the 7 days before this
+    report's 期間 ("2026-11-14 – 11-20") straight from GA4."""
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})\s*[–-]\s*(?:(\d{4})-)?(\d{2})-(\d{2})", period or "")
+    if not m:
+        return None
+    start = date(int(m[1]), int(m[2]), int(m[3]))
+    end = date(int(m[4] or m[1]), int(m[5]), int(m[6]))
+    days = (end - start).days + 1
+    try:
+        numbers = ga4_week(start - timedelta(days=days), end - timedelta(days=days))
+    except Exception as err:
+        print(f"Last week from GA4 failed: {err}")
+        return None
+    return {k: numbers[k] for k, _ in KPIS if isinstance(numbers.get(k), int)} or None
+
+
 def render(page: dict) -> tuple[str, str]:
     ds = CONFIG["weekly"]
     col = columns(ds)
     sent_on = value(page, col["寄出日"])
     earlier = query(ds, {"filter": {"property": col["寄出日"], "date": {"before": sent_on}},
                          "sorts": [{"property": col["寄出日"], "direction": "descending"}], "page_size": 1}) if sent_on else []
+    previous = {k: value(earlier[0], col[k]) for k, _ in KPIS if k in col} if earlier else ga4_previous(value(page, col["期間"]))
     title = value(page, col["週次"])
     subject = f"Jason好好聊 網站週報｜{title}"
     fill = {"subject": html.escape(subject), "period": html.escape(value(page, col["期間"]) or ""),
-            "kpis": kpi_html(page, earlier[0] if earlier else None, col), "body": body_html(children(page["id"])),
+            "kpis": kpi_html(page, previous, col), "body": body_html(children(page["id"])),
             "notion_url": html.escape(CONFIG["page"])}
     return subject, re.sub(r"\{\{(\w+)\}\}", lambda m: fill.get(m.group(1), ""), TEMPLATE)
 
