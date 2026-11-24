@@ -36,5 +36,7 @@ export async function logQuestion(token: string, ds: string, question: string, t
         '第幾題 Turn': { number: turn },
       },
     }),
-  }).catch(() => undefined);
+  })
+    .then(async (r) => { if (!r.ok) console.log(`question log: Notion ${r.status} ${(await r.text()).slice(0, 300)}`); })
+    .catch((err) => console.log(`question log failed: ${err}`));
 }
